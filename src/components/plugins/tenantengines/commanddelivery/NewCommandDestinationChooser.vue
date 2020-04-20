@@ -1,0 +1,44 @@
+<template>
+  <sw-new-element-chooser ref="dialog" :icon="icon" title="Add Command Destination" width="500">
+    <sw-new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Command Destination</sw-new-element-entry>
+    <sw-new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Command Destination</sw-new-element-entry>
+  </sw-new-element-chooser>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import { Component, Refs, MicroserviceIcon } from "sitewhere-ide-common";
+
+@Component({
+  components: {}
+})
+export default class NewCommandDestinationChooser extends Vue {
+  /** References */
+  $refs!: Refs<{
+    dialog: any;
+  }>;
+
+  /** Get page icon */
+  get icon(): MicroserviceIcon {
+    return MicroserviceIcon.CommandDelivery;
+  }
+
+  /** Open chooser */
+  openChooser(): void {
+    this.$refs.dialog.openDialog();
+  }
+
+  /** Close chooser */
+  closeChooser(): void {
+    this.$refs.dialog.closeDialog();
+  }
+
+  /** Close chooser on item click */
+  onChosen(id: string): void {
+    this.closeChooser();
+    this.$emit("chosen", id);
+  }
+}
+</script>
+
+<style scoped></style>

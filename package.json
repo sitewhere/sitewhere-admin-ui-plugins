@@ -1,0 +1,50 @@
+{
+  "name": "sitewhere-admin-ui-plugins",
+  "version": "3.0.0-alpha.1",
+  "description": "Pluggable components for SiteWhere admin user interface",
+  "main": "dist/sitewhere-admin-ui-plugins.js",
+  "typings": "types/sitewhere.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "npm run build:comp",
+    "build:comp": "node build/build.js",
+    "clean": "rimraf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sitewhere/sitewhere-admin-ui-plugins.git"
+  },
+  "keywords": [
+    "sitewhere",
+    "ide",
+    "components"
+  ],
+  "author": "Derek Adams <derek.adams@sitewhere.com>",
+  "license": "CPAL-1.0",
+  "bugs": {
+    "url": "https://github.com/sitewhere/sitewhere-admin-ui-plugins/issues"
+  },
+  "homepage": "https://github.com/sitewhere/sitewhere-admin-ui-plugins#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/vuelidate": "^0.7.11",
+    "electron": "^4.2.12",
+    "rimraf": "^2.7.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "sitewhere-ide-common": "3.0.0-alpha.1",
+    "sitewhere-ide-components": "3.0.0-alpha.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.8.3",
+    "uglify-js": "^3.8.0",
+    "vue-template-compiler": "^2.6.11",
+    "zlib": "^1.0.5"
+  }
+}

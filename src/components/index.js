@@ -19,4 +19,13 @@ function AdminUiPlugins(Vue) {
   Vue.component("sw-event-sources-config-plugin", EventSourcesPlugin);
 }
 
+export {
+  TenantEnginePlugin,
+  AssetManagementPlugin,
+  BatchOperationsPlugin,
+  CommandDeliveryPlugin,
+  DeviceManagementPlugin,
+  EventSourcesPlugin
+}
+
 export default AdminUiPlugins;

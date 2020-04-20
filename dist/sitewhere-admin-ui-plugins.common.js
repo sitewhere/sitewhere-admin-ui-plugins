@@ -11512,4 +11512,10 @@ function AdminUiPlugins(Vue) {
   Vue.component("sw-event-sources-config-plugin", __vue_component__$13);
 }
 
+exports.AssetManagementPlugin = __vue_component__$7;
+exports.BatchOperationsPlugin = __vue_component__$b;
+exports.CommandDeliveryPlugin = __vue_component__$v;
+exports.DeviceManagementPlugin = __vue_component__$w;
+exports.EventSourcesPlugin = __vue_component__$13;
+exports.TenantEnginePlugin = __vue_component__$6;
 exports.default = AdminUiPlugins;

@@ -1,3 +1,5 @@
+import SiteWhereIdeComponents from "sitewhere-ide-components";
+
 import DatastoreSelector from "./plugins/tenantengines/common/DatastoreSelector.vue";
 import TenantEnginePlugin from "./plugins/tenantengines/TenantEnginePlugin.vue";
 
@@ -7,8 +9,10 @@ import CommandDeliveryPlugin from "./plugins/tenantengines/commanddelivery/Comma
 import DeviceManagementPlugin from "./plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue";
 import EventSourcesPlugin from "./plugins/tenantengines/eventsources/EventSourcesPlugin.vue";
 
-// Process as Vue plugin.
+/** Process as Vue plugin */
 function AdminUiPlugins(Vue) {
+  Vue.use(SiteWhereIdeComponents);
+
   Vue.component("sw-datastore-selector", DatastoreSelector);
   Vue.component("sw-tenant-engine-plugin", TenantEnginePlugin);
 

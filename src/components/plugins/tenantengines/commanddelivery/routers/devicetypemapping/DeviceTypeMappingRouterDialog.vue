@@ -23,15 +23,13 @@
 </template>
 
 <script lang="ts">
+import { Component, Ref, Prop } from "vue-property-decorator";
 import {
-  Component,
-  DialogComponent,
-  Refs,
-  Prop,
   showError,
   MicroserviceIcon,
   listDeviceTypes
 } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 
 import { AxiosResponse } from "axios";
@@ -52,20 +50,16 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
 > {
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
+  @Ref() readonly dialog!: any;
+  @Ref() readonly mappings!: DeviceTypeMappingRouterFields;
 
   $store: any;
   deviceTypes: IDeviceType[] = [];
 
-  // References.
-  $refs!: Refs<{
-    dialog: any;
-    mappings: DeviceTypeMappingRouterFields;
-  }>;
-
   /** Generate payload from UI */
   generatePayload() {
     let payload: any = {};
-    Object.assign(payload, (this.$refs.mappings as any).save());
+    Object.assign(payload, (this.mappings as any).save());
 
     return payload;
   }
@@ -73,8 +67,8 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
   /** Reset dialog contents */
   reset() {
     this.loadDeviceTypes();
-    if (this.$refs.mappings) {
-      (this.$refs.mappings as any).reset();
+    if (this.mappings) {
+      (this.mappings as any).reset();
     }
   }
 
@@ -97,15 +91,15 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
   /** Load dialog from a given configuration */
   load(config: IDeviceTypeMappingRouterConfiguration) {
     this.reset();
-    if (this.$refs.mappings) {
-      (this.$refs.mappings as any).load(config);
+    if (this.mappings) {
+      (this.mappings as any).load(config);
     }
   }
 
   /** Called after create button is clicked */
   onCreateClicked(e: any) {
-    if (!(this.$refs.mappings as any).validate()) {
-      this.$refs.dialog.setActiveTab(0);
+    if (!(this.mappings as any).validate()) {
+      (this.dialog as any).setActiveTab(0);
       return;
     }
 

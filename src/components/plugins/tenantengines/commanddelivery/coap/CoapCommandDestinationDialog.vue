@@ -27,13 +27,9 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  DialogComponent,
-  Refs,
-  Prop,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import { Component, Ref, Prop } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 
 import CommandDestinationDialog from "../CommandDestinationDialog.vue";
@@ -54,12 +50,8 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly cancelLabel!: string;
   @Prop() readonly idsInUse!: string[];
-
-  // References.
-  $refs!: Refs<{
-    dialog: any;
-    coap: CoapFields;
-  }>;
+  @Ref() readonly dialog!: any;
+  @Ref() readonly coap!: CoapFields;
 
   /** List of parameter extractors */
   parameterExtractors: { text: string; value: string }[] = [
@@ -77,10 +69,10 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
   /** Generate payload from UI */
   generatePayload() {
     let config: any = {};
-    Object.assign(config, (this.$refs.coap as any).save());
+    Object.assign(config, (this.coap as any).save());
 
     let payload: any = {};
-    Object.assign(payload, (this.$refs.dialog as any).save());
+    Object.assign(payload, (this.dialog as any).save());
     payload.configuration = config;
 
     return payload;
@@ -88,30 +80,30 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
 
   /** Reset dialog contents */
   reset() {
-    if (this.$refs.coap) {
-      (this.$refs.coap as any).reset();
+    if (this.coap) {
+      (this.coap as any).reset();
     }
-    this.$refs.dialog.reset();
+    (this.dialog as any).reset();
   }
 
   /** Load dialog from a given configuration */
   load(config: ICommandDestinationGenericConfiguration) {
     this.reset();
-    if (this.$refs.dialog) {
-      this.$refs.dialog.load(config);
+    if (this.dialog) {
+      (this.dialog as any).load(config);
     }
-    if (this.$refs.coap) {
-      (this.$refs.coap as any).load(config.configuration);
+    if (this.coap) {
+      (this.coap as any).load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
   onCreateClicked(e: any) {
-    if (!this.$refs.dialog.validate()) {
+    if (!(this.dialog as any).validate()) {
       return;
     }
-    if (!(this.$refs.coap as any).validate()) {
-      this.$refs.dialog.setActiveTab(0);
+    if (!(this.coap as any).validate()) {
+      (this.dialog as any).setActiveTab(0);
       return;
     }
 

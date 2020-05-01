@@ -13,10 +13,7 @@
     </v-card>
     <v-card flat class="mb-3" v-else>No mappings have been assigned.</v-card>
     <v-card flat class="mb-4" v-if="defaultDestination">
-      <sw-content-field
-        name="default destination"
-        :value="defaultDestination"
-      />
+      <sw-content-field name="default destination" :value="defaultDestination" />
     </v-card>
     <v-card flat class="mb-4" v-else>
       <sw-content-warning
@@ -28,11 +25,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop } from "sitewhere-ide-common";
+import { Component, Prop } from "vue-property-decorator";
 import {
   IRouterGenericConfiguration,
   IDeviceTypeMappingRouterConfiguration,
-  IDeviceTypeMapping,
+  IDeviceTypeMapping
 } from "sitewhere-configuration-model";
 
 @Component({})

@@ -16,10 +16,12 @@
 </template>
 
 <script lang="ts">
-import { Component, DialogSection } from "sitewhere-ide-common";
+import { Component } from "vue-property-decorator";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
+import { DialogSection } from "sitewhere-ide-components";
 
 import { required } from "vuelidate/lib/validators";
+import { Validation } from "vuelidate";
 
 @Component({
   validations: {
@@ -45,7 +47,6 @@ export default class BatchOperationManagerFields extends DialogSection {
 
   /** Load form data from an object */
   load(input: IBatchOperationManagerConfiguration): void {
-    console.log("load from", input);
     this.throttleDelayMs = input.throttleDelayMs || 0;
   }
 

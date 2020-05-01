@@ -12,7 +12,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, MicroserviceIcon } from "sitewhere-ide-common";
+import { Component, Prop } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
 
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import EventSourcesTable from "./EventSourcesTable.vue";

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import CoapCommandDestinationDialog from "./CoapCommandDestinationDialog.vue";
 
@@ -26,25 +26,21 @@ import { ICoapCommandDestinationConfiguration } from "sitewhere-configuration-mo
 })
 export default class CoapCommandDestinationCreateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: CoapCommandDestinationDialog;
-  }>;
+  @Ref() readonly dialog!: CoapCommandDestinationDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: ICoapCommandDestinationConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

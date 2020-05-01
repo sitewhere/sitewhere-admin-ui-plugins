@@ -12,6 +12,8 @@ const commonjs = require("rollup-plugin-commonjs");
 const typescript = require("rollup-plugin-typescript2");
 const vue = require("rollup-plugin-vue");
 const version = process.env.VERSION || require("../package.json").version;
+const cjsOutput = require("../package.json").main;
+const esOutput = require("../package.json").module;
 const banner = `/**
   * SiteWhere Admin UI Plugins v${version}
   * (c) 2020 SiteWhere LLC
@@ -27,13 +29,12 @@ const resolve = _path => path.resolve(__dirname, "../", _path);
 build(
   [
     {
-      file: resolve("dist/sitewhere-admin-ui-plugins.js"),
-      format: "umd",
-      env: "development"
-    },
-    {
-      file: resolve("dist/sitewhere-admin-ui-plugins.common.js"),
-      format: "cjs"
+      file: resolve(cjsOutput),
+      format: "cjs",
+      name: "SiteWhereAdminUiPlugins"
+    }, {
+      file: resolve(esOutput),
+      format: "es"
     }
   ].map(genConfig)
 );
@@ -43,11 +44,18 @@ function genConfig(opts) {
     input: {
       input: resolve("src/components/index.js"),
       external: [
-        "vue",
-        "axios",
+        "sitewhere-rest-api",
         "sitewhere-ide-common",
         "sitewhere-ide-components",
+        "axios",
+        "vue",
+        "vuelidate",
+        "vue-property-decorator",
+        "vue-router",
+        "vuex",
+        "moment",
         "electron",
+        "vue-color"
       ],
       plugins: [
         nodeResolve(),
@@ -60,19 +68,23 @@ function genConfig(opts) {
           clean: true,
           tsconfigDefaults: {
             compilerOptions: {
-              target: "es5",
-              module: "es2015",
+              target: "es2015",
+              module: "esnext",
+              strict: true,
+              jsx: "preserve",
+              importHelpers: true,
               moduleResolution: "node",
-              isolatedModules: false,
-              experimentalDecorators: true,
-              emitDecoratorMetadata: true,
-              declaration: true,
               noImplicitAny: true,
-              removeComments: false,
-              strictNullChecks: true,
-              typeRoots: ["../node_modules/@types/"],
+              noEmitOnError: false,
+              experimentalDecorators: true,
+              esModuleInterop: true,
+              emitDecoratorMetadata: true,
               allowSyntheticDefaultImports: true,
-              lib: ["dom", "es2015", "es2016", "es2017"]
+              strictFunctionTypes: false,
+              typeRoots: ["../node_modules/@types/"],
+              lib: [
+                "es2018",
+                "dom"]
             }
           }
         }),
@@ -82,11 +94,12 @@ function genConfig(opts) {
     output: {
       file: opts.file,
       format: opts.format,
+      name: opts.name,
       banner,
-      name: "SiteWhereAdminUiPlugins",
       exports: "named",
       globals: {
-        vue: "Vue"
+        vue: "Vue",
+        moment: "moment"
       }
     }
   };

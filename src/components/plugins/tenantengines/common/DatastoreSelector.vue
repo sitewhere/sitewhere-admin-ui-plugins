@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 import {
   IDatastoreDefinition,
   IDatastoreDefinitionLocal,
@@ -59,12 +59,8 @@ import Postgres95Summary from "./datastore/postgres95/Postgres95Summary.vue";
 export default class DatastoreSelector extends Vue {
   @Prop() readonly datastore!: IDatastoreDefinition;
   @Prop() readonly instance!: IInstanceConfiguration;
-
-  /** References */
-  $refs!: Refs<{
-    create: DatastoreCreateDialog;
-    update: DatastoreUpdateDialog;
-  }>;
+  @Ref() readonly create!: DatastoreCreateDialog;
+  @Ref() readonly update!: DatastoreUpdateDialog;
 
   /** Global RDB configurations */
   get rdbConfigurations(): IRdbConfigurationMap | null {
@@ -130,7 +126,7 @@ export default class DatastoreSelector extends Vue {
 
   /** Add datastore */
   onAddDatastore() {
-    (this.$refs.create as any).openDialog();
+    (this.create as any).openDialog();
   }
 
   /** Called to create datastore based on UI data */
@@ -140,7 +136,7 @@ export default class DatastoreSelector extends Vue {
 
   /** Update datastore */
   onUpdateDatastore() {
-    (this.$refs.update as any).openDialog(this.datastore);
+    (this.update as any).openDialog(this.datastore);
   }
 
   /** Called to update datastore based on UI data */

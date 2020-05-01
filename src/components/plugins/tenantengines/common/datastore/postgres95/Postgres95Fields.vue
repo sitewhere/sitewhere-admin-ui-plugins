@@ -78,9 +78,11 @@
 </template>
 
 <script lang="ts">
-import { Component, DialogSection, Prop } from "sitewhere-ide-common";
+import { Component, Prop } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 
 import { required } from "vuelidate/lib/validators";
+import { Validation } from "vuelidate";
 
 @Component({
   validations: {
@@ -90,6 +92,7 @@ import { required } from "vuelidate/lib/validators";
   }
 } as any)
 export default class Postgres95Fields extends DialogSection {
+  dummy!: Validation;
   @Prop() readonly readonly!: boolean;
 
   hostname: string | null = null;

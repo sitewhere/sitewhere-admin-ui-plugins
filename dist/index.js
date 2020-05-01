@@ -9,7 +9,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var SiteWhereIdeComponents = require('sitewhere-ide-components');
+var SiteWhereIdeComponents__default = _interopDefault(SiteWhereIdeComponents);
 var Vue = _interopDefault(require('vue'));
+var vuePropertyDecorator = require('vue-property-decorator');
 var sitewhereIdeCommon = require('sitewhere-ide-common');
 
 /*! *****************************************************************************
@@ -26,20 +29,6 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
 
 function __decorate(decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -59,34 +48,6 @@ function __awaiter(thisArg, _arguments, P, generator) {
         function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
 }
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -1015,41 +976,39 @@ unwrapExports(validators);
 var validators_1 = validators.required;
 var validators_2 = validators.helpers;
 
-var Postgres95Fields = /** @class */ (function (_super) {
-    __extends(Postgres95Fields, _super);
-    function Postgres95Fields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.hostname = null;
-        _this.port = null;
-        _this.username = null;
-        _this.password = null;
-        _this.maxConnections = null;
-        return _this;
+let Postgres95Fields = class Postgres95Fields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.hostname = null;
+        this.port = null;
+        this.username = null;
+        this.password = null;
+        this.maxConnections = null;
     }
     /** Reset section content */
-    Postgres95Fields.prototype.reset = function () {
+    reset() {
         this.hostname = null;
         this.port = null;
         this.username = null;
         this.password = null;
         this.maxConnections = null;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    Postgres95Fields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    Postgres95Fields.prototype.load = function (configuration) {
+    load(configuration) {
         this.hostname = configuration.hostname;
         this.port = configuration.port;
         this.username = configuration.username;
         this.password = configuration.password;
         this.maxConnections = configuration.maxConnections;
-    };
+    }
     /** Save form data to an object */
-    Postgres95Fields.prototype.save = function () {
+    save() {
         return {
             hostname: this.hostname,
             port: this.port,
@@ -1057,22 +1016,22 @@ var Postgres95Fields = /** @class */ (function (_super) {
             password: this.password,
             maxConnections: this.maxConnections
         };
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Boolean)
-    ], Postgres95Fields.prototype, "readonly", void 0);
-    Postgres95Fields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                hostname: {
-                    required: validators_1
-                }
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Boolean)
+], Postgres95Fields.prototype, "readonly", void 0);
+Postgres95Fields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            hostname: {
+                required: validators_1
             }
-        })
-    ], Postgres95Fields);
-    return Postgres95Fields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], Postgres95Fields);
+var script = Postgres95Fields;
 
 function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
     if (typeof shadowMode !== 'boolean') {
@@ -1203,7 +1162,7 @@ function addStyle(id, css) {
 }
 
 /* script */
-const __vue_script__ = Postgres95Fields;
+const __vue_script__ = script;
 
 /* template */
 var __vue_render__ = function() {
@@ -1346,11 +1305,11 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-3eb6c03a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Postgres95Fields.vue"}, media: undefined });
+    inject("data-v-69eb4638_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Postgres95Fields.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__ = "data-v-3eb6c03a";
+  const __vue_scope_id__ = "data-v-69eb4638";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -1374,91 +1333,77 @@ __vue_render__._withStripped = true;
     undefined
   );
 
-var DatastoreDialog = /** @class */ (function (_super) {
-    __extends(DatastoreDialog, _super);
-    function DatastoreDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.scope = 0;
-        _this.reference = null;
-        _this.type = "postgres95";
+let DatastoreDialog = class DatastoreDialog extends SiteWhereIdeComponents.DialogComponent {
+    constructor() {
+        super(...arguments);
+        this.scope = 0;
+        this.reference = null;
+        this.type = "postgres95";
         /** List of supported database types */
-        _this.databaseTypes = [
+        this.databaseTypes = [
             {
                 text: "PostgreSQL",
                 value: "postgres95"
             }
         ];
-        return _this;
     }
-    DatastoreDialog.prototype.onScopeChanged = function (updated) {
+    /** Convert to dialog */
+    get dialogComponent() {
+        return this.dialog;
+    }
+    /** Convert to dialog section */
+    get detailsSection() {
+        return this.details;
+    }
+    onScopeChanged(updated) {
         if (!this.isLocalScope) {
             if (!this.reference) {
-                var refs = this.globalDatabases;
+                let refs = this.globalDatabases;
                 if (refs.length) {
                     this.reference = refs[0].value;
                 }
             }
         }
         this.reloadDetails();
-    };
-    DatastoreDialog.prototype.onReferenceChanged = function (updated) {
+    }
+    onReferenceChanged(updated) {
         this.reloadDetails();
-    };
-    Object.defineProperty(DatastoreDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.NavigationIcon.Datastore;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreDialog.prototype, "isLocalScope", {
-        /** Indicates if local scope is chosen */
-        get: function () {
-            return this.scope == 0;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreDialog.prototype, "isGlobalScope", {
-        /** Indicates if global scope is chosen */
-        get: function () {
-            return this.scope == 1;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreDialog.prototype, "rdbConfigurations", {
-        /** Global RDB configurations */
-        get: function () {
-            return this.instance && this.instance.persistenceConfigurations
-                ? this.instance.persistenceConfigurations.rdbConfigurations
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreDialog.prototype, "globalDatabases", {
-        /** Get list of available global databases */
-        get: function () {
-            var databases = [];
-            if (this.rdbConfigurations) {
-                var keys = Object.keys(this.rdbConfigurations);
-                keys.forEach(function (key) {
-                    databases.push({ text: key, value: key });
-                });
-            }
-            return databases;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.NavigationIcon.Datastore;
+    }
+    /** Indicates if local scope is chosen */
+    get isLocalScope() {
+        return this.scope == 0;
+    }
+    /** Indicates if global scope is chosen */
+    get isGlobalScope() {
+        return this.scope == 1;
+    }
+    /** Global RDB configurations */
+    get rdbConfigurations() {
+        return this.instance && this.instance.persistenceConfigurations
+            ? this.instance.persistenceConfigurations.rdbConfigurations
+            : null;
+    }
+    /** Get list of available global databases */
+    get globalDatabases() {
+        let databases = [];
+        if (this.rdbConfigurations) {
+            let keys = Object.keys(this.rdbConfigurations);
+            keys.forEach(key => {
+                databases.push({ text: key, value: key });
+            });
+        }
+        return databases;
+    }
     /** Find a referenced persistence configuration */
-    DatastoreDialog.prototype.findGlobalDefinition = function (reference) {
+    findGlobalDefinition(reference) {
         if (!this.rdbConfigurations) {
             return null;
         }
-        var match = this.rdbConfigurations[reference];
+        let match = this.rdbConfigurations[reference];
         if (!match) {
             return null;
         }
@@ -1466,65 +1411,61 @@ var DatastoreDialog = /** @class */ (function (_super) {
             type: match.type,
             configuration: match.configuration
         };
-    };
+    }
     /** Local or global datastore type */
-    DatastoreDialog.prototype.getDatastoreType = function () {
+    getDatastoreType() {
         if (!this.isLocalScope && this.reference) {
-            var global = this.findGlobalDefinition(this.reference);
+            let global = this.findGlobalDefinition(this.reference);
             return global ? global.type : null;
         }
         return this.type;
-    };
+    }
     /** Local or global datastore configuration */
-    DatastoreDialog.prototype.getDatastoreConfiguration = function () {
+    getDatastoreConfiguration() {
         if (this.isLocalScope) {
             return this.configuration;
         }
         else if (this.reference) {
-            var global = this.findGlobalDefinition(this.reference);
+            let global = this.findGlobalDefinition(this.reference);
             return global ? global.configuration : {};
         }
         else {
             console.log("neither local scope or reference!");
             return {};
         }
-    };
-    Object.defineProperty(DatastoreDialog.prototype, "isPostgres95", {
-        /** Indicates whether database is Postgres95 */
-        get: function () {
-            var type = this.getDatastoreType();
-            return type == "postgres95";
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    /** Indicates whether database is Postgres95 */
+    get isPostgres95() {
+        let type = this.getDatastoreType();
+        return type == "postgres95";
+    }
     /** Generate configuration from detail panel */
-    DatastoreDialog.prototype.generateConfiguration = function () {
-        var configuration = {};
-        Object.assign(configuration, this.$refs.details.save());
+    generateConfiguration() {
+        let configuration = {};
+        Object.assign(configuration, this.detailsSection.save());
         return configuration;
-    };
+    }
     /** Generate payload from UI data */
-    DatastoreDialog.prototype.generatePayload = function () {
+    generatePayload() {
         if (this.scope == 1 && this.reference) {
             return {
                 reference: this.reference
             };
         }
         else {
-            var configuration = this.generateConfiguration();
+            let configuration = this.generateConfiguration();
             return { type: this.type, configuration: configuration };
         }
-    };
+    }
     /** Reset dialog content to default */
-    DatastoreDialog.prototype.reset = function () {
-        if (this.$refs.details) {
-            this.$refs.details.reset();
+    reset() {
+        if (this.details) {
+            this.detailsSection.reset();
         }
-        this.$refs.dialog.setActiveTab(0);
-    };
+        this.dialogComponent.setActiveTab(0);
+    }
     /** Load data from an existing configuration */
-    DatastoreDialog.prototype.load = function (payload) {
+    load(payload) {
         this.reset();
         this.type = payload.type || "postgres95";
         this.configuration =
@@ -1533,57 +1474,65 @@ var DatastoreDialog = /** @class */ (function (_super) {
         this.scope = this.reference ? 1 : 0;
         console.log("reference", this.reference);
         this.reloadDetails();
-    };
+    }
     /** Reload details panel based on updated configuration */
-    DatastoreDialog.prototype.reloadDetails = function () {
-        var config = this.getDatastoreConfiguration();
-        if (this.$refs.details && config) {
-            this.$refs.details.load(config);
+    reloadDetails() {
+        let config = this.getDatastoreConfiguration();
+        if (this.details && config) {
+            this.detailsSection.load(config);
         }
-    };
+    }
     // Called after create button is clicked.
-    DatastoreDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.details.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+    onCreateClicked(e) {
+        if (!this.detailsSection.validate()) {
+            this.dialogComponent.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DatastoreDialog.prototype, "instance", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], DatastoreDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], DatastoreDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Watch("scope"),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Number]),
-        __metadata("design:returntype", void 0)
-    ], DatastoreDialog.prototype, "onScopeChanged", null);
-    __decorate([
-        sitewhereIdeCommon.Watch("reference"),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [String]),
-        __metadata("design:returntype", void 0)
-    ], DatastoreDialog.prototype, "onReferenceChanged", null);
-    DatastoreDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { Postgres95Fields: __vue_component__ }
-        })
-    ], DatastoreDialog);
-    return DatastoreDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DatastoreDialog.prototype, "instance", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DatastoreDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DatastoreDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], DatastoreDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], DatastoreDialog.prototype, "details", void 0);
+__decorate([
+    vuePropertyDecorator.Watch("scope"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], DatastoreDialog.prototype, "onScopeChanged", null);
+__decorate([
+    vuePropertyDecorator.Watch("reference"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], DatastoreDialog.prototype, "onReferenceChanged", null);
+DatastoreDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: { Postgres95Fields: __vue_component__ }
+    })
+], DatastoreDialog);
+var script$1 = DatastoreDialog;
 
 /* script */
-const __vue_script__$1 = DatastoreDialog;
+const __vue_script__$1 = script$1;
 
 /* template */
 var __vue_render__$1 = function() {
@@ -1728,11 +1677,11 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-5621e09b_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreDialog.vue"}, media: undefined });
+    inject("data-v-f53e683a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-5621e09b";
+  const __vue_scope_id__$1 = "data-v-f53e683a";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -1756,39 +1705,41 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
-var DatastoreCreateDialog = /** @class */ (function (_super) {
-    __extends(DatastoreCreateDialog, _super);
-    function DatastoreCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let DatastoreCreateDialog = class DatastoreCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    DatastoreCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    DatastoreCreateDialog.prototype.openDialog = function () {
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DatastoreCreateDialog.prototype, "instance", void 0);
-    DatastoreCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                DatastoreDialog: __vue_component__$1
-            }
-        })
-    ], DatastoreCreateDialog);
-    return DatastoreCreateDialog;
-}(Vue));
+    openDialog() {
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DatastoreCreateDialog.prototype, "instance", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$1)
+], DatastoreCreateDialog.prototype, "dialog", void 0);
+DatastoreCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DatastoreDialog: __vue_component__$1
+        }
+    })
+], DatastoreCreateDialog);
+var script$2 = DatastoreCreateDialog;
 
 /* script */
-const __vue_script__$2 = DatastoreCreateDialog;
+const __vue_script__$2 = script$2;
 
 /* template */
 var __vue_render__$2 = function() {
@@ -1811,11 +1762,11 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = function (inject) {
     if (!inject) return
-    inject("data-v-509d7c0c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreCreateDialog.vue"}, media: undefined });
+    inject("data-v-68f29977_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-509d7c0c";
+  const __vue_scope_id__$2 = "data-v-68f29977";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
@@ -1839,37 +1790,37 @@ __vue_render__$2._withStripped = true;
     undefined
   );
 
-var DatastoreUpdateDialog = /** @class */ (function (_super) {
-    __extends(DatastoreUpdateDialog, _super);
-    function DatastoreUpdateDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+let DatastoreUpdateDialog = class DatastoreUpdateDialog extends Vue {
     /** Emit payload */
-    DatastoreUpdateDialog.prototype.onPayload = function (definition) {
-        this.$refs.dialog.closeDialog();
+    onPayload(definition) {
+        this.dialog.closeDialog();
         this.$emit("update", definition);
-    };
+    }
     /** Open dialog */
-    DatastoreUpdateDialog.prototype.openDialog = function (definition) {
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(definition);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DatastoreUpdateDialog.prototype, "instance", void 0);
-    DatastoreUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                DatastoreDialog: __vue_component__$1
-            }
-        })
-    ], DatastoreUpdateDialog);
-    return DatastoreUpdateDialog;
-}(Vue));
+    openDialog(definition) {
+        this.dialog.openDialog();
+        this.dialog.load(definition);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DatastoreUpdateDialog.prototype, "instance", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$1)
+], DatastoreUpdateDialog.prototype, "dialog", void 0);
+DatastoreUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DatastoreDialog: __vue_component__$1
+        }
+    })
+], DatastoreUpdateDialog);
+var script$3 = DatastoreUpdateDialog;
 
 /* script */
-const __vue_script__$3 = DatastoreUpdateDialog;
+const __vue_script__$3 = script$3;
 
 /* template */
 var __vue_render__$3 = function() {
@@ -1892,11 +1843,11 @@ __vue_render__$3._withStripped = true;
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-01347b36_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreUpdateDialog.vue"}, media: undefined });
+    inject("data-v-2eb6f936_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-01347b36";
+  const __vue_scope_id__$3 = "data-v-2eb6f936";
   /* module identifier */
   const __vue_module_identifier__$3 = undefined;
   /* functional template */
@@ -1920,65 +1871,41 @@ __vue_render__$3._withStripped = true;
     undefined
   );
 
-var Postgres95Summary = /** @class */ (function (_super) {
-    __extends(Postgres95Summary, _super);
-    function Postgres95Summary() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let Postgres95Summary = class Postgres95Summary extends Vue {
+    /** Hostname */
+    get hostname() {
+        return this.configuration ? this.configuration.hostname : null;
     }
-    Object.defineProperty(Postgres95Summary.prototype, "hostname", {
-        /** Hostname */
-        get: function () {
-            return this.configuration ? this.configuration.hostname : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Postgres95Summary.prototype, "port", {
-        /** Port */
-        get: function () {
-            return this.configuration ? this.configuration.port : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Postgres95Summary.prototype, "username", {
-        /** Username */
-        get: function () {
-            return this.configuration ? this.configuration.username : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Postgres95Summary.prototype, "password", {
-        /** Password */
-        get: function () {
-            return this.configuration ? this.configuration.password : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Postgres95Summary.prototype, "maxConnections", {
-        /** Max connections */
-        get: function () {
-            return this.configuration ? this.configuration.maxConnections : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], Postgres95Summary.prototype, "configuration", void 0);
-    Postgres95Summary = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {}
-        })
-    ], Postgres95Summary);
-    return Postgres95Summary;
-}(Vue));
+    /** Port */
+    get port() {
+        return this.configuration ? this.configuration.port : null;
+    }
+    /** Username */
+    get username() {
+        return this.configuration ? this.configuration.username : null;
+    }
+    /** Password */
+    get password() {
+        return this.configuration ? this.configuration.password : null;
+    }
+    /** Max connections */
+    get maxConnections() {
+        return this.configuration ? this.configuration.maxConnections : null;
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], Postgres95Summary.prototype, "configuration", void 0);
+Postgres95Summary = __decorate([
+    vuePropertyDecorator.Component({
+        components: {}
+    })
+], Postgres95Summary);
+var script$4 = Postgres95Summary;
 
 /* script */
-const __vue_script__$4 = Postgres95Summary;
+const __vue_script__$4 = script$4;
 
 /* template */
 var __vue_render__$4 = function() {
@@ -2029,11 +1956,11 @@ __vue_render__$4._withStripped = true;
   /* style */
   const __vue_inject_styles__$4 = function (inject) {
     if (!inject) return
-    inject("data-v-0ce4ebed_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Postgres95Summary.vue"}, media: undefined });
+    inject("data-v-0c8dad33_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"Postgres95Summary.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$4 = "data-v-0ce4ebed";
+  const __vue_scope_id__$4 = "data-v-0c8dad33";
   /* module identifier */
   const __vue_module_identifier__$4 = undefined;
   /* functional template */
@@ -2057,75 +1984,51 @@ __vue_render__$4._withStripped = true;
     undefined
   );
 
-var DatastoreSelector = /** @class */ (function (_super) {
-    __extends(DatastoreSelector, _super);
-    function DatastoreSelector() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let DatastoreSelector = class DatastoreSelector extends Vue {
+    /** Global RDB configurations */
+    get rdbConfigurations() {
+        return this.instance && this.instance.persistenceConfigurations
+            ? this.instance.persistenceConfigurations.rdbConfigurations
+            : null;
     }
-    Object.defineProperty(DatastoreSelector.prototype, "rdbConfigurations", {
-        /** Global RDB configurations */
-        get: function () {
-            return this.instance && this.instance.persistenceConfigurations
-                ? this.instance.persistenceConfigurations.rdbConfigurations
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreSelector.prototype, "datastoreReference", {
-        /** Get reference name */
-        get: function () {
-            return this.datastore
-                ? this.datastore.reference
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreSelector.prototype, "datastoreType", {
-        /** Local or global datastore type */
-        get: function () {
-            var reference = this.datastoreReference;
-            if (reference) {
-                var global = this.findGlobalDefinition(reference);
-                return global ? global.type : null;
-            }
-            return this.datastore
-                ? this.datastore.type
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreSelector.prototype, "configuration", {
-        /** Local or global datastore configuration */
-        get: function () {
-            var reference = this.datastoreReference;
-            if (reference) {
-                var global = this.findGlobalDefinition(reference);
-                return global ? global.configuration : null;
-            }
-            return this.datastore
-                ? this.datastore.configuration
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DatastoreSelector.prototype, "isPostgres95", {
-        /** Postgres95 datastore */
-        get: function () {
-            return this.datastoreType ? this.datastoreType == "postgres95" : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get reference name */
+    get datastoreReference() {
+        return this.datastore
+            ? this.datastore.reference
+            : null;
+    }
+    /** Local or global datastore type */
+    get datastoreType() {
+        let reference = this.datastoreReference;
+        if (reference) {
+            let global = this.findGlobalDefinition(reference);
+            return global ? global.type : null;
+        }
+        return this.datastore
+            ? this.datastore.type
+            : null;
+    }
+    /** Local or global datastore configuration */
+    get configuration() {
+        let reference = this.datastoreReference;
+        if (reference) {
+            let global = this.findGlobalDefinition(reference);
+            return global ? global.configuration : null;
+        }
+        return this.datastore
+            ? this.datastore.configuration
+            : null;
+    }
+    /** Postgres95 datastore */
+    get isPostgres95() {
+        return this.datastoreType ? this.datastoreType == "postgres95" : false;
+    }
     /** Find a referenced persistence configuration */
-    DatastoreSelector.prototype.findGlobalDefinition = function (reference) {
+    findGlobalDefinition(reference) {
         if (!this.rdbConfigurations) {
             return null;
         }
-        var match = this.rdbConfigurations[reference];
+        let match = this.rdbConfigurations[reference];
         if (!match) {
             return null;
         }
@@ -2133,49 +2036,57 @@ var DatastoreSelector = /** @class */ (function (_super) {
             type: match.type,
             configuration: match.configuration
         };
-    };
+    }
     /** Add datastore */
-    DatastoreSelector.prototype.onAddDatastore = function () {
-        this.$refs.create.openDialog();
-    };
+    onAddDatastore() {
+        this.create.openDialog();
+    }
     /** Called to create datastore based on UI data */
-    DatastoreSelector.prototype.onDatastoreCreate = function (definition) {
+    onDatastoreCreate(definition) {
         this.$emit("create", definition);
-    };
+    }
     /** Update datastore */
-    DatastoreSelector.prototype.onUpdateDatastore = function () {
-        this.$refs.update.openDialog(this.datastore);
-    };
+    onUpdateDatastore() {
+        this.update.openDialog(this.datastore);
+    }
     /** Called to update datastore based on UI data */
-    DatastoreSelector.prototype.onDatastoreUpdate = function (definition) {
+    onDatastoreUpdate(definition) {
         this.$emit("update", definition);
-    };
+    }
     /** Unset datastore */
-    DatastoreSelector.prototype.onUnsetDatastore = function () {
+    onUnsetDatastore() {
         this.$emit("unset");
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DatastoreSelector.prototype, "datastore", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DatastoreSelector.prototype, "instance", void 0);
-    DatastoreSelector = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                DatastoreCreateDialog: __vue_component__$2,
-                DatastoreUpdateDialog: __vue_component__$3,
-                Postgres95Summary: __vue_component__$4
-            }
-        })
-    ], DatastoreSelector);
-    return DatastoreSelector;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DatastoreSelector.prototype, "datastore", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DatastoreSelector.prototype, "instance", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$2)
+], DatastoreSelector.prototype, "create", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$3)
+], DatastoreSelector.prototype, "update", void 0);
+DatastoreSelector = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DatastoreCreateDialog: __vue_component__$2,
+            DatastoreUpdateDialog: __vue_component__$3,
+            Postgres95Summary: __vue_component__$4
+        }
+    })
+], DatastoreSelector);
+var script$5 = DatastoreSelector;
 
 /* script */
-const __vue_script__$5 = DatastoreSelector;
+const __vue_script__$5 = script$5;
 
 /* template */
 var __vue_render__$5 = function() {
@@ -2273,11 +2184,11 @@ __vue_render__$5._withStripped = true;
   /* style */
   const __vue_inject_styles__$5 = function (inject) {
     if (!inject) return
-    inject("data-v-a05ced16_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreSelector.vue"}, media: undefined });
+    inject("data-v-0afb1231_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DatastoreSelector.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$5 = "data-v-a05ced16";
+  const __vue_scope_id__$5 = "data-v-0afb1231";
   /* module identifier */
   const __vue_module_identifier__$5 = undefined;
   /* functional template */
@@ -2301,51 +2212,35 @@ __vue_render__$5._withStripped = true;
     undefined
   );
 
-var TenantEnginePlugin = /** @class */ (function (_super) {
-    __extends(TenantEnginePlugin, _super);
-    function TenantEnginePlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let TenantEnginePlugin = class TenantEnginePlugin extends Vue {
+    /** Get microservice information */
+    get tenant() {
+        return this.configuration ? this.configuration.tenant : null;
     }
-    Object.defineProperty(TenantEnginePlugin.prototype, "tenant", {
-        /** Get microservice information */
-        get: function () {
-            return this.configuration ? this.configuration.tenant : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TenantEnginePlugin.prototype, "microservice", {
-        /** Get microservice information */
-        get: function () {
-            return this.configuration ? this.configuration.microservice : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TenantEnginePlugin.prototype, "header", {
-        /** Get header displayed at top of page */
-        get: function () {
-            return this.tenant && this.microservice
-                ? this.microservice.name + " Configuration for Tenant '" + this.tenant.name + "'"
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], TenantEnginePlugin.prototype, "configuration", void 0);
-    TenantEnginePlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {}
-        })
-    ], TenantEnginePlugin);
-    return TenantEnginePlugin;
-}(Vue));
+    /** Get microservice information */
+    get microservice() {
+        return this.configuration ? this.configuration.microservice : null;
+    }
+    /** Get header displayed at top of page */
+    get header() {
+        return this.tenant && this.microservice
+            ? `${this.microservice.name} Configuration for Tenant '${this.tenant.name}'`
+            : null;
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], TenantEnginePlugin.prototype, "configuration", void 0);
+TenantEnginePlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: {}
+    })
+], TenantEnginePlugin);
+var script$6 = TenantEnginePlugin;
 
 /* script */
-const __vue_script__$6 = TenantEnginePlugin;
+const __vue_script__$6 = script$6;
 
 /* template */
 var __vue_render__$6 = function() {
@@ -2388,11 +2283,11 @@ __vue_render__$6._withStripped = true;
   /* style */
   const __vue_inject_styles__$6 = function (inject) {
     if (!inject) return
-    inject("data-v-0a4101e6_0", { source: "\n.flex-rows[data-v-0a4101e6] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\n}\n.plugin-header[data-v-0a4101e6] {\r\n  flex: 0;\n}\n.plugin-content[data-v-0a4101e6] {\r\n  flex: 1;\r\n  background-color: #fff;\r\n  overflow-y: auto;\n}\n.plugin-footer[data-v-0a4101e6] {\r\n  flex: 0;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\TenantEnginePlugin.vue"],"names":[],"mappings":";AAyDA;EACA,aAAA;EACA,sBAAA;EACA,YAAA;AACA;AACA;EACA,OAAA;AACA;AACA;EACA,OAAA;EACA,sBAAA;EACA,gBAAA;AACA;AACA;EACA,OAAA;AACA","file":"TenantEnginePlugin.vue","sourcesContent":["<template>\r\n  <v-card flat style=\"height: 100%\">\r\n    <v-card-text>\r\n      <div class=\"flex-rows\">\r\n        <div v-if=\"microservice && tenant\" class=\"plugin-header\">\r\n          <slot name=\"header\">\r\n            <sw-page-header :text=\"header\" />\r\n          </slot>\r\n        </div>\r\n        <div class=\"plugin-content\">\r\n          <slot />\r\n        </div>\r\n        <div class=\"plugin-footer\">\r\n          <slot name=\"footer\" />\r\n        </div>\r\n      </div>\r\n    </v-card-text>\r\n    <slot name=\"dialogs\"></slot>\r\n  </v-card>\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component, Prop } from \"sitewhere-ide-common\";\r\n\r\nimport {\r\n  ITenantEngineConfiguration,\r\n  IMicroserviceSummary,\r\n  ITenant\r\n} from \"sitewhere-rest-api\";\r\n\r\n@Component({\r\n  components: {}\r\n})\r\nexport default class TenantEnginePlugin extends Vue {\r\n  @Prop() readonly configuration!: ITenantEngineConfiguration;\r\n\r\n  /** Get microservice information */\r\n  get tenant(): ITenant | null {\r\n    return this.configuration ? this.configuration.tenant : null;\r\n  }\r\n\r\n  /** Get microservice information */\r\n  get microservice(): IMicroserviceSummary | null {\r\n    return this.configuration ? this.configuration.microservice : null;\r\n  }\r\n\r\n  /** Get header displayed at top of page */\r\n  get header(): string | null {\r\n    return this.tenant && this.microservice\r\n      ? `${this.microservice.name} Configuration for Tenant '${this.tenant.name}'`\r\n      : null;\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.flex-rows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\r\n}\r\n.plugin-header {\r\n  flex: 0;\r\n}\r\n.plugin-content {\r\n  flex: 1;\r\n  background-color: #fff;\r\n  overflow-y: auto;\r\n}\r\n.plugin-footer {\r\n  flex: 0;\r\n}\r\n</style>\r\n"]}, media: undefined });
+    inject("data-v-3fcd2675_0", { source: "\n.flex-rows[data-v-3fcd2675] {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\n}\n.plugin-header[data-v-3fcd2675] {\r\n  flex: 0;\n}\n.plugin-content[data-v-3fcd2675] {\r\n  flex: 1;\r\n  background-color: #fff;\r\n  overflow-y: auto;\n}\n.plugin-footer[data-v-3fcd2675] {\r\n  flex: 0;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\TenantEnginePlugin.vue"],"names":[],"mappings":";AAyDA;EACA,aAAA;EACA,sBAAA;EACA,YAAA;AACA;AACA;EACA,OAAA;AACA;AACA;EACA,OAAA;EACA,sBAAA;EACA,gBAAA;AACA;AACA;EACA,OAAA;AACA","file":"TenantEnginePlugin.vue","sourcesContent":["<template>\r\n  <v-card flat style=\"height: 100%\">\r\n    <v-card-text>\r\n      <div class=\"flex-rows\">\r\n        <div v-if=\"microservice && tenant\" class=\"plugin-header\">\r\n          <slot name=\"header\">\r\n            <sw-page-header :text=\"header\" />\r\n          </slot>\r\n        </div>\r\n        <div class=\"plugin-content\">\r\n          <slot />\r\n        </div>\r\n        <div class=\"plugin-footer\">\r\n          <slot name=\"footer\" />\r\n        </div>\r\n      </div>\r\n    </v-card-text>\r\n    <slot name=\"dialogs\"></slot>\r\n  </v-card>\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component, Prop } from \"vue-property-decorator\";\r\n\r\nimport {\r\n  ITenantEngineConfiguration,\r\n  IMicroserviceSummary,\r\n  ITenant\r\n} from \"sitewhere-rest-api\";\r\n\r\n@Component({\r\n  components: {}\r\n})\r\nexport default class TenantEnginePlugin extends Vue {\r\n  @Prop() readonly configuration!: ITenantEngineConfiguration;\r\n\r\n  /** Get microservice information */\r\n  get tenant(): ITenant | null {\r\n    return this.configuration ? this.configuration.tenant : null;\r\n  }\r\n\r\n  /** Get microservice information */\r\n  get microservice(): IMicroserviceSummary | null {\r\n    return this.configuration ? this.configuration.microservice : null;\r\n  }\r\n\r\n  /** Get header displayed at top of page */\r\n  get header(): string | null {\r\n    return this.tenant && this.microservice\r\n      ? `${this.microservice.name} Configuration for Tenant '${this.tenant.name}'`\r\n      : null;\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.flex-rows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\r\n}\r\n.plugin-header {\r\n  flex: 0;\r\n}\r\n.plugin-content {\r\n  flex: 1;\r\n  background-color: #fff;\r\n  overflow-y: auto;\r\n}\r\n.plugin-footer {\r\n  flex: 0;\r\n}\r\n</style>\r\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$6 = "data-v-0a4101e6";
+  const __vue_scope_id__$6 = "data-v-3fcd2675";
   /* module identifier */
   const __vue_module_identifier__$6 = undefined;
   /* functional template */
@@ -2416,63 +2311,47 @@ __vue_render__$6._withStripped = true;
     undefined
   );
 
-var AssetManagementPlugin = /** @class */ (function (_super) {
-    __extends(AssetManagementPlugin, _super);
-    function AssetManagementPlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let AssetManagementPlugin = class AssetManagementPlugin extends Vue {
+    /** Get tenant configuration for asset management */
+    get assetManagement() {
+        return this.configuration ? this.configuration.tenantConfiguration : null;
     }
-    Object.defineProperty(AssetManagementPlugin.prototype, "assetManagement", {
-        /** Get tenant configuration for asset management */
-        get: function () {
-            return this.configuration ? this.configuration.tenantConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AssetManagementPlugin.prototype, "instanceManagement", {
-        /** Get instance configuraton information */
-        get: function () {
-            return this.configuration ? this.configuration.instanceConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AssetManagementPlugin.prototype, "datastore", {
-        /** Get datastore definition */
-        get: function () {
-            return this.assetManagement ? this.assetManagement.datastore : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get instance configuraton information */
+    get instanceManagement() {
+        return this.configuration ? this.configuration.instanceConfiguration : null;
+    }
+    /** Get datastore definition */
+    get datastore() {
+        return this.assetManagement ? this.assetManagement.datastore : null;
+    }
     /** Create new datastore */
-    AssetManagementPlugin.prototype.onCreateDatastore = function (definition) {
+    onCreateDatastore(definition) {
         this.assetManagement.datastore = definition;
-    };
+    }
     /** Update datastore */
-    AssetManagementPlugin.prototype.onUpdateDatastore = function (definition) {
+    onUpdateDatastore(definition) {
         this.assetManagement.datastore = definition;
-    };
+    }
     /** Unset the datastore */
-    AssetManagementPlugin.prototype.onUnsetDatastore = function () {
+    onUnsetDatastore() {
         if (this.assetManagement) {
             this.assetManagement.datastore = null;
         }
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], AssetManagementPlugin.prototype, "configuration", void 0);
-    AssetManagementPlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { TenantEnginePlugin: __vue_component__$6, DatastoreSelector: __vue_component__$5 }
-        })
-    ], AssetManagementPlugin);
-    return AssetManagementPlugin;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], AssetManagementPlugin.prototype, "configuration", void 0);
+AssetManagementPlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: { TenantEnginePlugin: __vue_component__$6, DatastoreSelector: __vue_component__$5 }
+    })
+], AssetManagementPlugin);
+var script$7 = AssetManagementPlugin;
 
 /* script */
-const __vue_script__$7 = AssetManagementPlugin;
+const __vue_script__$7 = script$7;
 
 /* template */
 var __vue_render__$7 = function() {
@@ -2511,11 +2390,11 @@ __vue_render__$7._withStripped = true;
   /* style */
   const __vue_inject_styles__$7 = function (inject) {
     if (!inject) return
-    inject("data-v-71b73da5_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"AssetManagementPlugin.vue"}, media: undefined });
+    inject("data-v-de94e618_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"AssetManagementPlugin.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$7 = "data-v-71b73da5";
+  const __vue_scope_id__$7 = "data-v-de94e618";
   /* module identifier */
   const __vue_module_identifier__$7 = undefined;
   /* functional template */
@@ -2539,48 +2418,45 @@ __vue_render__$7._withStripped = true;
     undefined
   );
 
-var BatchOperationManagerFields = /** @class */ (function (_super) {
-    __extends(BatchOperationManagerFields, _super);
-    function BatchOperationManagerFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.throttleDelayMs = 0;
-        return _this;
+let BatchOperationManagerFields = class BatchOperationManagerFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.throttleDelayMs = 0;
     }
     /** Reset section content */
-    BatchOperationManagerFields.prototype.reset = function () {
+    reset() {
         this.throttleDelayMs = 0;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    BatchOperationManagerFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    BatchOperationManagerFields.prototype.load = function (input) {
-        console.log("load from", input);
+    load(input) {
         this.throttleDelayMs = input.throttleDelayMs || 0;
-    };
+    }
     /** Save form data to an object */
-    BatchOperationManagerFields.prototype.save = function () {
+    save() {
         return {
             throttleDelayMs: this.throttleDelayMs
         };
-    };
-    BatchOperationManagerFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                throttleDelayMs: {
-                    required: validators_1
-                }
+    }
+};
+BatchOperationManagerFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            throttleDelayMs: {
+                required: validators_1
             }
-        })
-    ], BatchOperationManagerFields);
-    return BatchOperationManagerFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], BatchOperationManagerFields);
+var script$8 = BatchOperationManagerFields;
 
 /* script */
-const __vue_script__$8 = BatchOperationManagerFields;
+const __vue_script__$8 = script$8;
 
 /* template */
 var __vue_render__$8 = function() {
@@ -2657,58 +2533,62 @@ __vue_render__$8._withStripped = true;
     undefined
   );
 
-var BatchOperationManagerDialog = /** @class */ (function (_super) {
-    __extends(BatchOperationManagerDialog, _super);
-    function BatchOperationManagerDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let BatchOperationManagerDialog = class BatchOperationManagerDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.BatchOperations;
     }
-    Object.defineProperty(BatchOperationManagerDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.BatchOperations;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Convert to dialog section */
+    get managerSection() {
+        return this.manager;
+    }
     /** Generate payload from UI */
-    BatchOperationManagerDialog.prototype.generatePayload = function () {
-        var payload = {};
-        Object.assign(payload, this.$refs.manager.save());
+    generatePayload() {
+        let payload = {};
+        Object.assign(payload, this.managerSection.save());
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    BatchOperationManagerDialog.prototype.reset = function () {
-        if (this.$refs.manager) {
-            this.$refs.manager.reset();
+    reset() {
+        if (this.manager) {
+            this.managerSection.reset();
         }
-    };
+    }
     /** Load dialog from a given configuration */
-    BatchOperationManagerDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.manager) {
-            this.$refs.manager.load(config);
+        if (this.manager) {
+            this.managerSection.load(config);
         }
-    };
+    }
     /** Called after create button is clicked */
-    BatchOperationManagerDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.manager.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+    onCreateClicked(e) {
+        if (!this.manager.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("update", payload);
         this.closeDialog();
-    };
-    BatchOperationManagerDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { BatchOperationManagerFields: __vue_component__$8 }
-        })
-    ], BatchOperationManagerDialog);
-    return BatchOperationManagerDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], BatchOperationManagerDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], BatchOperationManagerDialog.prototype, "manager", void 0);
+BatchOperationManagerDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: { BatchOperationManagerFields: __vue_component__$8 }
+    })
+], BatchOperationManagerDialog);
+var script$9 = BatchOperationManagerDialog;
 
 /* script */
-const __vue_script__$9 = BatchOperationManagerDialog;
+const __vue_script__$9 = script$9;
 
 /* template */
 var __vue_render__$9 = function() {
@@ -2790,50 +2670,42 @@ __vue_render__$9._withStripped = true;
     undefined
   );
 
-var BatchOperationManagerSection = /** @class */ (function (_super) {
-    __extends(BatchOperationManagerSection, _super);
-    function BatchOperationManagerSection() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let BatchOperationManagerSection = class BatchOperationManagerSection extends Vue {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.BatchOperations;
     }
-    Object.defineProperty(BatchOperationManagerSection.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.BatchOperations;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BatchOperationManagerSection.prototype, "throttleDelayMs", {
-        /** Get throttle delay(ms) */
-        get: function () {
-            return this.configuration ? this.configuration.throttleDelayMs : 0;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get throttle delay(ms) */
+    get throttleDelayMs() {
+        return this.configuration ? this.configuration.throttleDelayMs : 0;
+    }
     /** Called to edit batch operation manager settings */
-    BatchOperationManagerSection.prototype.onEditBatchOperationManager = function () {
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(this.configuration);
-    };
+    onEditBatchOperationManager() {
+        this.dialog.openDialog();
+        this.dialog.load(this.configuration);
+    }
     /** Handle update */
-    BatchOperationManagerSection.prototype.onBatchOperationManagerUpdate = function (updated) {
+    onBatchOperationManagerUpdate(updated) {
         this.$emit("update", updated);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], BatchOperationManagerSection.prototype, "configuration", void 0);
-    BatchOperationManagerSection = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { BatchOperationManagerDialog: __vue_component__$9 }
-        })
-    ], BatchOperationManagerSection);
-    return BatchOperationManagerSection;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], BatchOperationManagerSection.prototype, "configuration", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$9)
+], BatchOperationManagerSection.prototype, "dialog", void 0);
+BatchOperationManagerSection = __decorate([
+    vuePropertyDecorator.Component({
+        components: { BatchOperationManagerDialog: __vue_component__$9 }
+    })
+], BatchOperationManagerSection);
+var script$a = BatchOperationManagerSection;
 
 /* script */
-const __vue_script__$a = BatchOperationManagerSection;
+const __vue_script__$a = script$a;
 
 /* template */
 var __vue_render__$a = function() {
@@ -2871,11 +2743,11 @@ __vue_render__$a._withStripped = true;
   /* style */
   const __vue_inject_styles__$a = function (inject) {
     if (!inject) return
-    inject("data-v-79b82228_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"BatchOperationManagerSection.vue"}, media: undefined });
+    inject("data-v-631578ab_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"BatchOperationManagerSection.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$a = "data-v-79b82228";
+  const __vue_scope_id__$a = "data-v-631578ab";
   /* module identifier */
   const __vue_module_identifier__$a = undefined;
   /* functional template */
@@ -2899,83 +2771,63 @@ __vue_render__$a._withStripped = true;
     undefined
   );
 
-var BatchOperationsPlugin = /** @class */ (function (_super) {
-    __extends(BatchOperationsPlugin, _super);
-    function BatchOperationsPlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let BatchOperationsPlugin = class BatchOperationsPlugin extends Vue {
+    /** Get tenant configuration for batch operations */
+    get batchOperations() {
+        return this.configuration ? this.configuration.tenantConfiguration : null;
     }
-    Object.defineProperty(BatchOperationsPlugin.prototype, "batchOperations", {
-        /** Get tenant configuration for batch operations */
-        get: function () {
-            return this.configuration ? this.configuration.tenantConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BatchOperationsPlugin.prototype, "instanceManagement", {
-        /** Get instance configuraton information */
-        get: function () {
-            return this.configuration ? this.configuration.instanceConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BatchOperationsPlugin.prototype, "datastore", {
-        /** Get datastore definition */
-        get: function () {
-            return this.batchOperations ? this.batchOperations.datastore : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BatchOperationsPlugin.prototype, "batchOperationManager", {
-        /** Get batch operation manager configuration */
-        get: function () {
-            return this.batchOperations
-                ? this.batchOperations.batchOperationManager
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get instance configuraton information */
+    get instanceManagement() {
+        return this.configuration ? this.configuration.instanceConfiguration : null;
+    }
+    /** Get datastore definition */
+    get datastore() {
+        return this.batchOperations ? this.batchOperations.datastore : null;
+    }
+    /** Get batch operation manager configuration */
+    get batchOperationManager() {
+        return this.batchOperations
+            ? this.batchOperations.batchOperationManager
+            : null;
+    }
     /** Create new datastore */
-    BatchOperationsPlugin.prototype.onCreateDatastore = function (definition) {
+    onCreateDatastore(definition) {
         this.batchOperations.datastore = definition;
-    };
+    }
     /** Update datastore */
-    BatchOperationsPlugin.prototype.onUpdateDatastore = function (definition) {
+    onUpdateDatastore(definition) {
         this.batchOperations.datastore = definition;
-    };
+    }
     /** Unset the datastore */
-    BatchOperationsPlugin.prototype.onUnsetDatastore = function () {
+    onUnsetDatastore() {
         if (this.batchOperations) {
             this.batchOperations.datastore = null;
         }
-    };
+    }
     /** Handle batch operation manager updates */
-    BatchOperationsPlugin.prototype.onBatchOperationManagerUpdate = function (updated) {
+    onBatchOperationManagerUpdate(updated) {
         if (this.batchOperations) {
             this.batchOperations.batchOperationManager = updated;
         }
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], BatchOperationsPlugin.prototype, "configuration", void 0);
-    BatchOperationsPlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                TenantEnginePlugin: __vue_component__$6,
-                DatastoreSelector: __vue_component__$5,
-                BatchOperationManagerSection: __vue_component__$a
-            }
-        })
-    ], BatchOperationsPlugin);
-    return BatchOperationsPlugin;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], BatchOperationsPlugin.prototype, "configuration", void 0);
+BatchOperationsPlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            TenantEnginePlugin: __vue_component__$6,
+            DatastoreSelector: __vue_component__$5,
+            BatchOperationManagerSection: __vue_component__$a
+        }
+    })
+], BatchOperationsPlugin);
+var script$b = BatchOperationsPlugin;
 
 /* script */
-const __vue_script__$b = BatchOperationsPlugin;
+const __vue_script__$b = script$b;
 
 /* template */
 var __vue_render__$b = function() {
@@ -3021,11 +2873,11 @@ __vue_render__$b._withStripped = true;
   /* style */
   const __vue_inject_styles__$b = function (inject) {
     if (!inject) return
-    inject("data-v-0050e0dc_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"BatchOperationsPlugin.vue"}, media: undefined });
+    inject("data-v-2ec6cee1_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"BatchOperationsPlugin.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$b = "data-v-0050e0dc";
+  const __vue_scope_id__$b = "data-v-2ec6cee1";
   /* module identifier */
   const __vue_module_identifier__$b = undefined;
   /* functional template */
@@ -3049,42 +2901,38 @@ __vue_render__$b._withStripped = true;
     undefined
   );
 
-var NewCommandDestinationChooser = /** @class */ (function (_super) {
-    __extends(NewCommandDestinationChooser, _super);
-    function NewCommandDestinationChooser() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let NewCommandDestinationChooser = class NewCommandDestinationChooser extends Vue {
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
     }
-    Object.defineProperty(NewCommandDestinationChooser.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Open chooser */
-    NewCommandDestinationChooser.prototype.openChooser = function () {
-        this.$refs.dialog.openDialog();
-    };
+    openChooser() {
+        this.dialog.openDialog();
+    }
     /** Close chooser */
-    NewCommandDestinationChooser.prototype.closeChooser = function () {
-        this.$refs.dialog.closeDialog();
-    };
+    closeChooser() {
+        this.dialog.closeDialog();
+    }
     /** Close chooser on item click */
-    NewCommandDestinationChooser.prototype.onChosen = function (id) {
+    onChosen(id) {
         this.closeChooser();
         this.$emit("chosen", id);
-    };
-    NewCommandDestinationChooser = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {}
-        })
-    ], NewCommandDestinationChooser);
-    return NewCommandDestinationChooser;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], NewCommandDestinationChooser.prototype, "dialog", void 0);
+NewCommandDestinationChooser = __decorate([
+    vuePropertyDecorator.Component({
+        components: {}
+    })
+], NewCommandDestinationChooser);
+var script$c = NewCommandDestinationChooser;
 
 /* script */
-const __vue_script__$c = NewCommandDestinationChooser;
+const __vue_script__$c = script$c;
 
 /* template */
 var __vue_render__$c = function() {
@@ -3125,11 +2973,11 @@ __vue_render__$c._withStripped = true;
   /* style */
   const __vue_inject_styles__$c = function (inject) {
     if (!inject) return
-    inject("data-v-82e99b78_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewCommandDestinationChooser.vue"}, media: undefined });
+    inject("data-v-7bc6cda0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewCommandDestinationChooser.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$c = "data-v-82e99b78";
+  const __vue_scope_id__$c = "data-v-7bc6cda0";
   /* module identifier */
   const __vue_module_identifier__$c = undefined;
   /* functional template */
@@ -3153,135 +3001,512 @@ __vue_render__$c._withStripped = true;
     undefined
   );
 
+let DefaultMqttParameterExtractorFields = class DefaultMqttParameterExtractorFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.commandTopicExpression = null;
+        this.systemTopicExpression = null;
+    }
+    /** Reset section content */
+    reset() {
+        this.commandTopicExpression = null;
+        this.systemTopicExpression = null;
+        this.$v.$reset();
+    }
+    /** Perform validation */
+    validate() {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    }
+    /** Load form data from an object */
+    load(input) {
+        this.commandTopicExpression = input.commandTopicExpression;
+        this.systemTopicExpression = input.systemTopicExpression;
+    }
+    /** Save form data to an object */
+    save() {
+        return {
+            commandTopicExpression: this.commandTopicExpression || "",
+            systemTopicExpression: this.systemTopicExpression || ""
+        };
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DefaultMqttParameterExtractorFields.prototype, "tenantId", void 0);
+DefaultMqttParameterExtractorFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            commandTopicExpression: {
+                required: validators_1
+            },
+            systemTopicExpression: {
+                required: validators_1
+            }
+        }
+    })
+], DefaultMqttParameterExtractorFields);
+var script$d = DefaultMqttParameterExtractorFields;
+
+/* script */
+const __vue_script__$d = script$d;
+
+/* template */
+var __vue_render__$d = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "sw-dialog-form",
+    [
+      _c(
+        "v-flex",
+        { attrs: { xs12: "" } },
+        [
+          _c(
+            "sw-form-text",
+            {
+              staticClass: "mr-3",
+              attrs: {
+                label: "Command topic expression",
+                title: "Expression used to determine command MQTT topic.",
+                icon: "settings"
+              },
+              model: {
+                value: _vm.commandTopicExpression,
+                callback: function($$v) {
+                  _vm.commandTopicExpression = $$v;
+                },
+                expression: "commandTopicExpression"
+              }
+            },
+            [
+              !_vm.$v.commandTopicExpression.required && _vm.$v.$dirty
+                ? _c("span", [_vm._v("Command topic expression is required.")])
+                : _vm._e()
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-flex",
+        { attrs: { xs12: "" } },
+        [
+          _c(
+            "sw-form-text",
+            {
+              staticClass: "mr-3",
+              attrs: {
+                label: "System topic expression",
+                title: "Expression used to determine system MQTT topic.",
+                icon: "settings"
+              },
+              model: {
+                value: _vm.systemTopicExpression,
+                callback: function($$v) {
+                  _vm.systemTopicExpression = $$v;
+                },
+                expression: "systemTopicExpression"
+              }
+            },
+            [
+              !_vm.$v.systemTopicExpression.required && _vm.$v.$dirty
+                ? _c("span", [_vm._v("System topic expression is required.")])
+                : _vm._e()
+            ]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__$d = [];
+__vue_render__$d._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$d = undefined;
+  /* scoped */
+  const __vue_scope_id__$d = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$d = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$d = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$d = normalizeComponent(
+    { render: __vue_render__$d, staticRenderFns: __vue_staticRenderFns__$d },
+    __vue_inject_styles__$d,
+    __vue_script__$d,
+    __vue_scope_id__$d,
+    __vue_is_functional_template__$d,
+    __vue_module_identifier__$d,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
+let DefaultMqttParameterExtractorConfiguration = class DefaultMqttParameterExtractorConfiguration extends SiteWhereIdeComponents.DialogSection {
+    /** Reset section content */
+    reset() {
+        if (this.fields) {
+            this.fields.reset();
+        }
+    }
+    /** Perform validation */
+    validate() {
+        if (!this.fields.validate()) {
+            return false;
+        }
+        return true;
+    }
+    /** Load form data from an object */
+    load(input) {
+        this.reset();
+        if (this.fields) {
+            this.fields.load(input);
+        }
+    }
+    /** Save form data to an object */
+    save() {
+        let payload = {};
+        if (this.fields) {
+            Object.assign(payload, this.fields.save());
+        }
+        return payload;
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DefaultMqttParameterExtractorConfiguration.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$d)
+], DefaultMqttParameterExtractorConfiguration.prototype, "fields", void 0);
+DefaultMqttParameterExtractorConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DefaultMqttParameterExtractorFields: __vue_component__$d
+        }
+    })
+], DefaultMqttParameterExtractorConfiguration);
+var script$e = DefaultMqttParameterExtractorConfiguration;
+
+/* script */
+const __vue_script__$e = script$e;
+
+/* template */
+var __vue_render__$e = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("default-mqtt-parameter-extractor-fields", {
+    ref: "fields",
+    attrs: { tenantId: _vm.tenantId }
+  })
+};
+var __vue_staticRenderFns__$e = [];
+__vue_render__$e._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$e = undefined;
+  /* scoped */
+  const __vue_scope_id__$e = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$e = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$e = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$e = normalizeComponent(
+    { render: __vue_render__$e, staticRenderFns: __vue_staticRenderFns__$e },
+    __vue_inject_styles__$e,
+    __vue_script__$e,
+    __vue_scope_id__$e,
+    __vue_is_functional_template__$e,
+    __vue_module_identifier__$e,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
+let ParameterExtractorConfiguration = class ParameterExtractorConfiguration extends SiteWhereIdeComponents.DialogSection {
+    onExtractorTypeUpdated(updated) {
+        this.load(this.parameterExtractor);
+    }
+    /** Parameter extractor type */
+    get extractorType() {
+        return this.parameterExtractor ? this.parameterExtractor.type : null;
+    }
+    /** Reset section content */
+    reset() {
+        if (this.details) {
+            this.details.reset();
+        }
+    }
+    /** Perform validation */
+    validate() {
+        if (this.details) {
+            if (!this.details.validate()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    /** Load form data from an object */
+    load(input) {
+        this.$nextTick().then(() => {
+            if (this.details) {
+                this.details.load(input.configuration);
+            }
+        });
+    }
+    /** Save form data to an object */
+    save() {
+        let config = {};
+        if (this.details) {
+            Object.assign(config, this.details.save());
+        }
+        return config;
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ParameterExtractorConfiguration.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], ParameterExtractorConfiguration.prototype, "parameterExtractor", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", SiteWhereIdeComponents.DialogSection)
+], ParameterExtractorConfiguration.prototype, "details", void 0);
+__decorate([
+    vuePropertyDecorator.Watch("extractorType", { immediate: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], ParameterExtractorConfiguration.prototype, "onExtractorTypeUpdated", null);
+ParameterExtractorConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DefaultMqttParameterExtractorConfiguration: __vue_component__$e
+        }
+    })
+], ParameterExtractorConfiguration);
+var script$f = ParameterExtractorConfiguration;
+
+/* script */
+const __vue_script__$f = script$f;
+
+/* template */
+var __vue_render__$f = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _vm.extractorType == "mqtt-default"
+        ? _c("default-mqtt-parameter-extractor-configuration", {
+            ref: "details"
+          })
+        : _vm._e()
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__$f = [];
+__vue_render__$f._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$f = undefined;
+  /* scoped */
+  const __vue_scope_id__$f = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$f = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$f = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$f = normalizeComponent(
+    { render: __vue_render__$f, staticRenderFns: __vue_staticRenderFns__$f },
+    __vue_inject_styles__$f,
+    __vue_script__$f,
+    __vue_scope_id__$f,
+    __vue_is_functional_template__$f,
+    __vue_module_identifier__$f,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
 /** Validator for checking if id is already used */
-var idConflict = validators_2.withParams({ type: "idConflict" }, function (value, vm) {
-    var idsInUse = vm.idsInUse;
-    var conflict = false;
-    idsInUse.forEach(function (id) {
+const idConflict = validators_2.withParams({ type: "idConflict" }, (value, vm) => {
+    let idsInUse = vm.idsInUse;
+    let conflict = false;
+    idsInUse.forEach(id => {
         if (vm.id == id)
             conflict = true;
     });
     return !conflict;
 });
-var CommandDestinationDialog = /** @class */ (function (_super) {
-    __extends(CommandDestinationDialog, _super);
-    function CommandDestinationDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.id = null;
-        _this.parameterExtractor = null;
-        return _this;
+let CommandDestinationDialog = class CommandDestinationDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.id = null;
+        this.parameterExtractor = null;
     }
-    Object.defineProperty(CommandDestinationDialog.prototype, "extractorType", {
-        /** Parameter extractor type */
-        get: function () {
-            return this.parameterExtractor ? this.parameterExtractor.type : null;
-        },
-        /** Blank configuration if type updated */
-        set: function (value) {
-            if (value) {
-                this.parameterExtractor = {
-                    type: value,
-                    configuration: {}
-                };
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Parameter extractor type */
+    get extractorType() {
+        return this.parameterExtractor ? this.parameterExtractor.type : null;
+    }
+    /** Blank configuration if type updated */
+    set extractorType(value) {
+        if (value) {
+            this.parameterExtractor = {
+                type: value,
+                configuration: {}
+            };
+        }
+    }
     /** Save dialog fields */
-    CommandDestinationDialog.prototype.save = function () {
-        var config = { id: this.id, type: this.type };
+    save() {
+        let config = { id: this.id, type: this.type };
         return config;
-    };
+    }
     /** Reset the dialog */
-    CommandDestinationDialog.prototype.reset = function () {
+    reset() {
         this.id = null;
         this.setActiveTab(0);
         this.$v.$reset();
-    };
+    }
     /** Validate fields */
-    CommandDestinationDialog.prototype.validate = function () {
-        if (!this.$refs.extractor.validate()) {
+    validate() {
+        if (!this.extractor.validate()) {
             return false;
         }
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load dialog from a given configuration */
-    CommandDestinationDialog.prototype.load = function (config) {
+    load(config) {
         this.id = config.id;
         this.parameterExtractor = config.parameterExtractor;
-    };
+    }
     /** Set the active tab */
-    CommandDestinationDialog.prototype.setActiveTab = function (tab) {
-        this.$refs.dialog.setActiveTab(tab);
-    };
+    setActiveTab(tab) {
+        this.dialog.setActiveTab(tab);
+    }
     /** Called after create button is clicked */
-    CommandDestinationDialog.prototype.onCreateClicked = function (e) {
+    onCreateClicked(e) {
         this.$emit("createClicked", e);
-    };
+    }
     /** Called after cancel button is clicked */
-    CommandDestinationDialog.prototype.onCancelClicked = function (e) {
+    onCancelClicked(e) {
         this.$emit("cancelClicked", e);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "type", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "icon", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], CommandDestinationDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDestinationDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Boolean)
-    ], CommandDestinationDialog.prototype, "visible", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CommandDestinationDialog.prototype, "idsInUse", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CommandDestinationDialog.prototype, "parameterExtractors", void 0);
-    CommandDestinationDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                id: {
-                    required: validators_1,
-                    idConflict: idConflict
-                }
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "type", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "icon", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], CommandDestinationDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDestinationDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Boolean)
+], CommandDestinationDialog.prototype, "visible", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CommandDestinationDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CommandDestinationDialog.prototype, "parameterExtractors", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], CommandDestinationDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], CommandDestinationDialog.prototype, "idTextField", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$f)
+], CommandDestinationDialog.prototype, "extractor", void 0);
+CommandDestinationDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ParameterExtractorConfiguration: __vue_component__$f
+        },
+        validations: {
+            id: {
+                required: validators_1,
+                idConflict
             }
-        })
-    ], CommandDestinationDialog);
-    return CommandDestinationDialog;
-}(Vue));
+        }
+    })
+], CommandDestinationDialog);
+var script$g = CommandDestinationDialog;
 
 /* script */
-const __vue_script__$d = CommandDestinationDialog;
+const __vue_script__$g = script$g;
 
 /* template */
-var __vue_render__$d = function() {
+var __vue_render__$g = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -3431,17 +3656,17 @@ var __vue_render__$d = function() {
     2
   )
 };
-var __vue_staticRenderFns__$d = [];
-__vue_render__$d._withStripped = true;
+var __vue_staticRenderFns__$g = [];
+__vue_render__$g._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$d = undefined;
+  const __vue_inject_styles__$g = undefined;
   /* scoped */
-  const __vue_scope_id__$d = undefined;
+  const __vue_scope_id__$g = undefined;
   /* module identifier */
-  const __vue_module_identifier__$d = undefined;
+  const __vue_module_identifier__$g = undefined;
   /* functional template */
-  const __vue_is_functional_template__$d = false;
+  const __vue_is_functional_template__$g = false;
   /* style inject */
   
   /* style inject SSR */
@@ -3450,35 +3675,31 @@ __vue_render__$d._withStripped = true;
   
 
   
-  const __vue_component__$d = normalizeComponent(
-    { render: __vue_render__$d, staticRenderFns: __vue_staticRenderFns__$d },
-    __vue_inject_styles__$d,
-    __vue_script__$d,
-    __vue_scope_id__$d,
-    __vue_is_functional_template__$d,
-    __vue_module_identifier__$d,
+  const __vue_component__$g = normalizeComponent(
+    { render: __vue_render__$g, staticRenderFns: __vue_staticRenderFns__$g },
+    __vue_inject_styles__$g,
+    __vue_script__$g,
+    __vue_scope_id__$g,
+    __vue_is_functional_template__$g,
+    __vue_module_identifier__$g,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var NoConfiguration = /** @class */ (function (_super) {
-    __extends(NoConfiguration, _super);
-    function NoConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NoConfiguration = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], NoConfiguration);
-    return NoConfiguration;
-}(Vue));
+let NoConfiguration = class NoConfiguration extends Vue {
+};
+NoConfiguration = __decorate([
+    vuePropertyDecorator.Component({})
+], NoConfiguration);
+var script$h = NoConfiguration;
 
 /* script */
-const __vue_script__$e = NoConfiguration;
+const __vue_script__$h = script$h;
 
 /* template */
-var __vue_render__$e = function() {
+var __vue_render__$h = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -3493,92 +3714,88 @@ var __vue_render__$e = function() {
     1
   )
 };
-var __vue_staticRenderFns__$e = [];
-__vue_render__$e._withStripped = true;
+var __vue_staticRenderFns__$h = [];
+__vue_render__$h._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$e = function (inject) {
+  const __vue_inject_styles__$h = function (inject) {
     if (!inject) return
-    inject("data-v-f5646f50_0", { source: "\n.padded-message[data-v-f5646f50] {\r\n  padding: 50px;\r\n  padding-top: 35px;\r\n  text-align: center;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\commanddelivery\\NoConfiguration.vue"],"names":[],"mappings":";AAiBA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;AACA","file":"NoConfiguration.vue","sourcesContent":["<template>\r\n  <v-card flat style=\"width: 100%;\"\r\n    ><v-card-text class=\"padded-message subheading\"\r\n      >This command destination has no configurable attributes.</v-card-text\r\n    ></v-card\r\n  >\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component } from \"sitewhere-ide-common\";\r\n\r\n@Component({})\r\nexport default class NoConfiguration extends Vue {}\r\n</script>\r\n\r\n<style scoped>\r\n.padded-message {\r\n  padding: 50px;\r\n  padding-top: 35px;\r\n  text-align: center;\r\n}\r\n</style>\r\n"]}, media: undefined });
+    inject("data-v-4e95005d_0", { source: "\n.padded-message[data-v-4e95005d] {\r\n  padding: 50px;\r\n  padding-top: 35px;\r\n  text-align: center;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\commanddelivery\\NoConfiguration.vue"],"names":[],"mappings":";AAiBA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;AACA","file":"NoConfiguration.vue","sourcesContent":["<template>\r\n  <v-card flat style=\"width: 100%;\">\r\n    <v-card-text\r\n      class=\"padded-message subheading\"\r\n    >This command destination has no configurable attributes.</v-card-text>\r\n  </v-card>\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component } from \"vue-property-decorator\";\r\n\r\n@Component({})\r\nexport default class NoConfiguration extends Vue {}\r\n</script>\r\n\r\n<style scoped>\r\n.padded-message {\r\n  padding: 50px;\r\n  padding-top: 35px;\r\n  text-align: center;\r\n}\r\n</style>\r\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$e = "data-v-f5646f50";
+  const __vue_scope_id__$h = "data-v-4e95005d";
   /* module identifier */
-  const __vue_module_identifier__$e = undefined;
+  const __vue_module_identifier__$h = undefined;
   /* functional template */
-  const __vue_is_functional_template__$e = false;
+  const __vue_is_functional_template__$h = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$e = normalizeComponent(
-    { render: __vue_render__$e, staticRenderFns: __vue_staticRenderFns__$e },
-    __vue_inject_styles__$e,
-    __vue_script__$e,
-    __vue_scope_id__$e,
-    __vue_is_functional_template__$e,
-    __vue_module_identifier__$e,
+  const __vue_component__$h = normalizeComponent(
+    { render: __vue_render__$h, staticRenderFns: __vue_staticRenderFns__$h },
+    __vue_inject_styles__$h,
+    __vue_script__$h,
+    __vue_scope_id__$h,
+    __vue_is_functional_template__$h,
+    __vue_module_identifier__$h,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CoapFields = /** @class */ (function (_super) {
-    __extends(CoapFields, _super);
-    function CoapFields() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+let CoapFields = class CoapFields extends SiteWhereIdeComponents.DialogSection {
     /** Reset section content */
-    CoapFields.prototype.reset = function () {
+    reset() {
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    CoapFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    CoapFields.prototype.load = function (input) { };
+    load(input) { }
     /** Save form data to an object */
-    CoapFields.prototype.save = function () {
+    save() {
         return {};
-    };
-    CoapFields = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NoConfiguration: __vue_component__$e
-            },
-            validations: {}
-        })
-    ], CoapFields);
-    return CoapFields;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+CoapFields = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NoConfiguration: __vue_component__$h
+        },
+        validations: {}
+    })
+], CoapFields);
+var script$i = CoapFields;
 
 /* script */
-const __vue_script__$f = CoapFields;
+const __vue_script__$i = script$i;
 
 /* template */
-var __vue_render__$f = function() {
+var __vue_render__$i = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
   return _c("sw-dialog-form", [_c("no-configuration")], 1)
 };
-var __vue_staticRenderFns__$f = [];
-__vue_render__$f._withStripped = true;
+var __vue_staticRenderFns__$i = [];
+__vue_render__$i._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$f = undefined;
+  const __vue_inject_styles__$i = undefined;
   /* scoped */
-  const __vue_scope_id__$f = undefined;
+  const __vue_scope_id__$i = undefined;
   /* module identifier */
-  const __vue_module_identifier__$f = undefined;
+  const __vue_module_identifier__$i = undefined;
   /* functional template */
-  const __vue_is_functional_template__$f = false;
+  const __vue_is_functional_template__$i = false;
   /* style inject */
   
   /* style inject SSR */
@@ -3587,118 +3804,120 @@ __vue_render__$f._withStripped = true;
   
 
   
-  const __vue_component__$f = normalizeComponent(
-    { render: __vue_render__$f, staticRenderFns: __vue_staticRenderFns__$f },
-    __vue_inject_styles__$f,
-    __vue_script__$f,
-    __vue_scope_id__$f,
-    __vue_is_functional_template__$f,
-    __vue_module_identifier__$f,
+  const __vue_component__$i = normalizeComponent(
+    { render: __vue_render__$i, staticRenderFns: __vue_staticRenderFns__$i },
+    __vue_inject_styles__$i,
+    __vue_script__$i,
+    __vue_scope_id__$i,
+    __vue_is_functional_template__$i,
+    __vue_module_identifier__$i,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var CoapCommandDestinationDialog = /** @class */ (function (_super) {
-    __extends(CoapCommandDestinationDialog, _super);
-    function CoapCommandDestinationDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+let CoapCommandDestinationDialog = class CoapCommandDestinationDialog extends SiteWhereIdeComponents.DialogComponent {
+    constructor() {
+        super(...arguments);
         /** List of parameter extractors */
-        _this.parameterExtractors = [
+        this.parameterExtractors = [
             {
                 text: "Metadata Extractor",
                 value: "coap-default"
             }
         ];
-        return _this;
     }
-    Object.defineProperty(CoapCommandDestinationDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
+    }
     /** Generate payload from UI */
-    CoapCommandDestinationDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.coap.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.coap.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    CoapCommandDestinationDialog.prototype.reset = function () {
-        if (this.$refs.coap) {
-            this.$refs.coap.reset();
+    reset() {
+        if (this.coap) {
+            this.coap.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    CoapCommandDestinationDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.coap) {
-            this.$refs.coap.load(config.configuration);
+        if (this.coap) {
+            this.coap.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    CoapCommandDestinationDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.coap.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.coap.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], CoapCommandDestinationDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CoapCommandDestinationDialog.prototype, "idsInUse", void 0);
-    CoapCommandDestinationDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CommandDestinationDialog: __vue_component__$d,
-                CoapFields: __vue_component__$f
-            }
-        })
-    ], CoapCommandDestinationDialog);
-    return CoapCommandDestinationDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], CoapCommandDestinationDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CoapCommandDestinationDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], CoapCommandDestinationDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$i)
+], CoapCommandDestinationDialog.prototype, "coap", void 0);
+CoapCommandDestinationDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CommandDestinationDialog: __vue_component__$g,
+            CoapFields: __vue_component__$i
+        }
+    })
+], CoapCommandDestinationDialog);
+var script$j = CoapCommandDestinationDialog;
 
 /* script */
-const __vue_script__$g = CoapCommandDestinationDialog;
+const __vue_script__$j = script$j;
 
 /* template */
-var __vue_render__$g = function() {
+var __vue_render__$j = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -3749,17 +3968,17 @@ var __vue_render__$g = function() {
     2
   )
 };
-var __vue_staticRenderFns__$g = [];
-__vue_render__$g._withStripped = true;
+var __vue_staticRenderFns__$j = [];
+__vue_render__$j._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$g = undefined;
+  const __vue_inject_styles__$j = undefined;
   /* scoped */
-  const __vue_scope_id__$g = undefined;
+  const __vue_scope_id__$j = undefined;
   /* module identifier */
-  const __vue_module_identifier__$g = undefined;
+  const __vue_module_identifier__$j = undefined;
   /* functional template */
-  const __vue_is_functional_template__$g = false;
+  const __vue_is_functional_template__$j = false;
   /* style inject */
   
   /* style inject SSR */
@@ -3768,56 +3987,58 @@ __vue_render__$g._withStripped = true;
   
 
   
-  const __vue_component__$g = normalizeComponent(
-    { render: __vue_render__$g, staticRenderFns: __vue_staticRenderFns__$g },
-    __vue_inject_styles__$g,
-    __vue_script__$g,
-    __vue_scope_id__$g,
-    __vue_is_functional_template__$g,
-    __vue_module_identifier__$g,
+  const __vue_component__$j = normalizeComponent(
+    { render: __vue_render__$j, staticRenderFns: __vue_staticRenderFns__$j },
+    __vue_inject_styles__$j,
+    __vue_script__$j,
+    __vue_scope_id__$j,
+    __vue_is_functional_template__$j,
+    __vue_module_identifier__$j,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var CoapCommandDestinationCreateDialog = /** @class */ (function (_super) {
-    __extends(CoapCommandDestinationCreateDialog, _super);
-    function CoapCommandDestinationCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let CoapCommandDestinationCreateDialog = class CoapCommandDestinationCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    CoapCommandDestinationCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    CoapCommandDestinationCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationCreateDialog.prototype, "tenantId", void 0);
-    CoapCommandDestinationCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CoapCommandDestinationDialog: __vue_component__$g
-            }
-        })
-    ], CoapCommandDestinationCreateDialog);
-    return CoapCommandDestinationCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$j)
+], CoapCommandDestinationCreateDialog.prototype, "dialog", void 0);
+CoapCommandDestinationCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CoapCommandDestinationDialog: __vue_component__$j
+        }
+    })
+], CoapCommandDestinationCreateDialog);
+var script$k = CoapCommandDestinationCreateDialog;
 
 /* script */
-const __vue_script__$h = CoapCommandDestinationCreateDialog;
+const __vue_script__$k = script$k;
 
 /* template */
-var __vue_render__$h = function() {
+var __vue_render__$k = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -3834,80 +4055,82 @@ var __vue_render__$h = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$h = [];
-__vue_render__$h._withStripped = true;
+var __vue_staticRenderFns__$k = [];
+__vue_render__$k._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$h = function (inject) {
+  const __vue_inject_styles__$k = function (inject) {
     if (!inject) return
-    inject("data-v-5399f761_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapCommandDestinationCreateDialog.vue"}, media: undefined });
+    inject("data-v-179de1ca_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapCommandDestinationCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$h = "data-v-5399f761";
+  const __vue_scope_id__$k = "data-v-179de1ca";
   /* module identifier */
-  const __vue_module_identifier__$h = undefined;
+  const __vue_module_identifier__$k = undefined;
   /* functional template */
-  const __vue_is_functional_template__$h = false;
+  const __vue_is_functional_template__$k = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$h = normalizeComponent(
-    { render: __vue_render__$h, staticRenderFns: __vue_staticRenderFns__$h },
-    __vue_inject_styles__$h,
-    __vue_script__$h,
-    __vue_scope_id__$h,
-    __vue_is_functional_template__$h,
-    __vue_module_identifier__$h,
+  const __vue_component__$k = normalizeComponent(
+    { render: __vue_render__$k, staticRenderFns: __vue_staticRenderFns__$k },
+    __vue_inject_styles__$k,
+    __vue_script__$k,
+    __vue_scope_id__$k,
+    __vue_is_functional_template__$k,
+    __vue_module_identifier__$k,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CoapCommandDestinationUpdateDialog = /** @class */ (function (_super) {
-    __extends(CoapCommandDestinationUpdateDialog, _super);
-    function CoapCommandDestinationUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let CoapCommandDestinationUpdateDialog = class CoapCommandDestinationUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    CoapCommandDestinationUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    CoapCommandDestinationUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapCommandDestinationUpdateDialog.prototype, "tenantId", void 0);
-    CoapCommandDestinationUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CoapCommandDestinationDialog: __vue_component__$g
-            }
-        })
-    ], CoapCommandDestinationUpdateDialog);
-    return CoapCommandDestinationUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapCommandDestinationUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$j)
+], CoapCommandDestinationUpdateDialog.prototype, "dialog", void 0);
+CoapCommandDestinationUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CoapCommandDestinationDialog: __vue_component__$j
+        }
+    })
+], CoapCommandDestinationUpdateDialog);
+var script$l = CoapCommandDestinationUpdateDialog;
 
 /* script */
-const __vue_script__$i = CoapCommandDestinationUpdateDialog;
+const __vue_script__$l = script$l;
 
 /* template */
-var __vue_render__$i = function() {
+var __vue_render__$l = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -3924,48 +4147,47 @@ var __vue_render__$i = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$i = [];
-__vue_render__$i._withStripped = true;
+var __vue_staticRenderFns__$l = [];
+__vue_render__$l._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$i = function (inject) {
+  const __vue_inject_styles__$l = function (inject) {
     if (!inject) return
-    inject("data-v-1547f81a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapCommandDestinationUpdateDialog.vue"}, media: undefined });
+    inject("data-v-5cb41a51_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapCommandDestinationUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$i = "data-v-1547f81a";
+  const __vue_scope_id__$l = "data-v-5cb41a51";
   /* module identifier */
-  const __vue_module_identifier__$i = undefined;
+  const __vue_module_identifier__$l = undefined;
   /* functional template */
-  const __vue_is_functional_template__$i = false;
+  const __vue_is_functional_template__$l = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$i = normalizeComponent(
-    { render: __vue_render__$i, staticRenderFns: __vue_staticRenderFns__$i },
-    __vue_inject_styles__$i,
-    __vue_script__$i,
-    __vue_scope_id__$i,
-    __vue_is_functional_template__$i,
-    __vue_module_identifier__$i,
+  const __vue_component__$l = normalizeComponent(
+    { render: __vue_render__$l, staticRenderFns: __vue_staticRenderFns__$l },
+    __vue_inject_styles__$l,
+    __vue_script__$l,
+    __vue_scope_id__$l,
+    __vue_is_functional_template__$l,
+    __vue_module_identifier__$l,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var MqttConnectionFields = /** @class */ (function (_super) {
-    __extends(MqttConnectionFields, _super);
-    function MqttConnectionFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.protocol = "tcp";
-        _this.hostname = null;
-        _this.port = 1883;
-        _this.protocols = [
+let MqttConnectionFields = class MqttConnectionFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.protocol = "tcp";
+        this.hostname = null;
+        this.port = 1883;
+        this.protocols = [
             {
                 text: "TCP",
                 value: "tcp"
@@ -3975,7 +4197,7 @@ var MqttConnectionFields = /** @class */ (function (_super) {
                 value: "tls"
             }
         ];
-        _this.qosValues = [
+        this.qosValues = [
             {
                 text: "0 - At Most Once",
                 value: 0
@@ -3989,57 +4211,56 @@ var MqttConnectionFields = /** @class */ (function (_super) {
                 value: 3
             }
         ];
-        return _this;
     }
     /** Reset section content */
-    MqttConnectionFields.prototype.reset = function () {
+    reset() {
         this.protocol = "tcp";
         this.hostname = null;
         this.port = 1883;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    MqttConnectionFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    MqttConnectionFields.prototype.load = function (input) {
+    load(input) {
         this.protocol = input.protocol || "tcp";
         this.hostname = input.hostname;
         this.port = input.port || 1883;
-    };
+    }
     /** Save form data to an object */
-    MqttConnectionFields.prototype.save = function () {
+    save() {
         return {
             protocol: this.protocol,
             hostname: this.hostname || "",
             port: this.port
         };
-    };
-    MqttConnectionFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                protocol: {
-                    required: validators_1
-                },
-                hostname: {
-                    required: validators_1
-                },
-                port: {
-                    required: validators_1
-                }
+    }
+};
+MqttConnectionFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            protocol: {
+                required: validators_1
+            },
+            hostname: {
+                required: validators_1
+            },
+            port: {
+                required: validators_1
             }
-        })
-    ], MqttConnectionFields);
-    return MqttConnectionFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], MqttConnectionFields);
+var script$m = MqttConnectionFields;
 
 /* script */
-const __vue_script__$j = MqttConnectionFields;
+const __vue_script__$m = script$m;
 
 /* template */
-var __vue_render__$j = function() {
+var __vue_render__$m = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -4137,17 +4358,17 @@ var __vue_render__$j = function() {
     1
   )
 };
-var __vue_staticRenderFns__$j = [];
-__vue_render__$j._withStripped = true;
+var __vue_staticRenderFns__$m = [];
+__vue_render__$m._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$j = undefined;
+  const __vue_inject_styles__$m = undefined;
   /* scoped */
-  const __vue_scope_id__$j = undefined;
+  const __vue_scope_id__$m = undefined;
   /* module identifier */
-  const __vue_module_identifier__$j = undefined;
+  const __vue_module_identifier__$m = undefined;
   /* functional template */
-  const __vue_is_functional_template__$j = false;
+  const __vue_is_functional_template__$m = false;
   /* style inject */
   
   /* style inject SSR */
@@ -4156,35 +4377,33 @@ __vue_render__$j._withStripped = true;
   
 
   
-  const __vue_component__$j = normalizeComponent(
-    { render: __vue_render__$j, staticRenderFns: __vue_staticRenderFns__$j },
-    __vue_inject_styles__$j,
-    __vue_script__$j,
-    __vue_scope_id__$j,
-    __vue_is_functional_template__$j,
-    __vue_module_identifier__$j,
+  const __vue_component__$m = normalizeComponent(
+    { render: __vue_render__$m, staticRenderFns: __vue_staticRenderFns__$m },
+    __vue_inject_styles__$m,
+    __vue_script__$m,
+    __vue_scope_id__$m,
+    __vue_is_functional_template__$m,
+    __vue_module_identifier__$m,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttAuthenticationFields = /** @class */ (function (_super) {
-    __extends(MqttAuthenticationFields, _super);
-    function MqttAuthenticationFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.username = null;
-        _this.password = null;
-        _this.clientId = null;
-        _this.cleanSession = null;
-        _this.trustStorePath = null;
-        _this.trustStorePassword = null;
-        _this.keyStorePath = null;
-        _this.keyStorePassword = null;
-        return _this;
+let MqttAuthenticationFields = class MqttAuthenticationFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.username = null;
+        this.password = null;
+        this.clientId = null;
+        this.cleanSession = null;
+        this.trustStorePath = null;
+        this.trustStorePassword = null;
+        this.keyStorePath = null;
+        this.keyStorePassword = null;
     }
     /** Reset section content */
-    MqttAuthenticationFields.prototype.reset = function () {
+    reset() {
         this.username = null;
         this.password = null;
         this.clientId = null;
@@ -4194,23 +4413,23 @@ var MqttAuthenticationFields = /** @class */ (function (_super) {
         this.keyStorePath = null;
         this.keyStorePassword = null;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    MqttAuthenticationFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    MqttAuthenticationFields.prototype.load = function (input) {
+    load(input) {
         this.username = input.username;
         this.password = input.password;
         this.trustStorePath = input.trustStorePath;
         this.trustStorePassword = input.trustStorePassword;
         this.keyStorePath = input.keyStorePath;
         this.keyStorePassword = input.keyStorePassword;
-    };
+    }
     /** Save form data to an object */
-    MqttAuthenticationFields.prototype.save = function () {
+    save() {
         return {
             username: this.username || "",
             password: this.password || "",
@@ -4219,18 +4438,18 @@ var MqttAuthenticationFields = /** @class */ (function (_super) {
             keyStorePath: this.keyStorePath || "",
             keyStorePassword: this.keyStorePassword || ""
         };
-    };
-    MqttAuthenticationFields = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], MqttAuthenticationFields);
-    return MqttAuthenticationFields;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+MqttAuthenticationFields = __decorate([
+    vuePropertyDecorator.Component({})
+], MqttAuthenticationFields);
+var script$n = MqttAuthenticationFields;
 
 /* script */
-const __vue_script__$k = MqttAuthenticationFields;
+const __vue_script__$n = script$n;
 
 /* template */
-var __vue_render__$k = function() {
+var __vue_render__$n = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -4378,17 +4597,17 @@ var __vue_render__$k = function() {
     1
   )
 };
-var __vue_staticRenderFns__$k = [];
-__vue_render__$k._withStripped = true;
+var __vue_staticRenderFns__$n = [];
+__vue_render__$n._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$k = undefined;
+  const __vue_inject_styles__$n = undefined;
   /* scoped */
-  const __vue_scope_id__$k = undefined;
+  const __vue_scope_id__$n = undefined;
   /* module identifier */
-  const __vue_module_identifier__$k = undefined;
+  const __vue_module_identifier__$n = undefined;
   /* functional template */
-  const __vue_is_functional_template__$k = false;
+  const __vue_is_functional_template__$n = false;
   /* style inject */
   
   /* style inject SSR */
@@ -4397,130 +4616,136 @@ __vue_render__$k._withStripped = true;
   
 
   
-  const __vue_component__$k = normalizeComponent(
-    { render: __vue_render__$k, staticRenderFns: __vue_staticRenderFns__$k },
-    __vue_inject_styles__$k,
-    __vue_script__$k,
-    __vue_scope_id__$k,
-    __vue_is_functional_template__$k,
-    __vue_module_identifier__$k,
+  const __vue_component__$n = normalizeComponent(
+    { render: __vue_render__$n, staticRenderFns: __vue_staticRenderFns__$n },
+    __vue_inject_styles__$n,
+    __vue_script__$n,
+    __vue_scope_id__$n,
+    __vue_is_functional_template__$n,
+    __vue_module_identifier__$n,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttCommandDestinationDialog = /** @class */ (function (_super) {
-    __extends(MqttCommandDestinationDialog, _super);
-    function MqttCommandDestinationDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+let MqttCommandDestinationDialog = class MqttCommandDestinationDialog extends SiteWhereIdeComponents.DialogComponent {
+    constructor() {
+        super(...arguments);
         /** List of parameter extractors */
-        _this.parameterExtractors = [
+        this.parameterExtractors = [
             {
                 text: "Default Extractor",
                 value: "mqtt-default"
             }
         ];
-        return _this;
     }
-    Object.defineProperty(MqttCommandDestinationDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
+    }
     /** Generate payload from UI */
-    MqttCommandDestinationDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.connection.save());
-        Object.assign(config, this.$refs.authentication.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.connection.save());
+        Object.assign(config, this.authentication.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    MqttCommandDestinationDialog.prototype.reset = function () {
-        if (this.$refs.connection) {
-            this.$refs.connection.reset();
+    reset() {
+        if (this.connection) {
+            this.connection.reset();
         }
-        if (this.$refs.authentication) {
-            this.$refs.authentication.reset();
+        if (this.authentication) {
+            this.authentication.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    MqttCommandDestinationDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.connection) {
-            this.$refs.connection.load(config.configuration);
+        if (this.connection) {
+            this.connection.load(config.configuration);
         }
-        if (this.$refs.authentication) {
-            this.$refs.authentication.load(config.configuration);
+        if (this.authentication) {
+            this.authentication.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    MqttCommandDestinationDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.connection.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.connection.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
-        if (!this.$refs.authentication.validate()) {
-            this.$refs.dialog.setActiveTab(1);
+        if (!this.authentication.validate()) {
+            this.dialog.setActiveTab(1);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], MqttCommandDestinationDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], MqttCommandDestinationDialog.prototype, "idsInUse", void 0);
-    MqttCommandDestinationDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CommandDestinationDialog: __vue_component__$d,
-                MqttConnectionFields: __vue_component__$j,
-                MqttAuthenticationFields: __vue_component__$k
-            }
-        })
-    ], MqttCommandDestinationDialog);
-    return MqttCommandDestinationDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], MqttCommandDestinationDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], MqttCommandDestinationDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], MqttCommandDestinationDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$m)
+], MqttCommandDestinationDialog.prototype, "connection", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$n)
+], MqttCommandDestinationDialog.prototype, "authentication", void 0);
+MqttCommandDestinationDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CommandDestinationDialog: __vue_component__$g,
+            MqttConnectionFields: __vue_component__$m,
+            MqttAuthenticationFields: __vue_component__$n
+        }
+    })
+], MqttCommandDestinationDialog);
+var script$o = MqttCommandDestinationDialog;
 
 /* script */
-const __vue_script__$l = MqttCommandDestinationDialog;
+const __vue_script__$o = script$o;
 
 /* template */
-var __vue_render__$l = function() {
+var __vue_render__$o = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -4582,17 +4807,17 @@ var __vue_render__$l = function() {
     2
   )
 };
-var __vue_staticRenderFns__$l = [];
-__vue_render__$l._withStripped = true;
+var __vue_staticRenderFns__$o = [];
+__vue_render__$o._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$l = undefined;
+  const __vue_inject_styles__$o = undefined;
   /* scoped */
-  const __vue_scope_id__$l = undefined;
+  const __vue_scope_id__$o = undefined;
   /* module identifier */
-  const __vue_module_identifier__$l = undefined;
+  const __vue_module_identifier__$o = undefined;
   /* functional template */
-  const __vue_is_functional_template__$l = false;
+  const __vue_is_functional_template__$o = false;
   /* style inject */
   
   /* style inject SSR */
@@ -4601,56 +4826,58 @@ __vue_render__$l._withStripped = true;
   
 
   
-  const __vue_component__$l = normalizeComponent(
-    { render: __vue_render__$l, staticRenderFns: __vue_staticRenderFns__$l },
-    __vue_inject_styles__$l,
-    __vue_script__$l,
-    __vue_scope_id__$l,
-    __vue_is_functional_template__$l,
-    __vue_module_identifier__$l,
+  const __vue_component__$o = normalizeComponent(
+    { render: __vue_render__$o, staticRenderFns: __vue_staticRenderFns__$o },
+    __vue_inject_styles__$o,
+    __vue_script__$o,
+    __vue_scope_id__$o,
+    __vue_is_functional_template__$o,
+    __vue_module_identifier__$o,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttCommandDestinationCreateDialog = /** @class */ (function (_super) {
-    __extends(MqttCommandDestinationCreateDialog, _super);
-    function MqttCommandDestinationCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let MqttCommandDestinationCreateDialog = class MqttCommandDestinationCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    MqttCommandDestinationCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    MqttCommandDestinationCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationCreateDialog.prototype, "tenantId", void 0);
-    MqttCommandDestinationCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                MqttCommandDestinationDialog: __vue_component__$l
-            }
-        })
-    ], MqttCommandDestinationCreateDialog);
-    return MqttCommandDestinationCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$o)
+], MqttCommandDestinationCreateDialog.prototype, "dialog", void 0);
+MqttCommandDestinationCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            MqttCommandDestinationDialog: __vue_component__$o
+        }
+    })
+], MqttCommandDestinationCreateDialog);
+var script$p = MqttCommandDestinationCreateDialog;
 
 /* script */
-const __vue_script__$m = MqttCommandDestinationCreateDialog;
+const __vue_script__$p = script$p;
 
 /* template */
-var __vue_render__$m = function() {
+var __vue_render__$p = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -4667,80 +4894,82 @@ var __vue_render__$m = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$m = [];
-__vue_render__$m._withStripped = true;
+var __vue_staticRenderFns__$p = [];
+__vue_render__$p._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$m = function (inject) {
+  const __vue_inject_styles__$p = function (inject) {
     if (!inject) return
-    inject("data-v-7a25791c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttCommandDestinationCreateDialog.vue"}, media: undefined });
+    inject("data-v-cefbab06_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttCommandDestinationCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$m = "data-v-7a25791c";
+  const __vue_scope_id__$p = "data-v-cefbab06";
   /* module identifier */
-  const __vue_module_identifier__$m = undefined;
+  const __vue_module_identifier__$p = undefined;
   /* functional template */
-  const __vue_is_functional_template__$m = false;
+  const __vue_is_functional_template__$p = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$m = normalizeComponent(
-    { render: __vue_render__$m, staticRenderFns: __vue_staticRenderFns__$m },
-    __vue_inject_styles__$m,
-    __vue_script__$m,
-    __vue_scope_id__$m,
-    __vue_is_functional_template__$m,
-    __vue_module_identifier__$m,
+  const __vue_component__$p = normalizeComponent(
+    { render: __vue_render__$p, staticRenderFns: __vue_staticRenderFns__$p },
+    __vue_inject_styles__$p,
+    __vue_script__$p,
+    __vue_scope_id__$p,
+    __vue_is_functional_template__$p,
+    __vue_module_identifier__$p,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var MqttCommandDestinationUpdateDialog = /** @class */ (function (_super) {
-    __extends(MqttCommandDestinationUpdateDialog, _super);
-    function MqttCommandDestinationUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let MqttCommandDestinationUpdateDialog = class MqttCommandDestinationUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    MqttCommandDestinationUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    MqttCommandDestinationUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttCommandDestinationUpdateDialog.prototype, "tenantId", void 0);
-    MqttCommandDestinationUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                MqttCommandDestinationDialog: __vue_component__$l
-            }
-        })
-    ], MqttCommandDestinationUpdateDialog);
-    return MqttCommandDestinationUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttCommandDestinationUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$o)
+], MqttCommandDestinationUpdateDialog.prototype, "dialog", void 0);
+MqttCommandDestinationUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            MqttCommandDestinationDialog: __vue_component__$o
+        }
+    })
+], MqttCommandDestinationUpdateDialog);
+var script$q = MqttCommandDestinationUpdateDialog;
 
 /* script */
-const __vue_script__$n = MqttCommandDestinationUpdateDialog;
+const __vue_script__$q = script$q;
 
 /* template */
-var __vue_render__$n = function() {
+var __vue_render__$q = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -4757,105 +4986,99 @@ var __vue_render__$n = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$n = [];
-__vue_render__$n._withStripped = true;
+var __vue_staticRenderFns__$q = [];
+__vue_render__$q._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$n = function (inject) {
+  const __vue_inject_styles__$q = function (inject) {
     if (!inject) return
-    inject("data-v-22c90e9f_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttCommandDestinationUpdateDialog.vue"}, media: undefined });
+    inject("data-v-35656d2c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttCommandDestinationUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$n = "data-v-22c90e9f";
+  const __vue_scope_id__$q = "data-v-35656d2c";
   /* module identifier */
-  const __vue_module_identifier__$n = undefined;
+  const __vue_module_identifier__$q = undefined;
   /* functional template */
-  const __vue_is_functional_template__$n = false;
+  const __vue_is_functional_template__$q = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$n = normalizeComponent(
-    { render: __vue_render__$n, staticRenderFns: __vue_staticRenderFns__$n },
-    __vue_inject_styles__$n,
-    __vue_script__$n,
-    __vue_scope_id__$n,
-    __vue_is_functional_template__$n,
-    __vue_module_identifier__$n,
+  const __vue_component__$q = normalizeComponent(
+    { render: __vue_render__$q, staticRenderFns: __vue_staticRenderFns__$q },
+    __vue_inject_styles__$q,
+    __vue_script__$q,
+    __vue_scope_id__$q,
+    __vue_is_functional_template__$q,
+    __vue_module_identifier__$q,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CommandDeliveryTable = /** @class */ (function (_super) {
-    __extends(CommandDeliveryTable, _super);
-    function CommandDeliveryTable() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.headers = [
+let CommandDeliveryTable = class CommandDeliveryTable extends Vue {
+    constructor() {
+        super(...arguments);
+        this.headers = [
             { text: "Id", value: "id" },
             { text: "Type", value: "type" },
             { text: "", value: "delete" }
         ];
         /** Command destinations in format for display */
-        _this.commandDestsAsSortedArray = [];
-        return _this;
+        this.commandDestsAsSortedArray = [];
     }
-    CommandDeliveryTable.prototype.onCommandDestinationsUpdated = function (updated) {
+    onCommandDestinationsUpdated(updated) {
         this.calculateCommandDestinationsAsSortedArray();
-    };
-    Object.defineProperty(CommandDeliveryTable.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
+    }
     /** Get list of ids already in use */
-    CommandDeliveryTable.prototype.findIdsInUse = function (exclude) {
-        var ids = [];
+    findIdsInUse(exclude) {
+        let ids = [];
         if (this.commandDestinations) {
-            this.commandDestinations.forEach(function (dest) {
+            this.commandDestinations.forEach(dest => {
                 if (dest.id != exclude) {
                     ids.push(dest.id);
                 }
             });
         }
         return ids;
-    };
+    }
     /** Get command destination index based on id */
-    CommandDeliveryTable.prototype.getCommandDestinationIndex = function (id) {
-        var match = null;
+    getCommandDestinationIndex(id) {
+        let match = null;
         if (this.commandDestinations) {
-            this.commandDestinations.forEach(function (dest, index) {
+            this.commandDestinations.forEach((dest, index) => {
                 if (dest.id === id) {
                     match = index;
                 }
             });
         }
         return match;
-    };
+    }
     /** Get a command destination by id */
-    CommandDeliveryTable.prototype.getCommandDestinationById = function (id) {
-        var index = this.getCommandDestinationIndex(id);
+    getCommandDestinationById(id) {
+        let index = this.getCommandDestinationIndex(id);
         if (this.commandDestinations && index != null) {
             return this.commandDestinations[index];
         }
         return null;
-    };
+    }
     /** Get command destinations as a sorted array */
-    CommandDeliveryTable.prototype.calculateCommandDestinationsAsSortedArray = function () {
-        var all = [];
+    calculateCommandDestinationsAsSortedArray() {
+        let all = [];
         if (this.commandDestinations) {
-            this.commandDestinations.forEach(function (dest) {
-                var meta = {};
+            this.commandDestinations.forEach(dest => {
+                let meta = {};
                 meta.id = dest.id;
                 meta.type = dest.type;
-                var config = dest.configuration;
+                let config = dest.configuration;
                 all.push({ meta: meta, config: config });
             });
         }
@@ -4863,93 +5086,113 @@ var CommandDeliveryTable = /** @class */ (function (_super) {
             return a.meta.id.localeCompare(b.meta.id);
         });
         this.commandDestsAsSortedArray = all;
-    };
+    }
     /** Add new command destination */
-    CommandDeliveryTable.prototype.onAddCommandDestination = function () {
-        this.$refs.chooser.openChooser();
-    };
+    onAddCommandDestination() {
+        this.chooser.openChooser();
+    }
     /** Called to create a new command destination based on type */
-    CommandDeliveryTable.prototype.onCommandDestinationCreate = function (id) {
-        var idsInUse = this.findIdsInUse();
+    onCommandDestinationCreate(id) {
+        let idsInUse = this.findIdsInUse();
         if (id == "coap") {
-            this.$refs.coapCreate.openDialog(idsInUse);
+            this.coapCreate.openDialog(idsInUse);
         }
         else if (id == "mqtt") {
-            this.$refs.mqttCreate.openDialog(idsInUse);
+            this.mqttCreate.openDialog(idsInUse);
         }
-    };
+    }
     /** Called when command destination is added */
-    CommandDeliveryTable.prototype.onCommandDestinationAdded = function (config) {
+    onCommandDestinationAdded(config) {
         if (this.commandDestinations) {
             this.commandDestinations.push(config);
             this.calculateCommandDestinationsAsSortedArray();
         }
         this.$emit("create", config);
-    };
+    }
     /** Open command destination by id */
-    CommandDeliveryTable.prototype.onOpenCommandDestination = function (id) {
-        var config = this.getCommandDestinationById(id);
-        var idsInUse = this.findIdsInUse(id);
+    onOpenCommandDestination(id) {
+        let config = this.getCommandDestinationById(id);
+        let idsInUse = this.findIdsInUse(id);
         if (config) {
             if (config.type === "coap") {
-                this.$refs.coapUpdate.openDialog(config, idsInUse);
+                this.coapUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "mqtt") {
-                this.$refs.mqttUpdate.openDialog(config, idsInUse);
+                this.mqttUpdate.openDialog(config, idsInUse);
             }
         }
-    };
+    }
     /** Called when command destination is updated */
-    CommandDeliveryTable.prototype.onCommandDestinationUpdated = function (originalId, config) {
-        var index = this.getCommandDestinationIndex(originalId);
+    onCommandDestinationUpdated(originalId, config) {
+        let index = this.getCommandDestinationIndex(originalId);
         if (this.commandDestinations && index != null) {
             Vue.set(this.commandDestinations, index, config);
             this.calculateCommandDestinationsAsSortedArray();
         }
         this.$emit("update", originalId, config);
-    };
+    }
     /** Delete command destination by id */
-    CommandDeliveryTable.prototype.onDeleteCommandDestination = function (id) {
-        var index = this.getCommandDestinationIndex(id);
+    onDeleteCommandDestination(id) {
+        let index = this.getCommandDestinationIndex(id);
         if (this.commandDestinations && index != null) {
             this.commandDestinations.splice(index);
             this.calculateCommandDestinationsAsSortedArray();
         }
         this.$emit("delete", id);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CommandDeliveryTable.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CommandDeliveryTable.prototype, "commandDestinations", void 0);
-    __decorate([
-        sitewhereIdeCommon.Watch("commandDestinations", { immediate: true }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], CommandDeliveryTable.prototype, "onCommandDestinationsUpdated", null);
-    CommandDeliveryTable = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NewCommandDestinationChooser: __vue_component__$c,
-                CoapCommandDestinationCreateDialog: __vue_component__$h,
-                CoapCommandDestinationUpdateDialog: __vue_component__$i,
-                MqttCommandDestinationCreateDialog: __vue_component__$m,
-                MqttCommandDestinationUpdateDialog: __vue_component__$n
-            }
-        })
-    ], CommandDeliveryTable);
-    return CommandDeliveryTable;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CommandDeliveryTable.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CommandDeliveryTable.prototype, "commandDestinations", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$c)
+], CommandDeliveryTable.prototype, "chooser", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$k)
+], CommandDeliveryTable.prototype, "coapCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$l)
+], CommandDeliveryTable.prototype, "coapUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$p)
+], CommandDeliveryTable.prototype, "mqttCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$q)
+], CommandDeliveryTable.prototype, "mqttUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Watch("commandDestinations", { immediate: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], CommandDeliveryTable.prototype, "onCommandDestinationsUpdated", null);
+CommandDeliveryTable = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NewCommandDestinationChooser: __vue_component__$c,
+            CoapCommandDestinationCreateDialog: __vue_component__$k,
+            CoapCommandDestinationUpdateDialog: __vue_component__$l,
+            MqttCommandDestinationCreateDialog: __vue_component__$p,
+            MqttCommandDestinationUpdateDialog: __vue_component__$q
+        }
+    })
+], CommandDeliveryTable);
+var script$r = CommandDeliveryTable;
 
 /* script */
-const __vue_script__$o = CommandDeliveryTable;
+const __vue_script__$r = script$r;
 
 /* template */
-var __vue_render__$o = function() {
+var __vue_render__$r = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5054,79 +5297,75 @@ var __vue_render__$o = function() {
     ])
   })
 };
-var __vue_staticRenderFns__$o = [];
-__vue_render__$o._withStripped = true;
+var __vue_staticRenderFns__$r = [];
+__vue_render__$r._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$o = function (inject) {
+  const __vue_inject_styles__$r = function (inject) {
     if (!inject) return
-    inject("data-v-7809fd91_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandDestinationsTable.vue"}, media: undefined });
+    inject("data-v-22f6052c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandDestinationsTable.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$o = "data-v-7809fd91";
+  const __vue_scope_id__$r = "data-v-22f6052c";
   /* module identifier */
-  const __vue_module_identifier__$o = undefined;
+  const __vue_module_identifier__$r = undefined;
   /* functional template */
-  const __vue_is_functional_template__$o = false;
+  const __vue_is_functional_template__$r = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$o = normalizeComponent(
-    { render: __vue_render__$o, staticRenderFns: __vue_staticRenderFns__$o },
-    __vue_inject_styles__$o,
-    __vue_script__$o,
-    __vue_scope_id__$o,
-    __vue_is_functional_template__$o,
-    __vue_module_identifier__$o,
+  const __vue_component__$r = normalizeComponent(
+    { render: __vue_render__$r, staticRenderFns: __vue_staticRenderFns__$r },
+    __vue_inject_styles__$r,
+    __vue_script__$r,
+    __vue_scope_id__$r,
+    __vue_is_functional_template__$r,
+    __vue_module_identifier__$r,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var NewCommandRouterChooser = /** @class */ (function (_super) {
-    __extends(NewCommandRouterChooser, _super);
-    function NewCommandRouterChooser() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let NewCommandRouterChooser = class NewCommandRouterChooser extends Vue {
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
     }
-    Object.defineProperty(NewCommandRouterChooser.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.CommandDelivery;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Open chooser */
-    NewCommandRouterChooser.prototype.openChooser = function () {
-        this.$refs.dialog.openDialog();
-    };
+    openChooser() {
+        this.dialog.openDialog();
+    }
     /** Close chooser */
-    NewCommandRouterChooser.prototype.closeChooser = function () {
-        this.$refs.dialog.closeDialog();
-    };
+    closeChooser() {
+        this.dialog.closeDialog();
+    }
     /** Close chooser on item click */
-    NewCommandRouterChooser.prototype.onChosen = function (id) {
+    onChosen(id) {
         this.closeChooser();
         this.$emit("chosen", id);
-    };
-    NewCommandRouterChooser = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {}
-        })
-    ], NewCommandRouterChooser);
-    return NewCommandRouterChooser;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], NewCommandRouterChooser.prototype, "dialog", void 0);
+NewCommandRouterChooser = __decorate([
+    vuePropertyDecorator.Component({
+        components: {}
+    })
+], NewCommandRouterChooser);
+var script$s = NewCommandRouterChooser;
 
 /* script */
-const __vue_script__$p = NewCommandRouterChooser;
+const __vue_script__$s = script$s;
 
 /* template */
-var __vue_render__$p = function() {
+var __vue_render__$s = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5149,94 +5388,74 @@ var __vue_render__$p = function() {
     1
   )
 };
-var __vue_staticRenderFns__$p = [];
-__vue_render__$p._withStripped = true;
+var __vue_staticRenderFns__$s = [];
+__vue_render__$s._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$p = function (inject) {
+  const __vue_inject_styles__$s = function (inject) {
     if (!inject) return
-    inject("data-v-03ad7fd8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewCommandRouterChooser.vue"}, media: undefined });
+    inject("data-v-5ff98cc4_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewCommandRouterChooser.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$p = "data-v-03ad7fd8";
+  const __vue_scope_id__$s = "data-v-5ff98cc4";
   /* module identifier */
-  const __vue_module_identifier__$p = undefined;
+  const __vue_module_identifier__$s = undefined;
   /* functional template */
-  const __vue_is_functional_template__$p = false;
+  const __vue_is_functional_template__$s = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$p = normalizeComponent(
-    { render: __vue_render__$p, staticRenderFns: __vue_staticRenderFns__$p },
-    __vue_inject_styles__$p,
-    __vue_script__$p,
-    __vue_scope_id__$p,
-    __vue_is_functional_template__$p,
-    __vue_module_identifier__$p,
+  const __vue_component__$s = normalizeComponent(
+    { render: __vue_render__$s, staticRenderFns: __vue_staticRenderFns__$s },
+    __vue_inject_styles__$s,
+    __vue_script__$s,
+    __vue_scope_id__$s,
+    __vue_is_functional_template__$s,
+    __vue_module_identifier__$s,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var DeviceTypeMappingRouterSummary = /** @class */ (function (_super) {
-    __extends(DeviceTypeMappingRouterSummary, _super);
-    function DeviceTypeMappingRouterSummary() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let DeviceTypeMappingRouterSummary = class DeviceTypeMappingRouterSummary extends Vue {
+    /** Get device type mapping router configuration */
+    get configuration() {
+        return this.router
+            ? this.router.configuration
+            : null;
     }
-    Object.defineProperty(DeviceTypeMappingRouterSummary.prototype, "configuration", {
-        /** Get device type mapping router configuration */
-        get: function () {
-            return this.router
-                ? this.router.configuration
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DeviceTypeMappingRouterSummary.prototype, "hasMappings", {
-        /** Indicates if there are mappings */
-        get: function () {
-            return this.mappings ? this.mappings.length > 0 : false;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DeviceTypeMappingRouterSummary.prototype, "mappings", {
-        /** Current list of device type mappings */
-        get: function () {
-            return this.configuration ? this.configuration.mappings : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DeviceTypeMappingRouterSummary.prototype, "defaultDestination", {
-        /** Get default destination */
-        get: function () {
-            return this.configuration ? this.configuration.defaultDestination : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DeviceTypeMappingRouterSummary.prototype, "router", void 0);
-    DeviceTypeMappingRouterSummary = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], DeviceTypeMappingRouterSummary);
-    return DeviceTypeMappingRouterSummary;
-}(Vue));
+    /** Indicates if there are mappings */
+    get hasMappings() {
+        return this.mappings ? this.mappings.length > 0 : false;
+    }
+    /** Current list of device type mappings */
+    get mappings() {
+        return this.configuration ? this.configuration.mappings : null;
+    }
+    /** Get default destination */
+    get defaultDestination() {
+        return this.configuration ? this.configuration.defaultDestination : null;
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DeviceTypeMappingRouterSummary.prototype, "router", void 0);
+DeviceTypeMappingRouterSummary = __decorate([
+    vuePropertyDecorator.Component({})
+], DeviceTypeMappingRouterSummary);
+var script$t = DeviceTypeMappingRouterSummary;
 
 /* script */
-const __vue_script__$q = DeviceTypeMappingRouterSummary;
+const __vue_script__$t = script$t;
 
 /* template */
-var __vue_render__$q = function() {
+var __vue_render__$t = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5302,83 +5521,81 @@ var __vue_render__$q = function() {
     1
   )
 };
-var __vue_staticRenderFns__$q = [];
-__vue_render__$q._withStripped = true;
+var __vue_staticRenderFns__$t = [];
+__vue_render__$t._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$q = function (inject) {
+  const __vue_inject_styles__$t = function (inject) {
     if (!inject) return
-    inject("data-v-7866b9f2_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceTypeMappingRouterSummary.vue"}, media: undefined });
+    inject("data-v-018d226a_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceTypeMappingRouterSummary.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$q = "data-v-7866b9f2";
+  const __vue_scope_id__$t = "data-v-018d226a";
   /* module identifier */
-  const __vue_module_identifier__$q = undefined;
+  const __vue_module_identifier__$t = undefined;
   /* functional template */
-  const __vue_is_functional_template__$q = false;
+  const __vue_is_functional_template__$t = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$q = normalizeComponent(
-    { render: __vue_render__$q, staticRenderFns: __vue_staticRenderFns__$q },
-    __vue_inject_styles__$q,
-    __vue_script__$q,
-    __vue_scope_id__$q,
-    __vue_is_functional_template__$q,
-    __vue_module_identifier__$q,
+  const __vue_component__$t = normalizeComponent(
+    { render: __vue_render__$t, staticRenderFns: __vue_staticRenderFns__$t },
+    __vue_inject_styles__$t,
+    __vue_script__$t,
+    __vue_scope_id__$t,
+    __vue_is_functional_template__$t,
+    __vue_module_identifier__$t,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var DeviceTypeMappingRouterFields = /** @class */ (function (_super) {
-    __extends(DeviceTypeMappingRouterFields, _super);
-    function DeviceTypeMappingRouterFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.defaultDestination = null;
-        return _this;
+let DeviceTypeMappingRouterFields = class DeviceTypeMappingRouterFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.defaultDestination = null;
     }
     /** Reset section content */
-    DeviceTypeMappingRouterFields.prototype.reset = function () {
+    reset() {
         this.defaultDestination = null;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    DeviceTypeMappingRouterFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    DeviceTypeMappingRouterFields.prototype.load = function (input) {
+    load(input) {
         this.defaultDestination = input.defaultDestination || null;
-    };
+    }
     /** Save form data to an object */
-    DeviceTypeMappingRouterFields.prototype.save = function () {
+    save() {
         return {
             mappings: [],
             defaultDestination: this.defaultDestination || ""
         };
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], DeviceTypeMappingRouterFields.prototype, "deviceTypes", void 0);
-    DeviceTypeMappingRouterFields = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], DeviceTypeMappingRouterFields);
-    return DeviceTypeMappingRouterFields;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], DeviceTypeMappingRouterFields.prototype, "deviceTypes", void 0);
+DeviceTypeMappingRouterFields = __decorate([
+    vuePropertyDecorator.Component({})
+], DeviceTypeMappingRouterFields);
+var script$u = DeviceTypeMappingRouterFields;
 
 /* script */
-const __vue_script__$r = DeviceTypeMappingRouterFields;
+const __vue_script__$u = script$u;
 
 /* template */
-var __vue_render__$r = function() {
+var __vue_render__$u = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5413,17 +5630,17 @@ var __vue_render__$r = function() {
     1
   )
 };
-var __vue_staticRenderFns__$r = [];
-__vue_render__$r._withStripped = true;
+var __vue_staticRenderFns__$u = [];
+__vue_render__$u._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$r = undefined;
+  const __vue_inject_styles__$u = undefined;
   /* scoped */
-  const __vue_scope_id__$r = undefined;
+  const __vue_scope_id__$u = undefined;
   /* module identifier */
-  const __vue_module_identifier__$r = undefined;
+  const __vue_module_identifier__$u = undefined;
   /* functional template */
-  const __vue_is_functional_template__$r = false;
+  const __vue_is_functional_template__$u = false;
   /* style inject */
   
   /* style inject SSR */
@@ -5432,101 +5649,97 @@ __vue_render__$r._withStripped = true;
   
 
   
-  const __vue_component__$r = normalizeComponent(
-    { render: __vue_render__$r, staticRenderFns: __vue_staticRenderFns__$r },
-    __vue_inject_styles__$r,
-    __vue_script__$r,
-    __vue_scope_id__$r,
-    __vue_is_functional_template__$r,
-    __vue_module_identifier__$r,
+  const __vue_component__$u = normalizeComponent(
+    { render: __vue_render__$u, staticRenderFns: __vue_staticRenderFns__$u },
+    __vue_inject_styles__$u,
+    __vue_script__$u,
+    __vue_scope_id__$u,
+    __vue_is_functional_template__$u,
+    __vue_module_identifier__$u,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var DeviceTypeMappingRouterDialog = /** @class */ (function (_super) {
-    __extends(DeviceTypeMappingRouterDialog, _super);
-    function DeviceTypeMappingRouterDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.deviceTypes = [];
-        return _this;
+let DeviceTypeMappingRouterDialog = class DeviceTypeMappingRouterDialog extends SiteWhereIdeComponents.DialogComponent {
+    constructor() {
+        super(...arguments);
+        this.deviceTypes = [];
     }
     /** Generate payload from UI */
-    DeviceTypeMappingRouterDialog.prototype.generatePayload = function () {
-        var payload = {};
-        Object.assign(payload, this.$refs.mappings.save());
+    generatePayload() {
+        let payload = {};
+        Object.assign(payload, this.mappings.save());
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    DeviceTypeMappingRouterDialog.prototype.reset = function () {
+    reset() {
         this.loadDeviceTypes();
-        if (this.$refs.mappings) {
-            this.$refs.mappings.reset();
+        if (this.mappings) {
+            this.mappings.reset();
         }
-    };
+    }
     /** Load device types asynchronously */
-    DeviceTypeMappingRouterDialog.prototype.loadDeviceTypes = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var criteria, format, response, err_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        criteria = { pageNumber: 1, pageSize: 0 };
-                        format = {};
-                        return [4 /*yield*/, sitewhereIdeCommon.listDeviceTypes(this.$store, criteria, format)];
-                    case 1:
-                        response = _a.sent();
-                        this.deviceTypes = response.data.results;
-                        return [3 /*break*/, 3];
-                    case 2:
-                        err_1 = _a.sent();
-                        sitewhereIdeCommon.showError(this, err_1);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
+    loadDeviceTypes() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let criteria = { pageNumber: 1, pageSize: 0 };
+                let format = {};
+                let response = yield sitewhereIdeCommon.listDeviceTypes(this.$store, criteria, format);
+                this.deviceTypes = response.data.results;
+            }
+            catch (err) {
+                sitewhereIdeCommon.showError(this, err);
+            }
         });
-    };
+    }
     /** Load dialog from a given configuration */
-    DeviceTypeMappingRouterDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.mappings) {
-            this.$refs.mappings.load(config);
+        if (this.mappings) {
+            this.mappings.load(config);
         }
-    };
+    }
     /** Called after create button is clicked */
-    DeviceTypeMappingRouterDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.mappings.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+    onCreateClicked(e) {
+        if (!this.mappings.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
         this.closeDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], DeviceTypeMappingRouterDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], DeviceTypeMappingRouterDialog.prototype, "createLabel", void 0);
-    DeviceTypeMappingRouterDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { DeviceTypeMappingRouterFields: __vue_component__$r }
-        })
-    ], DeviceTypeMappingRouterDialog);
-    return DeviceTypeMappingRouterDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DeviceTypeMappingRouterDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DeviceTypeMappingRouterDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], DeviceTypeMappingRouterDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$u)
+], DeviceTypeMappingRouterDialog.prototype, "mappings", void 0);
+DeviceTypeMappingRouterDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: { DeviceTypeMappingRouterFields: __vue_component__$u }
+    })
+], DeviceTypeMappingRouterDialog);
+var script$v = DeviceTypeMappingRouterDialog;
 
 /* script */
-const __vue_script__$s = DeviceTypeMappingRouterDialog;
+const __vue_script__$v = script$v;
 
 /* template */
-var __vue_render__$s = function() {
+var __vue_render__$v = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5578,17 +5791,17 @@ var __vue_render__$s = function() {
     2
   )
 };
-var __vue_staticRenderFns__$s = [];
-__vue_render__$s._withStripped = true;
+var __vue_staticRenderFns__$v = [];
+__vue_render__$v._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$s = undefined;
+  const __vue_inject_styles__$v = undefined;
   /* scoped */
-  const __vue_scope_id__$s = undefined;
+  const __vue_scope_id__$v = undefined;
   /* module identifier */
-  const __vue_module_identifier__$s = undefined;
+  const __vue_module_identifier__$v = undefined;
   /* functional template */
-  const __vue_is_functional_template__$s = false;
+  const __vue_is_functional_template__$v = false;
   /* style inject */
   
   /* style inject SSR */
@@ -5597,51 +5810,53 @@ __vue_render__$s._withStripped = true;
   
 
   
-  const __vue_component__$s = normalizeComponent(
-    { render: __vue_render__$s, staticRenderFns: __vue_staticRenderFns__$s },
-    __vue_inject_styles__$s,
-    __vue_script__$s,
-    __vue_scope_id__$s,
-    __vue_is_functional_template__$s,
-    __vue_module_identifier__$s,
+  const __vue_component__$v = normalizeComponent(
+    { render: __vue_render__$v, staticRenderFns: __vue_staticRenderFns__$v },
+    __vue_inject_styles__$v,
+    __vue_script__$v,
+    __vue_scope_id__$v,
+    __vue_is_functional_template__$v,
+    __vue_module_identifier__$v,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var DeviceTypeMappingRouterCreateDialog = /** @class */ (function (_super) {
-    __extends(DeviceTypeMappingRouterCreateDialog, _super);
-    function DeviceTypeMappingRouterCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let DeviceTypeMappingRouterCreateDialog = class DeviceTypeMappingRouterCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    DeviceTypeMappingRouterCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    DeviceTypeMappingRouterCreateDialog.prototype.openDialog = function () {
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    DeviceTypeMappingRouterCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                DeviceTypeMappingRouterDialog: __vue_component__$s
-            }
-        })
-    ], DeviceTypeMappingRouterCreateDialog);
-    return DeviceTypeMappingRouterCreateDialog;
-}(Vue));
+    openDialog() {
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$v)
+], DeviceTypeMappingRouterCreateDialog.prototype, "dialog", void 0);
+DeviceTypeMappingRouterCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            DeviceTypeMappingRouterDialog: __vue_component__$v
+        }
+    })
+], DeviceTypeMappingRouterCreateDialog);
+var script$w = DeviceTypeMappingRouterCreateDialog;
 
 /* script */
-const __vue_script__$t = DeviceTypeMappingRouterCreateDialog;
+const __vue_script__$w = script$w;
 
 /* template */
-var __vue_render__$t = function() {
+var __vue_render__$w = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5654,94 +5869,94 @@ var __vue_render__$t = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$t = [];
-__vue_render__$t._withStripped = true;
+var __vue_staticRenderFns__$w = [];
+__vue_render__$w._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$t = function (inject) {
+  const __vue_inject_styles__$w = function (inject) {
     if (!inject) return
-    inject("data-v-904dd628_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceTypeMappingRouterCreateDialog.vue"}, media: undefined });
+    inject("data-v-916dfc20_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceTypeMappingRouterCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$t = "data-v-904dd628";
+  const __vue_scope_id__$w = "data-v-916dfc20";
   /* module identifier */
-  const __vue_module_identifier__$t = undefined;
+  const __vue_module_identifier__$w = undefined;
   /* functional template */
-  const __vue_is_functional_template__$t = false;
+  const __vue_is_functional_template__$w = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$t = normalizeComponent(
-    { render: __vue_render__$t, staticRenderFns: __vue_staticRenderFns__$t },
-    __vue_inject_styles__$t,
-    __vue_script__$t,
-    __vue_scope_id__$t,
-    __vue_is_functional_template__$t,
-    __vue_module_identifier__$t,
+  const __vue_component__$w = normalizeComponent(
+    { render: __vue_render__$w, staticRenderFns: __vue_staticRenderFns__$w },
+    __vue_inject_styles__$w,
+    __vue_script__$w,
+    __vue_scope_id__$w,
+    __vue_is_functional_template__$w,
+    __vue_module_identifier__$w,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CommandRouterSection = /** @class */ (function (_super) {
-    __extends(CommandRouterSection, _super);
-    function CommandRouterSection() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let CommandRouterSection = class CommandRouterSection extends Vue {
+    /** Check for device type mapping router */
+    get isDeviceTypeMappingRouter() {
+        return this.router && this.router.type == "device-type-mapping";
     }
-    Object.defineProperty(CommandRouterSection.prototype, "isDeviceTypeMappingRouter", {
-        /** Check for device type mapping router */
-        get: function () {
-            return this.router && this.router.type == "device-type-mapping";
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Send event to unset the router */
-    CommandRouterSection.prototype.onUnsetCommandRouter = function () {
+    onUnsetCommandRouter() {
         this.$emit("unset");
-    };
+    }
     /** Open chooser for adding command router */
-    CommandRouterSection.prototype.onAddCommandRouter = function () {
-        this.$refs.chooser.openChooser();
-    };
+    onAddCommandRouter() {
+        this.chooser.openChooser();
+    }
     /** Update command router settings */
-    CommandRouterSection.prototype.onUpdateCommandRouter = function () { };
+    onUpdateCommandRouter() { }
     /** Show dialog for creating command router */
-    CommandRouterSection.prototype.onCommandRouterChosen = function (type) {
+    onCommandRouterChosen(type) {
         if (type == "device-type-mapping") {
-            this.$refs.dtmRouterCreate.openDialog();
+            this.dtmRouterCreate.openDialog();
         }
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], CommandRouterSection.prototype, "router", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CommandRouterSection.prototype, "commandDestinations", void 0);
-    CommandRouterSection = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NewCommandRouterChooser: __vue_component__$p,
-                DeviceTypeMappingRouterSummary: __vue_component__$q,
-                DeviceTypeMappingRouterCreateDialog: __vue_component__$t
-            }
-        })
-    ], CommandRouterSection);
-    return CommandRouterSection;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], CommandRouterSection.prototype, "router", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CommandRouterSection.prototype, "commandDestinations", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$s)
+], CommandRouterSection.prototype, "chooser", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$w)
+], CommandRouterSection.prototype, "dtmRouterCreate", void 0);
+CommandRouterSection = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NewCommandRouterChooser: __vue_component__$s,
+            DeviceTypeMappingRouterSummary: __vue_component__$t,
+            DeviceTypeMappingRouterCreateDialog: __vue_component__$w
+        }
+    })
+], CommandRouterSection);
+var script$x = CommandRouterSection;
 
 /* script */
-const __vue_script__$u = CommandRouterSection;
+const __vue_script__$x = script$x;
 
 /* template */
-var __vue_render__$u = function() {
+var __vue_render__$x = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5809,141 +6024,113 @@ var __vue_render__$u = function() {
     1
   )
 };
-var __vue_staticRenderFns__$u = [];
-__vue_render__$u._withStripped = true;
+var __vue_staticRenderFns__$x = [];
+__vue_render__$x._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$u = function (inject) {
+  const __vue_inject_styles__$x = function (inject) {
     if (!inject) return
-    inject("data-v-1cf8327c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandRouterSection.vue"}, media: undefined });
+    inject("data-v-79cf907e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandRouterSection.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$u = "data-v-1cf8327c";
+  const __vue_scope_id__$x = "data-v-79cf907e";
   /* module identifier */
-  const __vue_module_identifier__$u = undefined;
+  const __vue_module_identifier__$x = undefined;
   /* functional template */
-  const __vue_is_functional_template__$u = false;
+  const __vue_is_functional_template__$x = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$u = normalizeComponent(
-    { render: __vue_render__$u, staticRenderFns: __vue_staticRenderFns__$u },
-    __vue_inject_styles__$u,
-    __vue_script__$u,
-    __vue_scope_id__$u,
-    __vue_is_functional_template__$u,
-    __vue_module_identifier__$u,
+  const __vue_component__$x = normalizeComponent(
+    { render: __vue_render__$x, staticRenderFns: __vue_staticRenderFns__$x },
+    __vue_inject_styles__$x,
+    __vue_script__$x,
+    __vue_scope_id__$x,
+    __vue_is_functional_template__$x,
+    __vue_module_identifier__$x,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CommandDeliveryPlugin = /** @class */ (function (_super) {
-    __extends(CommandDeliveryPlugin, _super);
-    function CommandDeliveryPlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let CommandDeliveryPlugin = class CommandDeliveryPlugin extends Vue {
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "tenantId", {
-        /** Tenant id */
-        get: function () {
-            return this.configuration ? this.configuration.tenant.token : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "commandDeliveryConfiguration", {
-        /** Get tenant configuration for command delivery */
-        get: function () {
-            return this.configuration ? this.configuration.tenantConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "instanceManagement", {
-        /** Get instance configuraton information */
-        get: function () {
-            return this.configuration ? this.configuration.instanceConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "commandDestinations", {
-        /** Get command destinations list */
-        get: function () {
-            return this.commandDeliveryConfiguration
-                ? this.commandDeliveryConfiguration.commandDestinations
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CommandDeliveryPlugin.prototype, "router", {
-        /** Get configured router */
-        get: function () {
-            return this.commandDeliveryConfiguration
-                ? this.commandDeliveryConfiguration.router
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Tenant id */
+    get tenantId() {
+        return this.configuration ? this.configuration.tenant.token : null;
+    }
+    /** Get tenant configuration for command delivery */
+    get commandDeliveryConfiguration() {
+        return this.configuration ? this.configuration.tenantConfiguration : null;
+    }
+    /** Get instance configuraton information */
+    get instanceManagement() {
+        return this.configuration ? this.configuration.instanceConfiguration : null;
+    }
+    /** Get command destinations list */
+    get commandDestinations() {
+        return this.commandDeliveryConfiguration
+            ? this.commandDeliveryConfiguration.commandDestinations
+            : null;
+    }
+    /** Get configured router */
+    get router() {
+        return this.commandDeliveryConfiguration
+            ? this.commandDeliveryConfiguration.router
+            : null;
+    }
     /** Handle command destination created */
-    CommandDeliveryPlugin.prototype.onCommandDestinationCreated = function (config) {
+    onCommandDestinationCreated(config) {
         this.markDirty();
-    };
+    }
     /** Handle command destination updated */
-    CommandDeliveryPlugin.prototype.onCommandDestinationUpdated = function (originalId, config) {
+    onCommandDestinationUpdated(originalId, config) {
         this.markDirty();
-    };
+    }
     /** Handle command destination deleted */
-    CommandDeliveryPlugin.prototype.onCommandDestinationDeleted = function (id) {
+    onCommandDestinationDeleted(id) {
         this.markDirty();
-    };
+    }
     /** Handle unsetting router */
-    CommandDeliveryPlugin.prototype.onUnsetCommandRouter = function () {
+    onUnsetCommandRouter() {
         if (this.commandDeliveryConfiguration) {
             this.commandDeliveryConfiguration.router = null;
         }
         this.markDirty();
-    };
+    }
     /** Mark data as having been updated */
-    CommandDeliveryPlugin.prototype.markDirty = function () {
+    markDirty() {
         this.$emit("dirty");
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], CommandDeliveryPlugin.prototype, "configuration", void 0);
-    CommandDeliveryPlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                TenantEnginePlugin: __vue_component__$6,
-                CommandDestinationsTable: __vue_component__$o,
-                CommandRouterSection: __vue_component__$u
-            }
-        })
-    ], CommandDeliveryPlugin);
-    return CommandDeliveryPlugin;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], CommandDeliveryPlugin.prototype, "configuration", void 0);
+CommandDeliveryPlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            TenantEnginePlugin: __vue_component__$6,
+            CommandDestinationsTable: __vue_component__$r,
+            CommandRouterSection: __vue_component__$x
+        }
+    })
+], CommandDeliveryPlugin);
+var script$y = CommandDeliveryPlugin;
 
 /* script */
-const __vue_script__$v = CommandDeliveryPlugin;
+const __vue_script__$y = script$y;
 
 /* template */
-var __vue_render__$v = function() {
+var __vue_render__$y = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -5976,91 +6163,75 @@ var __vue_render__$v = function() {
     1
   )
 };
-var __vue_staticRenderFns__$v = [];
-__vue_render__$v._withStripped = true;
+var __vue_staticRenderFns__$y = [];
+__vue_render__$y._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$v = function (inject) {
+  const __vue_inject_styles__$y = function (inject) {
     if (!inject) return
-    inject("data-v-397f7bdc_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandDeliveryPlugin.vue"}, media: undefined });
+    inject("data-v-26bb3bd6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CommandDeliveryPlugin.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$v = "data-v-397f7bdc";
+  const __vue_scope_id__$y = "data-v-26bb3bd6";
   /* module identifier */
-  const __vue_module_identifier__$v = undefined;
+  const __vue_module_identifier__$y = undefined;
   /* functional template */
-  const __vue_is_functional_template__$v = false;
+  const __vue_is_functional_template__$y = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$v = normalizeComponent(
-    { render: __vue_render__$v, staticRenderFns: __vue_staticRenderFns__$v },
-    __vue_inject_styles__$v,
-    __vue_script__$v,
-    __vue_scope_id__$v,
-    __vue_is_functional_template__$v,
-    __vue_module_identifier__$v,
+  const __vue_component__$y = normalizeComponent(
+    { render: __vue_render__$y, staticRenderFns: __vue_staticRenderFns__$y },
+    __vue_inject_styles__$y,
+    __vue_script__$y,
+    __vue_scope_id__$y,
+    __vue_is_functional_template__$y,
+    __vue_module_identifier__$y,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var DeviceManagementPlugin = /** @class */ (function (_super) {
-    __extends(DeviceManagementPlugin, _super);
-    function DeviceManagementPlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let DeviceManagementPlugin = class DeviceManagementPlugin extends Vue {
+    /** Get tenant configuration for device management */
+    get deviceManagement() {
+        return this.configuration ? this.configuration.tenantConfiguration : null;
     }
-    Object.defineProperty(DeviceManagementPlugin.prototype, "deviceManagement", {
-        /** Get tenant configuration for device management */
-        get: function () {
-            return this.configuration ? this.configuration.tenantConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DeviceManagementPlugin.prototype, "instanceManagement", {
-        /** Get instance configuraton information */
-        get: function () {
-            return this.configuration ? this.configuration.instanceConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(DeviceManagementPlugin.prototype, "datastore", {
-        /** Get datastore definition */
-        get: function () {
-            return this.deviceManagement ? this.deviceManagement.datastore : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    DeviceManagementPlugin.prototype.onUnsetDatastore = function () {
+    /** Get instance configuraton information */
+    get instanceManagement() {
+        return this.configuration ? this.configuration.instanceConfiguration : null;
+    }
+    /** Get datastore definition */
+    get datastore() {
+        return this.deviceManagement ? this.deviceManagement.datastore : null;
+    }
+    onUnsetDatastore() {
         if (this.deviceManagement) {
             this.deviceManagement.datastore = null;
         }
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DeviceManagementPlugin.prototype, "configuration", void 0);
-    DeviceManagementPlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { TenantEnginePlugin: __vue_component__$6, DatastoreSelector: __vue_component__$5 }
-        })
-    ], DeviceManagementPlugin);
-    return DeviceManagementPlugin;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DeviceManagementPlugin.prototype, "configuration", void 0);
+DeviceManagementPlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: { TenantEnginePlugin: __vue_component__$6, DatastoreSelector: __vue_component__$5 }
+    })
+], DeviceManagementPlugin);
+var script$z = DeviceManagementPlugin;
 
 /* script */
-const __vue_script__$w = DeviceManagementPlugin;
+const __vue_script__$z = script$z;
 
 /* template */
-var __vue_render__$w = function() {
+var __vue_render__$z = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -6088,79 +6259,75 @@ var __vue_render__$w = function() {
     1
   )
 };
-var __vue_staticRenderFns__$w = [];
-__vue_render__$w._withStripped = true;
+var __vue_staticRenderFns__$z = [];
+__vue_render__$z._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$w = function (inject) {
+  const __vue_inject_styles__$z = function (inject) {
     if (!inject) return
-    inject("data-v-012e731f_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceManagementPlugin.vue"}, media: undefined });
+    inject("data-v-d231dc24_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"DeviceManagementPlugin.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$w = "data-v-012e731f";
+  const __vue_scope_id__$z = "data-v-d231dc24";
   /* module identifier */
-  const __vue_module_identifier__$w = undefined;
+  const __vue_module_identifier__$z = undefined;
   /* functional template */
-  const __vue_is_functional_template__$w = false;
+  const __vue_is_functional_template__$z = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$w = normalizeComponent(
-    { render: __vue_render__$w, staticRenderFns: __vue_staticRenderFns__$w },
-    __vue_inject_styles__$w,
-    __vue_script__$w,
-    __vue_scope_id__$w,
-    __vue_is_functional_template__$w,
-    __vue_module_identifier__$w,
+  const __vue_component__$z = normalizeComponent(
+    { render: __vue_render__$z, staticRenderFns: __vue_staticRenderFns__$z },
+    __vue_inject_styles__$z,
+    __vue_script__$z,
+    __vue_scope_id__$z,
+    __vue_is_functional_template__$z,
+    __vue_module_identifier__$z,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var NewEventSourceChooser = /** @class */ (function (_super) {
-    __extends(NewEventSourceChooser, _super);
-    function NewEventSourceChooser() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let NewEventSourceChooser = class NewEventSourceChooser extends Vue {
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(NewEventSourceChooser.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Open chooser */
-    NewEventSourceChooser.prototype.openChooser = function () {
-        this.$refs.dialog.openDialog();
-    };
+    openChooser() {
+        this.dialog.openDialog();
+    }
     /** Close chooser */
-    NewEventSourceChooser.prototype.closeChooser = function () {
-        this.$refs.dialog.closeDialog();
-    };
+    closeChooser() {
+        this.dialog.closeDialog();
+    }
     /** Close chooser on item click */
-    NewEventSourceChooser.prototype.onChosen = function (id) {
+    onChosen(id) {
         this.closeChooser();
         this.$emit("chosen", id);
-    };
-    NewEventSourceChooser = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {}
-        })
-    ], NewEventSourceChooser);
-    return NewEventSourceChooser;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], NewEventSourceChooser.prototype, "dialog", void 0);
+NewEventSourceChooser = __decorate([
+    vuePropertyDecorator.Component({
+        components: {}
+    })
+], NewEventSourceChooser);
+var script$A = NewEventSourceChooser;
 
 /* script */
-const __vue_script__$x = NewEventSourceChooser;
+const __vue_script__$A = script$A;
 
 /* template */
-var __vue_render__$x = function() {
+var __vue_render__$A = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -6228,223 +6395,21 @@ var __vue_render__$x = function() {
     1
   )
 };
-var __vue_staticRenderFns__$x = [];
-__vue_render__$x._withStripped = true;
-
-  /* style */
-  const __vue_inject_styles__$x = function (inject) {
-    if (!inject) return
-    inject("data-v-6bde6aaa_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewEventSourceChooser.vue"}, media: undefined });
-
-  };
-  /* scoped */
-  const __vue_scope_id__$x = "data-v-6bde6aaa";
-  /* module identifier */
-  const __vue_module_identifier__$x = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$x = false;
-  /* style inject SSR */
-  
-  /* style inject shadow dom */
-  
-
-  
-  const __vue_component__$x = normalizeComponent(
-    { render: __vue_render__$x, staticRenderFns: __vue_staticRenderFns__$x },
-    __vue_inject_styles__$x,
-    __vue_script__$x,
-    __vue_scope_id__$x,
-    __vue_is_functional_template__$x,
-    __vue_module_identifier__$x,
-    false,
-    createInjector,
-    undefined,
-    undefined
-  );
-
-var NoConfiguration$1 = /** @class */ (function (_super) {
-    __extends(NoConfiguration, _super);
-    function NoConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NoConfiguration = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], NoConfiguration);
-    return NoConfiguration;
-}(Vue));
-
-/* script */
-const __vue_script__$y = NoConfiguration$1;
-
-/* template */
-var __vue_render__$y = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c(
-    "v-card",
-    { attrs: { flat: "" } },
-    [
-      _c("v-card-text", { staticClass: "padded-message subheading" }, [
-        _vm._v("This decoder has no configurable attributes.")
-      ])
-    ],
-    1
-  )
-};
-var __vue_staticRenderFns__$y = [];
-__vue_render__$y._withStripped = true;
-
-  /* style */
-  const __vue_inject_styles__$y = function (inject) {
-    if (!inject) return
-    inject("data-v-43498f83_0", { source: "\n.padded-message[data-v-43498f83] {\r\n  padding: 50px;\r\n  text-align: center;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\eventsources\\decoders\\NoConfiguration.vue"],"names":[],"mappings":";AAiBA;EACA,aAAA;EACA,kBAAA;AACA","file":"NoConfiguration.vue","sourcesContent":["<template>\r\n  <v-card flat\r\n    ><v-card-text class=\"padded-message subheading\"\r\n      >This decoder has no configurable attributes.</v-card-text\r\n    ></v-card\r\n  >\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component } from \"sitewhere-ide-common\";\r\n\r\n@Component({})\r\nexport default class NoConfiguration extends Vue {}\r\n</script>\r\n\r\n<style scoped>\r\n.padded-message {\r\n  padding: 50px;\r\n  text-align: center;\r\n}\r\n</style>\r\n"]}, media: undefined });
-
-  };
-  /* scoped */
-  const __vue_scope_id__$y = "data-v-43498f83";
-  /* module identifier */
-  const __vue_module_identifier__$y = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$y = false;
-  /* style inject SSR */
-  
-  /* style inject shadow dom */
-  
-
-  
-  const __vue_component__$y = normalizeComponent(
-    { render: __vue_render__$y, staticRenderFns: __vue_staticRenderFns__$y },
-    __vue_inject_styles__$y,
-    __vue_script__$y,
-    __vue_scope_id__$y,
-    __vue_is_functional_template__$y,
-    __vue_module_identifier__$y,
-    false,
-    createInjector,
-    undefined,
-    undefined
-  );
-
-var JsonDecoderConfiguration = /** @class */ (function (_super) {
-    __extends(JsonDecoderConfiguration, _super);
-    function JsonDecoderConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /** Reset section content */
-    JsonDecoderConfiguration.prototype.reset = function () { };
-    /** Perform validation */
-    JsonDecoderConfiguration.prototype.validate = function () {
-        return true;
-    };
-    /** Load form data from an object */
-    JsonDecoderConfiguration.prototype.load = function (input) { };
-    /** Save form data to an object */
-    JsonDecoderConfiguration.prototype.save = function () {
-        return {};
-    };
-    JsonDecoderConfiguration = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NoConfiguration: __vue_component__$y
-            }
-        })
-    ], JsonDecoderConfiguration);
-    return JsonDecoderConfiguration;
-}(sitewhereIdeCommon.DialogSection));
-
-/* script */
-const __vue_script__$z = JsonDecoderConfiguration;
-
-/* template */
-var __vue_render__$z = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c("no-configuration")
-};
-var __vue_staticRenderFns__$z = [];
-__vue_render__$z._withStripped = true;
-
-  /* style */
-  const __vue_inject_styles__$z = undefined;
-  /* scoped */
-  const __vue_scope_id__$z = undefined;
-  /* module identifier */
-  const __vue_module_identifier__$z = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$z = false;
-  /* style inject */
-  
-  /* style inject SSR */
-  
-  /* style inject shadow dom */
-  
-
-  
-  const __vue_component__$z = normalizeComponent(
-    { render: __vue_render__$z, staticRenderFns: __vue_staticRenderFns__$z },
-    __vue_inject_styles__$z,
-    __vue_script__$z,
-    __vue_scope_id__$z,
-    __vue_is_functional_template__$z,
-    __vue_module_identifier__$z,
-    false,
-    undefined,
-    undefined,
-    undefined
-  );
-
-var ProtobufDecoderConfiguration = /** @class */ (function (_super) {
-    __extends(ProtobufDecoderConfiguration, _super);
-    function ProtobufDecoderConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /** Reset section content */
-    ProtobufDecoderConfiguration.prototype.reset = function () { };
-    /** Perform validation */
-    ProtobufDecoderConfiguration.prototype.validate = function () {
-        return true;
-    };
-    /** Load form data from an object */
-    ProtobufDecoderConfiguration.prototype.load = function (input) { };
-    /** Save form data to an object */
-    ProtobufDecoderConfiguration.prototype.save = function () {
-        return {};
-    };
-    ProtobufDecoderConfiguration = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NoConfiguration: __vue_component__$y
-            }
-        })
-    ], ProtobufDecoderConfiguration);
-    return ProtobufDecoderConfiguration;
-}(sitewhereIdeCommon.DialogSection));
-
-/* script */
-const __vue_script__$A = ProtobufDecoderConfiguration;
-
-/* template */
-var __vue_render__$A = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c("no-configuration")
-};
 var __vue_staticRenderFns__$A = [];
 __vue_render__$A._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$A = undefined;
+  const __vue_inject_styles__$A = function (inject) {
+    if (!inject) return
+    inject("data-v-731ee5d4_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"NewEventSourceChooser.vue"}, media: undefined });
+
+  };
   /* scoped */
-  const __vue_scope_id__$A = undefined;
+  const __vue_scope_id__$A = "data-v-731ee5d4";
   /* module identifier */
   const __vue_module_identifier__$A = undefined;
   /* functional template */
   const __vue_is_functional_template__$A = false;
-  /* style inject */
-  
   /* style inject SSR */
   
   /* style inject shadow dom */
@@ -6459,62 +6424,254 @@ __vue_render__$A._withStripped = true;
     __vue_is_functional_template__$A,
     __vue_module_identifier__$A,
     false,
+    createInjector,
+    undefined,
+    undefined
+  );
+
+let NoConfiguration$1 = class NoConfiguration extends Vue {
+};
+NoConfiguration$1 = __decorate([
+    vuePropertyDecorator.Component({})
+], NoConfiguration$1);
+var script$B = NoConfiguration$1;
+
+/* script */
+const __vue_script__$B = script$B;
+
+/* template */
+var __vue_render__$B = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c("v-card-text", { staticClass: "padded-message subheading" }, [
+        _vm._v("This decoder has no configurable attributes.")
+      ])
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__$B = [];
+__vue_render__$B._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$B = function (inject) {
+    if (!inject) return
+    inject("data-v-2333d534_0", { source: "\n.padded-message[data-v-2333d534] {\r\n  padding: 50px;\r\n  text-align: center;\n}\r\n", map: {"version":3,"sources":["C:\\Users\\Derek\\Documents\\GitHub\\sitewhere-admin-ui-plugins\\src\\components\\plugins\\tenantengines\\eventsources\\decoders\\NoConfiguration.vue"],"names":[],"mappings":";AAeA;EACA,aAAA;EACA,kBAAA;AACA","file":"NoConfiguration.vue","sourcesContent":["<template>\r\n  <v-card flat>\r\n    <v-card-text class=\"padded-message subheading\">This decoder has no configurable attributes.</v-card-text>\r\n  </v-card>\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport Vue from \"vue\";\r\nimport { Component } from \"vue-property-decorator\";\r\n\r\n@Component({})\r\nexport default class NoConfiguration extends Vue {}\r\n</script>\r\n\r\n<style scoped>\r\n.padded-message {\r\n  padding: 50px;\r\n  text-align: center;\r\n}\r\n</style>\r\n"]}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$B = "data-v-2333d534";
+  /* module identifier */
+  const __vue_module_identifier__$B = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$B = false;
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$B = normalizeComponent(
+    { render: __vue_render__$B, staticRenderFns: __vue_staticRenderFns__$B },
+    __vue_inject_styles__$B,
+    __vue_script__$B,
+    __vue_scope_id__$B,
+    __vue_is_functional_template__$B,
+    __vue_module_identifier__$B,
+    false,
+    createInjector,
+    undefined,
+    undefined
+  );
+
+let JsonDecoderConfiguration = class JsonDecoderConfiguration extends SiteWhereIdeComponents.DialogSection {
+    /** Reset section content */
+    reset() { }
+    /** Perform validation */
+    validate() {
+        return true;
+    }
+    /** Load form data from an object */
+    load(input) { }
+    /** Save form data to an object */
+    save() {
+        return {};
+    }
+};
+JsonDecoderConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NoConfiguration: __vue_component__$B
+        }
+    })
+], JsonDecoderConfiguration);
+var script$C = JsonDecoderConfiguration;
+
+/* script */
+const __vue_script__$C = script$C;
+
+/* template */
+var __vue_render__$C = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("no-configuration")
+};
+var __vue_staticRenderFns__$C = [];
+__vue_render__$C._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$C = undefined;
+  /* scoped */
+  const __vue_scope_id__$C = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$C = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$C = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$C = normalizeComponent(
+    { render: __vue_render__$C, staticRenderFns: __vue_staticRenderFns__$C },
+    __vue_inject_styles__$C,
+    __vue_script__$C,
+    __vue_scope_id__$C,
+    __vue_is_functional_template__$C,
+    __vue_module_identifier__$C,
+    false,
     undefined,
     undefined,
     undefined
   );
 
-var ScriptedDecoderFields = /** @class */ (function (_super) {
-    __extends(ScriptedDecoderFields, _super);
-    function ScriptedDecoderFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.scriptId = null;
-        return _this;
+let ProtobufDecoderConfiguration = class ProtobufDecoderConfiguration extends SiteWhereIdeComponents.DialogSection {
+    /** Reset section content */
+    reset() { }
+    /** Perform validation */
+    validate() {
+        return true;
+    }
+    /** Load form data from an object */
+    load(input) { }
+    /** Save form data to an object */
+    save() {
+        return {};
+    }
+};
+ProtobufDecoderConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NoConfiguration: __vue_component__$B
+        }
+    })
+], ProtobufDecoderConfiguration);
+var script$D = ProtobufDecoderConfiguration;
+
+/* script */
+const __vue_script__$D = script$D;
+
+/* template */
+var __vue_render__$D = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("no-configuration")
+};
+var __vue_staticRenderFns__$D = [];
+__vue_render__$D._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$D = undefined;
+  /* scoped */
+  const __vue_scope_id__$D = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$D = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$D = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$D = normalizeComponent(
+    { render: __vue_render__$D, staticRenderFns: __vue_staticRenderFns__$D },
+    __vue_inject_styles__$D,
+    __vue_script__$D,
+    __vue_scope_id__$D,
+    __vue_is_functional_template__$D,
+    __vue_module_identifier__$D,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
+let ScriptedDecoderFields = class ScriptedDecoderFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.scriptId = null;
     }
     /** Reset section content */
-    ScriptedDecoderFields.prototype.reset = function () {
-        if (this.$refs.chooser) {
-            this.$refs.chooser.reset();
+    reset() {
+        if (this.chooser) {
+            this.chooser.reset();
         }
         this.scriptId = null;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    ScriptedDecoderFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    ScriptedDecoderFields.prototype.load = function (input) {
+    load(input) {
         this.scriptId = input.scriptId || null;
-    };
+    }
     /** Save form data to an object */
-    ScriptedDecoderFields.prototype.save = function () {
+    save() {
         return {
             scriptId: this.scriptId || ""
         };
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ScriptedDecoderFields.prototype, "tenantId", void 0);
-    ScriptedDecoderFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                scriptId: {
-                    required: validators_1
-                }
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ScriptedDecoderFields.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Object)
+], ScriptedDecoderFields.prototype, "chooser", void 0);
+ScriptedDecoderFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            scriptId: {
+                required: validators_1
             }
-        })
-    ], ScriptedDecoderFields);
-    return ScriptedDecoderFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], ScriptedDecoderFields);
+var script$E = ScriptedDecoderFields;
 
 /* script */
-const __vue_script__$B = ScriptedDecoderFields;
+const __vue_script__$E = script$E;
 
 /* template */
-var __vue_render__$B = function() {
+var __vue_render__$E = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -6559,17 +6716,17 @@ var __vue_render__$B = function() {
     1
   )
 };
-var __vue_staticRenderFns__$B = [];
-__vue_render__$B._withStripped = true;
+var __vue_staticRenderFns__$E = [];
+__vue_render__$E._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$B = undefined;
+  const __vue_inject_styles__$E = undefined;
   /* scoped */
-  const __vue_scope_id__$B = undefined;
+  const __vue_scope_id__$E = undefined;
   /* module identifier */
-  const __vue_module_identifier__$B = undefined;
+  const __vue_module_identifier__$E = undefined;
   /* functional template */
-  const __vue_is_functional_template__$B = false;
+  const __vue_is_functional_template__$E = false;
   /* style inject */
   
   /* style inject SSR */
@@ -6578,71 +6735,71 @@ __vue_render__$B._withStripped = true;
   
 
   
-  const __vue_component__$B = normalizeComponent(
-    { render: __vue_render__$B, staticRenderFns: __vue_staticRenderFns__$B },
-    __vue_inject_styles__$B,
-    __vue_script__$B,
-    __vue_scope_id__$B,
-    __vue_is_functional_template__$B,
-    __vue_module_identifier__$B,
+  const __vue_component__$E = normalizeComponent(
+    { render: __vue_render__$E, staticRenderFns: __vue_staticRenderFns__$E },
+    __vue_inject_styles__$E,
+    __vue_script__$E,
+    __vue_scope_id__$E,
+    __vue_is_functional_template__$E,
+    __vue_module_identifier__$E,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ScriptedEventDecoderConfiguration = /** @class */ (function (_super) {
-    __extends(ScriptedEventDecoderConfiguration, _super);
-    function ScriptedEventDecoderConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
+let ScriptedEventDecoderConfiguration = class ScriptedEventDecoderConfiguration extends SiteWhereIdeComponents.DialogSection {
     /** Reset section content */
-    ScriptedEventDecoderConfiguration.prototype.reset = function () {
-        if (this.$refs.script) {
-            this.$refs.script.reset();
+    reset() {
+        if (this.script) {
+            this.script.reset();
         }
-    };
+    }
     /** Perform validation */
-    ScriptedEventDecoderConfiguration.prototype.validate = function () {
-        if (!this.$refs.script.validate()) {
+    validate() {
+        if (!this.script.validate()) {
             return false;
         }
         return true;
-    };
+    }
     /** Load form data from an object */
-    ScriptedEventDecoderConfiguration.prototype.load = function (input) {
+    load(input) {
         this.reset();
-        if (this.$refs.script) {
-            this.$refs.script.load(input);
+        if (this.script) {
+            this.script.load(input);
         }
-    };
+    }
     /** Save form data to an object */
-    ScriptedEventDecoderConfiguration.prototype.save = function () {
-        var payload = {};
-        if (this.$refs.script) {
-            Object.assign(payload, this.$refs.script.save());
+    save() {
+        let payload = {};
+        if (this.script) {
+            Object.assign(payload, this.script.save());
         }
         return payload;
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ScriptedEventDecoderConfiguration.prototype, "tenantId", void 0);
-    ScriptedEventDecoderConfiguration = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                ScriptedEventDecoderFields: __vue_component__$B
-            }
-        })
-    ], ScriptedEventDecoderConfiguration);
-    return ScriptedEventDecoderConfiguration;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ScriptedEventDecoderConfiguration.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$E)
+], ScriptedEventDecoderConfiguration.prototype, "script", void 0);
+ScriptedEventDecoderConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ScriptedEventDecoderFields: __vue_component__$E
+        }
+    })
+], ScriptedEventDecoderConfiguration);
+var script$F = ScriptedEventDecoderConfiguration;
 
 /* script */
-const __vue_script__$C = ScriptedEventDecoderConfiguration;
+const __vue_script__$F = script$F;
 
 /* template */
-var __vue_render__$C = function() {
+var __vue_render__$F = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -6651,17 +6808,17 @@ var __vue_render__$C = function() {
     attrs: { tenantId: _vm.tenantId }
   })
 };
-var __vue_staticRenderFns__$C = [];
-__vue_render__$C._withStripped = true;
+var __vue_staticRenderFns__$F = [];
+__vue_render__$F._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$C = undefined;
+  const __vue_inject_styles__$F = undefined;
   /* scoped */
-  const __vue_scope_id__$C = undefined;
+  const __vue_scope_id__$F = undefined;
   /* module identifier */
-  const __vue_module_identifier__$C = undefined;
+  const __vue_module_identifier__$F = undefined;
   /* functional template */
-  const __vue_is_functional_template__$C = false;
+  const __vue_is_functional_template__$F = false;
   /* style inject */
   
   /* style inject SSR */
@@ -6670,98 +6827,93 @@ __vue_render__$C._withStripped = true;
   
 
   
-  const __vue_component__$C = normalizeComponent(
-    { render: __vue_render__$C, staticRenderFns: __vue_staticRenderFns__$C },
-    __vue_inject_styles__$C,
-    __vue_script__$C,
-    __vue_scope_id__$C,
-    __vue_is_functional_template__$C,
-    __vue_module_identifier__$C,
+  const __vue_component__$F = normalizeComponent(
+    { render: __vue_render__$F, staticRenderFns: __vue_staticRenderFns__$F },
+    __vue_inject_styles__$F,
+    __vue_script__$F,
+    __vue_scope_id__$F,
+    __vue_is_functional_template__$F,
+    __vue_module_identifier__$F,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var DecoderConfiguration = /** @class */ (function (_super) {
-    __extends(DecoderConfiguration, _super);
-    function DecoderConfiguration() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    DecoderConfiguration.prototype.onDecoderTypeUpdated = function (updated) {
+let DecoderConfiguration = class DecoderConfiguration extends SiteWhereIdeComponents.DialogSection {
+    onDecoderTypeUpdated(updated) {
         this.load(this.decoder);
-    };
-    Object.defineProperty(DecoderConfiguration.prototype, "decoderType", {
-        /** Decoder type */
-        get: function () {
-            return this.decoder ? this.decoder.type : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    /** Decoder type */
+    get decoderType() {
+        return this.decoder ? this.decoder.type : null;
+    }
     /** Reset section content */
-    DecoderConfiguration.prototype.reset = function () {
-        if (this.$refs.details) {
-            this.$refs.details.reset();
+    reset() {
+        if (this.details) {
+            this.details.reset();
         }
-    };
+    }
     /** Perform validation */
-    DecoderConfiguration.prototype.validate = function () {
-        if (this.$refs.details) {
-            if (!this.$refs.details.validate()) {
+    validate() {
+        if (this.details) {
+            if (!this.details.validate()) {
                 return false;
             }
         }
         return true;
-    };
+    }
     /** Load form data from an object */
-    DecoderConfiguration.prototype.load = function (input) {
-        var _this = this;
-        this.$nextTick().then(function () {
-            if (_this.$refs.details) {
-                _this.$refs.details.load(input.configuration);
+    load(input) {
+        this.$nextTick().then(() => {
+            if (this.details) {
+                this.details.load(input.configuration);
             }
         });
-    };
+    }
     /** Save form data to an object */
-    DecoderConfiguration.prototype.save = function () {
-        var config = {};
-        if (this.$refs.details) {
-            Object.assign(config, this.$refs.details.save());
+    save() {
+        let config = {};
+        if (this.details) {
+            Object.assign(config, this.details.save());
         }
         return config;
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], DecoderConfiguration.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], DecoderConfiguration.prototype, "decoder", void 0);
-    __decorate([
-        sitewhereIdeCommon.Watch("decoderType", { immediate: true }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [String]),
-        __metadata("design:returntype", void 0)
-    ], DecoderConfiguration.prototype, "onDecoderTypeUpdated", null);
-    DecoderConfiguration = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                JsonDecoderConfiguration: __vue_component__$z,
-                ProtobufDecoderConfiguration: __vue_component__$A,
-                ScriptedEventDecoderConfiguration: __vue_component__$C
-            }
-        })
-    ], DecoderConfiguration);
-    return DecoderConfiguration;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], DecoderConfiguration.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], DecoderConfiguration.prototype, "decoder", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", SiteWhereIdeComponents.DialogSection)
+], DecoderConfiguration.prototype, "details", void 0);
+__decorate([
+    vuePropertyDecorator.Watch("decoderType", { immediate: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], DecoderConfiguration.prototype, "onDecoderTypeUpdated", null);
+DecoderConfiguration = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            JsonDecoderConfiguration: __vue_component__$C,
+            ProtobufDecoderConfiguration: __vue_component__$D,
+            ScriptedEventDecoderConfiguration: __vue_component__$F
+        }
+    })
+], DecoderConfiguration);
+var script$G = DecoderConfiguration;
 
 /* script */
-const __vue_script__$D = DecoderConfiguration;
+const __vue_script__$G = script$G;
 
 /* template */
-var __vue_render__$D = function() {
+var __vue_render__$G = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -6787,17 +6939,17 @@ var __vue_render__$D = function() {
     1
   )
 };
-var __vue_staticRenderFns__$D = [];
-__vue_render__$D._withStripped = true;
+var __vue_staticRenderFns__$G = [];
+__vue_render__$G._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$D = undefined;
+  const __vue_inject_styles__$G = undefined;
   /* scoped */
-  const __vue_scope_id__$D = undefined;
+  const __vue_scope_id__$G = undefined;
   /* module identifier */
-  const __vue_module_identifier__$D = undefined;
+  const __vue_module_identifier__$G = undefined;
   /* functional template */
-  const __vue_is_functional_template__$D = false;
+  const __vue_is_functional_template__$G = false;
   /* style inject */
   
   /* style inject SSR */
@@ -6806,13 +6958,13 @@ __vue_render__$D._withStripped = true;
   
 
   
-  const __vue_component__$D = normalizeComponent(
-    { render: __vue_render__$D, staticRenderFns: __vue_staticRenderFns__$D },
-    __vue_inject_styles__$D,
-    __vue_script__$D,
-    __vue_scope_id__$D,
-    __vue_is_functional_template__$D,
-    __vue_module_identifier__$D,
+  const __vue_component__$G = normalizeComponent(
+    { render: __vue_render__$G, staticRenderFns: __vue_staticRenderFns__$G },
+    __vue_inject_styles__$G,
+    __vue_script__$G,
+    __vue_scope_id__$G,
+    __vue_is_functional_template__$G,
+    __vue_module_identifier__$G,
     false,
     undefined,
     undefined,
@@ -6820,27 +6972,26 @@ __vue_render__$D._withStripped = true;
   );
 
 /** Validator for checking if id is already used */
-var idConflict$1 = validators_2.withParams({ type: "idConflict" }, function (value, vm) {
-    var idsInUse = vm.idsInUse;
-    var conflict = false;
-    idsInUse.forEach(function (id) {
+const idConflict$1 = validators_2.withParams({ type: "idConflict" }, (value, vm) => {
+    let idsInUse = vm.idsInUse;
+    let conflict = false;
+    idsInUse.forEach(id => {
         if (vm.id == id)
             conflict = true;
     });
     return !conflict;
 });
-var EventSourceDialog = /** @class */ (function (_super) {
-    __extends(EventSourceDialog, _super);
-    function EventSourceDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.defaultDecoder = {
+let EventSourceDialog = class EventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    constructor() {
+        super(...arguments);
+        this.defaultDecoder = {
             type: "json",
             configuration: {}
         };
-        _this.id = null;
-        _this.decoder = _this.defaultDecoder;
+        this.id = null;
+        this.decoder = this.defaultDecoder;
         /** List of decoder types */
-        _this.decoderTypes = [
+        this.decoderTypes = [
             {
                 text: "JSON",
                 value: "json"
@@ -6854,123 +7005,130 @@ var EventSourceDialog = /** @class */ (function (_super) {
                 value: "scripted"
             }
         ];
-        return _this;
     }
-    Object.defineProperty(EventSourceDialog.prototype, "decoderType", {
-        /** Decoder type */
-        get: function () {
-            return this.decoder ? this.decoder.type : null;
-        },
-        /** Blank configuration if type updated */
-        set: function (value) {
-            if (value) {
-                this.decoder = {
-                    type: value,
-                    configuration: {}
-                };
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Decoder type */
+    get decoderType() {
+        return this.decoder ? this.decoder.type : null;
+    }
+    /** Blank configuration if type updated */
+    set decoderType(value) {
+        if (value) {
+            this.decoder = {
+                type: value,
+                configuration: {}
+            };
+        }
+    }
     /** Save dialog fields */
-    EventSourceDialog.prototype.save = function () {
-        var config = { id: this.id, type: this.type };
-        this.decoder.configuration = this.$refs.decoder.save();
-        var decoder = {
+    save() {
+        let config = { id: this.id, type: this.type };
+        this.decoder.configuration = this.decoderConfiguration.save();
+        let decoder = {
             decoder: this.decoder
         };
         Object.assign(config, decoder);
         return config;
-    };
+    }
     /** Reset the dialog */
-    EventSourceDialog.prototype.reset = function () {
+    reset() {
         this.id = null;
         this.decoder = this.defaultDecoder;
         this.setActiveTab(0);
-        this.$refs.decoder.reset();
+        this.decoderConfiguration.reset();
         this.$v.$reset();
-    };
+    }
     /** Validate fields */
-    EventSourceDialog.prototype.validate = function () {
-        if (!this.$refs.decoder.validate()) {
+    validate() {
+        if (!this.decoderConfiguration.validate()) {
             return false;
         }
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load dialog from a given configuration */
-    EventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.id = config.id;
         this.decoder = config.decoder;
-    };
+    }
     /** Set the active tab */
-    EventSourceDialog.prototype.setActiveTab = function (tab) {
-        this.$refs.dialog.setActiveTab(tab);
-    };
+    setActiveTab(tab) {
+        this.dialog.setActiveTab(tab);
+    }
     /** Called after create button is clicked */
-    EventSourceDialog.prototype.onCreateClicked = function (e) {
+    onCreateClicked(e) {
         this.$emit("createClicked", e);
-    };
+    }
     /** Called after cancel button is clicked */
-    EventSourceDialog.prototype.onCancelClicked = function (e) {
+    onCancelClicked(e) {
         this.$emit("cancelClicked", e);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "type", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "icon", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], EventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Boolean)
-    ], EventSourceDialog.prototype, "visible", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], EventSourceDialog.prototype, "idsInUse", void 0);
-    EventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { DecoderConfiguration: __vue_component__$D },
-            validations: {
-                id: {
-                    required: validators_1,
-                    idConflict: idConflict$1
-                }
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "type", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "icon", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], EventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Boolean)
+], EventSourceDialog.prototype, "visible", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], EventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], EventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], EventSourceDialog.prototype, "idTextField", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", Vue)
+], EventSourceDialog.prototype, "decoderConfiguration", void 0);
+EventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: { DecoderConfiguration: __vue_component__$G },
+        validations: {
+            id: {
+                required: validators_1,
+                idConflict: idConflict$1
             }
-        })
-    ], EventSourceDialog);
-    return EventSourceDialog;
-}(Vue));
+        }
+    })
+], EventSourceDialog);
+var script$H = EventSourceDialog;
 
 /* script */
-const __vue_script__$E = EventSourceDialog;
+const __vue_script__$H = script$H;
 
 /* template */
-var __vue_render__$E = function() {
+var __vue_render__$H = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7116,17 +7274,17 @@ var __vue_render__$E = function() {
     2
   )
 };
-var __vue_staticRenderFns__$E = [];
-__vue_render__$E._withStripped = true;
+var __vue_staticRenderFns__$H = [];
+__vue_render__$H._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$E = undefined;
+  const __vue_inject_styles__$H = undefined;
   /* scoped */
-  const __vue_scope_id__$E = undefined;
+  const __vue_scope_id__$H = undefined;
   /* module identifier */
-  const __vue_module_identifier__$E = undefined;
+  const __vue_module_identifier__$H = undefined;
   /* functional template */
-  const __vue_is_functional_template__$E = false;
+  const __vue_is_functional_template__$H = false;
   /* style inject */
   
   /* style inject SSR */
@@ -7135,84 +7293,82 @@ __vue_render__$E._withStripped = true;
   
 
   
-  const __vue_component__$E = normalizeComponent(
-    { render: __vue_render__$E, staticRenderFns: __vue_staticRenderFns__$E },
-    __vue_inject_styles__$E,
-    __vue_script__$E,
-    __vue_scope_id__$E,
-    __vue_is_functional_template__$E,
-    __vue_module_identifier__$E,
+  const __vue_component__$H = normalizeComponent(
+    { render: __vue_render__$H, staticRenderFns: __vue_staticRenderFns__$H },
+    __vue_inject_styles__$H,
+    __vue_script__$H,
+    __vue_scope_id__$H,
+    __vue_is_functional_template__$H,
+    __vue_module_identifier__$H,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ActiveMqBrokerFields = /** @class */ (function (_super) {
-    __extends(ActiveMqBrokerFields, _super);
-    function ActiveMqBrokerFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.brokerName = "sitewhere";
-        _this.transportUri = "";
-        _this.queueName = "sitewhere";
-        _this.numConsumers = 3;
-        return _this;
+let ActiveMqBrokerFields = class ActiveMqBrokerFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.brokerName = "sitewhere";
+        this.transportUri = "";
+        this.queueName = "sitewhere";
+        this.numConsumers = 3;
     }
     /** Reset section content */
-    ActiveMqBrokerFields.prototype.reset = function () {
+    reset() {
         this.brokerName = "sitewhere";
         this.transportUri = "";
         this.queueName = "sitewhere";
         this.numConsumers = 3;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    ActiveMqBrokerFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    ActiveMqBrokerFields.prototype.load = function (input) {
+    load(input) {
         this.brokerName = input.brokerName || "sitewhere";
         this.transportUri = input.transportUri || "";
         this.queueName = input.queueName || "sitewhere";
         this.numConsumers = input.numConsumers || 3;
-    };
+    }
     /** Save form data to an object */
-    ActiveMqBrokerFields.prototype.save = function () {
+    save() {
         return {
             brokerName: this.brokerName,
             transportUri: this.transportUri,
             queueName: this.queueName,
             numConsumers: this.numConsumers
         };
-    };
-    ActiveMqBrokerFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                brokerName: {
-                    required: validators_1
-                },
-                transportUri: {
-                    required: validators_1
-                },
-                queueName: {
-                    required: validators_1
-                },
-                numConsumers: {
-                    required: validators_1
-                }
+    }
+};
+ActiveMqBrokerFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            brokerName: {
+                required: validators_1
+            },
+            transportUri: {
+                required: validators_1
+            },
+            queueName: {
+                required: validators_1
+            },
+            numConsumers: {
+                required: validators_1
             }
-        })
-    ], ActiveMqBrokerFields);
-    return ActiveMqBrokerFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], ActiveMqBrokerFields);
+var script$I = ActiveMqBrokerFields;
 
 /* script */
-const __vue_script__$F = ActiveMqBrokerFields;
+const __vue_script__$I = script$I;
 
 /* template */
-var __vue_render__$F = function() {
+var __vue_render__$I = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7348,17 +7504,17 @@ var __vue_render__$F = function() {
     1
   )
 };
-var __vue_staticRenderFns__$F = [];
-__vue_render__$F._withStripped = true;
+var __vue_staticRenderFns__$I = [];
+__vue_render__$I._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$F = undefined;
+  const __vue_inject_styles__$I = undefined;
   /* scoped */
-  const __vue_scope_id__$F = undefined;
+  const __vue_scope_id__$I = undefined;
   /* module identifier */
-  const __vue_module_identifier__$F = undefined;
+  const __vue_module_identifier__$I = undefined;
   /* functional template */
-  const __vue_is_functional_template__$F = false;
+  const __vue_is_functional_template__$I = false;
   /* style inject */
   
   /* style inject SSR */
@@ -7367,110 +7523,110 @@ __vue_render__$F._withStripped = true;
   
 
   
-  const __vue_component__$F = normalizeComponent(
-    { render: __vue_render__$F, staticRenderFns: __vue_staticRenderFns__$F },
-    __vue_inject_styles__$F,
-    __vue_script__$F,
-    __vue_scope_id__$F,
-    __vue_is_functional_template__$F,
-    __vue_module_identifier__$F,
+  const __vue_component__$I = normalizeComponent(
+    { render: __vue_render__$I, staticRenderFns: __vue_staticRenderFns__$I },
+    __vue_inject_styles__$I,
+    __vue_script__$I,
+    __vue_scope_id__$I,
+    __vue_is_functional_template__$I,
+    __vue_module_identifier__$I,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ActiveMqBrokerEventSourceDialog = /** @class */ (function (_super) {
-    __extends(ActiveMqBrokerEventSourceDialog, _super);
-    function ActiveMqBrokerEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let ActiveMqBrokerEventSourceDialog = class ActiveMqBrokerEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(ActiveMqBrokerEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    ActiveMqBrokerEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.broker.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.broker.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    ActiveMqBrokerEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.broker) {
-            this.$refs.broker.reset();
+    reset() {
+        if (this.broker) {
+            this.broker.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    ActiveMqBrokerEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.broker) {
-            this.$refs.broker.load(config.configuration);
+        if (this.broker) {
+            this.broker.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    ActiveMqBrokerEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.broker.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.broker.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], ActiveMqBrokerEventSourceDialog.prototype, "idsInUse", void 0);
-    ActiveMqBrokerEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                ActiveMqBrokerFields: __vue_component__$F
-            }
-        })
-    ], ActiveMqBrokerEventSourceDialog);
-    return ActiveMqBrokerEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], ActiveMqBrokerEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], ActiveMqBrokerEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], ActiveMqBrokerEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$I)
+], ActiveMqBrokerEventSourceDialog.prototype, "broker", void 0);
+ActiveMqBrokerEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            ActiveMqBrokerFields: __vue_component__$I
+        }
+    })
+], ActiveMqBrokerEventSourceDialog);
+var script$J = ActiveMqBrokerEventSourceDialog;
 
 /* script */
-const __vue_script__$G = ActiveMqBrokerEventSourceDialog;
+const __vue_script__$J = script$J;
 
 /* template */
-var __vue_render__$G = function() {
+var __vue_render__$J = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7520,17 +7676,17 @@ var __vue_render__$G = function() {
     2
   )
 };
-var __vue_staticRenderFns__$G = [];
-__vue_render__$G._withStripped = true;
+var __vue_staticRenderFns__$J = [];
+__vue_render__$J._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$G = undefined;
+  const __vue_inject_styles__$J = undefined;
   /* scoped */
-  const __vue_scope_id__$G = undefined;
+  const __vue_scope_id__$J = undefined;
   /* module identifier */
-  const __vue_module_identifier__$G = undefined;
+  const __vue_module_identifier__$J = undefined;
   /* functional template */
-  const __vue_is_functional_template__$G = false;
+  const __vue_is_functional_template__$J = false;
   /* style inject */
   
   /* style inject SSR */
@@ -7539,56 +7695,58 @@ __vue_render__$G._withStripped = true;
   
 
   
-  const __vue_component__$G = normalizeComponent(
-    { render: __vue_render__$G, staticRenderFns: __vue_staticRenderFns__$G },
-    __vue_inject_styles__$G,
-    __vue_script__$G,
-    __vue_scope_id__$G,
-    __vue_is_functional_template__$G,
-    __vue_module_identifier__$G,
+  const __vue_component__$J = normalizeComponent(
+    { render: __vue_render__$J, staticRenderFns: __vue_staticRenderFns__$J },
+    __vue_inject_styles__$J,
+    __vue_script__$J,
+    __vue_scope_id__$J,
+    __vue_is_functional_template__$J,
+    __vue_module_identifier__$J,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ActiveMqBrokerEventSourceCreateDialog = /** @class */ (function (_super) {
-    __extends(ActiveMqBrokerEventSourceCreateDialog, _super);
-    function ActiveMqBrokerEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let ActiveMqBrokerEventSourceCreateDialog = class ActiveMqBrokerEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    ActiveMqBrokerEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    ActiveMqBrokerEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceCreateDialog.prototype, "tenantId", void 0);
-    ActiveMqBrokerEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                ActiveMqBrokerEventSourceDialog: __vue_component__$G
-            }
-        })
-    ], ActiveMqBrokerEventSourceCreateDialog);
-    return ActiveMqBrokerEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$J)
+], ActiveMqBrokerEventSourceCreateDialog.prototype, "dialog", void 0);
+ActiveMqBrokerEventSourceCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ActiveMqBrokerEventSourceDialog: __vue_component__$J
+        }
+    })
+], ActiveMqBrokerEventSourceCreateDialog);
+var script$K = ActiveMqBrokerEventSourceCreateDialog;
 
 /* script */
-const __vue_script__$H = ActiveMqBrokerEventSourceCreateDialog;
+const __vue_script__$K = script$K;
 
 /* template */
-var __vue_render__$H = function() {
+var __vue_render__$K = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7605,80 +7763,82 @@ var __vue_render__$H = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$H = [];
-__vue_render__$H._withStripped = true;
+var __vue_staticRenderFns__$K = [];
+__vue_render__$K._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$H = function (inject) {
+  const __vue_inject_styles__$K = function (inject) {
     if (!inject) return
-    inject("data-v-495d76ca_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqBrokerEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-7ab8a4ca_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqBrokerEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$H = "data-v-495d76ca";
+  const __vue_scope_id__$K = "data-v-7ab8a4ca";
   /* module identifier */
-  const __vue_module_identifier__$H = undefined;
+  const __vue_module_identifier__$K = undefined;
   /* functional template */
-  const __vue_is_functional_template__$H = false;
+  const __vue_is_functional_template__$K = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$H = normalizeComponent(
-    { render: __vue_render__$H, staticRenderFns: __vue_staticRenderFns__$H },
-    __vue_inject_styles__$H,
-    __vue_script__$H,
-    __vue_scope_id__$H,
-    __vue_is_functional_template__$H,
-    __vue_module_identifier__$H,
+  const __vue_component__$K = normalizeComponent(
+    { render: __vue_render__$K, staticRenderFns: __vue_staticRenderFns__$K },
+    __vue_inject_styles__$K,
+    __vue_script__$K,
+    __vue_scope_id__$K,
+    __vue_is_functional_template__$K,
+    __vue_module_identifier__$K,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var ActiveMqBrokerEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(ActiveMqBrokerEventSourceUpdateDialog, _super);
-    function ActiveMqBrokerEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let ActiveMqBrokerEventSourceUpdateDialog = class ActiveMqBrokerEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    ActiveMqBrokerEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    ActiveMqBrokerEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    ActiveMqBrokerEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                ActiveMqBrokerEventSourceDialog: __vue_component__$G
-            }
-        })
-    ], ActiveMqBrokerEventSourceUpdateDialog);
-    return ActiveMqBrokerEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$J)
+], ActiveMqBrokerEventSourceUpdateDialog.prototype, "dialog", void 0);
+ActiveMqBrokerEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ActiveMqBrokerEventSourceDialog: __vue_component__$J
+        }
+    })
+], ActiveMqBrokerEventSourceUpdateDialog);
+var script$L = ActiveMqBrokerEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$I = ActiveMqBrokerEventSourceUpdateDialog;
+const __vue_script__$L = script$L;
 
 /* template */
-var __vue_render__$I = function() {
+var __vue_render__$L = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7695,98 +7855,96 @@ var __vue_render__$I = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$I = [];
-__vue_render__$I._withStripped = true;
+var __vue_staticRenderFns__$L = [];
+__vue_render__$L._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$I = function (inject) {
+  const __vue_inject_styles__$L = function (inject) {
     if (!inject) return
-    inject("data-v-23b2c714_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqBrokerEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-385c1259_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqBrokerEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$I = "data-v-23b2c714";
+  const __vue_scope_id__$L = "data-v-385c1259";
   /* module identifier */
-  const __vue_module_identifier__$I = undefined;
+  const __vue_module_identifier__$L = undefined;
   /* functional template */
-  const __vue_is_functional_template__$I = false;
+  const __vue_is_functional_template__$L = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$I = normalizeComponent(
-    { render: __vue_render__$I, staticRenderFns: __vue_staticRenderFns__$I },
-    __vue_inject_styles__$I,
-    __vue_script__$I,
-    __vue_scope_id__$I,
-    __vue_is_functional_template__$I,
-    __vue_module_identifier__$I,
+  const __vue_component__$L = normalizeComponent(
+    { render: __vue_render__$L, staticRenderFns: __vue_staticRenderFns__$L },
+    __vue_inject_styles__$L,
+    __vue_script__$L,
+    __vue_scope_id__$L,
+    __vue_is_functional_template__$L,
+    __vue_module_identifier__$L,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var ActiveMqClientFields = /** @class */ (function (_super) {
-    __extends(ActiveMqClientFields, _super);
-    function ActiveMqClientFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.remoteUri = "";
-        _this.queueName = "sitewhere";
-        _this.numConsumers = 3;
-        return _this;
+let ActiveMqClientFields = class ActiveMqClientFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.remoteUri = "";
+        this.queueName = "sitewhere";
+        this.numConsumers = 3;
     }
     /** Reset section content */
-    ActiveMqClientFields.prototype.reset = function () {
+    reset() {
         this.remoteUri = "";
         this.queueName = "sitewhere";
         this.numConsumers = 3;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    ActiveMqClientFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    ActiveMqClientFields.prototype.load = function (input) {
+    load(input) {
         this.remoteUri = input.remoteUri || "";
         this.queueName = input.queueName || "sitewhere";
         this.numConsumers = input.numConsumers || 3;
-    };
+    }
     /** Save form data to an object */
-    ActiveMqClientFields.prototype.save = function () {
+    save() {
         return {
             remoteUri: this.remoteUri,
             queueName: this.queueName,
             numConsumers: this.numConsumers
         };
-    };
-    ActiveMqClientFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                remoteUri: {
-                    required: validators_1
-                },
-                queueName: {
-                    required: validators_1
-                },
-                numConsumers: {
-                    required: validators_1
-                }
+    }
+};
+ActiveMqClientFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            remoteUri: {
+                required: validators_1
+            },
+            queueName: {
+                required: validators_1
+            },
+            numConsumers: {
+                required: validators_1
             }
-        })
-    ], ActiveMqClientFields);
-    return ActiveMqClientFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], ActiveMqClientFields);
+var script$M = ActiveMqClientFields;
 
 /* script */
-const __vue_script__$J = ActiveMqClientFields;
+const __vue_script__$M = script$M;
 
 /* template */
-var __vue_render__$J = function() {
+var __vue_render__$M = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -7891,17 +8049,17 @@ var __vue_render__$J = function() {
     1
   )
 };
-var __vue_staticRenderFns__$J = [];
-__vue_render__$J._withStripped = true;
+var __vue_staticRenderFns__$M = [];
+__vue_render__$M._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$J = undefined;
+  const __vue_inject_styles__$M = undefined;
   /* scoped */
-  const __vue_scope_id__$J = undefined;
+  const __vue_scope_id__$M = undefined;
   /* module identifier */
-  const __vue_module_identifier__$J = undefined;
+  const __vue_module_identifier__$M = undefined;
   /* functional template */
-  const __vue_is_functional_template__$J = false;
+  const __vue_is_functional_template__$M = false;
   /* style inject */
   
   /* style inject SSR */
@@ -7910,110 +8068,110 @@ __vue_render__$J._withStripped = true;
   
 
   
-  const __vue_component__$J = normalizeComponent(
-    { render: __vue_render__$J, staticRenderFns: __vue_staticRenderFns__$J },
-    __vue_inject_styles__$J,
-    __vue_script__$J,
-    __vue_scope_id__$J,
-    __vue_is_functional_template__$J,
-    __vue_module_identifier__$J,
+  const __vue_component__$M = normalizeComponent(
+    { render: __vue_render__$M, staticRenderFns: __vue_staticRenderFns__$M },
+    __vue_inject_styles__$M,
+    __vue_script__$M,
+    __vue_scope_id__$M,
+    __vue_is_functional_template__$M,
+    __vue_module_identifier__$M,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ActiveMqClientEventSourceDialog = /** @class */ (function (_super) {
-    __extends(ActiveMqClientEventSourceDialog, _super);
-    function ActiveMqClientEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let ActiveMqClientEventSourceDialog = class ActiveMqClientEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(ActiveMqClientEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    ActiveMqClientEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
+    generatePayload() {
+        let config = {};
         Object.assign(config, this.$refs.client.save());
-        var payload = {};
+        let payload = {};
         Object.assign(payload, this.$refs.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    ActiveMqClientEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.client) {
-            this.$refs.client.reset();
+    reset() {
+        if (this.client) {
+            this.client.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    ActiveMqClientEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.client) {
-            this.$refs.client.load(config.configuration);
+        if (this.client) {
+            this.client.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    ActiveMqClientEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.client.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.client.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqClientEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqClientEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], ActiveMqClientEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqClientEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqClientEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], ActiveMqClientEventSourceDialog.prototype, "idsInUse", void 0);
-    ActiveMqClientEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                ActiveMqClientFields: __vue_component__$J
-            }
-        })
-    ], ActiveMqClientEventSourceDialog);
-    return ActiveMqClientEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqClientEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqClientEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], ActiveMqClientEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqClientEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqClientEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], ActiveMqClientEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], ActiveMqClientEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$M)
+], ActiveMqClientEventSourceDialog.prototype, "client", void 0);
+ActiveMqClientEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            ActiveMqClientFields: __vue_component__$M
+        }
+    })
+], ActiveMqClientEventSourceDialog);
+var script$N = ActiveMqClientEventSourceDialog;
 
 /* script */
-const __vue_script__$K = ActiveMqClientEventSourceDialog;
+const __vue_script__$N = script$N;
 
 /* template */
-var __vue_render__$K = function() {
+var __vue_render__$N = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8063,17 +8221,17 @@ var __vue_render__$K = function() {
     2
   )
 };
-var __vue_staticRenderFns__$K = [];
-__vue_render__$K._withStripped = true;
+var __vue_staticRenderFns__$N = [];
+__vue_render__$N._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$K = undefined;
+  const __vue_inject_styles__$N = undefined;
   /* scoped */
-  const __vue_scope_id__$K = undefined;
+  const __vue_scope_id__$N = undefined;
   /* module identifier */
-  const __vue_module_identifier__$K = undefined;
+  const __vue_module_identifier__$N = undefined;
   /* functional template */
-  const __vue_is_functional_template__$K = false;
+  const __vue_is_functional_template__$N = false;
   /* style inject */
   
   /* style inject SSR */
@@ -8082,56 +8240,58 @@ __vue_render__$K._withStripped = true;
   
 
   
-  const __vue_component__$K = normalizeComponent(
-    { render: __vue_render__$K, staticRenderFns: __vue_staticRenderFns__$K },
-    __vue_inject_styles__$K,
-    __vue_script__$K,
-    __vue_scope_id__$K,
-    __vue_is_functional_template__$K,
-    __vue_module_identifier__$K,
+  const __vue_component__$N = normalizeComponent(
+    { render: __vue_render__$N, staticRenderFns: __vue_staticRenderFns__$N },
+    __vue_inject_styles__$N,
+    __vue_script__$N,
+    __vue_scope_id__$N,
+    __vue_is_functional_template__$N,
+    __vue_module_identifier__$N,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var ActiveMqBrokerEventSourceCreateDialog$1 = /** @class */ (function (_super) {
-    __extends(ActiveMqBrokerEventSourceCreateDialog, _super);
-    function ActiveMqBrokerEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let ActiveMqBrokerEventSourceCreateDialog$1 = class ActiveMqBrokerEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    ActiveMqBrokerEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    ActiveMqBrokerEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqBrokerEventSourceCreateDialog.prototype, "tenantId", void 0);
-    ActiveMqBrokerEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                ActiveMqClientEventSourceDialog: __vue_component__$K
-            }
-        })
-    ], ActiveMqBrokerEventSourceCreateDialog);
-    return ActiveMqBrokerEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqBrokerEventSourceCreateDialog$1.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$N)
+], ActiveMqBrokerEventSourceCreateDialog$1.prototype, "dialog", void 0);
+ActiveMqBrokerEventSourceCreateDialog$1 = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ActiveMqClientEventSourceDialog: __vue_component__$N
+        }
+    })
+], ActiveMqBrokerEventSourceCreateDialog$1);
+var script$O = ActiveMqBrokerEventSourceCreateDialog$1;
 
 /* script */
-const __vue_script__$L = ActiveMqBrokerEventSourceCreateDialog$1;
+const __vue_script__$O = script$O;
 
 /* template */
-var __vue_render__$L = function() {
+var __vue_render__$O = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8148,80 +8308,82 @@ var __vue_render__$L = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$L = [];
-__vue_render__$L._withStripped = true;
+var __vue_staticRenderFns__$O = [];
+__vue_render__$O._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$L = function (inject) {
+  const __vue_inject_styles__$O = function (inject) {
     if (!inject) return
-    inject("data-v-479d0845_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqClientEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-bb51c3d0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqClientEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$L = "data-v-479d0845";
+  const __vue_scope_id__$O = "data-v-bb51c3d0";
   /* module identifier */
-  const __vue_module_identifier__$L = undefined;
+  const __vue_module_identifier__$O = undefined;
   /* functional template */
-  const __vue_is_functional_template__$L = false;
+  const __vue_is_functional_template__$O = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$L = normalizeComponent(
-    { render: __vue_render__$L, staticRenderFns: __vue_staticRenderFns__$L },
-    __vue_inject_styles__$L,
-    __vue_script__$L,
-    __vue_scope_id__$L,
-    __vue_is_functional_template__$L,
-    __vue_module_identifier__$L,
+  const __vue_component__$O = normalizeComponent(
+    { render: __vue_render__$O, staticRenderFns: __vue_staticRenderFns__$O },
+    __vue_inject_styles__$O,
+    __vue_script__$O,
+    __vue_scope_id__$O,
+    __vue_is_functional_template__$O,
+    __vue_module_identifier__$O,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var ActiveMqClientEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(ActiveMqClientEventSourceUpdateDialog, _super);
-    function ActiveMqClientEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let ActiveMqClientEventSourceUpdateDialog = class ActiveMqClientEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    ActiveMqClientEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    ActiveMqClientEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], ActiveMqClientEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    ActiveMqClientEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                ActiveMqClientEventSourceDialog: __vue_component__$K
-            }
-        })
-    ], ActiveMqClientEventSourceUpdateDialog);
-    return ActiveMqClientEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], ActiveMqClientEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$N)
+], ActiveMqClientEventSourceUpdateDialog.prototype, "dialog", void 0);
+ActiveMqClientEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            ActiveMqClientEventSourceDialog: __vue_component__$N
+        }
+    })
+], ActiveMqClientEventSourceUpdateDialog);
+var script$P = ActiveMqClientEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$M = ActiveMqClientEventSourceUpdateDialog;
+const __vue_script__$P = script$P;
 
 /* template */
-var __vue_render__$M = function() {
+var __vue_render__$P = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8238,84 +8400,82 @@ var __vue_render__$M = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$M = [];
-__vue_render__$M._withStripped = true;
+var __vue_staticRenderFns__$P = [];
+__vue_render__$P._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$M = function (inject) {
+  const __vue_inject_styles__$P = function (inject) {
     if (!inject) return
-    inject("data-v-7fd51f76_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqClientEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-51a33b06_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ActiveMqClientEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$M = "data-v-7fd51f76";
+  const __vue_scope_id__$P = "data-v-51a33b06";
   /* module identifier */
-  const __vue_module_identifier__$M = undefined;
+  const __vue_module_identifier__$P = undefined;
   /* functional template */
-  const __vue_is_functional_template__$M = false;
+  const __vue_is_functional_template__$P = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$M = normalizeComponent(
-    { render: __vue_render__$M, staticRenderFns: __vue_staticRenderFns__$M },
-    __vue_inject_styles__$M,
-    __vue_script__$M,
-    __vue_scope_id__$M,
-    __vue_is_functional_template__$M,
-    __vue_module_identifier__$M,
+  const __vue_component__$P = normalizeComponent(
+    { render: __vue_render__$P, staticRenderFns: __vue_staticRenderFns__$P },
+    __vue_inject_styles__$P,
+    __vue_script__$P,
+    __vue_scope_id__$P,
+    __vue_is_functional_template__$P,
+    __vue_module_identifier__$P,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CoapServerFields = /** @class */ (function (_super) {
-    __extends(CoapServerFields, _super);
-    function CoapServerFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.port = 8583;
-        return _this;
+let CoapServerFields = class CoapServerFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.port = 8583;
     }
     /** Reset section content */
-    CoapServerFields.prototype.reset = function () {
+    reset() {
         this.port = 8583;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    CoapServerFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    CoapServerFields.prototype.load = function (input) {
+    load(input) {
         this.port = input.port || 8583;
-    };
+    }
     /** Save form data to an object */
-    CoapServerFields.prototype.save = function () {
+    save() {
         return {
             port: this.port
         };
-    };
-    CoapServerFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                port: {
-                    required: validators_1
-                }
+    }
+};
+CoapServerFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            port: {
+                required: validators_1
             }
-        })
-    ], CoapServerFields);
-    return CoapServerFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], CoapServerFields);
+var script$Q = CoapServerFields;
 
 /* script */
-const __vue_script__$N = CoapServerFields;
+const __vue_script__$Q = script$Q;
 
 /* template */
-var __vue_render__$N = function() {
+var __vue_render__$Q = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8356,17 +8516,17 @@ var __vue_render__$N = function() {
     1
   )
 };
-var __vue_staticRenderFns__$N = [];
-__vue_render__$N._withStripped = true;
+var __vue_staticRenderFns__$Q = [];
+__vue_render__$Q._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$N = undefined;
+  const __vue_inject_styles__$Q = undefined;
   /* scoped */
-  const __vue_scope_id__$N = undefined;
+  const __vue_scope_id__$Q = undefined;
   /* module identifier */
-  const __vue_module_identifier__$N = undefined;
+  const __vue_module_identifier__$Q = undefined;
   /* functional template */
-  const __vue_is_functional_template__$N = false;
+  const __vue_is_functional_template__$Q = false;
   /* style inject */
   
   /* style inject SSR */
@@ -8375,110 +8535,110 @@ __vue_render__$N._withStripped = true;
   
 
   
-  const __vue_component__$N = normalizeComponent(
-    { render: __vue_render__$N, staticRenderFns: __vue_staticRenderFns__$N },
-    __vue_inject_styles__$N,
-    __vue_script__$N,
-    __vue_scope_id__$N,
-    __vue_is_functional_template__$N,
-    __vue_module_identifier__$N,
+  const __vue_component__$Q = normalizeComponent(
+    { render: __vue_render__$Q, staticRenderFns: __vue_staticRenderFns__$Q },
+    __vue_inject_styles__$Q,
+    __vue_script__$Q,
+    __vue_scope_id__$Q,
+    __vue_is_functional_template__$Q,
+    __vue_module_identifier__$Q,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var CoapEventSourceDialog = /** @class */ (function (_super) {
-    __extends(CoapEventSourceDialog, _super);
-    function CoapEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let CoapEventSourceDialog = class CoapEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(CoapEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    CoapEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.server.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.server.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    CoapEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.server) {
-            this.$refs.server.reset();
+    reset() {
+        if (this.server) {
+            this.server.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    CoapEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.server) {
-            this.$refs.server.load(config.configuration);
+        if (this.server) {
+            this.server.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    CoapEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.server.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.server.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], CoapEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], CoapEventSourceDialog.prototype, "idsInUse", void 0);
-    CoapEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                CoapServerFields: __vue_component__$N
-            }
-        })
-    ], CoapEventSourceDialog);
-    return CoapEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], CoapEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], CoapEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], CoapEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$Q)
+], CoapEventSourceDialog.prototype, "server", void 0);
+CoapEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            CoapServerFields: __vue_component__$Q
+        }
+    })
+], CoapEventSourceDialog);
+var script$R = CoapEventSourceDialog;
 
 /* script */
-const __vue_script__$O = CoapEventSourceDialog;
+const __vue_script__$R = script$R;
 
 /* template */
-var __vue_render__$O = function() {
+var __vue_render__$R = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8528,17 +8688,17 @@ var __vue_render__$O = function() {
     2
   )
 };
-var __vue_staticRenderFns__$O = [];
-__vue_render__$O._withStripped = true;
+var __vue_staticRenderFns__$R = [];
+__vue_render__$R._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$O = undefined;
+  const __vue_inject_styles__$R = undefined;
   /* scoped */
-  const __vue_scope_id__$O = undefined;
+  const __vue_scope_id__$R = undefined;
   /* module identifier */
-  const __vue_module_identifier__$O = undefined;
+  const __vue_module_identifier__$R = undefined;
   /* functional template */
-  const __vue_is_functional_template__$O = false;
+  const __vue_is_functional_template__$R = false;
   /* style inject */
   
   /* style inject SSR */
@@ -8547,56 +8707,58 @@ __vue_render__$O._withStripped = true;
   
 
   
-  const __vue_component__$O = normalizeComponent(
-    { render: __vue_render__$O, staticRenderFns: __vue_staticRenderFns__$O },
-    __vue_inject_styles__$O,
-    __vue_script__$O,
-    __vue_scope_id__$O,
-    __vue_is_functional_template__$O,
-    __vue_module_identifier__$O,
+  const __vue_component__$R = normalizeComponent(
+    { render: __vue_render__$R, staticRenderFns: __vue_staticRenderFns__$R },
+    __vue_inject_styles__$R,
+    __vue_script__$R,
+    __vue_scope_id__$R,
+    __vue_is_functional_template__$R,
+    __vue_module_identifier__$R,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var CoapEventSourceCreateDialog = /** @class */ (function (_super) {
-    __extends(CoapEventSourceCreateDialog, _super);
-    function CoapEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let CoapEventSourceCreateDialog = class CoapEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    CoapEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    CoapEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceCreateDialog.prototype, "tenantId", void 0);
-    CoapEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CoapEventSourceDialog: __vue_component__$O
-            }
-        })
-    ], CoapEventSourceCreateDialog);
-    return CoapEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$R)
+], CoapEventSourceCreateDialog.prototype, "dialog", void 0);
+CoapEventSourceCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CoapEventSourceDialog: __vue_component__$R
+        }
+    })
+], CoapEventSourceCreateDialog);
+var script$S = CoapEventSourceCreateDialog;
 
 /* script */
-const __vue_script__$P = CoapEventSourceCreateDialog;
+const __vue_script__$S = script$S;
 
 /* template */
-var __vue_render__$P = function() {
+var __vue_render__$S = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8613,80 +8775,82 @@ var __vue_render__$P = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$P = [];
-__vue_render__$P._withStripped = true;
+var __vue_staticRenderFns__$S = [];
+__vue_render__$S._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$P = function (inject) {
+  const __vue_inject_styles__$S = function (inject) {
     if (!inject) return
-    inject("data-v-d962d522_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-a87ba9f8_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$P = "data-v-d962d522";
+  const __vue_scope_id__$S = "data-v-a87ba9f8";
   /* module identifier */
-  const __vue_module_identifier__$P = undefined;
+  const __vue_module_identifier__$S = undefined;
   /* functional template */
-  const __vue_is_functional_template__$P = false;
+  const __vue_is_functional_template__$S = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$P = normalizeComponent(
-    { render: __vue_render__$P, staticRenderFns: __vue_staticRenderFns__$P },
-    __vue_inject_styles__$P,
-    __vue_script__$P,
-    __vue_scope_id__$P,
-    __vue_is_functional_template__$P,
-    __vue_module_identifier__$P,
+  const __vue_component__$S = normalizeComponent(
+    { render: __vue_render__$S, staticRenderFns: __vue_staticRenderFns__$S },
+    __vue_inject_styles__$S,
+    __vue_script__$S,
+    __vue_scope_id__$S,
+    __vue_is_functional_template__$S,
+    __vue_module_identifier__$S,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var CoapEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(CoapEventSourceUpdateDialog, _super);
-    function CoapEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let CoapEventSourceUpdateDialog = class CoapEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    CoapEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    CoapEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], CoapEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    CoapEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                CoapEventSourceDialog: __vue_component__$O
-            }
-        })
-    ], CoapEventSourceUpdateDialog);
-    return CoapEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], CoapEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$R)
+], CoapEventSourceUpdateDialog.prototype, "dialog", void 0);
+CoapEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            CoapEventSourceDialog: __vue_component__$R
+        }
+    })
+], CoapEventSourceUpdateDialog);
+var script$T = CoapEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$Q = CoapEventSourceUpdateDialog;
+const __vue_script__$T = script$T;
 
 /* template */
-var __vue_render__$Q = function() {
+var __vue_render__$T = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -8703,56 +8867,54 @@ var __vue_render__$Q = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$Q = [];
-__vue_render__$Q._withStripped = true;
+var __vue_staticRenderFns__$T = [];
+__vue_render__$T._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$Q = function (inject) {
+  const __vue_inject_styles__$T = function (inject) {
     if (!inject) return
-    inject("data-v-7c740a2c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-95249282_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"CoapEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$Q = "data-v-7c740a2c";
+  const __vue_scope_id__$T = "data-v-95249282";
   /* module identifier */
-  const __vue_module_identifier__$Q = undefined;
+  const __vue_module_identifier__$T = undefined;
   /* functional template */
-  const __vue_is_functional_template__$Q = false;
+  const __vue_is_functional_template__$T = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$Q = normalizeComponent(
-    { render: __vue_render__$Q, staticRenderFns: __vue_staticRenderFns__$Q },
-    __vue_inject_styles__$Q,
-    __vue_script__$Q,
-    __vue_scope_id__$Q,
-    __vue_is_functional_template__$Q,
-    __vue_module_identifier__$Q,
+  const __vue_component__$T = normalizeComponent(
+    { render: __vue_render__$T, staticRenderFns: __vue_staticRenderFns__$T },
+    __vue_inject_styles__$T,
+    __vue_script__$T,
+    __vue_scope_id__$T,
+    __vue_is_functional_template__$T,
+    __vue_module_identifier__$T,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var EventHubFields = /** @class */ (function (_super) {
-    __extends(EventHubFields, _super);
-    function EventHubFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.consumerGroupName = "";
-        _this.namespaceName = "";
-        _this.eventHubName = "";
-        _this.sasKeyName = "";
-        _this.sasKey = "";
-        _this.storageConnectionString = "";
-        _this.storageContainerName = "";
-        _this.hostNamePrefix = "";
-        return _this;
+let EventHubFields = class EventHubFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.consumerGroupName = "";
+        this.namespaceName = "";
+        this.eventHubName = "";
+        this.sasKeyName = "";
+        this.sasKey = "";
+        this.storageConnectionString = "";
+        this.storageContainerName = "";
+        this.hostNamePrefix = "";
     }
     /** Reset section content */
-    EventHubFields.prototype.reset = function () {
+    reset() {
         this.consumerGroupName = "";
         this.namespaceName = "";
         this.eventHubName = "";
@@ -8762,14 +8924,14 @@ var EventHubFields = /** @class */ (function (_super) {
         this.storageContainerName = "";
         this.hostNamePrefix = "";
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    EventHubFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    EventHubFields.prototype.load = function (input) {
+    load(input) {
         this.consumerGroupName = input.consumerGroupName || "";
         this.namespaceName = input.namespaceName || "";
         this.eventHubName = input.eventHubName || "";
@@ -8778,9 +8940,9 @@ var EventHubFields = /** @class */ (function (_super) {
         this.storageConnectionString = input.storageConnectionString || "";
         this.storageContainerName = input.storageContainerName || "";
         this.hostNamePrefix = input.hostNamePrefix || "";
-    };
+    }
     /** Save form data to an object */
-    EventHubFields.prototype.save = function () {
+    save() {
         return {
             consumerGroupName: this.consumerGroupName,
             namespaceName: this.namespaceName,
@@ -8791,45 +8953,45 @@ var EventHubFields = /** @class */ (function (_super) {
             storageContainerName: this.storageContainerName,
             hostNamePrefix: this.hostNamePrefix
         };
-    };
-    EventHubFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                consumerGroupName: {
-                    required: validators_1
-                },
-                namespaceName: {
-                    required: validators_1
-                },
-                eventHubName: {
-                    required: validators_1
-                },
-                sasKeyName: {
-                    required: validators_1
-                },
-                sasKey: {
-                    required: validators_1
-                },
-                storageConnectionString: {
-                    required: validators_1
-                },
-                storageContainerName: {
-                    required: validators_1
-                },
-                hostNamePrefix: {
-                    required: validators_1
-                }
+    }
+};
+EventHubFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            consumerGroupName: {
+                required: validators_1
+            },
+            namespaceName: {
+                required: validators_1
+            },
+            eventHubName: {
+                required: validators_1
+            },
+            sasKeyName: {
+                required: validators_1
+            },
+            sasKey: {
+                required: validators_1
+            },
+            storageConnectionString: {
+                required: validators_1
+            },
+            storageContainerName: {
+                required: validators_1
+            },
+            hostNamePrefix: {
+                required: validators_1
             }
-        })
-    ], EventHubFields);
-    return EventHubFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], EventHubFields);
+var script$U = EventHubFields;
 
 /* script */
-const __vue_script__$R = EventHubFields;
+const __vue_script__$U = script$U;
 
 /* template */
-var __vue_render__$R = function() {
+var __vue_render__$U = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -9091,17 +9253,17 @@ var __vue_render__$R = function() {
     1
   )
 };
-var __vue_staticRenderFns__$R = [];
-__vue_render__$R._withStripped = true;
+var __vue_staticRenderFns__$U = [];
+__vue_render__$U._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$R = undefined;
+  const __vue_inject_styles__$U = undefined;
   /* scoped */
-  const __vue_scope_id__$R = undefined;
+  const __vue_scope_id__$U = undefined;
   /* module identifier */
-  const __vue_module_identifier__$R = undefined;
+  const __vue_module_identifier__$U = undefined;
   /* functional template */
-  const __vue_is_functional_template__$R = false;
+  const __vue_is_functional_template__$U = false;
   /* style inject */
   
   /* style inject SSR */
@@ -9110,110 +9272,110 @@ __vue_render__$R._withStripped = true;
   
 
   
-  const __vue_component__$R = normalizeComponent(
-    { render: __vue_render__$R, staticRenderFns: __vue_staticRenderFns__$R },
-    __vue_inject_styles__$R,
-    __vue_script__$R,
-    __vue_scope_id__$R,
-    __vue_is_functional_template__$R,
-    __vue_module_identifier__$R,
+  const __vue_component__$U = normalizeComponent(
+    { render: __vue_render__$U, staticRenderFns: __vue_staticRenderFns__$U },
+    __vue_inject_styles__$U,
+    __vue_script__$U,
+    __vue_scope_id__$U,
+    __vue_is_functional_template__$U,
+    __vue_module_identifier__$U,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var EventHubEventSourceDialog = /** @class */ (function (_super) {
-    __extends(EventHubEventSourceDialog, _super);
-    function EventHubEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let EventHubEventSourceDialog = class EventHubEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(EventHubEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    EventHubEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.connection.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.connection.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    EventHubEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.connection) {
-            this.$refs.connection.reset();
+    reset() {
+        if (this.connection) {
+            this.connection.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    EventHubEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.connection) {
-            this.$refs.connection.load(config.configuration);
+        if (this.connection) {
+            this.connection.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    EventHubEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.connection.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.connection.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], EventHubEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], EventHubEventSourceDialog.prototype, "idsInUse", void 0);
-    EventHubEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                EventHubFields: __vue_component__$R
-            }
-        })
-    ], EventHubEventSourceDialog);
-    return EventHubEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], EventHubEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], EventHubEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], EventHubEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$U)
+], EventHubEventSourceDialog.prototype, "connection", void 0);
+EventHubEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            EventHubFields: __vue_component__$U
+        }
+    })
+], EventHubEventSourceDialog);
+var script$V = EventHubEventSourceDialog;
 
 /* script */
-const __vue_script__$S = EventHubEventSourceDialog;
+const __vue_script__$V = script$V;
 
 /* template */
-var __vue_render__$S = function() {
+var __vue_render__$V = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -9263,17 +9425,17 @@ var __vue_render__$S = function() {
     2
   )
 };
-var __vue_staticRenderFns__$S = [];
-__vue_render__$S._withStripped = true;
+var __vue_staticRenderFns__$V = [];
+__vue_render__$V._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$S = undefined;
+  const __vue_inject_styles__$V = undefined;
   /* scoped */
-  const __vue_scope_id__$S = undefined;
+  const __vue_scope_id__$V = undefined;
   /* module identifier */
-  const __vue_module_identifier__$S = undefined;
+  const __vue_module_identifier__$V = undefined;
   /* functional template */
-  const __vue_is_functional_template__$S = false;
+  const __vue_is_functional_template__$V = false;
   /* style inject */
   
   /* style inject SSR */
@@ -9282,56 +9444,58 @@ __vue_render__$S._withStripped = true;
   
 
   
-  const __vue_component__$S = normalizeComponent(
-    { render: __vue_render__$S, staticRenderFns: __vue_staticRenderFns__$S },
-    __vue_inject_styles__$S,
-    __vue_script__$S,
-    __vue_scope_id__$S,
-    __vue_is_functional_template__$S,
-    __vue_module_identifier__$S,
+  const __vue_component__$V = normalizeComponent(
+    { render: __vue_render__$V, staticRenderFns: __vue_staticRenderFns__$V },
+    __vue_inject_styles__$V,
+    __vue_script__$V,
+    __vue_scope_id__$V,
+    __vue_is_functional_template__$V,
+    __vue_module_identifier__$V,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var EventHubEventSourceCreateDialog = /** @class */ (function (_super) {
-    __extends(EventHubEventSourceCreateDialog, _super);
-    function EventHubEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let EventHubEventSourceCreateDialog = class EventHubEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    EventHubEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    EventHubEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceCreateDialog.prototype, "tenantId", void 0);
-    EventHubEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventHubEventSourceDialog: __vue_component__$S
-            }
-        })
-    ], EventHubEventSourceCreateDialog);
-    return EventHubEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$V)
+], EventHubEventSourceCreateDialog.prototype, "dialog", void 0);
+EventHubEventSourceCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventHubEventSourceDialog: __vue_component__$V
+        }
+    })
+], EventHubEventSourceCreateDialog);
+var script$W = EventHubEventSourceCreateDialog;
 
 /* script */
-const __vue_script__$T = EventHubEventSourceCreateDialog;
+const __vue_script__$W = script$W;
 
 /* template */
-var __vue_render__$T = function() {
+var __vue_render__$W = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -9348,80 +9512,82 @@ var __vue_render__$T = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$T = [];
-__vue_render__$T._withStripped = true;
+var __vue_staticRenderFns__$W = [];
+__vue_render__$W._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$T = function (inject) {
+  const __vue_inject_styles__$W = function (inject) {
     if (!inject) return
-    inject("data-v-69f53158_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventHubEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-3ad9ef03_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventHubEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$T = "data-v-69f53158";
+  const __vue_scope_id__$W = "data-v-3ad9ef03";
   /* module identifier */
-  const __vue_module_identifier__$T = undefined;
+  const __vue_module_identifier__$W = undefined;
   /* functional template */
-  const __vue_is_functional_template__$T = false;
+  const __vue_is_functional_template__$W = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$T = normalizeComponent(
-    { render: __vue_render__$T, staticRenderFns: __vue_staticRenderFns__$T },
-    __vue_inject_styles__$T,
-    __vue_script__$T,
-    __vue_scope_id__$T,
-    __vue_is_functional_template__$T,
-    __vue_module_identifier__$T,
+  const __vue_component__$W = normalizeComponent(
+    { render: __vue_render__$W, staticRenderFns: __vue_staticRenderFns__$W },
+    __vue_inject_styles__$W,
+    __vue_script__$W,
+    __vue_scope_id__$W,
+    __vue_is_functional_template__$W,
+    __vue_module_identifier__$W,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var EventHubEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(EventHubEventSourceUpdateDialog, _super);
-    function EventHubEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let EventHubEventSourceUpdateDialog = class EventHubEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    EventHubEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    EventHubEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventHubEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    EventHubEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventHubEventSourceDialog: __vue_component__$S
-            }
-        })
-    ], EventHubEventSourceUpdateDialog);
-    return EventHubEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventHubEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$V)
+], EventHubEventSourceUpdateDialog.prototype, "dialog", void 0);
+EventHubEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventHubEventSourceDialog: __vue_component__$V
+        }
+    })
+], EventHubEventSourceUpdateDialog);
+var script$X = EventHubEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$U = EventHubEventSourceUpdateDialog;
+const __vue_script__$X = script$X;
 
 /* template */
-var __vue_render__$U = function() {
+var __vue_render__$X = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -9438,51 +9604,50 @@ var __vue_render__$U = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$U = [];
-__vue_render__$U._withStripped = true;
+var __vue_staticRenderFns__$X = [];
+__vue_render__$X._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$U = function (inject) {
+  const __vue_inject_styles__$X = function (inject) {
     if (!inject) return
-    inject("data-v-159c6767_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventHubEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-767e548c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventHubEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$U = "data-v-159c6767";
+  const __vue_scope_id__$X = "data-v-767e548c";
   /* module identifier */
-  const __vue_module_identifier__$U = undefined;
+  const __vue_module_identifier__$X = undefined;
   /* functional template */
-  const __vue_is_functional_template__$U = false;
+  const __vue_is_functional_template__$X = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$U = normalizeComponent(
-    { render: __vue_render__$U, staticRenderFns: __vue_staticRenderFns__$U },
-    __vue_inject_styles__$U,
-    __vue_script__$U,
-    __vue_scope_id__$U,
-    __vue_is_functional_template__$U,
-    __vue_module_identifier__$U,
+  const __vue_component__$X = normalizeComponent(
+    { render: __vue_render__$X, staticRenderFns: __vue_staticRenderFns__$X },
+    __vue_inject_styles__$X,
+    __vue_script__$X,
+    __vue_scope_id__$X,
+    __vue_is_functional_template__$X,
+    __vue_module_identifier__$X,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var MqttConnectionFields$1 = /** @class */ (function (_super) {
-    __extends(MqttConnectionFields, _super);
-    function MqttConnectionFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.protocol = "tcp";
-        _this.hostname = null;
-        _this.port = 1883;
-        _this.topic = null;
-        _this.qos = 1;
-        _this.numThreads = 3;
-        _this.protocols = [
+let MqttConnectionFields$1 = class MqttConnectionFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.protocol = "tcp";
+        this.hostname = null;
+        this.port = 1883;
+        this.topic = null;
+        this.qos = 1;
+        this.numThreads = 3;
+        this.protocols = [
             {
                 text: "TCP",
                 value: "tcp"
@@ -9492,7 +9657,7 @@ var MqttConnectionFields$1 = /** @class */ (function (_super) {
                 value: "tls"
             }
         ];
-        _this.qosValues = [
+        this.qosValues = [
             {
                 text: "0 - At Most Once",
                 value: 0
@@ -9506,10 +9671,9 @@ var MqttConnectionFields$1 = /** @class */ (function (_super) {
                 value: 3
             }
         ];
-        return _this;
     }
     /** Reset section content */
-    MqttConnectionFields.prototype.reset = function () {
+    reset() {
         this.protocol = "tcp";
         this.hostname = null;
         this.port = 1883;
@@ -9517,23 +9681,23 @@ var MqttConnectionFields$1 = /** @class */ (function (_super) {
         this.qos = 0;
         this.numThreads = 3;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    MqttConnectionFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    MqttConnectionFields.prototype.load = function (input) {
+    load(input) {
         this.protocol = input.protocol || "tcp";
         this.hostname = input.hostname;
         this.port = input.port || 1883;
         this.topic = input.topic;
         this.qos = input.qos || 0;
         this.numThreads = input.numThreads || 3;
-    };
+    }
     /** Save form data to an object */
-    MqttConnectionFields.prototype.save = function () {
+    save() {
         return {
             protocol: this.protocol,
             hostname: this.hostname || "",
@@ -9542,39 +9706,39 @@ var MqttConnectionFields$1 = /** @class */ (function (_super) {
             qos: this.qos,
             numThreads: this.numThreads
         };
-    };
-    MqttConnectionFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                protocol: {
-                    required: validators_1
-                },
-                hostname: {
-                    required: validators_1
-                },
-                port: {
-                    required: validators_1
-                },
-                topic: {
-                    required: validators_1
-                },
-                qos: {
-                    required: validators_1
-                },
-                numThreads: {
-                    required: validators_1
-                }
+    }
+};
+MqttConnectionFields$1 = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            protocol: {
+                required: validators_1
+            },
+            hostname: {
+                required: validators_1
+            },
+            port: {
+                required: validators_1
+            },
+            topic: {
+                required: validators_1
+            },
+            qos: {
+                required: validators_1
+            },
+            numThreads: {
+                required: validators_1
             }
-        })
-    ], MqttConnectionFields);
-    return MqttConnectionFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], MqttConnectionFields$1);
+var script$Y = MqttConnectionFields$1;
 
 /* script */
-const __vue_script__$V = MqttConnectionFields$1;
+const __vue_script__$Y = script$Y;
 
 /* template */
-var __vue_render__$V = function() {
+var __vue_render__$Y = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -9762,17 +9926,17 @@ var __vue_render__$V = function() {
     1
   )
 };
-var __vue_staticRenderFns__$V = [];
-__vue_render__$V._withStripped = true;
+var __vue_staticRenderFns__$Y = [];
+__vue_render__$Y._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$V = undefined;
+  const __vue_inject_styles__$Y = undefined;
   /* scoped */
-  const __vue_scope_id__$V = undefined;
+  const __vue_scope_id__$Y = undefined;
   /* module identifier */
-  const __vue_module_identifier__$V = undefined;
+  const __vue_module_identifier__$Y = undefined;
   /* functional template */
-  const __vue_is_functional_template__$V = false;
+  const __vue_is_functional_template__$Y = false;
   /* style inject */
   
   /* style inject SSR */
@@ -9781,35 +9945,33 @@ __vue_render__$V._withStripped = true;
   
 
   
-  const __vue_component__$V = normalizeComponent(
-    { render: __vue_render__$V, staticRenderFns: __vue_staticRenderFns__$V },
-    __vue_inject_styles__$V,
-    __vue_script__$V,
-    __vue_scope_id__$V,
-    __vue_is_functional_template__$V,
-    __vue_module_identifier__$V,
+  const __vue_component__$Y = normalizeComponent(
+    { render: __vue_render__$Y, staticRenderFns: __vue_staticRenderFns__$Y },
+    __vue_inject_styles__$Y,
+    __vue_script__$Y,
+    __vue_scope_id__$Y,
+    __vue_is_functional_template__$Y,
+    __vue_module_identifier__$Y,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttAuthenticationFields$1 = /** @class */ (function (_super) {
-    __extends(MqttAuthenticationFields, _super);
-    function MqttAuthenticationFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.username = null;
-        _this.password = null;
-        _this.clientId = null;
-        _this.cleanSession = null;
-        _this.trustStorePath = null;
-        _this.trustStorePassword = null;
-        _this.keyStorePath = null;
-        _this.keyStorePassword = null;
-        return _this;
+let MqttAuthenticationFields$1 = class MqttAuthenticationFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.username = null;
+        this.password = null;
+        this.clientId = null;
+        this.cleanSession = null;
+        this.trustStorePath = null;
+        this.trustStorePassword = null;
+        this.keyStorePath = null;
+        this.keyStorePassword = null;
     }
     /** Reset section content */
-    MqttAuthenticationFields.prototype.reset = function () {
+    reset() {
         this.username = null;
         this.password = null;
         this.clientId = null;
@@ -9819,23 +9981,23 @@ var MqttAuthenticationFields$1 = /** @class */ (function (_super) {
         this.keyStorePath = null;
         this.keyStorePassword = null;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    MqttAuthenticationFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    MqttAuthenticationFields.prototype.load = function (input) {
+    load(input) {
         this.username = input.username;
         this.password = input.password;
         this.trustStorePath = input.trustStorePath;
         this.trustStorePassword = input.trustStorePassword;
         this.keyStorePath = input.keyStorePath;
         this.keyStorePassword = input.keyStorePassword;
-    };
+    }
     /** Save form data to an object */
-    MqttAuthenticationFields.prototype.save = function () {
+    save() {
         return {
             username: this.username || "",
             password: this.password || "",
@@ -9844,18 +10006,18 @@ var MqttAuthenticationFields$1 = /** @class */ (function (_super) {
             keyStorePath: this.keyStorePath || "",
             keyStorePassword: this.keyStorePassword || ""
         };
-    };
-    MqttAuthenticationFields = __decorate([
-        sitewhereIdeCommon.Component({})
-    ], MqttAuthenticationFields);
-    return MqttAuthenticationFields;
-}(sitewhereIdeCommon.DialogSection));
+    }
+};
+MqttAuthenticationFields$1 = __decorate([
+    vuePropertyDecorator.Component({})
+], MqttAuthenticationFields$1);
+var script$Z = MqttAuthenticationFields$1;
 
 /* script */
-const __vue_script__$W = MqttAuthenticationFields$1;
+const __vue_script__$Z = script$Z;
 
 /* template */
-var __vue_render__$W = function() {
+var __vue_render__$Z = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10003,17 +10165,17 @@ var __vue_render__$W = function() {
     1
   )
 };
-var __vue_staticRenderFns__$W = [];
-__vue_render__$W._withStripped = true;
+var __vue_staticRenderFns__$Z = [];
+__vue_render__$Z._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$W = undefined;
+  const __vue_inject_styles__$Z = undefined;
   /* scoped */
-  const __vue_scope_id__$W = undefined;
+  const __vue_scope_id__$Z = undefined;
   /* module identifier */
-  const __vue_module_identifier__$W = undefined;
+  const __vue_module_identifier__$Z = undefined;
   /* functional template */
-  const __vue_is_functional_template__$W = false;
+  const __vue_is_functional_template__$Z = false;
   /* style inject */
   
   /* style inject SSR */
@@ -10022,122 +10184,126 @@ __vue_render__$W._withStripped = true;
   
 
   
-  const __vue_component__$W = normalizeComponent(
-    { render: __vue_render__$W, staticRenderFns: __vue_staticRenderFns__$W },
-    __vue_inject_styles__$W,
-    __vue_script__$W,
-    __vue_scope_id__$W,
-    __vue_is_functional_template__$W,
-    __vue_module_identifier__$W,
+  const __vue_component__$Z = normalizeComponent(
+    { render: __vue_render__$Z, staticRenderFns: __vue_staticRenderFns__$Z },
+    __vue_inject_styles__$Z,
+    __vue_script__$Z,
+    __vue_scope_id__$Z,
+    __vue_is_functional_template__$Z,
+    __vue_module_identifier__$Z,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttEventSourceDialog = /** @class */ (function (_super) {
-    __extends(MqttEventSourceDialog, _super);
-    function MqttEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let MqttEventSourceDialog = class MqttEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(MqttEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    MqttEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.connection.save());
-        Object.assign(config, this.$refs.authentication.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.connection.save());
+        Object.assign(config, this.authentication.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    MqttEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.connection) {
-            this.$refs.connection.reset();
+    reset() {
+        if (this.connection) {
+            this.connection.reset();
         }
-        if (this.$refs.authentication) {
-            this.$refs.authentication.reset();
+        if (this.authentication) {
+            this.authentication.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    MqttEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.connection) {
-            this.$refs.connection.load(config.configuration);
+        if (this.connection) {
+            this.connection.load(config.configuration);
         }
-        if (this.$refs.authentication) {
-            this.$refs.authentication.load(config.configuration);
+        if (this.authentication) {
+            this.authentication.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    MqttEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.connection.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.connection.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
-        if (!this.$refs.authentication.validate()) {
-            this.$refs.dialog.setActiveTab(1);
+        if (!this.authentication.validate()) {
+            this.dialog.setActiveTab(1);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], MqttEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], MqttEventSourceDialog.prototype, "idsInUse", void 0);
-    MqttEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                MqttConnectionFields: __vue_component__$V,
-                MqttAuthenticationFields: __vue_component__$W
-            }
-        })
-    ], MqttEventSourceDialog);
-    return MqttEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], MqttEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], MqttEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], MqttEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$Y)
+], MqttEventSourceDialog.prototype, "connection", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$Z)
+], MqttEventSourceDialog.prototype, "authentication", void 0);
+MqttEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            MqttConnectionFields: __vue_component__$Y,
+            MqttAuthenticationFields: __vue_component__$Z
+        }
+    })
+], MqttEventSourceDialog);
+var script$_ = MqttEventSourceDialog;
 
 /* script */
-const __vue_script__$X = MqttEventSourceDialog;
+const __vue_script__$_ = script$_;
 
 /* template */
-var __vue_render__$X = function() {
+var __vue_render__$_ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10198,17 +10364,17 @@ var __vue_render__$X = function() {
     2
   )
 };
-var __vue_staticRenderFns__$X = [];
-__vue_render__$X._withStripped = true;
+var __vue_staticRenderFns__$_ = [];
+__vue_render__$_._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$X = undefined;
+  const __vue_inject_styles__$_ = undefined;
   /* scoped */
-  const __vue_scope_id__$X = undefined;
+  const __vue_scope_id__$_ = undefined;
   /* module identifier */
-  const __vue_module_identifier__$X = undefined;
+  const __vue_module_identifier__$_ = undefined;
   /* functional template */
-  const __vue_is_functional_template__$X = false;
+  const __vue_is_functional_template__$_ = false;
   /* style inject */
   
   /* style inject SSR */
@@ -10217,56 +10383,58 @@ __vue_render__$X._withStripped = true;
   
 
   
-  const __vue_component__$X = normalizeComponent(
-    { render: __vue_render__$X, staticRenderFns: __vue_staticRenderFns__$X },
-    __vue_inject_styles__$X,
-    __vue_script__$X,
-    __vue_scope_id__$X,
-    __vue_is_functional_template__$X,
-    __vue_module_identifier__$X,
+  const __vue_component__$_ = normalizeComponent(
+    { render: __vue_render__$_, staticRenderFns: __vue_staticRenderFns__$_ },
+    __vue_inject_styles__$_,
+    __vue_script__$_,
+    __vue_scope_id__$_,
+    __vue_is_functional_template__$_,
+    __vue_module_identifier__$_,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var MqttEventSourceCreateDialog = /** @class */ (function (_super) {
-    __extends(MqttEventSourceCreateDialog, _super);
-    function MqttEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let MqttEventSourceCreateDialog = class MqttEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    MqttEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    MqttEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceCreateDialog.prototype, "tenantId", void 0);
-    MqttEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                MqttEventSourceDialog: __vue_component__$X
-            }
-        })
-    ], MqttEventSourceCreateDialog);
-    return MqttEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$_)
+], MqttEventSourceCreateDialog.prototype, "dialog", void 0);
+MqttEventSourceCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            MqttEventSourceDialog: __vue_component__$_
+        }
+    })
+], MqttEventSourceCreateDialog);
+var script$$ = MqttEventSourceCreateDialog;
 
 /* script */
-const __vue_script__$Y = MqttEventSourceCreateDialog;
+const __vue_script__$$ = script$$;
 
 /* template */
-var __vue_render__$Y = function() {
+var __vue_render__$$ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10283,80 +10451,82 @@ var __vue_render__$Y = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$Y = [];
-__vue_render__$Y._withStripped = true;
+var __vue_staticRenderFns__$$ = [];
+__vue_render__$$._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$Y = function (inject) {
+  const __vue_inject_styles__$$ = function (inject) {
     if (!inject) return
-    inject("data-v-00d7fb1e_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-80c23bc0_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$Y = "data-v-00d7fb1e";
+  const __vue_scope_id__$$ = "data-v-80c23bc0";
   /* module identifier */
-  const __vue_module_identifier__$Y = undefined;
+  const __vue_module_identifier__$$ = undefined;
   /* functional template */
-  const __vue_is_functional_template__$Y = false;
+  const __vue_is_functional_template__$$ = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$Y = normalizeComponent(
-    { render: __vue_render__$Y, staticRenderFns: __vue_staticRenderFns__$Y },
-    __vue_inject_styles__$Y,
-    __vue_script__$Y,
-    __vue_scope_id__$Y,
-    __vue_is_functional_template__$Y,
-    __vue_module_identifier__$Y,
+  const __vue_component__$$ = normalizeComponent(
+    { render: __vue_render__$$, staticRenderFns: __vue_staticRenderFns__$$ },
+    __vue_inject_styles__$$,
+    __vue_script__$$,
+    __vue_scope_id__$$,
+    __vue_is_functional_template__$$,
+    __vue_module_identifier__$$,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var MqttEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(MqttEventSourceUpdateDialog, _super);
-    function MqttEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let MqttEventSourceUpdateDialog = class MqttEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    MqttEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    MqttEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], MqttEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    MqttEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                MqttEventSourceDialog: __vue_component__$X
-            }
-        })
-    ], MqttEventSourceUpdateDialog);
-    return MqttEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], MqttEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$_)
+], MqttEventSourceUpdateDialog.prototype, "dialog", void 0);
+MqttEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            MqttEventSourceDialog: __vue_component__$_
+        }
+    })
+], MqttEventSourceUpdateDialog);
+var script$10 = MqttEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$Z = MqttEventSourceUpdateDialog;
+const __vue_script__$10 = script$10;
 
 /* template */
-var __vue_render__$Z = function() {
+var __vue_render__$10 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10373,105 +10543,103 @@ var __vue_render__$Z = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$Z = [];
-__vue_render__$Z._withStripped = true;
+var __vue_staticRenderFns__$10 = [];
+__vue_render__$10._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$Z = function (inject) {
+  const __vue_inject_styles__$10 = function (inject) {
     if (!inject) return
-    inject("data-v-56e96894_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-489c24fb_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"MqttEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$Z = "data-v-56e96894";
+  const __vue_scope_id__$10 = "data-v-489c24fb";
   /* module identifier */
-  const __vue_module_identifier__$Z = undefined;
+  const __vue_module_identifier__$10 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$Z = false;
+  const __vue_is_functional_template__$10 = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$Z = normalizeComponent(
-    { render: __vue_render__$Z, staticRenderFns: __vue_staticRenderFns__$Z },
-    __vue_inject_styles__$Z,
-    __vue_script__$Z,
-    __vue_scope_id__$Z,
-    __vue_is_functional_template__$Z,
-    __vue_module_identifier__$Z,
+  const __vue_component__$10 = normalizeComponent(
+    { render: __vue_render__$10, staticRenderFns: __vue_staticRenderFns__$10 },
+    __vue_inject_styles__$10,
+    __vue_script__$10,
+    __vue_scope_id__$10,
+    __vue_is_functional_template__$10,
+    __vue_module_identifier__$10,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var RabbitMqFields = /** @class */ (function (_super) {
-    __extends(RabbitMqFields, _super);
-    function RabbitMqFields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.connectionUri = "";
-        _this.queueName = "";
-        _this.numConsumers = 5;
-        _this.reconnectInterval = 10;
-        return _this;
+let RabbitMqFields = class RabbitMqFields extends SiteWhereIdeComponents.DialogSection {
+    constructor() {
+        super(...arguments);
+        this.connectionUri = "";
+        this.queueName = "";
+        this.numConsumers = 5;
+        this.reconnectInterval = 10;
     }
     /** Reset section content */
-    RabbitMqFields.prototype.reset = function () {
+    reset() {
         this.connectionUri = "";
         this.queueName = "";
         this.numConsumers = 5;
         this.reconnectInterval = 10;
         this.$v.$reset();
-    };
+    }
     /** Perform validation */
-    RabbitMqFields.prototype.validate = function () {
+    validate() {
         this.$v.$touch();
         return !this.$v.$invalid;
-    };
+    }
     /** Load form data from an object */
-    RabbitMqFields.prototype.load = function (input) {
+    load(input) {
         this.connectionUri = input.connectionUri || "";
         this.queueName = input.queueName || "";
         this.numConsumers = input.numConsumers || 5;
         this.reconnectInterval = input.reconnectInterval || 10;
-    };
+    }
     /** Save form data to an object */
-    RabbitMqFields.prototype.save = function () {
+    save() {
         return {
             connectionUri: this.connectionUri,
             queueName: this.queueName,
             numConsumers: this.numConsumers,
             reconnectInterval: this.reconnectInterval
         };
-    };
-    RabbitMqFields = __decorate([
-        sitewhereIdeCommon.Component({
-            validations: {
-                connectionUri: {
-                    required: validators_1
-                },
-                queueName: {
-                    required: validators_1
-                },
-                numConsumers: {
-                    required: validators_1
-                },
-                reconnectInterval: {
-                    required: validators_1
-                }
+    }
+};
+RabbitMqFields = __decorate([
+    vuePropertyDecorator.Component({
+        validations: {
+            connectionUri: {
+                required: validators_1
+            },
+            queueName: {
+                required: validators_1
+            },
+            numConsumers: {
+                required: validators_1
+            },
+            reconnectInterval: {
+                required: validators_1
             }
-        })
-    ], RabbitMqFields);
-    return RabbitMqFields;
-}(sitewhereIdeCommon.DialogSection));
+        }
+    })
+], RabbitMqFields);
+var script$11 = RabbitMqFields;
 
 /* script */
-const __vue_script__$_ = RabbitMqFields;
+const __vue_script__$11 = script$11;
 
 /* template */
-var __vue_render__$_ = function() {
+var __vue_render__$11 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10608,17 +10776,17 @@ var __vue_render__$_ = function() {
     1
   )
 };
-var __vue_staticRenderFns__$_ = [];
-__vue_render__$_._withStripped = true;
+var __vue_staticRenderFns__$11 = [];
+__vue_render__$11._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$_ = undefined;
+  const __vue_inject_styles__$11 = undefined;
   /* scoped */
-  const __vue_scope_id__$_ = undefined;
+  const __vue_scope_id__$11 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$_ = undefined;
+  const __vue_module_identifier__$11 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$_ = false;
+  const __vue_is_functional_template__$11 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -10627,110 +10795,110 @@ __vue_render__$_._withStripped = true;
   
 
   
-  const __vue_component__$_ = normalizeComponent(
-    { render: __vue_render__$_, staticRenderFns: __vue_staticRenderFns__$_ },
-    __vue_inject_styles__$_,
-    __vue_script__$_,
-    __vue_scope_id__$_,
-    __vue_is_functional_template__$_,
-    __vue_module_identifier__$_,
+  const __vue_component__$11 = normalizeComponent(
+    { render: __vue_render__$11, staticRenderFns: __vue_staticRenderFns__$11 },
+    __vue_inject_styles__$11,
+    __vue_script__$11,
+    __vue_scope_id__$11,
+    __vue_is_functional_template__$11,
+    __vue_module_identifier__$11,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var RabbitMqEventSourceDialog = /** @class */ (function (_super) {
-    __extends(RabbitMqEventSourceDialog, _super);
-    function RabbitMqEventSourceDialog() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let RabbitMqEventSourceDialog = class RabbitMqEventSourceDialog extends SiteWhereIdeComponents.DialogComponent {
+    /** Get icon for dialog */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(RabbitMqEventSourceDialog.prototype, "icon", {
-        /** Get icon for dialog */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
     /** Generate payload from UI */
-    RabbitMqEventSourceDialog.prototype.generatePayload = function () {
-        var config = {};
-        Object.assign(config, this.$refs.client.save());
-        var payload = {};
-        Object.assign(payload, this.$refs.dialog.save());
+    generatePayload() {
+        let config = {};
+        Object.assign(config, this.client.save());
+        let payload = {};
+        Object.assign(payload, this.dialog.save());
         payload.configuration = config;
         return payload;
-    };
+    }
     /** Reset dialog contents */
-    RabbitMqEventSourceDialog.prototype.reset = function () {
-        if (this.$refs.client) {
-            this.$refs.client.reset();
+    reset() {
+        if (this.client) {
+            this.client.reset();
         }
-        this.$refs.dialog.reset();
-    };
+        this.dialog.reset();
+    }
     /** Load dialog from a given configuration */
-    RabbitMqEventSourceDialog.prototype.load = function (config) {
+    load(config) {
         this.reset();
-        if (this.$refs.dialog) {
-            this.$refs.dialog.load(config);
+        if (this.dialog) {
+            this.dialog.load(config);
         }
-        if (this.$refs.client) {
-            this.$refs.client.load(config.configuration);
+        if (this.client) {
+            this.client.load(config.configuration);
         }
-    };
+    }
     /** Called after create button is clicked */
-    RabbitMqEventSourceDialog.prototype.onCreateClicked = function (e) {
-        if (!this.$refs.dialog.validate()) {
+    onCreateClicked(e) {
+        if (!this.dialog.validate()) {
             return;
         }
-        if (!this.$refs.client.validate()) {
-            this.$refs.dialog.setActiveTab(0);
+        if (!this.client.validate()) {
+            this.dialog.setActiveTab(0);
             return;
         }
         var payload = this.generatePayload();
         this.$emit("payload", payload);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceDialog.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceDialog.prototype, "title", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Number)
-    ], RabbitMqEventSourceDialog.prototype, "width", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceDialog.prototype, "createLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceDialog.prototype, "cancelLabel", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], RabbitMqEventSourceDialog.prototype, "idsInUse", void 0);
-    RabbitMqEventSourceDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                EventSourceDialog: __vue_component__$E,
-                RabbitMqFields: __vue_component__$_
-            }
-        })
-    ], RabbitMqEventSourceDialog);
-    return RabbitMqEventSourceDialog;
-}(sitewhereIdeCommon.DialogComponent));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceDialog.prototype, "title", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Number)
+], RabbitMqEventSourceDialog.prototype, "width", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceDialog.prototype, "createLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceDialog.prototype, "cancelLabel", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], RabbitMqEventSourceDialog.prototype, "idsInUse", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$H)
+], RabbitMqEventSourceDialog.prototype, "dialog", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$11)
+], RabbitMqEventSourceDialog.prototype, "client", void 0);
+RabbitMqEventSourceDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            EventSourceDialog: __vue_component__$H,
+            RabbitMqFields: __vue_component__$11
+        }
+    })
+], RabbitMqEventSourceDialog);
+var script$12 = RabbitMqEventSourceDialog;
 
 /* script */
-const __vue_script__$$ = RabbitMqEventSourceDialog;
+const __vue_script__$12 = script$12;
 
 /* template */
-var __vue_render__$$ = function() {
+var __vue_render__$12 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10780,17 +10948,17 @@ var __vue_render__$$ = function() {
     2
   )
 };
-var __vue_staticRenderFns__$$ = [];
-__vue_render__$$._withStripped = true;
+var __vue_staticRenderFns__$12 = [];
+__vue_render__$12._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$$ = undefined;
+  const __vue_inject_styles__$12 = undefined;
   /* scoped */
-  const __vue_scope_id__$$ = undefined;
+  const __vue_scope_id__$12 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$$ = undefined;
+  const __vue_module_identifier__$12 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$$ = false;
+  const __vue_is_functional_template__$12 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -10799,56 +10967,58 @@ __vue_render__$$._withStripped = true;
   
 
   
-  const __vue_component__$$ = normalizeComponent(
-    { render: __vue_render__$$, staticRenderFns: __vue_staticRenderFns__$$ },
-    __vue_inject_styles__$$,
-    __vue_script__$$,
-    __vue_scope_id__$$,
-    __vue_is_functional_template__$$,
-    __vue_module_identifier__$$,
+  const __vue_component__$12 = normalizeComponent(
+    { render: __vue_render__$12, staticRenderFns: __vue_staticRenderFns__$12 },
+    __vue_inject_styles__$12,
+    __vue_script__$12,
+    __vue_scope_id__$12,
+    __vue_is_functional_template__$12,
+    __vue_module_identifier__$12,
     false,
     undefined,
     undefined,
     undefined
   );
 
-var RabbitMqEventSourceCreateDialog = /** @class */ (function (_super) {
-    __extends(RabbitMqEventSourceCreateDialog, _super);
-    function RabbitMqEventSourceCreateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.idsInUse = [];
-        return _this;
+let RabbitMqEventSourceCreateDialog = class RabbitMqEventSourceCreateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.idsInUse = [];
     }
     /** Emit payload */
-    RabbitMqEventSourceCreateDialog.prototype.onPayload = function (payload) {
-        this.$refs.dialog.closeDialog();
+    onPayload(payload) {
+        this.dialog.closeDialog();
         this.$emit("create", payload);
-    };
+    }
     /** Open dialog */
-    RabbitMqEventSourceCreateDialog.prototype.openDialog = function (idsInUse) {
+    openDialog(idsInUse) {
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceCreateDialog.prototype, "tenantId", void 0);
-    RabbitMqEventSourceCreateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                RabbitMqEventSourceDialog: __vue_component__$$
-            }
-        })
-    ], RabbitMqEventSourceCreateDialog);
-    return RabbitMqEventSourceCreateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceCreateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$12)
+], RabbitMqEventSourceCreateDialog.prototype, "dialog", void 0);
+RabbitMqEventSourceCreateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            RabbitMqEventSourceDialog: __vue_component__$12
+        }
+    })
+], RabbitMqEventSourceCreateDialog);
+var script$13 = RabbitMqEventSourceCreateDialog;
 
 /* script */
-const __vue_script__$10 = RabbitMqEventSourceCreateDialog;
+const __vue_script__$13 = script$13;
 
 /* template */
-var __vue_render__$10 = function() {
+var __vue_render__$13 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10865,80 +11035,82 @@ var __vue_render__$10 = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$10 = [];
-__vue_render__$10._withStripped = true;
+var __vue_staticRenderFns__$13 = [];
+__vue_render__$13._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$10 = function (inject) {
+  const __vue_inject_styles__$13 = function (inject) {
     if (!inject) return
-    inject("data-v-b956c218_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"RabbitMqEventSourceCreateDialog.vue"}, media: undefined });
+    inject("data-v-b048adba_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"RabbitMqEventSourceCreateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$10 = "data-v-b956c218";
+  const __vue_scope_id__$13 = "data-v-b048adba";
   /* module identifier */
-  const __vue_module_identifier__$10 = undefined;
+  const __vue_module_identifier__$13 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$10 = false;
+  const __vue_is_functional_template__$13 = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$10 = normalizeComponent(
-    { render: __vue_render__$10, staticRenderFns: __vue_staticRenderFns__$10 },
-    __vue_inject_styles__$10,
-    __vue_script__$10,
-    __vue_scope_id__$10,
-    __vue_is_functional_template__$10,
-    __vue_module_identifier__$10,
+  const __vue_component__$13 = normalizeComponent(
+    { render: __vue_render__$13, staticRenderFns: __vue_staticRenderFns__$13 },
+    __vue_inject_styles__$13,
+    __vue_script__$13,
+    __vue_scope_id__$13,
+    __vue_is_functional_template__$13,
+    __vue_module_identifier__$13,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var RabbitMqEventSourceUpdateDialog = /** @class */ (function (_super) {
-    __extends(RabbitMqEventSourceUpdateDialog, _super);
-    function RabbitMqEventSourceUpdateDialog() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.originalId = null;
-        _this.idsInUse = [];
-        return _this;
+let RabbitMqEventSourceUpdateDialog = class RabbitMqEventSourceUpdateDialog extends Vue {
+    constructor() {
+        super(...arguments);
+        this.originalId = null;
+        this.idsInUse = [];
     }
     /** Emit payload */
-    RabbitMqEventSourceUpdateDialog.prototype.onPayload = function (config) {
-        this.$refs.dialog.closeDialog();
+    onPayload(config) {
+        this.dialog.closeDialog();
         this.$emit("update", this.originalId, config);
-    };
+    }
     /** Open dialog */
-    RabbitMqEventSourceUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+    openDialog(config, idsInUse) {
         this.originalId = config.id;
         this.idsInUse = idsInUse;
-        this.$refs.dialog.reset();
-        this.$refs.dialog.openDialog();
-        this.$refs.dialog.load(config);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], RabbitMqEventSourceUpdateDialog.prototype, "tenantId", void 0);
-    RabbitMqEventSourceUpdateDialog = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                RabbitMqEventSourceDialog: __vue_component__$$
-            }
-        })
-    ], RabbitMqEventSourceUpdateDialog);
-    return RabbitMqEventSourceUpdateDialog;
-}(Vue));
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], RabbitMqEventSourceUpdateDialog.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$12)
+], RabbitMqEventSourceUpdateDialog.prototype, "dialog", void 0);
+RabbitMqEventSourceUpdateDialog = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            RabbitMqEventSourceDialog: __vue_component__$12
+        }
+    })
+], RabbitMqEventSourceUpdateDialog);
+var script$14 = RabbitMqEventSourceUpdateDialog;
 
 /* script */
-const __vue_script__$11 = RabbitMqEventSourceUpdateDialog;
+const __vue_script__$14 = script$14;
 
 /* template */
-var __vue_render__$11 = function() {
+var __vue_render__$14 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -10955,108 +11127,102 @@ var __vue_render__$11 = function() {
     on: { payload: _vm.onPayload }
   })
 };
-var __vue_staticRenderFns__$11 = [];
-__vue_render__$11._withStripped = true;
+var __vue_staticRenderFns__$14 = [];
+__vue_render__$14._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$11 = function (inject) {
+  const __vue_inject_styles__$14 = function (inject) {
     if (!inject) return
-    inject("data-v-499c13fe_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"RabbitMqEventSourceUpdateDialog.vue"}, media: undefined });
+    inject("data-v-ab09920c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"RabbitMqEventSourceUpdateDialog.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$11 = "data-v-499c13fe";
+  const __vue_scope_id__$14 = "data-v-ab09920c";
   /* module identifier */
-  const __vue_module_identifier__$11 = undefined;
+  const __vue_module_identifier__$14 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$11 = false;
+  const __vue_is_functional_template__$14 = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$11 = normalizeComponent(
-    { render: __vue_render__$11, staticRenderFns: __vue_staticRenderFns__$11 },
-    __vue_inject_styles__$11,
-    __vue_script__$11,
-    __vue_scope_id__$11,
-    __vue_is_functional_template__$11,
-    __vue_module_identifier__$11,
+  const __vue_component__$14 = normalizeComponent(
+    { render: __vue_render__$14, staticRenderFns: __vue_staticRenderFns__$14 },
+    __vue_inject_styles__$14,
+    __vue_script__$14,
+    __vue_scope_id__$14,
+    __vue_is_functional_template__$14,
+    __vue_module_identifier__$14,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var EventSourcesTable = /** @class */ (function (_super) {
-    __extends(EventSourcesTable, _super);
-    function EventSourcesTable() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.headers = [
+let EventSourcesTable = class EventSourcesTable extends Vue {
+    constructor() {
+        super(...arguments);
+        this.headers = [
             { text: "Id", value: "id" },
             { text: "Type", value: "type" },
             { text: "Decoder", value: "decoder" },
             { text: "", value: "delete" }
         ];
         /** Event sources in format for display */
-        _this.eventSourcesAsSortedArray = [];
-        return _this;
+        this.eventSourcesAsSortedArray = [];
     }
-    EventSourcesTable.prototype.onEventSourcesUpdated = function (updated) {
+    onEventSourcesUpdated(updated) {
         this.calculateEventSourcesAsSortedArray();
-    };
-    Object.defineProperty(EventSourcesTable.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    }
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
+    }
     /** Get list of ids already in use */
-    EventSourcesTable.prototype.findIdsInUse = function (exclude) {
-        var ids = [];
+    findIdsInUse(exclude) {
+        let ids = [];
         if (this.eventSources) {
-            this.eventSources.forEach(function (source) {
+            this.eventSources.forEach(source => {
                 if (source.id != exclude) {
                     ids.push(source.id);
                 }
             });
         }
         return ids;
-    };
+    }
     /** Get event source index based on id */
-    EventSourcesTable.prototype.getEventSourceIndex = function (id) {
-        var match = null;
+    getEventSourceIndex(id) {
+        let match = null;
         if (this.eventSources) {
-            this.eventSources.forEach(function (source, index) {
+            this.eventSources.forEach((source, index) => {
                 if (source.id === id) {
                     match = index;
                 }
             });
         }
         return match;
-    };
+    }
     /** Get an event source by id */
-    EventSourcesTable.prototype.getEventSourceById = function (id) {
-        var index = this.getEventSourceIndex(id);
+    getEventSourceById(id) {
+        let index = this.getEventSourceIndex(id);
         if (this.eventSources && index != null) {
             return this.eventSources[index];
         }
         return null;
-    };
+    }
     /** Get event sources as a sorted array */
-    EventSourcesTable.prototype.calculateEventSourcesAsSortedArray = function () {
-        var all = [];
+    calculateEventSourcesAsSortedArray() {
+        let all = [];
         if (this.eventSources) {
-            this.eventSources.forEach(function (source) {
-                var meta = {};
+            this.eventSources.forEach(source => {
+                let meta = {};
                 meta.id = source.id;
                 meta.type = source.type;
                 meta.decoder = source.decoder;
-                var config = source.configuration;
-                var decoder = source.decoder;
+                let config = source.configuration;
+                let decoder = source.decoder;
                 all.push({ meta: meta, config: config, decoder: decoder });
             });
         }
@@ -11064,125 +11230,177 @@ var EventSourcesTable = /** @class */ (function (_super) {
             return a.meta.id.localeCompare(b.meta.id);
         });
         this.eventSourcesAsSortedArray = all;
-    };
+    }
     /** Add new event source */
-    EventSourcesTable.prototype.onAddEventSource = function () {
-        this.$refs.chooser.openChooser();
-    };
+    onAddEventSource() {
+        this.chooser.openChooser();
+    }
     /** Called to create a new event source based on type */
-    EventSourcesTable.prototype.onEventSourceCreate = function (id) {
-        var idsInUse = this.findIdsInUse();
+    onEventSourceCreate(id) {
+        let idsInUse = this.findIdsInUse();
         if (id == "activemq-broker") {
-            this.$refs.amqBrokerCreate.openDialog(idsInUse);
+            this.amqBrokerCreate.openDialog(idsInUse);
         }
         else if (id == "activemq-client") {
-            this.$refs.amqClientCreate.openDialog(idsInUse);
+            this.amqClientCreate.openDialog(idsInUse);
         }
         else if (id == "coap") {
-            this.$refs.coapCreate.openDialog(idsInUse);
+            this.coapCreate.openDialog(idsInUse);
         }
         else if (id == "eventhub") {
-            this.$refs.eventHubCreate.openDialog(idsInUse);
+            this.eventHubCreate.openDialog(idsInUse);
         }
         else if (id == "mqtt") {
-            this.$refs.mqttCreate.openDialog(idsInUse);
+            this.mqttCreate.openDialog(idsInUse);
         }
         else if (id == "rabbitmq") {
-            this.$refs.rabbitMqCreate.openDialog(idsInUse);
+            this.rabbitMqCreate.openDialog(idsInUse);
         }
-    };
+    }
     /** Called when event source is added */
-    EventSourcesTable.prototype.onEventSourceAdded = function (config) {
+    onEventSourceAdded(config) {
         if (this.eventSources) {
             this.eventSources.push(config);
             this.calculateEventSourcesAsSortedArray();
         }
         this.$emit("create", config);
-    };
+    }
     /** Open event source by id */
-    EventSourcesTable.prototype.onOpenEventSource = function (id) {
-        var config = this.getEventSourceById(id);
-        var idsInUse = this.findIdsInUse(id);
+    onOpenEventSource(id) {
+        let config = this.getEventSourceById(id);
+        let idsInUse = this.findIdsInUse(id);
         if (config) {
             if (config.type === "activemq-broker") {
-                this.$refs.amqBrokerUpdate.openDialog(config, idsInUse);
+                this.amqBrokerUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "activemq-client") {
-                this.$refs.amqClientUpdate.openDialog(config, idsInUse);
+                this.amqClientUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "coap") {
-                this.$refs.coapUpdate.openDialog(config, idsInUse);
+                this.coapUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "eventhub") {
-                this.$refs.eventHubUpdate.openDialog(config, idsInUse);
+                this.eventHubUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "mqtt") {
-                this.$refs.mqttUpdate.openDialog(config, idsInUse);
+                this.mqttUpdate.openDialog(config, idsInUse);
             }
             else if (config.type === "rabbitmq") {
-                this.$refs.rabbitMqUpdate.openDialog(config, idsInUse);
+                this.rabbitMqUpdate.openDialog(config, idsInUse);
             }
         }
-    };
+    }
     /** Called when event source is updated */
-    EventSourcesTable.prototype.onEventSourceUpdated = function (originalId, config) {
-        var index = this.getEventSourceIndex(originalId);
+    onEventSourceUpdated(originalId, config) {
+        let index = this.getEventSourceIndex(originalId);
         if (this.eventSources && index != null) {
             Vue.set(this.eventSources, index, config);
             this.calculateEventSourcesAsSortedArray();
         }
         this.$emit("update", originalId, config);
-    };
+    }
     /** Delete event source by id */
-    EventSourcesTable.prototype.onDeleteEventSource = function (id) {
-        var index = this.getEventSourceIndex(id);
+    onDeleteEventSource(id) {
+        let index = this.getEventSourceIndex(id);
         if (this.eventSources && index != null) {
             this.eventSources.splice(index);
             this.calculateEventSourcesAsSortedArray();
         }
         this.$emit("delete", id);
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", String)
-    ], EventSourcesTable.prototype, "tenantId", void 0);
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Array)
-    ], EventSourcesTable.prototype, "eventSources", void 0);
-    __decorate([
-        sitewhereIdeCommon.Watch("eventSources", { immediate: true }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], EventSourcesTable.prototype, "onEventSourcesUpdated", null);
-    EventSourcesTable = __decorate([
-        sitewhereIdeCommon.Component({
-            components: {
-                NewEventSourceChooser: __vue_component__$x,
-                ActiveMqBrokerEventSourceCreateDialog: __vue_component__$H,
-                ActiveMqBrokerEventSourceUpdateDialog: __vue_component__$I,
-                ActiveMqClientEventSourceCreateDialog: __vue_component__$L,
-                ActiveMqClientEventSourceUpdateDialog: __vue_component__$M,
-                CoapEventSourceCreateDialog: __vue_component__$P,
-                CoapEventSourceUpdateDialog: __vue_component__$Q,
-                EventHubEventSourceCreateDialog: __vue_component__$T,
-                EventHubEventSourceUpdateDialog: __vue_component__$U,
-                MqttEventSourceCreateDialog: __vue_component__$Y,
-                MqttEventSourceUpdateDialog: __vue_component__$Z,
-                RabbitMqEventSourceCreateDialog: __vue_component__$10,
-                RabbitMqEventSourceUpdateDialog: __vue_component__$11
-            }
-        })
-    ], EventSourcesTable);
-    return EventSourcesTable;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", String)
+], EventSourcesTable.prototype, "tenantId", void 0);
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Array)
+], EventSourcesTable.prototype, "eventSources", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$A)
+], EventSourcesTable.prototype, "chooser", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$A)
+], EventSourcesTable.prototype, "amqBrokerCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$L)
+], EventSourcesTable.prototype, "amqBrokerUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$O)
+], EventSourcesTable.prototype, "amqClientCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$P)
+], EventSourcesTable.prototype, "amqClientUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$S)
+], EventSourcesTable.prototype, "coapCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$T)
+], EventSourcesTable.prototype, "coapUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$W)
+], EventSourcesTable.prototype, "eventHubCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$X)
+], EventSourcesTable.prototype, "eventHubUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$$)
+], EventSourcesTable.prototype, "mqttCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$10)
+], EventSourcesTable.prototype, "mqttUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$13)
+], EventSourcesTable.prototype, "rabbitMqCreate", void 0);
+__decorate([
+    vuePropertyDecorator.Ref(),
+    __metadata("design:type", __vue_component__$14)
+], EventSourcesTable.prototype, "rabbitMqUpdate", void 0);
+__decorate([
+    vuePropertyDecorator.Watch("eventSources", { immediate: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], EventSourcesTable.prototype, "onEventSourcesUpdated", null);
+EventSourcesTable = __decorate([
+    vuePropertyDecorator.Component({
+        components: {
+            NewEventSourceChooser: __vue_component__$A,
+            ActiveMqBrokerEventSourceCreateDialog: __vue_component__$K,
+            ActiveMqBrokerEventSourceUpdateDialog: __vue_component__$L,
+            ActiveMqClientEventSourceCreateDialog: __vue_component__$O,
+            ActiveMqClientEventSourceUpdateDialog: __vue_component__$P,
+            CoapEventSourceCreateDialog: __vue_component__$S,
+            CoapEventSourceUpdateDialog: __vue_component__$T,
+            EventHubEventSourceCreateDialog: __vue_component__$W,
+            EventHubEventSourceUpdateDialog: __vue_component__$X,
+            MqttEventSourceCreateDialog: __vue_component__$$,
+            MqttEventSourceUpdateDialog: __vue_component__$10,
+            RabbitMqEventSourceCreateDialog: __vue_component__$13,
+            RabbitMqEventSourceUpdateDialog: __vue_component__$14
+        }
+    })
+], EventSourcesTable);
+var script$15 = EventSourcesTable;
 
 /* script */
-const __vue_script__$12 = EventSourcesTable;
+const __vue_script__$15 = script$15;
 
 /* template */
-var __vue_render__$12 = function() {
+var __vue_render__$15 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -11333,120 +11551,96 @@ var __vue_render__$12 = function() {
     ])
   })
 };
-var __vue_staticRenderFns__$12 = [];
-__vue_render__$12._withStripped = true;
+var __vue_staticRenderFns__$15 = [];
+__vue_render__$15._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$12 = function (inject) {
+  const __vue_inject_styles__$15 = function (inject) {
     if (!inject) return
-    inject("data-v-cb65d786_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventSourcesTable.vue"}, media: undefined });
+    inject("data-v-0658fbe6_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventSourcesTable.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$12 = "data-v-cb65d786";
+  const __vue_scope_id__$15 = "data-v-0658fbe6";
   /* module identifier */
-  const __vue_module_identifier__$12 = undefined;
+  const __vue_module_identifier__$15 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$12 = false;
+  const __vue_is_functional_template__$15 = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$12 = normalizeComponent(
-    { render: __vue_render__$12, staticRenderFns: __vue_staticRenderFns__$12 },
-    __vue_inject_styles__$12,
-    __vue_script__$12,
-    __vue_scope_id__$12,
-    __vue_is_functional_template__$12,
-    __vue_module_identifier__$12,
+  const __vue_component__$15 = normalizeComponent(
+    { render: __vue_render__$15, staticRenderFns: __vue_staticRenderFns__$15 },
+    __vue_inject_styles__$15,
+    __vue_script__$15,
+    __vue_scope_id__$15,
+    __vue_is_functional_template__$15,
+    __vue_module_identifier__$15,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-var EventSourcesPlugin = /** @class */ (function (_super) {
-    __extends(EventSourcesPlugin, _super);
-    function EventSourcesPlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+let EventSourcesPlugin = class EventSourcesPlugin extends Vue {
+    /** Get page icon */
+    get icon() {
+        return sitewhereIdeCommon.MicroserviceIcon.EventSources;
     }
-    Object.defineProperty(EventSourcesPlugin.prototype, "icon", {
-        /** Get page icon */
-        get: function () {
-            return sitewhereIdeCommon.MicroserviceIcon.EventSources;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(EventSourcesPlugin.prototype, "tenantId", {
-        /** Tenant id */
-        get: function () {
-            return this.configuration ? this.configuration.tenant.token : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(EventSourcesPlugin.prototype, "eventSourcesConfiguration", {
-        /** Get tenant configuration for event sources */
-        get: function () {
-            return this.configuration ? this.configuration.tenantConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(EventSourcesPlugin.prototype, "instanceManagement", {
-        /** Get instance configuraton information */
-        get: function () {
-            return this.configuration ? this.configuration.instanceConfiguration : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(EventSourcesPlugin.prototype, "eventSources", {
-        /** Get event sources list */
-        get: function () {
-            return this.eventSourcesConfiguration
-                ? this.eventSourcesConfiguration.eventSources
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /** Tenant id */
+    get tenantId() {
+        return this.configuration ? this.configuration.tenant.token : null;
+    }
+    /** Get tenant configuration for event sources */
+    get eventSourcesConfiguration() {
+        return this.configuration ? this.configuration.tenantConfiguration : null;
+    }
+    /** Get instance configuraton information */
+    get instanceManagement() {
+        return this.configuration ? this.configuration.instanceConfiguration : null;
+    }
+    /** Get event sources list */
+    get eventSources() {
+        return this.eventSourcesConfiguration
+            ? this.eventSourcesConfiguration.eventSources
+            : null;
+    }
     /** Handle event source created */
-    EventSourcesPlugin.prototype.onEventSourceCreated = function (config) {
+    onEventSourceCreated(config) {
         this.markDirty();
-    };
+    }
     /** Handle event source updated */
-    EventSourcesPlugin.prototype.onEventSourceUpdated = function (originalId, config) {
+    onEventSourceUpdated(originalId, config) {
         this.markDirty();
-    };
+    }
     /** Handle event source deleted */
-    EventSourcesPlugin.prototype.onEventSourceDeleted = function (id) {
+    onEventSourceDeleted(id) {
         this.markDirty();
-    };
+    }
     /** Mark data as having been updated */
-    EventSourcesPlugin.prototype.markDirty = function () {
+    markDirty() {
         this.$emit("dirty");
-    };
-    __decorate([
-        sitewhereIdeCommon.Prop(),
-        __metadata("design:type", Object)
-    ], EventSourcesPlugin.prototype, "configuration", void 0);
-    EventSourcesPlugin = __decorate([
-        sitewhereIdeCommon.Component({
-            components: { TenantEnginePlugin: __vue_component__$6, EventSourcesTable: __vue_component__$12 }
-        })
-    ], EventSourcesPlugin);
-    return EventSourcesPlugin;
-}(Vue));
+    }
+};
+__decorate([
+    vuePropertyDecorator.Prop(),
+    __metadata("design:type", Object)
+], EventSourcesPlugin.prototype, "configuration", void 0);
+EventSourcesPlugin = __decorate([
+    vuePropertyDecorator.Component({
+        components: { TenantEnginePlugin: __vue_component__$6, EventSourcesTable: __vue_component__$15 }
+    })
+], EventSourcesPlugin);
+var script$16 = EventSourcesPlugin;
 
 /* script */
-const __vue_script__$13 = EventSourcesPlugin;
+const __vue_script__$16 = script$16;
 
 /* template */
-var __vue_render__$13 = function() {
+var __vue_render__$16 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -11466,56 +11660,58 @@ var __vue_render__$13 = function() {
     1
   )
 };
-var __vue_staticRenderFns__$13 = [];
-__vue_render__$13._withStripped = true;
+var __vue_staticRenderFns__$16 = [];
+__vue_render__$16._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$13 = function (inject) {
+  const __vue_inject_styles__$16 = function (inject) {
     if (!inject) return
-    inject("data-v-3ec9ce6d_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventSourcesPlugin.vue"}, media: undefined });
+    inject("data-v-916fe66c_0", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"EventSourcesPlugin.vue"}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$13 = "data-v-3ec9ce6d";
+  const __vue_scope_id__$16 = "data-v-916fe66c";
   /* module identifier */
-  const __vue_module_identifier__$13 = undefined;
+  const __vue_module_identifier__$16 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$13 = false;
+  const __vue_is_functional_template__$16 = false;
   /* style inject SSR */
   
   /* style inject shadow dom */
   
 
   
-  const __vue_component__$13 = normalizeComponent(
-    { render: __vue_render__$13, staticRenderFns: __vue_staticRenderFns__$13 },
-    __vue_inject_styles__$13,
-    __vue_script__$13,
-    __vue_scope_id__$13,
-    __vue_is_functional_template__$13,
-    __vue_module_identifier__$13,
+  const __vue_component__$16 = normalizeComponent(
+    { render: __vue_render__$16, staticRenderFns: __vue_staticRenderFns__$16 },
+    __vue_inject_styles__$16,
+    __vue_script__$16,
+    __vue_scope_id__$16,
+    __vue_is_functional_template__$16,
+    __vue_module_identifier__$16,
     false,
     createInjector,
     undefined,
     undefined
   );
 
-// Process as Vue plugin.
+/** Process as Vue plugin */
 function AdminUiPlugins(Vue) {
+  Vue.use(SiteWhereIdeComponents__default);
+
   Vue.component("sw-datastore-selector", __vue_component__$5);
   Vue.component("sw-tenant-engine-plugin", __vue_component__$6);
 
   Vue.component("sw-asset-management-config-plugin", __vue_component__$7);
   Vue.component("sw-batch-operations-config-plugin", __vue_component__$b);
-  Vue.component("sw-command-delivery-config-plugin", __vue_component__$v);
-  Vue.component("sw-device-management-config-plugin", __vue_component__$w);
-  Vue.component("sw-event-sources-config-plugin", __vue_component__$13);
+  Vue.component("sw-command-delivery-config-plugin", __vue_component__$y);
+  Vue.component("sw-device-management-config-plugin", __vue_component__$z);
+  Vue.component("sw-event-sources-config-plugin", __vue_component__$16);
 }
 
 exports.AssetManagementPlugin = __vue_component__$7;
 exports.BatchOperationsPlugin = __vue_component__$b;
-exports.CommandDeliveryPlugin = __vue_component__$v;
-exports.DeviceManagementPlugin = __vue_component__$w;
-exports.EventSourcesPlugin = __vue_component__$13;
+exports.CommandDeliveryPlugin = __vue_component__$y;
+exports.DeviceManagementPlugin = __vue_component__$z;
+exports.EventSourcesPlugin = __vue_component__$16;
 exports.TenantEnginePlugin = __vue_component__$6;
 exports.default = AdminUiPlugins;

@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Refs, Prop } from "sitewhere-ide-common";
+import { Component, Ref, Prop } from "vue-property-decorator";
 
 import DatastoreDialog from "./DatastoreDialog.vue";
 
@@ -24,24 +24,20 @@ import { IInstanceConfiguration } from "sitewhere-rest-api";
 })
 export default class DatastoreCreateDialog extends Vue {
   @Prop() readonly instance!: IInstanceConfiguration;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: DatastoreDialog;
-  }>;
+  @Ref() readonly dialog!: DatastoreDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: IDatastoreDefinition): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(): void {
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

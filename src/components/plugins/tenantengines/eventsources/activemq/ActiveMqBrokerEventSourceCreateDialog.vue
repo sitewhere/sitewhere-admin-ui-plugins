@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import ActiveMqBrokerEventSourceDialog from "./ActiveMqBrokerEventSourceDialog.vue";
 
@@ -26,25 +26,21 @@ import { IActiveMqBrokerConfiguration } from "sitewhere-configuration-model";
 })
 export default class ActiveMqBrokerEventSourceCreateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: ActiveMqBrokerEventSourceDialog;
-  }>;
+  @Ref() readonly dialog!: ActiveMqBrokerEventSourceDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: IActiveMqBrokerConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

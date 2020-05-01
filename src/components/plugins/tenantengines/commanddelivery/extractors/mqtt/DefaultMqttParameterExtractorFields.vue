@@ -30,7 +30,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, DialogSection, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 import { IDefaultMqttParameterExtractorConfiguration } from "sitewhere-configuration-model";
 
 import { required } from "vuelidate/lib/validators";

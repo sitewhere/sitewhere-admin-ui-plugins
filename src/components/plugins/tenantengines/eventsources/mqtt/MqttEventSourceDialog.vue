@@ -30,13 +30,9 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  DialogComponent,
-  Refs,
-  Prop,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import { Component, Ref, Prop } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
 import EventSourceDialog from "../EventSourceDialog.vue";
@@ -59,13 +55,9 @@ export default class MqttEventSourceDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly cancelLabel!: string;
   @Prop() readonly idsInUse!: string[];
-
-  // References.
-  $refs!: Refs<{
-    dialog: any;
-    connection: MqttConnectionFields;
-    authentication: MqttAuthenticationFields;
-  }>;
+  @Ref() readonly dialog!: EventSourceDialog;
+  @Ref() readonly connection!: MqttConnectionFields;
+  @Ref() readonly authentication!: MqttAuthenticationFields;
 
   /** Get icon for dialog */
   get icon(): MicroserviceIcon {
@@ -75,11 +67,11 @@ export default class MqttEventSourceDialog extends DialogComponent<
   /** Generate payload from UI */
   generatePayload() {
     let config: any = {};
-    Object.assign(config, (this.$refs.connection as any).save());
-    Object.assign(config, (this.$refs.authentication as any).save());
+    Object.assign(config, (this.connection as any).save());
+    Object.assign(config, (this.authentication as any).save());
 
     let payload: any = {};
-    Object.assign(payload, this.$refs.dialog.save());
+    Object.assign(payload, (this.dialog as any).save());
     payload.configuration = config;
 
     return payload;
@@ -87,40 +79,40 @@ export default class MqttEventSourceDialog extends DialogComponent<
 
   /** Reset dialog contents */
   reset() {
-    if (this.$refs.connection) {
-      (this.$refs.connection as any).reset();
+    if (this.connection) {
+      (this.connection as any).reset();
     }
-    if (this.$refs.authentication) {
-      (this.$refs.authentication as any).reset();
+    if (this.authentication) {
+      (this.authentication as any).reset();
     }
-    this.$refs.dialog.reset();
+    (this.dialog as any).reset();
   }
 
   /** Load dialog from a given configuration */
   load(config: IEventSourceGenericConfiguration) {
     this.reset();
-    if (this.$refs.dialog) {
-      this.$refs.dialog.load(config);
+    if (this.dialog) {
+      (this.dialog as any).load(config);
     }
-    if (this.$refs.connection) {
-      (this.$refs.connection as any).load(config.configuration);
+    if (this.connection) {
+      (this.connection as any).load(config.configuration);
     }
-    if (this.$refs.authentication) {
-      (this.$refs.authentication as any).load(config.configuration);
+    if (this.authentication) {
+      (this.authentication as any).load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
   onCreateClicked(e: any) {
-    if (!this.$refs.dialog.validate()) {
+    if (!(this.dialog as any).validate()) {
       return;
     }
-    if (!(this.$refs.connection as any).validate()) {
-      this.$refs.dialog.setActiveTab(0);
+    if (!(this.connection as any).validate()) {
+      (this.dialog as any).setActiveTab(0);
       return;
     }
-    if (!(this.$refs.authentication as any).validate()) {
-      this.$refs.dialog.setActiveTab(1);
+    if (!(this.authentication as any).validate()) {
+      (this.dialog as any).setActiveTab(1);
       return;
     }
 

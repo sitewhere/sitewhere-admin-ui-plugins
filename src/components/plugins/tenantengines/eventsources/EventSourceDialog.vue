@@ -58,13 +58,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import {
-  Component,
-  DialogComponent,
-  ITabbedComponent,
-  Prop,
-  Refs
-} from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
+import { ITabbedComponent } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 
 import DecoderConfiguration from "./decoders/DecoderConfiguration.vue";
 
@@ -97,7 +93,9 @@ const idConflict: ValidationRule = helpers.withParams(
     }
   }
 })
-export default class EventSourceDialog extends Vue {
+export default class EventSourceDialog extends DialogComponent<
+  IEventSourceGenericConfiguration
+> {
   @Prop() readonly tenantId!: string;
   @Prop() readonly type!: string;
   @Prop() readonly icon!: string;
@@ -107,13 +105,9 @@ export default class EventSourceDialog extends Vue {
   @Prop() readonly createLabel!: string;
   @Prop() readonly visible!: boolean;
   @Prop() readonly idsInUse!: string[];
-
-  // References.
-  $refs!: Refs<{
-    dialog: DialogComponent<any> & ITabbedComponent;
-    idTextField: any;
-    decoder: DecoderConfiguration;
-  }>;
+  @Ref() readonly dialog!: Vue;
+  @Ref() readonly idTextField!: Vue;
+  @Ref() readonly decoderConfiguration!: Vue;
 
   defaultDecoder = {
     type: "json",
@@ -157,7 +151,7 @@ export default class EventSourceDialog extends Vue {
   /** Save dialog fields */
   save(): any {
     let config: any = { id: this.id, type: this.type };
-    this.decoder.configuration = (this.$refs.decoder as any).save();
+    this.decoder.configuration = (this.decoderConfiguration as any).save();
     let decoder: { decoder: IEventDecoderGenericConfiguration } = {
       decoder: this.decoder
     };
@@ -170,13 +164,13 @@ export default class EventSourceDialog extends Vue {
     this.id = null;
     this.decoder = this.defaultDecoder;
     this.setActiveTab(0);
-    (this.$refs.decoder as any).reset();
+    (this.decoderConfiguration as any).reset();
     this.$v.$reset();
   }
 
   /** Validate fields */
   validate(): boolean {
-    if (!(this.$refs.decoder as any).validate()) {
+    if (!(this.decoderConfiguration as any).validate()) {
       return false;
     }
     this.$v.$touch();
@@ -191,7 +185,7 @@ export default class EventSourceDialog extends Vue {
 
   /** Set the active tab */
   setActiveTab(tab: number): void {
-    this.$refs.dialog.setActiveTab(tab);
+    (this.dialog as any).setActiveTab(tab);
   }
 
   /** Called after create button is clicked */

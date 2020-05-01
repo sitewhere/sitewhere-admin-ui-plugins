@@ -54,13 +54,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import {
-  Component,
-  Prop,
-  Watch,
-  Refs,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import { Component, Prop, Watch, Ref } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
 
 import NewCommandDestinationChooser from "./NewCommandDestinationChooser.vue";
 import CoapCommandDestinationCreateDialog from "./coap/CoapCommandDestinationCreateDialog.vue";
@@ -83,15 +78,11 @@ export default class CommandDeliveryTable extends Vue {
   @Prop() readonly tenantId!: string;
   @Prop()
   readonly commandDestinations!: ICommandDestinationGenericConfiguration[];
-
-  /** References */
-  $refs!: Refs<{
-    chooser: NewCommandDestinationChooser;
-    coapCreate: CoapCommandDestinationCreateDialog;
-    coapUpdate: CoapCommandDestinationUpdateDialog;
-    mqttCreate: MqttCommandDestinationCreateDialog;
-    mqttUpdate: MqttCommandDestinationUpdateDialog;
-  }>;
+  @Ref() readonly chooser!: NewCommandDestinationChooser;
+  @Ref() readonly coapCreate!: CoapCommandDestinationCreateDialog;
+  @Ref() readonly coapUpdate!: CoapCommandDestinationUpdateDialog;
+  @Ref() readonly mqttCreate!: MqttCommandDestinationCreateDialog;
+  @Ref() readonly mqttUpdate!: MqttCommandDestinationUpdateDialog;
 
   headers: any[] = [
     { text: "Id", value: "id" },
@@ -169,16 +160,16 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Add new command destination */
   onAddCommandDestination() {
-    (this.$refs.chooser as any).openChooser();
+    (this.chooser as any).openChooser();
   }
 
   /** Called to create a new command destination based on type */
   onCommandDestinationCreate(id: string): void {
     let idsInUse: string[] = this.findIdsInUse();
     if (id == "coap") {
-      (this.$refs.coapCreate as any).openDialog(idsInUse);
+      (this.coapCreate as any).openDialog(idsInUse);
     } else if (id == "mqtt") {
-      (this.$refs.mqttCreate as any).openDialog(idsInUse);
+      (this.mqttCreate as any).openDialog(idsInUse);
     }
   }
 
@@ -201,9 +192,9 @@ export default class CommandDeliveryTable extends Vue {
     let idsInUse: string[] = this.findIdsInUse(id);
     if (config) {
       if (config.type === "coap") {
-        (this.$refs.coapUpdate as any).openDialog(config, idsInUse);
+        (this.coapUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "mqtt") {
-        (this.$refs.mqttUpdate as any).openDialog(config, idsInUse);
+        (this.mqttUpdate as any).openDialog(config, idsInUse);
       }
     }
   }

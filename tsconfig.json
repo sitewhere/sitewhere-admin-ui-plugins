@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "../lib",
     "target": "es2015",
     "module": "esnext",
     "strict": true,
@@ -15,20 +14,18 @@
     "allowSyntheticDefaultImports": true,
     "strictFunctionTypes": false,
     "sourceMap": true,
-    "typeRoots": [
-      "../node_modules/@types/"
+    "baseUrl": ".",
+    "types": [
+      "node"
     ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"
     ]
-  },
-  "include": [
-    "./*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ],
-  "compileOnSave": false
+  }
 }

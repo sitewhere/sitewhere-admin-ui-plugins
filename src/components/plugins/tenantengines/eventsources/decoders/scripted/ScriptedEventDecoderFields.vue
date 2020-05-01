@@ -19,7 +19,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, DialogSection, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 import { IScriptedEventDecoderConfiguration } from "sitewhere-configuration-model";
 
 import { required } from "vuelidate/lib/validators";
@@ -33,18 +34,14 @@ import { required } from "vuelidate/lib/validators";
 })
 export default class ScriptedDecoderFields extends DialogSection {
   @Prop() readonly tenantId!: string;
+  @Ref() readonly chooser!: any;
 
   scriptId: string | null = null;
 
-  // References.
-  $refs!: Refs<{
-    chooser: any;
-  }>;
-
   /** Reset section content */
   reset(): void {
-    if (this.$refs.chooser) {
-      this.$refs.chooser.reset();
+    if (this.chooser) {
+      (this.chooser as any).reset();
     }
     this.scriptId = null;
     this.$v.$reset();

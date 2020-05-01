@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import CoapEventSourceDialog from "./CoapEventSourceDialog.vue";
 
@@ -26,25 +26,21 @@ import { ICoapServerConfiguration } from "sitewhere-configuration-model";
 })
 export default class CoapEventSourceCreateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: CoapEventSourceDialog;
-  }>;
+  @Ref() readonly dialog!: CoapEventSourceDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: ICoapServerConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import MqttCommandDestinationDialog from "./MqttCommandDestinationDialog.vue";
 
@@ -26,25 +26,21 @@ import { IMqttCommandDestinationConfiguration } from "sitewhere-configuration-mo
 })
 export default class MqttCommandDestinationCreateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: MqttCommandDestinationDialog;
-  }>;
+  @Ref() readonly dialog!: MqttCommandDestinationDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: IMqttCommandDestinationConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

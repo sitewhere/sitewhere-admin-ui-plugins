@@ -13,8 +13,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Refs, Prop, MicroserviceIcon } from "sitewhere-ide-common";
 
+import { Component, Ref, Prop } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
 
 import BatchOperationManagerDialog from "./BatchOperationManagerDialog.vue";
@@ -24,11 +25,7 @@ import BatchOperationManagerDialog from "./BatchOperationManagerDialog.vue";
 })
 export default class BatchOperationManagerSection extends Vue {
   @Prop() readonly configuration!: IBatchOperationManagerConfiguration;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: BatchOperationManagerDialog;
-  }>;
+  @Ref() readonly dialog!: BatchOperationManagerDialog;
 
   /** Get icon for dialog */
   get icon(): MicroserviceIcon {
@@ -42,8 +39,8 @@ export default class BatchOperationManagerSection extends Vue {
 
   /** Called to edit batch operation manager settings */
   onEditBatchOperationManager(): void {
-    (this.$refs.dialog as any).openDialog();
-    (this.$refs.dialog as any).load(this.configuration);
+    (this.dialog as any).openDialog();
+    (this.dialog as any).load(this.configuration);
   }
 
   /** Handle update */

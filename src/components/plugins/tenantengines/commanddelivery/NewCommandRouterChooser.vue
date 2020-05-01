@@ -10,16 +10,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Refs, MicroserviceIcon } from "sitewhere-ide-common";
+import { Component, Ref } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
 
 @Component({
   components: {}
 })
 export default class NewCommandRouterChooser extends Vue {
-  /** References */
-  $refs!: Refs<{
-    dialog: any;
-  }>;
+  @Ref() readonly dialog!: any;
 
   /** Get page icon */
   get icon(): MicroserviceIcon {
@@ -28,12 +26,12 @@ export default class NewCommandRouterChooser extends Vue {
 
   /** Open chooser */
   openChooser(): void {
-    this.$refs.dialog.openDialog();
+    this.dialog.openDialog();
   }
 
   /** Close chooser */
   closeChooser(): void {
-    this.$refs.dialog.closeDialog();
+    this.dialog.closeDialog();
   }
 
   /** Close chooser on item click */

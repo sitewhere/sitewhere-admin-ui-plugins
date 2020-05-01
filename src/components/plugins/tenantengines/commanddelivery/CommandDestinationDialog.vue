@@ -62,13 +62,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import {
-  Component,
-  DialogComponent,
-  ITabbedComponent,
-  Prop,
-  Refs
-} from "sitewhere-ide-common";
+import { Component, Prop, Ref, Mixins } from "vue-property-decorator";
+import { ITabbedComponent } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 
 import ParameterExtractorConfiguration from "./extractors/ParameterExtractorConfiguration.vue";
 
@@ -93,6 +89,9 @@ const idConflict: ValidationRule = helpers.withParams(
 );
 
 @Component({
+  components: {
+    ParameterExtractorConfiguration
+  },
   validations: {
     id: {
       required,
@@ -111,13 +110,9 @@ export default class CommandDestinationDialog extends Vue {
   @Prop() readonly visible!: boolean;
   @Prop() readonly idsInUse!: string[];
   @Prop() readonly parameterExtractors!: { text: string; value: string }[];
-
-  // References.
-  $refs!: Refs<{
-    dialog: DialogComponent<any> & ITabbedComponent;
-    idTextField: any;
-    extractor: ParameterExtractorConfiguration;
-  }>;
+  @Ref() readonly dialog!: DialogComponent<any> & ITabbedComponent;
+  @Ref() readonly idTextField!: any;
+  @Ref() readonly extractor!: ParameterExtractorConfiguration;
 
   id: string | null = null;
   parameterExtractor: IParameterExtractorGenericConfiguration | null = null;
@@ -152,7 +147,7 @@ export default class CommandDestinationDialog extends Vue {
 
   /** Validate fields */
   validate(): boolean {
-    if (!(this.$refs.extractor as any).validate()) {
+    if (!(this.extractor as any).validate()) {
       return false;
     }
     this.$v.$touch();
@@ -167,7 +162,7 @@ export default class CommandDestinationDialog extends Vue {
 
   /** Set the active tab */
   setActiveTab(tab: number): void {
-    this.$refs.dialog.setActiveTab(tab);
+    this.dialog.setActiveTab(tab);
   }
 
   /** Called after create button is clicked */

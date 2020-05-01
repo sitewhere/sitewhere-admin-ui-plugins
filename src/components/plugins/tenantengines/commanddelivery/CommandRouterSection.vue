@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 import {
   IRouterGenericConfiguration,
   ICommandDestinationGenericConfiguration
@@ -53,12 +53,8 @@ export default class CommandRouterSection extends Vue {
   @Prop() readonly router!: IRouterGenericConfiguration;
   @Prop()
   readonly commandDestinations!: ICommandDestinationGenericConfiguration[];
-
-  /** References */
-  $refs!: Refs<{
-    chooser: NewCommandRouterChooser;
-    dtmRouterCreate: DeviceTypeMappingRouterCreateDialog;
-  }>;
+  @Ref() readonly chooser!: NewCommandRouterChooser;
+  @Ref() readonly dtmRouterCreate!: DeviceTypeMappingRouterCreateDialog;
 
   /** Check for device type mapping router */
   get isDeviceTypeMappingRouter(): boolean {
@@ -72,7 +68,7 @@ export default class CommandRouterSection extends Vue {
 
   /** Open chooser for adding command router */
   onAddCommandRouter(): void {
-    (this.$refs.chooser as any).openChooser();
+    (this.chooser as any).openChooser();
   }
 
   /** Update command router settings */
@@ -81,7 +77,7 @@ export default class CommandRouterSection extends Vue {
   /** Show dialog for creating command router */
   onCommandRouterChosen(type: string): void {
     if (type == "device-type-mapping") {
-      (this.$refs.dtmRouterCreate as any).openDialog();
+      (this.dtmRouterCreate as any).openDialog();
     }
   }
 }

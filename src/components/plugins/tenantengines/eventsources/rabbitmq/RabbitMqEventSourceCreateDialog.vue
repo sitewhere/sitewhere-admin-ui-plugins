@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import RabbitMqEventSourceDialog from "./RabbitMqEventSourceDialog.vue";
 
@@ -26,25 +26,21 @@ import { IRabbitMqConfiguration } from "sitewhere-configuration-model";
 })
 export default class RabbitMqEventSourceCreateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: RabbitMqEventSourceDialog;
-  }>;
+  @Ref() readonly dialog!: RabbitMqEventSourceDialog;
 
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(payload: IRabbitMqConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
   }
 }
 </script>

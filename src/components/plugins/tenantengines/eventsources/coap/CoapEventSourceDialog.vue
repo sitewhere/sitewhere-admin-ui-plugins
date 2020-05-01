@@ -26,13 +26,9 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  DialogComponent,
-  Refs,
-  Prop,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import { Component, Ref, Prop } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
+import { DialogComponent } from "sitewhere-ide-components";
 import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
 import EventSourceDialog from "../EventSourceDialog.vue";
@@ -53,12 +49,8 @@ export default class CoapEventSourceDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly cancelLabel!: string;
   @Prop() readonly idsInUse!: string[];
-
-  // References.
-  $refs!: Refs<{
-    dialog: any;
-    server: CoapServerFields;
-  }>;
+  @Ref() readonly dialog!: EventSourceDialog;
+  @Ref() readonly server!: CoapServerFields;
 
   /** Get icon for dialog */
   get icon(): MicroserviceIcon {
@@ -68,10 +60,10 @@ export default class CoapEventSourceDialog extends DialogComponent<
   /** Generate payload from UI */
   generatePayload() {
     let config: any = {};
-    Object.assign(config, (this.$refs.server as any).save());
+    Object.assign(config, (this.server as any).save());
 
     let payload: any = {};
-    Object.assign(payload, this.$refs.dialog.save());
+    Object.assign(payload, (this.dialog as any).save());
     payload.configuration = config;
 
     return payload;
@@ -79,30 +71,30 @@ export default class CoapEventSourceDialog extends DialogComponent<
 
   /** Reset dialog contents */
   reset() {
-    if (this.$refs.server) {
-      (this.$refs.server as any).reset();
+    if (this.server) {
+      (this.server as any).reset();
     }
-    this.$refs.dialog.reset();
+    (this.dialog as any).reset();
   }
 
   /** Load dialog from a given configuration */
   load(config: IEventSourceGenericConfiguration) {
     this.reset();
-    if (this.$refs.dialog) {
-      this.$refs.dialog.load(config);
+    if (this.dialog) {
+      (this.dialog as any).load(config);
     }
-    if (this.$refs.server) {
-      (this.$refs.server as any).load(config.configuration);
+    if (this.server) {
+      (this.server as any).load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
   onCreateClicked(e: any) {
-    if (!this.$refs.dialog.validate()) {
+    if (!(this.dialog as any).validate()) {
       return;
     }
-    if (!(this.$refs.server as any).validate()) {
-      this.$refs.dialog.setActiveTab(0);
+    if (!(this.server as any).validate()) {
+      (this.dialog as any).setActiveTab(0);
       return;
     }
 

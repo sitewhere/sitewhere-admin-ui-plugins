@@ -15,7 +15,8 @@
 </template>
 
 <script lang="ts">
-import { Component, DialogSection, Prop } from "sitewhere-ide-common";
+import { Component, Prop } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 import { IDeviceType } from "sitewhere-rest-api";
 

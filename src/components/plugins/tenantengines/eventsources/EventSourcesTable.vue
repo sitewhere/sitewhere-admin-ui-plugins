@@ -91,13 +91,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import {
-  Component,
-  Prop,
-  Watch,
-  Refs,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import { Component, Prop, Watch, Ref } from "vue-property-decorator";
+import { MicroserviceIcon } from "sitewhere-ide-common";
 
 import NewEventSourceChooser from "./NewEventSourceChooser.vue";
 import ActiveMqBrokerEventSourceCreateDialog from "./activemq/ActiveMqBrokerEventSourceCreateDialog.vue";
@@ -135,23 +130,19 @@ import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model"
 export default class EventSourcesTable extends Vue {
   @Prop() readonly tenantId!: string;
   @Prop() readonly eventSources!: IEventSourceGenericConfiguration[];
-
-  /** References */
-  $refs!: Refs<{
-    chooser: NewEventSourceChooser;
-    amqBrokerCreate: ActiveMqBrokerEventSourceCreateDialog;
-    amqBrokerUpdate: ActiveMqBrokerEventSourceUpdateDialog;
-    amqClientCreate: ActiveMqClientEventSourceCreateDialog;
-    amqClientUpdate: ActiveMqClientEventSourceUpdateDialog;
-    coapCreate: CoapEventSourceCreateDialog;
-    coapUpdate: CoapEventSourceUpdateDialog;
-    eventHubCreate: EventHubEventSourceCreateDialog;
-    eventHubUpdate: EventHubEventSourceUpdateDialog;
-    mqttCreate: MqttEventSourceCreateDialog;
-    mqttUpdate: MqttEventSourceUpdateDialog;
-    rabbitMqCreate: RabbitMqEventSourceCreateDialog;
-    rabbitMqUpdate: RabbitMqEventSourceUpdateDialog;
-  }>;
+  @Ref() readonly chooser!: NewEventSourceChooser;
+  @Ref() readonly amqBrokerCreate!: NewEventSourceChooser;
+  @Ref() readonly amqBrokerUpdate!: ActiveMqBrokerEventSourceUpdateDialog;
+  @Ref() readonly amqClientCreate!: ActiveMqClientEventSourceCreateDialog;
+  @Ref() readonly amqClientUpdate!: ActiveMqClientEventSourceUpdateDialog;
+  @Ref() readonly coapCreate!: CoapEventSourceCreateDialog;
+  @Ref() readonly coapUpdate!: CoapEventSourceUpdateDialog;
+  @Ref() readonly eventHubCreate!: EventHubEventSourceCreateDialog;
+  @Ref() readonly eventHubUpdate!: EventHubEventSourceUpdateDialog;
+  @Ref() readonly mqttCreate!: MqttEventSourceCreateDialog;
+  @Ref() readonly mqttUpdate!: MqttEventSourceUpdateDialog;
+  @Ref() readonly rabbitMqCreate!: RabbitMqEventSourceCreateDialog;
+  @Ref() readonly rabbitMqUpdate!: RabbitMqEventSourceUpdateDialog;
 
   headers: any[] = [
     { text: "Id", value: "id" },
@@ -230,24 +221,24 @@ export default class EventSourcesTable extends Vue {
 
   /** Add new event source */
   onAddEventSource() {
-    (this.$refs.chooser as any).openChooser();
+    (this.chooser as any).openChooser();
   }
 
   /** Called to create a new event source based on type */
   onEventSourceCreate(id: string): void {
     let idsInUse: string[] = this.findIdsInUse();
     if (id == "activemq-broker") {
-      (this.$refs.amqBrokerCreate as any).openDialog(idsInUse);
+      (this.amqBrokerCreate as any).openDialog(idsInUse);
     } else if (id == "activemq-client") {
-      (this.$refs.amqClientCreate as any).openDialog(idsInUse);
+      (this.amqClientCreate as any).openDialog(idsInUse);
     } else if (id == "coap") {
-      (this.$refs.coapCreate as any).openDialog(idsInUse);
+      (this.coapCreate as any).openDialog(idsInUse);
     } else if (id == "eventhub") {
-      (this.$refs.eventHubCreate as any).openDialog(idsInUse);
+      (this.eventHubCreate as any).openDialog(idsInUse);
     } else if (id == "mqtt") {
-      (this.$refs.mqttCreate as any).openDialog(idsInUse);
+      (this.mqttCreate as any).openDialog(idsInUse);
     } else if (id == "rabbitmq") {
-      (this.$refs.rabbitMqCreate as any).openDialog(idsInUse);
+      (this.rabbitMqCreate as any).openDialog(idsInUse);
     }
   }
 
@@ -268,17 +259,17 @@ export default class EventSourcesTable extends Vue {
     let idsInUse: string[] = this.findIdsInUse(id);
     if (config) {
       if (config.type === "activemq-broker") {
-        (this.$refs.amqBrokerUpdate as any).openDialog(config, idsInUse);
+        (this.amqBrokerUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "activemq-client") {
-        (this.$refs.amqClientUpdate as any).openDialog(config, idsInUse);
+        (this.amqClientUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "coap") {
-        (this.$refs.coapUpdate as any).openDialog(config, idsInUse);
+        (this.coapUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "eventhub") {
-        (this.$refs.eventHubUpdate as any).openDialog(config, idsInUse);
+        (this.eventHubUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "mqtt") {
-        (this.$refs.mqttUpdate as any).openDialog(config, idsInUse);
+        (this.mqttUpdate as any).openDialog(config, idsInUse);
       } else if (config.type === "rabbitmq") {
-        (this.$refs.rabbitMqUpdate as any).openDialog(config, idsInUse);
+        (this.rabbitMqUpdate as any).openDialog(config, idsInUse);
       }
     }
   }

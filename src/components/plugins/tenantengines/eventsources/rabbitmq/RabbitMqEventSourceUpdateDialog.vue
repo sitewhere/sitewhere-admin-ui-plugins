@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
 import RabbitMqEventSourceDialog from "./RabbitMqEventSourceDialog.vue";
 
@@ -26,18 +26,14 @@ import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model"
 })
 export default class RabbitMqEventSourceUpdateDialog extends Vue {
   @Prop() readonly tenantId!: string;
-
-  /** References */
-  $refs!: Refs<{
-    dialog: RabbitMqEventSourceDialog;
-  }>;
+  @Ref() readonly dialog!: RabbitMqEventSourceDialog;
 
   originalId: string | null = null;
   idsInUse: string[] = [];
 
   /** Emit payload */
   onPayload(config: IEventSourceGenericConfiguration): void {
-    (this.$refs.dialog as any).closeDialog();
+    (this.dialog as any).closeDialog();
     this.$emit("update", this.originalId, config);
   }
 
@@ -48,9 +44,9 @@ export default class RabbitMqEventSourceUpdateDialog extends Vue {
   ): void {
     this.originalId = config.id;
     this.idsInUse = idsInUse;
-    (this.$refs.dialog as any).reset();
-    (this.$refs.dialog as any).openDialog();
-    (this.$refs.dialog as any).load(config);
+    (this.dialog as any).reset();
+    (this.dialog as any).openDialog();
+    (this.dialog as any).load(config);
   }
 }
 </script>

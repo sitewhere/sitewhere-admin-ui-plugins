@@ -1,10 +1,7 @@
 <template>
   <v-card flat>
     <json-decoder-configuration ref="details" v-if="decoderType == 'json'" />
-    <protobuf-decoder-configuration
-      ref="details"
-      v-if="decoderType == 'protobuf'"
-    />
+    <protobuf-decoder-configuration ref="details" v-if="decoderType == 'protobuf'" />
     <scripted-event-decoder-configuration
       ref="details"
       :tenantId="tenantId"
@@ -14,13 +11,8 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Prop,
-  DialogSection,
-  Refs,
-  Watch
-} from "sitewhere-ide-common";
+import { Component, Prop, Ref, Watch } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 
 import JsonDecoderConfiguration from "./json/JsonDecoderConfiguration.vue";
 import ProtobufDecoderConfiguration from "./protobuf/ProtobufDecoderConfiguration.vue";
@@ -37,11 +29,7 @@ import { IEventDecoderGenericConfiguration } from "sitewhere-configuration-model
 export default class DecoderConfiguration extends DialogSection {
   @Prop() readonly tenantId!: string;
   @Prop() readonly decoder!: IEventDecoderGenericConfiguration;
-
-  // References.
-  $refs!: Refs<{
-    details: DialogSection;
-  }>;
+  @Ref() readonly details!: DialogSection;
 
   @Watch("decoderType", { immediate: true })
   onDecoderTypeUpdated(updated: string) {
@@ -55,15 +43,15 @@ export default class DecoderConfiguration extends DialogSection {
 
   /** Reset section content */
   reset(): void {
-    if (this.$refs.details) {
-      this.$refs.details.reset();
+    if (this.details) {
+      (this.details as any).reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
-    if (this.$refs.details) {
-      if (!this.$refs.details.validate()) {
+    if (this.details) {
+      if (!(this.details as any).validate()) {
         return false;
       }
     }
@@ -73,8 +61,8 @@ export default class DecoderConfiguration extends DialogSection {
   /** Load form data from an object */
   load(input: IEventDecoderGenericConfiguration): void {
     this.$nextTick().then(() => {
-      if (this.$refs.details) {
-        this.$refs.details.load(input.configuration);
+      if (this.details) {
+        (this.details as any).load(input.configuration);
       }
     });
   }
@@ -82,8 +70,8 @@ export default class DecoderConfiguration extends DialogSection {
   /** Save form data to an object */
   save(): {} {
     let config: any = {};
-    if (this.$refs.details) {
-      Object.assign(config, this.$refs.details.save());
+    if (this.details) {
+      Object.assign(config, (this.details as any).save());
     }
     return config;
   }

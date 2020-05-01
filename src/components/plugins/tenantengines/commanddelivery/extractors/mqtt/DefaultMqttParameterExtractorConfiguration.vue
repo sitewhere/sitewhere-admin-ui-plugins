@@ -3,33 +3,30 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, DialogSection, Refs } from "sitewhere-ide-common";
+import { Component, Prop, Ref } from "vue-property-decorator";
+import { DialogSection } from "sitewhere-ide-components";
 
 import DefaultMqttParameterExtractorFields from "./DefaultMqttParameterExtractorFields.vue";
 
 @Component({
   components: {
-    DefaultMqttParameterExtractorFields,
-  },
+    DefaultMqttParameterExtractorFields
+  }
 })
 export default class DefaultMqttParameterExtractorConfiguration extends DialogSection {
   @Prop() readonly tenantId!: string;
-
-  // References.
-  $refs!: Refs<{
-    fields: DefaultMqttParameterExtractorFields;
-  }>;
+  @Ref() readonly fields!: DefaultMqttParameterExtractorFields;
 
   /** Reset section content */
   reset(): void {
-    if (this.$refs.fields) {
-      this.$refs.fields.reset();
+    if (this.fields) {
+      (this.fields as any).reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
-    if (!this.$refs.fields.validate()) {
+    if (!(this.fields as any).validate()) {
       return false;
     }
     return true;
@@ -38,8 +35,8 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
   /** Load form data from an object */
   load(input: any): void {
     this.reset();
-    if (this.$refs.fields) {
-      this.$refs.fields.load(input);
+    if (this.fields) {
+      (this.fields as any).load(input);
     }
   }
 
@@ -47,8 +44,8 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
   save(): {} {
     let payload: any = {};
 
-    if (this.$refs.fields) {
-      Object.assign(payload, this.$refs.fields.save());
+    if (this.fields) {
+      Object.assign(payload, (this.fields as any).save());
     }
 
     return payload;

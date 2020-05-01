@@ -23,14 +23,11 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  DialogComponent,
-  Refs,
-  Prop,
-  MicroserviceIcon
-} from "sitewhere-ide-common";
+import Vue from "vue";
+import { Component, Ref, Prop } from "vue-property-decorator";
+import { MicroserviceIcon, ITabbedComponent } from "sitewhere-ide-common";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
+import { DialogComponent, DialogSection } from "sitewhere-ide-components";
 
 import BatchOperationManagerFields from "./BatchOperationManagerFields.vue";
 
@@ -40,44 +37,46 @@ import BatchOperationManagerFields from "./BatchOperationManagerFields.vue";
 export default class BatchOperationManagerDialog extends DialogComponent<
   IBatchOperationManagerConfiguration
 > {
-  // References.
-  $refs!: Refs<{
-    dialog: any;
-    manager: BatchOperationManagerFields;
-  }>;
+  @Ref() readonly dialog!: ITabbedComponent;
+  @Ref() readonly manager!: Vue;
 
   /** Get icon for dialog */
   get icon(): MicroserviceIcon {
     return MicroserviceIcon.BatchOperations;
   }
 
+  /** Convert to dialog section */
+  get managerSection(): DialogSection {
+    return this.manager as DialogSection;
+  }
+
   /** Generate payload from UI */
   generatePayload() {
     let payload: any = {};
-    Object.assign(payload, (this.$refs.manager as any).save());
+    Object.assign(payload, this.managerSection.save());
 
     return payload;
   }
 
   /** Reset dialog contents */
   reset() {
-    if (this.$refs.manager) {
-      (this.$refs.manager as any).reset();
+    if (this.manager) {
+      this.managerSection.reset();
     }
   }
 
   /** Load dialog from a given configuration */
   load(config: IBatchOperationManagerConfiguration) {
     this.reset();
-    if (this.$refs.manager) {
-      (this.$refs.manager as any).load(config);
+    if (this.manager) {
+      this.managerSection.load(config);
     }
   }
 
   /** Called after create button is clicked */
   onCreateClicked(e: any) {
-    if (!(this.$refs.manager as any).validate()) {
-      (this.$refs.dialog as any).setActiveTab(0);
+    if (!(this.manager as any).validate()) {
+      this.dialog.setActiveTab(0);
       return;
     }
 

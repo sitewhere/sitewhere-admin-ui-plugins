@@ -56,7 +56,7 @@ export default class MqttCommandDestinationDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly cancelLabel!: string;
   @Prop() readonly idsInUse!: string[];
-  @Ref() readonly dialog!: any;
+  @Ref() readonly dialog!: CommandDestinationDialog;
   @Ref() readonly connection!: MqttConnectionFields;
   @Ref() readonly authentication!: MqttAuthenticationFields;
 
@@ -75,11 +75,13 @@ export default class MqttCommandDestinationDialog extends DialogComponent<
 
   /** Generate payload from UI */
   generatePayload() {
-    let config: any = {};
-    Object.assign(config, (this.connection as any).save());
-    Object.assign(config, (this.authentication as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
+    Object.assign(config, this.connection.save());
+    Object.assign(config, this.authentication.save());
 
-    let payload: any = {};
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
     Object.assign(payload, this.dialog.save());
     payload.configuration = config;
 
@@ -89,10 +91,10 @@ export default class MqttCommandDestinationDialog extends DialogComponent<
   /** Reset dialog contents */
   reset() {
     if (this.connection) {
-      (this.connection as any).reset();
+      this.connection.reset();
     }
     if (this.authentication) {
-      (this.authentication as any).reset();
+      this.authentication.reset();
     }
     this.dialog.reset();
   }
@@ -104,28 +106,29 @@ export default class MqttCommandDestinationDialog extends DialogComponent<
       this.dialog.load(config);
     }
     if (this.connection) {
-      (this.connection as any).load(config.configuration);
+      this.connection.load(config.configuration);
     }
     if (this.authentication) {
-      (this.authentication as any).load(config.configuration);
+      this.authentication.load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
     if (!this.dialog.validate()) {
       return;
     }
-    if (!(this.connection as any).validate()) {
+    if (!this.connection.validate()) {
       this.dialog.setActiveTab(0);
       return;
     }
-    if (!(this.authentication as any).validate()) {
+    if (!this.authentication.validate()) {
       this.dialog.setActiveTab(1);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
   }
 }

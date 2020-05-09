@@ -30,16 +30,14 @@ export default class DatastoreCreateDialog extends Vue {
 
   /** Emit payload */
   onPayload(payload: IDatastoreDefinition): void {
-    (this.dialog as any).closeDialog();
+    this.dialog.closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(): void {
-    (this.dialog as any).reset();
-    (this.dialog as any).openDialog();
+    this.dialog.reset();
+    this.dialog.openDialog();
   }
 }
 </script>
-
-<style scoped></style>

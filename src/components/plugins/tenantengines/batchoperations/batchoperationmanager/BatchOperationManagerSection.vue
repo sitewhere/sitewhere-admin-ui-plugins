@@ -39,8 +39,8 @@ export default class BatchOperationManagerSection extends Vue {
 
   /** Called to edit batch operation manager settings */
   onEditBatchOperationManager(): void {
-    (this.dialog as any).openDialog();
-    (this.dialog as any).load(this.configuration);
+    this.dialog.openDialog();
+    this.dialog.load(this.configuration);
   }
 
   /** Handle update */
@@ -49,5 +49,3 @@ export default class BatchOperationManagerSection extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

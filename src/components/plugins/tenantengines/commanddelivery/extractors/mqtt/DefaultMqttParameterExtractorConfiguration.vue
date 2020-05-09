@@ -20,32 +20,33 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
   /** Reset section content */
   reset(): void {
     if (this.fields) {
-      (this.fields as any).reset();
+      this.fields.reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
-    if (!(this.fields as any).validate()) {
+    if (!this.fields.validate()) {
       return false;
     }
     return true;
   }
 
   /** Load form data from an object */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   load(input: any): void {
     this.reset();
     if (this.fields) {
-      (this.fields as any).load(input);
+      this.fields.load(input);
     }
   }
 
   /** Save form data to an object */
   save(): {} {
-    let payload: any = {};
-
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
     if (this.fields) {
-      Object.assign(payload, (this.fields as any).save());
+      Object.assign(payload, this.fields.save());
     }
 
     return payload;

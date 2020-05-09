@@ -131,7 +131,7 @@ export default class EventSourcesTable extends Vue {
   @Prop() readonly tenantId!: string;
   @Prop() readonly eventSources!: IEventSourceGenericConfiguration[];
   @Ref() readonly chooser!: NewEventSourceChooser;
-  @Ref() readonly amqBrokerCreate!: NewEventSourceChooser;
+  @Ref() readonly amqBrokerCreate!: ActiveMqBrokerEventSourceCreateDialog;
   @Ref() readonly amqBrokerUpdate!: ActiveMqBrokerEventSourceUpdateDialog;
   @Ref() readonly amqClientCreate!: ActiveMqClientEventSourceCreateDialog;
   @Ref() readonly amqClientUpdate!: ActiveMqClientEventSourceUpdateDialog;
@@ -144,6 +144,7 @@ export default class EventSourcesTable extends Vue {
   @Ref() readonly rabbitMqCreate!: RabbitMqEventSourceCreateDialog;
   @Ref() readonly rabbitMqUpdate!: RabbitMqEventSourceUpdateDialog;
 
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   headers: any[] = [
     { text: "Id", value: "id" },
     { text: "Type", value: "type" },
@@ -152,10 +153,11 @@ export default class EventSourcesTable extends Vue {
   ];
 
   /** Event sources in format for display */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   eventSourcesAsSortedArray: any[] = [];
 
   @Watch("eventSources", { immediate: true })
-  onEventSourcesUpdated(updated: any) {
+  onEventSourcesUpdated() {
     this.calculateEventSourcesAsSortedArray();
   }
 
@@ -166,7 +168,7 @@ export default class EventSourcesTable extends Vue {
 
   /** Get list of ids already in use */
   findIdsInUse(exclude?: string): string[] {
-    let ids: string[] = [];
+    const ids: string[] = [];
     if (this.eventSources) {
       this.eventSources.forEach(source => {
         if (source.id != exclude) {
@@ -192,7 +194,7 @@ export default class EventSourcesTable extends Vue {
 
   /** Get an event source by id */
   getEventSourceById(id: string): IEventSourceGenericConfiguration | null {
-    let index: number | null = this.getEventSourceIndex(id);
+    const index: number | null = this.getEventSourceIndex(id);
     if (this.eventSources && index != null) {
       return this.eventSources[index];
     }
@@ -201,15 +203,19 @@ export default class EventSourcesTable extends Vue {
 
   /** Get event sources as a sorted array */
   calculateEventSourcesAsSortedArray(): void {
-    let all: any[] = [];
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const all: any[] = [];
     if (this.eventSources) {
       this.eventSources.forEach(source => {
-        let meta: any = {};
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const meta: any = {};
         meta.id = source.id;
         meta.type = source.type;
         meta.decoder = source.decoder;
-        let config: any = source.configuration;
-        let decoder: any = source.decoder;
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const config: any = source.configuration;
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const decoder: any = source.decoder;
         all.push({ meta: meta, config: config, decoder: decoder });
       });
     }
@@ -221,24 +227,24 @@ export default class EventSourcesTable extends Vue {
 
   /** Add new event source */
   onAddEventSource() {
-    (this.chooser as any).openChooser();
+    this.chooser.openChooser();
   }
 
   /** Called to create a new event source based on type */
   onEventSourceCreate(id: string): void {
-    let idsInUse: string[] = this.findIdsInUse();
+    const idsInUse: string[] = this.findIdsInUse();
     if (id == "activemq-broker") {
-      (this.amqBrokerCreate as any).openDialog(idsInUse);
+      this.amqBrokerCreate.openDialog(idsInUse);
     } else if (id == "activemq-client") {
-      (this.amqClientCreate as any).openDialog(idsInUse);
+      this.amqClientCreate.openDialog(idsInUse);
     } else if (id == "coap") {
-      (this.coapCreate as any).openDialog(idsInUse);
+      this.coapCreate.openDialog(idsInUse);
     } else if (id == "eventhub") {
-      (this.eventHubCreate as any).openDialog(idsInUse);
+      this.eventHubCreate.openDialog(idsInUse);
     } else if (id == "mqtt") {
-      (this.mqttCreate as any).openDialog(idsInUse);
+      this.mqttCreate.openDialog(idsInUse);
     } else if (id == "rabbitmq") {
-      (this.rabbitMqCreate as any).openDialog(idsInUse);
+      this.rabbitMqCreate.openDialog(idsInUse);
     }
   }
 
@@ -253,23 +259,23 @@ export default class EventSourcesTable extends Vue {
 
   /** Open event source by id */
   onOpenEventSource(id: string) {
-    let config: IEventSourceGenericConfiguration | null = this.getEventSourceById(
+    const config: IEventSourceGenericConfiguration | null = this.getEventSourceById(
       id
     );
-    let idsInUse: string[] = this.findIdsInUse(id);
+    const idsInUse: string[] = this.findIdsInUse(id);
     if (config) {
       if (config.type === "activemq-broker") {
-        (this.amqBrokerUpdate as any).openDialog(config, idsInUse);
+        this.amqBrokerUpdate.openDialog(config, idsInUse);
       } else if (config.type === "activemq-client") {
-        (this.amqClientUpdate as any).openDialog(config, idsInUse);
+        this.amqClientUpdate.openDialog(config, idsInUse);
       } else if (config.type === "coap") {
-        (this.coapUpdate as any).openDialog(config, idsInUse);
+        this.coapUpdate.openDialog(config, idsInUse);
       } else if (config.type === "eventhub") {
-        (this.eventHubUpdate as any).openDialog(config, idsInUse);
+        this.eventHubUpdate.openDialog(config, idsInUse);
       } else if (config.type === "mqtt") {
-        (this.mqttUpdate as any).openDialog(config, idsInUse);
+        this.mqttUpdate.openDialog(config, idsInUse);
       } else if (config.type === "rabbitmq") {
-        (this.rabbitMqUpdate as any).openDialog(config, idsInUse);
+        this.rabbitMqUpdate.openDialog(config, idsInUse);
       }
     }
   }
@@ -279,7 +285,7 @@ export default class EventSourcesTable extends Vue {
     originalId: string,
     config: IEventSourceGenericConfiguration
   ): void {
-    let index: number | null = this.getEventSourceIndex(originalId);
+    const index: number | null = this.getEventSourceIndex(originalId);
     if (this.eventSources && index != null) {
       Vue.set(this.eventSources, index, config);
       this.calculateEventSourcesAsSortedArray();
@@ -289,7 +295,7 @@ export default class EventSourcesTable extends Vue {
 
   /** Delete event source by id */
   onDeleteEventSource(id: string) {
-    let index: number | null = this.getEventSourceIndex(id);
+    const index: number | null = this.getEventSourceIndex(id);
     if (this.eventSources && index != null) {
       this.eventSources.splice(index);
       this.calculateEventSourcesAsSortedArray();

@@ -74,10 +74,10 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class RabbitMqFields extends DialogSection {
-  connectionUri: string = "";
-  queueName: string = "";
-  numConsumers: number = 5;
-  reconnectInterval: number = 10;
+  connectionUri = "";
+  queueName = "";
+  numConsumers = 5;
+  reconnectInterval = 10;
 
   /** Reset section content */
   reset(): void {

@@ -59,19 +59,23 @@ export default class EventSourcesPlugin extends Vue {
   }
 
   /** Handle event source created */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   onEventSourceCreated(config: IEventSourceGenericConfiguration): void {
     this.markDirty();
   }
 
   /** Handle event source updated */
   onEventSourceUpdated(
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     originalId: string,
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     config: IEventSourceGenericConfiguration
   ): void {
     this.markDirty();
   }
 
   /** Handle event source deleted */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   onEventSourceDeleted(id: string): void {
     this.markDirty();
   }
@@ -82,5 +86,3 @@ export default class EventSourcesPlugin extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

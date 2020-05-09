@@ -20,32 +20,34 @@ export default class ScriptedEventDecoderConfiguration extends DialogSection {
   /** Reset section content */
   reset(): void {
     if (this.script) {
-      (this.script as any).reset();
+      this.script.reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
-    if (!(this.script as any).validate()) {
+    if (!this.script.validate()) {
       return false;
     }
     return true;
   }
 
   /** Load form data from an object */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   load(input: any): void {
     this.reset();
     if (this.script) {
-      (this.script as any).load(input);
+      this.script.load(input);
     }
   }
 
   /** Save form data to an object */
   save(): {} {
-    let payload: any = {};
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
 
     if (this.script) {
-      Object.assign(payload, (this.script as any).save());
+      Object.assign(payload, this.script.save());
     }
 
     return payload;

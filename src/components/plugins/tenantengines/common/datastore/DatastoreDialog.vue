@@ -89,9 +89,10 @@ export default class DatastoreDialog extends DialogComponent<
   @Ref() readonly dialog!: Vue;
   @Ref() readonly details!: Vue;
 
-  scope: number = 0;
+  scope = 0;
   reference: string | null = null;
-  type: string = "postgres95";
+  type = "postgres95";
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   configuration: any;
 
   /** List of supported database types */
@@ -113,10 +114,10 @@ export default class DatastoreDialog extends DialogComponent<
   }
 
   @Watch("scope")
-  onScopeChanged(updated: number) {
+  onScopeChanged() {
     if (!this.isLocalScope) {
       if (!this.reference) {
-        let refs: { text: string; value: string }[] = this.globalDatabases;
+        const refs: { text: string; value: string }[] = this.globalDatabases;
         if (refs.length) {
           this.reference = refs[0].value;
         }
@@ -126,7 +127,7 @@ export default class DatastoreDialog extends DialogComponent<
   }
 
   @Watch("reference")
-  onReferenceChanged(updated: string) {
+  onReferenceChanged() {
     this.reloadDetails();
   }
 
@@ -154,9 +155,9 @@ export default class DatastoreDialog extends DialogComponent<
 
   /** Get list of available global databases */
   get globalDatabases(): { text: string; value: string }[] {
-    let databases: { text: string; value: string }[] = [];
+    const databases: { text: string; value: string }[] = [];
     if (this.rdbConfigurations) {
-      let keys: string[] = Object.keys(this.rdbConfigurations);
+      const keys: string[] = Object.keys(this.rdbConfigurations);
       keys.forEach(key => {
         databases.push({ text: key, value: key });
       });
@@ -169,7 +170,7 @@ export default class DatastoreDialog extends DialogComponent<
     if (!this.rdbConfigurations) {
       return null;
     }
-    let match: IRdbConfiguration = this.rdbConfigurations[reference];
+    const match: IRdbConfiguration = this.rdbConfigurations[reference];
     if (!match) {
       return null;
     }
@@ -182,7 +183,7 @@ export default class DatastoreDialog extends DialogComponent<
   /** Local or global datastore type */
   getDatastoreType(): string | null {
     if (!this.isLocalScope && this.reference) {
-      let global: IDatastoreDefinition | null = this.findGlobalDefinition(
+      const global: IDatastoreDefinition | null = this.findGlobalDefinition(
         this.reference
       );
       return global ? global.type : null;
@@ -191,29 +192,31 @@ export default class DatastoreDialog extends DialogComponent<
   }
 
   /** Local or global datastore configuration */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   getDatastoreConfiguration(): any {
     if (this.isLocalScope) {
       return this.configuration;
     } else if (this.reference) {
-      let global: IDatastoreDefinition | null = this.findGlobalDefinition(
+      const global: IDatastoreDefinition | null = this.findGlobalDefinition(
         this.reference
       );
       return global ? global.configuration : {};
     } else {
-      console.log("neither local scope or reference!");
-      return {};
+      throw new Error("Neither local nor reference!");
     }
   }
 
   /** Indicates whether database is Postgres95 */
   get isPostgres95(): boolean {
-    let type: string | null = this.getDatastoreType();
+    const type: string | null = this.getDatastoreType();
     return type == "postgres95";
   }
 
   /** Generate configuration from detail panel */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   generateConfiguration(): any {
-    let configuration: any = {};
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const configuration: any = {};
     Object.assign(configuration, this.detailsSection.save());
     return configuration;
   }
@@ -225,7 +228,8 @@ export default class DatastoreDialog extends DialogComponent<
         reference: this.reference
       };
     } else {
-      let configuration: any = this.generateConfiguration();
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      const configuration: any = this.generateConfiguration();
       return { type: this.type, configuration: configuration };
     }
   }
@@ -246,29 +250,28 @@ export default class DatastoreDialog extends DialogComponent<
       (payload as IDatastoreDefinitionLocal).configuration || {};
     this.reference = (payload as IDatastoreDefinitionReference).reference;
     this.scope = this.reference ? 1 : 0;
-    console.log("reference", this.reference);
     this.reloadDetails();
   }
 
   /** Reload details panel based on updated configuration */
   reloadDetails() {
-    let config: any = this.getDatastoreConfiguration();
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = this.getDatastoreConfiguration();
     if (this.details && config) {
       this.detailsSection.load(config);
     }
   }
 
-  // Called after create button is clicked.
+  /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
     if (!this.detailsSection.validate()) {
       this.dialogComponent.setActiveTab(0);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
   }
 }
 </script>
-
-<style scoped></style>

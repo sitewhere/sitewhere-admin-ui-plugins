@@ -78,6 +78,7 @@ export default class BatchOperationsPlugin extends Vue {
   /** Unset the datastore */
   onUnsetDatastore(): void {
     if (this.batchOperations) {
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.batchOperations as any).datastore = null;
     }
   }

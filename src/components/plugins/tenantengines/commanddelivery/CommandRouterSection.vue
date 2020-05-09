@@ -68,19 +68,18 @@ export default class CommandRouterSection extends Vue {
 
   /** Open chooser for adding command router */
   onAddCommandRouter(): void {
-    (this.chooser as any).openChooser();
+    this.chooser.openChooser();
   }
 
   /** Update command router settings */
+  /* eslint-disable-next-line @typescript-eslint/no-empty-function */
   onUpdateCommandRouter(): void {}
 
   /** Show dialog for creating command router */
   onCommandRouterChosen(type: string): void {
     if (type == "device-type-mapping") {
-      (this.dtmRouterCreate as any).openDialog();
+      this.dtmRouterCreate.openDialog();
     }
   }
 }
 </script>
-
-<style scoped></style>

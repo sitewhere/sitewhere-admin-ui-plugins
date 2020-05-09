@@ -57,10 +57,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import { Component, Prop, Ref } from "vue-property-decorator";
-import { ITabbedComponent } from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
+import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
 
 import DecoderConfiguration from "./decoders/DecoderConfiguration.vue";
 
@@ -74,9 +72,10 @@ import { required, ValidationRule, helpers } from "vuelidate/lib/validators";
 /** Validator for checking if id is already used */
 const idConflict: ValidationRule = helpers.withParams(
   { type: "idConflict" },
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   (value: any, vm: any) => {
-    let idsInUse: string[] = vm.idsInUse;
-    let conflict: boolean = false;
+    const idsInUse: string[] = vm.idsInUse;
+    let conflict = false;
     idsInUse.forEach(id => {
       if (vm.id == id) conflict = true;
     });
@@ -105,9 +104,8 @@ export default class EventSourceDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly visible!: boolean;
   @Prop() readonly idsInUse!: string[];
-  @Ref() readonly dialog!: Vue;
-  @Ref() readonly idTextField!: Vue;
-  @Ref() readonly decoderConfiguration!: Vue;
+  @Ref() readonly dialog!: BaseDialog;
+  @Ref() readonly decoderConfiguration!: DecoderConfiguration;
 
   defaultDecoder = {
     type: "json",
@@ -149,10 +147,12 @@ export default class EventSourceDialog extends DialogComponent<
   ];
 
   /** Save dialog fields */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   save(): any {
-    let config: any = { id: this.id, type: this.type };
-    this.decoder.configuration = (this.decoderConfiguration as any).save();
-    let decoder: { decoder: IEventDecoderGenericConfiguration } = {
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = { id: this.id, type: this.type };
+    this.decoder.configuration = this.decoderConfiguration.save();
+    const decoder: { decoder: IEventDecoderGenericConfiguration } = {
       decoder: this.decoder
     };
     Object.assign(config, decoder);
@@ -164,13 +164,13 @@ export default class EventSourceDialog extends DialogComponent<
     this.id = null;
     this.decoder = this.defaultDecoder;
     this.setActiveTab(0);
-    (this.decoderConfiguration as any).reset();
+    this.decoderConfiguration.reset();
     this.$v.$reset();
   }
 
   /** Validate fields */
   validate(): boolean {
-    if (!(this.decoderConfiguration as any).validate()) {
+    if (!this.decoderConfiguration.validate()) {
       return false;
     }
     this.$v.$touch();
@@ -185,15 +185,17 @@ export default class EventSourceDialog extends DialogComponent<
 
   /** Set the active tab */
   setActiveTab(tab: number): void {
-    (this.dialog as any).setActiveTab(tab);
+    this.dialog.setActiveTab(tab);
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   onCreateClicked(e: any) {
     this.$emit("createClicked", e);
   }
 
   /** Called after cancel button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   onCancelClicked(e: any) {
     this.$emit("cancelClicked", e);
   }

@@ -79,6 +79,7 @@ export default class CommandDeliveryPlugin extends Vue {
 
   /** Handle command destination created */
   onCommandDestinationCreated(
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     config: ICommandDestinationGenericConfiguration
   ): void {
     this.markDirty();
@@ -86,13 +87,16 @@ export default class CommandDeliveryPlugin extends Vue {
 
   /** Handle command destination updated */
   onCommandDestinationUpdated(
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     originalId: string,
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     config: ICommandDestinationGenericConfiguration
   ): void {
     this.markDirty();
   }
 
   /** Handle command destination deleted */
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   onCommandDestinationDeleted(id: string): void {
     this.markDirty();
   }
@@ -100,6 +104,7 @@ export default class CommandDeliveryPlugin extends Vue {
   /** Handle unsetting router */
   onUnsetCommandRouter(): void {
     if (this.commandDeliveryConfiguration) {
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.commandDeliveryConfiguration as any).router = null;
     }
     this.markDirty();

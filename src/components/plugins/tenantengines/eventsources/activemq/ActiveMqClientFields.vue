@@ -59,9 +59,9 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class ActiveMqClientFields extends DialogSection {
-  remoteUri: string = "";
-  queueName: string = "sitewhere";
-  numConsumers: number = 3;
+  remoteUri = "";
+  queueName = "sitewhere";
+  numConsumers = 3;
 
   /** Reset section content */
   reset(): void {

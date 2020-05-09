@@ -24,12 +24,8 @@
 
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
-import {
-  showError,
-  MicroserviceIcon,
-  listDeviceTypes
-} from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
+import { showError, listDeviceTypes } from "sitewhere-ide-common";
+import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
 import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 
 import { AxiosResponse } from "axios";
@@ -50,16 +46,16 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
 > {
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
-  @Ref() readonly dialog!: any;
+  @Ref() readonly dialog!: BaseDialog;
   @Ref() readonly mappings!: DeviceTypeMappingRouterFields;
 
-  $store: any;
   deviceTypes: IDeviceType[] = [];
 
   /** Generate payload from UI */
   generatePayload() {
-    let payload: any = {};
-    Object.assign(payload, (this.mappings as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
+    Object.assign(payload, this.mappings.save());
 
     return payload;
   }
@@ -68,16 +64,19 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
   reset() {
     this.loadDeviceTypes();
     if (this.mappings) {
-      (this.mappings as any).reset();
+      this.mappings.reset();
     }
   }
 
   /** Load device types asynchronously */
   async loadDeviceTypes() {
     try {
-      let criteria: IDeviceTypeSearchCriteria = { pageNumber: 1, pageSize: 0 };
-      let format: IDeviceTypeResponseFormat = {};
-      let response: AxiosResponse<IDeviceTypeSearchResults> = await listDeviceTypes(
+      const criteria: IDeviceTypeSearchCriteria = {
+        pageNumber: 1,
+        pageSize: 0
+      };
+      const format: IDeviceTypeResponseFormat = {};
+      const response: AxiosResponse<IDeviceTypeSearchResults> = await listDeviceTypes(
         this.$store,
         criteria,
         format
@@ -92,18 +91,19 @@ export default class DeviceTypeMappingRouterDialog extends DialogComponent<
   load(config: IDeviceTypeMappingRouterConfiguration) {
     this.reset();
     if (this.mappings) {
-      (this.mappings as any).load(config);
+      this.mappings.load(config);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!(this.mappings as any).validate()) {
-      (this.dialog as any).setActiveTab(0);
+    if (!this.mappings.validate()) {
+      this.dialog.setActiveTab(0);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
     this.closeDialog();
   }

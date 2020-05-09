@@ -84,17 +84,21 @@ export default class CommandDeliveryTable extends Vue {
   @Ref() readonly mqttCreate!: MqttCommandDestinationCreateDialog;
   @Ref() readonly mqttUpdate!: MqttCommandDestinationUpdateDialog;
 
-  headers: any[] = [
+  headers: { text: string; value: string }[] = [
     { text: "Id", value: "id" },
     { text: "Type", value: "type" },
     { text: "", value: "delete" }
   ];
 
   /** Command destinations in format for display */
-  commandDestsAsSortedArray: any[] = [];
+  commandDestsAsSortedArray: {
+    meta: { id: string; type: string };
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    config: any;
+  }[] = [];
 
   @Watch("commandDestinations", { immediate: true })
-  onCommandDestinationsUpdated(updated: any) {
+  onCommandDestinationsUpdated() {
     this.calculateCommandDestinationsAsSortedArray();
   }
 
@@ -105,7 +109,7 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Get list of ids already in use */
   findIdsInUse(exclude?: string): string[] {
-    let ids: string[] = [];
+    const ids: string[] = [];
     if (this.commandDestinations) {
       this.commandDestinations.forEach(dest => {
         if (dest.id != exclude) {
@@ -133,7 +137,7 @@ export default class CommandDeliveryTable extends Vue {
   getCommandDestinationById(
     id: string
   ): ICommandDestinationGenericConfiguration | null {
-    let index: number | null = this.getCommandDestinationIndex(id);
+    const index: number | null = this.getCommandDestinationIndex(id);
     if (this.commandDestinations && index != null) {
       return this.commandDestinations[index];
     }
@@ -142,13 +146,16 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Get command destinations as a sorted array */
   calculateCommandDestinationsAsSortedArray(): void {
-    let all: any[] = [];
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const all: { meta: { id: string; type: string }; config: any }[] = [];
     if (this.commandDestinations) {
       this.commandDestinations.forEach(dest => {
-        let meta: any = {};
-        meta.id = dest.id;
-        meta.type = dest.type;
-        let config: any = dest.configuration;
+        const meta: { id: string; type: string } = {
+          id: dest.id,
+          type: dest.type
+        };
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        const config: any = dest.configuration;
         all.push({ meta: meta, config: config });
       });
     }
@@ -160,16 +167,16 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Add new command destination */
   onAddCommandDestination() {
-    (this.chooser as any).openChooser();
+    this.chooser.openChooser();
   }
 
   /** Called to create a new command destination based on type */
   onCommandDestinationCreate(id: string): void {
-    let idsInUse: string[] = this.findIdsInUse();
+    const idsInUse: string[] = this.findIdsInUse();
     if (id == "coap") {
-      (this.coapCreate as any).openDialog(idsInUse);
+      this.coapCreate.openDialog(idsInUse);
     } else if (id == "mqtt") {
-      (this.mqttCreate as any).openDialog(idsInUse);
+      this.mqttCreate.openDialog(idsInUse);
     }
   }
 
@@ -186,15 +193,15 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Open command destination by id */
   onOpenCommandDestination(id: string) {
-    let config: ICommandDestinationGenericConfiguration | null = this.getCommandDestinationById(
+    const config: ICommandDestinationGenericConfiguration | null = this.getCommandDestinationById(
       id
     );
-    let idsInUse: string[] = this.findIdsInUse(id);
+    const idsInUse: string[] = this.findIdsInUse(id);
     if (config) {
       if (config.type === "coap") {
-        (this.coapUpdate as any).openDialog(config, idsInUse);
+        this.coapUpdate.openDialog(config, idsInUse);
       } else if (config.type === "mqtt") {
-        (this.mqttUpdate as any).openDialog(config, idsInUse);
+        this.mqttUpdate.openDialog(config, idsInUse);
       }
     }
   }
@@ -204,7 +211,7 @@ export default class CommandDeliveryTable extends Vue {
     originalId: string,
     config: ICommandDestinationGenericConfiguration
   ): void {
-    let index: number | null = this.getCommandDestinationIndex(originalId);
+    const index: number | null = this.getCommandDestinationIndex(originalId);
     if (this.commandDestinations && index != null) {
       Vue.set(this.commandDestinations, index, config);
       this.calculateCommandDestinationsAsSortedArray();
@@ -214,7 +221,7 @@ export default class CommandDeliveryTable extends Vue {
 
   /** Delete command destination by id */
   onDeleteCommandDestination(id: string) {
-    let index: number | null = this.getCommandDestinationIndex(id);
+    const index: number | null = this.getCommandDestinationIndex(id);
     if (this.commandDestinations && index != null) {
       this.commandDestinations.splice(index);
       this.calculateCommandDestinationsAsSortedArray();
@@ -224,4 +231,3 @@ export default class CommandDeliveryTable extends Vue {
 }
 </script>
 
-<style scoped></style>

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Ref } from "vue-property-decorator";
+import { Component, Ref } from "vue-property-decorator";
 
 import DeviceTypeMappingRouterDialog from "./DeviceTypeMappingRouterDialog.vue";
 
@@ -27,16 +27,15 @@ export default class DeviceTypeMappingRouterCreateDialog extends Vue {
 
   /** Emit payload */
   onPayload(payload: IDeviceTypeMappingRouterConfiguration): void {
-    (this.dialog as any).closeDialog();
+    this.dialog.closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(): void {
-    (this.dialog as any).reset();
-    (this.dialog as any).openDialog();
+    this.dialog.reset();
+    this.dialog.openDialog();
   }
 }
 </script>
 
-<style scoped></style>

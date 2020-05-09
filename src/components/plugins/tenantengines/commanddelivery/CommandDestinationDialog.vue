@@ -62,9 +62,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Ref, Mixins } from "vue-property-decorator";
-import { ITabbedComponent } from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
+import { Component, Prop, Ref } from "vue-property-decorator";
+import { BaseDialog } from "sitewhere-ide-components";
 
 import ParameterExtractorConfiguration from "./extractors/ParameterExtractorConfiguration.vue";
 
@@ -78,9 +77,10 @@ import { required, ValidationRule, helpers } from "vuelidate/lib/validators";
 /** Validator for checking if id is already used */
 const idConflict: ValidationRule = helpers.withParams(
   { type: "idConflict" },
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   (value: any, vm: any) => {
-    let idsInUse: string[] = vm.idsInUse;
-    let conflict: boolean = false;
+    const idsInUse: string[] = vm.idsInUse;
+    let conflict = false;
     idsInUse.forEach(id => {
       if (vm.id == id) conflict = true;
     });
@@ -110,8 +110,7 @@ export default class CommandDestinationDialog extends Vue {
   @Prop() readonly visible!: boolean;
   @Prop() readonly idsInUse!: string[];
   @Prop() readonly parameterExtractors!: { text: string; value: string }[];
-  @Ref() readonly dialog!: DialogComponent<any> & ITabbedComponent;
-  @Ref() readonly idTextField!: any;
+  @Ref() readonly dialog!: BaseDialog;
   @Ref() readonly extractor!: ParameterExtractorConfiguration;
 
   id: string | null = null;
@@ -133,8 +132,11 @@ export default class CommandDestinationDialog extends Vue {
   }
 
   /** Save dialog fields */
-  save(): any {
-    let config: any = { id: this.id, type: this.type };
+  save(): { id: string | null; type: string } {
+    const config: { id: string | null; type: string } = {
+      id: this.id,
+      type: this.type
+    };
     return config;
   }
 
@@ -147,7 +149,7 @@ export default class CommandDestinationDialog extends Vue {
 
   /** Validate fields */
   validate(): boolean {
-    if (!(this.extractor as any).validate()) {
+    if (!this.extractor.validate()) {
       return false;
     }
     this.$v.$touch();
@@ -166,11 +168,13 @@ export default class CommandDestinationDialog extends Vue {
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   onCreateClicked(e: any) {
     this.$emit("createClicked", e);
   }
 
   /** Called after cancel button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   onCancelClicked(e: any) {
     this.$emit("cancelClicked", e);
   }

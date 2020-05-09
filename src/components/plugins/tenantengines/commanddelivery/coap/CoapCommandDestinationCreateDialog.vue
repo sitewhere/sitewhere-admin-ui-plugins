@@ -32,17 +32,15 @@ export default class CoapCommandDestinationCreateDialog extends Vue {
 
   /** Emit payload */
   onPayload(payload: ICoapCommandDestinationConfiguration): void {
-    (this.dialog as any).closeDialog();
+    this.dialog.closeDialog();
     this.$emit("create", payload);
   }
 
   /** Open dialog */
   openDialog(idsInUse: string[]): void {
     this.idsInUse = idsInUse;
-    (this.dialog as any).reset();
-    (this.dialog as any).openDialog();
+    this.dialog.reset();
+    this.dialog.openDialog();
   }
 }
 </script>
-
-<style scoped></style>

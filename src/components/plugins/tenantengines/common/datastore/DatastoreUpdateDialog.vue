@@ -28,16 +28,15 @@ export default class DatastoreUpdateDialog extends Vue {
 
   /** Emit payload */
   onPayload(definition: IDatastoreDefinition): void {
-    (this.dialog as any).closeDialog();
+    this.dialog.closeDialog();
     this.$emit("update", definition);
   }
 
   /** Open dialog */
   openDialog(definition: IDatastoreDefinition): void {
-    (this.dialog as any).openDialog();
-    (this.dialog as any).load(definition);
+    this.dialog.openDialog();
+    this.dialog.load(definition);
   }
 }
 </script>
 
-<style scoped></style>

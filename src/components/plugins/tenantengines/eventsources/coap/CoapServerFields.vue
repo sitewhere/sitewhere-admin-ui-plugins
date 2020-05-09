@@ -29,7 +29,7 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class CoapServerFields extends DialogSection {
-  port: number = 8583;
+  port = 8583;
 
   /** Reset section content */
   reset(): void {

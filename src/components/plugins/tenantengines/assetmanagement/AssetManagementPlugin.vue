@@ -60,10 +60,9 @@ export default class AssetManagementPlugin extends Vue {
   /** Unset the datastore */
   onUnsetDatastore(): void {
     if (this.assetManagement) {
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.assetManagement as any).datastore = null;
     }
   }
 }
 </script>
-
-<style scoped></style>

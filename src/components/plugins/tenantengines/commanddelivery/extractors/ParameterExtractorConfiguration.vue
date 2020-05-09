@@ -13,7 +13,6 @@ import { DialogSection } from "sitewhere-ide-components";
 
 import DefaultMqttParameterExtractorConfiguration from "./mqtt/DefaultMqttParameterExtractorConfiguration.vue";
 import { IParameterExtractorGenericConfiguration } from "sitewhere-configuration-model";
-import { Validation } from "vuelidate";
 
 @Component({
   components: {
@@ -26,7 +25,7 @@ export default class ParameterExtractorConfiguration extends DialogSection {
   @Ref() readonly details!: DialogSection;
 
   @Watch("extractorType", { immediate: true })
-  onExtractorTypeUpdated(updated: string) {
+  onExtractorTypeUpdated() {
     this.load(this.parameterExtractor);
   }
 
@@ -38,14 +37,14 @@ export default class ParameterExtractorConfiguration extends DialogSection {
   /** Reset section content */
   reset(): void {
     if (this.details) {
-      (this.details as any).reset();
+      this.details.reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
     if (this.details) {
-      if (!(this.details as any).validate()) {
+      if (!this.details.validate()) {
         return false;
       }
     }
@@ -56,16 +55,17 @@ export default class ParameterExtractorConfiguration extends DialogSection {
   load(input: IParameterExtractorGenericConfiguration): void {
     this.$nextTick().then(() => {
       if (this.details) {
-        (this.details as any).load(input.configuration);
+        this.details.load(input.configuration);
       }
     });
   }
 
   /** Save form data to an object */
   save(): {} {
-    let config: any = {};
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
     if (this.details) {
-      Object.assign(config, (this.details as any).save());
+      Object.assign(config, this.details.save());
     }
     return config;
   }

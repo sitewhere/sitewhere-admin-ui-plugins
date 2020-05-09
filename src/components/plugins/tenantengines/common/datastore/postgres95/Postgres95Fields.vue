@@ -90,7 +90,7 @@ import { Validation } from "vuelidate";
       required
     }
   }
-} as any)
+})
 export default class Postgres95Fields extends DialogSection {
   dummy!: Validation;
   @Prop() readonly readonly!: boolean;
@@ -118,6 +118,7 @@ export default class Postgres95Fields extends DialogSection {
   }
 
   /** Load form data from an object */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   load(configuration: any): void {
     this.hostname = configuration.hostname;
     this.port = configuration.port;
@@ -138,5 +139,3 @@ export default class Postgres95Fields extends DialogSection {
   }
 }
 </script>
-
-<style scoped></style>

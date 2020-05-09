@@ -73,10 +73,10 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class ActiveMqBrokerFields extends DialogSection {
-  brokerName: string = "sitewhere";
-  transportUri: string = "";
-  queueName: string = "sitewhere";
-  numConsumers: number = 3;
+  brokerName = "sitewhere";
+  transportUri = "";
+  queueName = "sitewhere";
+  numConsumers = 3;
 
   /** Reset section content */
   reset(): void {

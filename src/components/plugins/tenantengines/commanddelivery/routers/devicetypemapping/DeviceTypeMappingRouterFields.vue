@@ -22,7 +22,13 @@ import { IDeviceType } from "sitewhere-rest-api";
 
 import { required } from "vuelidate/lib/validators";
 
-@Component({})
+@Component({
+  validations: {
+    defaultDestination: {
+      required
+    }
+  }
+})
 export default class DeviceTypeMappingRouterFields extends DialogSection {
   @Prop() readonly deviceTypes!: IDeviceType[];
 

@@ -9,12 +9,13 @@
 import Vue from "vue";
 import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
+import { NewElementChooser } from "sitewhere-ide-components";
 
 @Component({
   components: {}
 })
 export default class NewCommandDestinationChooser extends Vue {
-  @Ref() readonly dialog!: any;
+  @Ref() readonly dialog!: NewElementChooser;
 
   /** Get page icon */
   get icon(): MicroserviceIcon {
@@ -38,5 +39,3 @@ export default class NewCommandDestinationChooser extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

@@ -129,14 +129,14 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class EventHubFields extends DialogSection {
-  consumerGroupName: string = "";
-  namespaceName: string = "";
-  eventHubName: string = "";
-  sasKeyName: string = "";
-  sasKey: string = "";
-  storageConnectionString: string = "";
-  storageContainerName: string = "";
-  hostNamePrefix: string = "";
+  consumerGroupName = "";
+  namespaceName = "";
+  eventHubName = "";
+  sasKeyName = "";
+  sasKey = "";
+  storageConnectionString = "";
+  storageContainerName = "";
+  hostNamePrefix = "";
 
   /** Reset section content */
   reset(): void {

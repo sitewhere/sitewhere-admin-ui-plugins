@@ -66,57 +66,60 @@ export default class MqttEventSourceDialog extends DialogComponent<
 
   /** Generate payload from UI */
   generatePayload() {
-    let config: any = {};
-    Object.assign(config, (this.connection as any).save());
-    Object.assign(config, (this.authentication as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
+    Object.assign(config, this.connection.save());
+    Object.assign(config, this.authentication.save());
 
-    let payload: any = {};
-    Object.assign(payload, (this.dialog as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
+    Object.assign(payload, this.dialog.save());
     payload.configuration = config;
 
     return payload;
   }
 
   /** Reset dialog contents */
-  reset() {
+  reset(): void {
     if (this.connection) {
-      (this.connection as any).reset();
+      this.connection.reset();
     }
     if (this.authentication) {
-      (this.authentication as any).reset();
+      this.authentication.reset();
     }
-    (this.dialog as any).reset();
+    this.dialog.reset();
   }
 
   /** Load dialog from a given configuration */
-  load(config: IEventSourceGenericConfiguration) {
+  load(config: IEventSourceGenericConfiguration): void {
     this.reset();
     if (this.dialog) {
-      (this.dialog as any).load(config);
+      this.dialog.load(config);
     }
     if (this.connection) {
-      (this.connection as any).load(config.configuration);
+      this.connection.load(config.configuration);
     }
     if (this.authentication) {
-      (this.authentication as any).load(config.configuration);
+      this.authentication.load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!(this.dialog as any).validate()) {
+    if (!this.dialog.validate()) {
       return;
     }
-    if (!(this.connection as any).validate()) {
-      (this.dialog as any).setActiveTab(0);
+    if (!this.connection.validate()) {
+      this.dialog.setActiveTab(0);
       return;
     }
-    if (!(this.authentication as any).validate()) {
-      (this.dialog as any).setActiveTab(1);
+    if (!this.authentication.validate()) {
+      this.dialog.setActiveTab(1);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
   }
 }

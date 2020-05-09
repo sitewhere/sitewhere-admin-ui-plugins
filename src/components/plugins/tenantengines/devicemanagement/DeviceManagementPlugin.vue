@@ -47,10 +47,9 @@ export default class DeviceManagementPlugin extends Vue {
 
   onUnsetDatastore(): void {
     if (this.deviceManagement) {
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.deviceManagement as any).datastore = null;
     }
   }
 }
 </script>
-
-<style scoped></style>

@@ -21,7 +21,6 @@ import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-mod
 import { DialogSection } from "sitewhere-ide-components";
 
 import { required } from "vuelidate/lib/validators";
-import { Validation } from "vuelidate";
 
 @Component({
   validations: {
@@ -31,7 +30,7 @@ import { Validation } from "vuelidate";
   }
 })
 export default class BatchOperationManagerFields extends DialogSection {
-  throttleDelayMs: number = 0;
+  throttleDelayMs = 0;
 
   /** Reset section content */
   reset(): void {

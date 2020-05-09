@@ -23,11 +23,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { Component, Ref, Prop } from "vue-property-decorator";
+import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon, ITabbedComponent } from "sitewhere-ide-common";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
-import { DialogComponent, DialogSection } from "sitewhere-ide-components";
+import { DialogComponent } from "sitewhere-ide-components";
 
 import BatchOperationManagerFields from "./BatchOperationManagerFields.vue";
 
@@ -38,22 +37,18 @@ export default class BatchOperationManagerDialog extends DialogComponent<
   IBatchOperationManagerConfiguration
 > {
   @Ref() readonly dialog!: ITabbedComponent;
-  @Ref() readonly manager!: Vue;
+  @Ref() readonly manager!: BatchOperationManagerFields;
 
   /** Get icon for dialog */
   get icon(): MicroserviceIcon {
     return MicroserviceIcon.BatchOperations;
   }
 
-  /** Convert to dialog section */
-  get managerSection(): DialogSection {
-    return this.manager as DialogSection;
-  }
-
   /** Generate payload from UI */
   generatePayload() {
-    let payload: any = {};
-    Object.assign(payload, this.managerSection.save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
+    Object.assign(payload, this.manager.save());
 
     return payload;
   }
@@ -61,7 +56,7 @@ export default class BatchOperationManagerDialog extends DialogComponent<
   /** Reset dialog contents */
   reset() {
     if (this.manager) {
-      this.managerSection.reset();
+      this.manager.reset();
     }
   }
 
@@ -69,18 +64,19 @@ export default class BatchOperationManagerDialog extends DialogComponent<
   load(config: IBatchOperationManagerConfiguration) {
     this.reset();
     if (this.manager) {
-      this.managerSection.load(config);
+      this.manager.load(config);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!(this.manager as any).validate()) {
+    if (!this.manager.validate()) {
       this.dialog.setActiveTab(0);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("update", payload);
     this.closeDialog();
   }

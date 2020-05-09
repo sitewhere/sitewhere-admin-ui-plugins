@@ -59,11 +59,13 @@ export default class CoapEventSourceDialog extends DialogComponent<
 
   /** Generate payload from UI */
   generatePayload() {
-    let config: any = {};
-    Object.assign(config, (this.server as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
+    Object.assign(config, this.server.save());
 
-    let payload: any = {};
-    Object.assign(payload, (this.dialog as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
+    Object.assign(payload, this.dialog.save());
     payload.configuration = config;
 
     return payload;
@@ -72,33 +74,35 @@ export default class CoapEventSourceDialog extends DialogComponent<
   /** Reset dialog contents */
   reset() {
     if (this.server) {
-      (this.server as any).reset();
+      this.server.reset();
     }
-    (this.dialog as any).reset();
+    this.dialog.reset();
   }
 
   /** Load dialog from a given configuration */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   load(config: IEventSourceGenericConfiguration) {
     this.reset();
     if (this.dialog) {
-      (this.dialog as any).load(config);
+      this.dialog.load(config);
     }
     if (this.server) {
-      (this.server as any).load(config.configuration);
+      this.server.load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!(this.dialog as any).validate()) {
+    if (!this.dialog.validate()) {
       return;
     }
-    if (!(this.server as any).validate()) {
-      (this.dialog as any).setActiveTab(0);
+    if (!this.server.validate()) {
+      this.dialog.setActiveTab(0);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
   }
 }

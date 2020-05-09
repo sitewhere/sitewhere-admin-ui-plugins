@@ -33,7 +33,7 @@ export default class ActiveMqBrokerEventSourceUpdateDialog extends Vue {
 
   /** Emit payload */
   onPayload(config: IEventSourceGenericConfiguration): void {
-    (this.dialog as any).closeDialog();
+    this.dialog.closeDialog();
     this.$emit("update", this.originalId, config);
   }
 
@@ -44,11 +44,10 @@ export default class ActiveMqBrokerEventSourceUpdateDialog extends Vue {
   ): void {
     this.originalId = config.id;
     this.idsInUse = idsInUse;
-    (this.dialog as any).reset();
-    (this.dialog as any).openDialog();
-    (this.dialog as any).load(config);
+    this.dialog.reset();
+    this.dialog.openDialog();
+    this.dialog.load(config);
   }
 }
 </script>
 
-<style scoped></style>

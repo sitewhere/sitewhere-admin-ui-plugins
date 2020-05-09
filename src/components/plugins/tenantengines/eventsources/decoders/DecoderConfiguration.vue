@@ -32,7 +32,7 @@ export default class DecoderConfiguration extends DialogSection {
   @Ref() readonly details!: DialogSection;
 
   @Watch("decoderType", { immediate: true })
-  onDecoderTypeUpdated(updated: string) {
+  onDecoderTypeUpdated() {
     this.load(this.decoder);
   }
 
@@ -44,14 +44,14 @@ export default class DecoderConfiguration extends DialogSection {
   /** Reset section content */
   reset(): void {
     if (this.details) {
-      (this.details as any).reset();
+      this.details.reset();
     }
   }
 
   /** Perform validation */
   validate(): boolean {
     if (this.details) {
-      if (!(this.details as any).validate()) {
+      if (!this.details.validate()) {
         return false;
       }
     }
@@ -62,16 +62,17 @@ export default class DecoderConfiguration extends DialogSection {
   load(input: IEventDecoderGenericConfiguration): void {
     this.$nextTick().then(() => {
       if (this.details) {
-        (this.details as any).load(input.configuration);
+        this.details.load(input.configuration);
       }
     });
   }
 
   /** Save form data to an object */
   save(): {} {
-    let config: any = {};
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
     if (this.details) {
-      Object.assign(config, (this.details as any).save());
+      Object.assign(config, this.details.save());
     }
     return config;
   }

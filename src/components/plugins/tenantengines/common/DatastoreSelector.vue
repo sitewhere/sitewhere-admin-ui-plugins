@@ -78,9 +78,9 @@ export default class DatastoreSelector extends Vue {
 
   /** Local or global datastore type */
   get datastoreType(): string | null {
-    let reference = this.datastoreReference;
+    const reference = this.datastoreReference;
     if (reference) {
-      let global: IDatastoreDefinition | null = this.findGlobalDefinition(
+      const global: IDatastoreDefinition | null = this.findGlobalDefinition(
         reference
       );
       return global ? global.type : null;
@@ -91,10 +91,11 @@ export default class DatastoreSelector extends Vue {
   }
 
   /** Local or global datastore configuration */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   get configuration(): any {
-    let reference = this.datastoreReference;
+    const reference = this.datastoreReference;
     if (reference) {
-      let global: IDatastoreDefinition | null = this.findGlobalDefinition(
+      const global: IDatastoreDefinition | null = this.findGlobalDefinition(
         reference
       );
       return global ? global.configuration : null;
@@ -114,7 +115,7 @@ export default class DatastoreSelector extends Vue {
     if (!this.rdbConfigurations) {
       return null;
     }
-    let match: IRdbConfiguration = this.rdbConfigurations[reference];
+    const match: IRdbConfiguration = this.rdbConfigurations[reference];
     if (!match) {
       return null;
     }
@@ -126,7 +127,7 @@ export default class DatastoreSelector extends Vue {
 
   /** Add datastore */
   onAddDatastore() {
-    (this.create as any).openDialog();
+    this.create.openDialog();
   }
 
   /** Called to create datastore based on UI data */
@@ -136,7 +137,7 @@ export default class DatastoreSelector extends Vue {
 
   /** Update datastore */
   onUpdateDatastore() {
-    (this.update as any).openDialog(this.datastore);
+    this.update.openDialog(this.datastore);
   }
 
   /** Called to update datastore based on UI data */

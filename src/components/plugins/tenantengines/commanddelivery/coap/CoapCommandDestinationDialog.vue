@@ -50,7 +50,7 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
   @Prop() readonly createLabel!: string;
   @Prop() readonly cancelLabel!: string;
   @Prop() readonly idsInUse!: string[];
-  @Ref() readonly dialog!: any;
+  @Ref() readonly dialog!: CommandDestinationDialog;
   @Ref() readonly coap!: CoapFields;
 
   /** List of parameter extractors */
@@ -68,11 +68,13 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
 
   /** Generate payload from UI */
   generatePayload() {
-    let config: any = {};
-    Object.assign(config, (this.coap as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const config: any = {};
+    Object.assign(config, this.coap.save());
 
-    let payload: any = {};
-    Object.assign(payload, (this.dialog as any).save());
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const payload: any = {};
+    Object.assign(payload, this.dialog.save());
     payload.configuration = config;
 
     return payload;
@@ -81,33 +83,34 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
   /** Reset dialog contents */
   reset() {
     if (this.coap) {
-      (this.coap as any).reset();
+      this.coap.reset();
     }
-    (this.dialog as any).reset();
+    this.dialog.reset();
   }
 
   /** Load dialog from a given configuration */
   load(config: ICommandDestinationGenericConfiguration) {
     this.reset();
     if (this.dialog) {
-      (this.dialog as any).load(config);
+      this.dialog.load(config);
     }
     if (this.coap) {
-      (this.coap as any).load(config.configuration);
+      this.coap.load(config.configuration);
     }
   }
 
   /** Called after create button is clicked */
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!(this.dialog as any).validate()) {
+    if (!this.dialog.validate()) {
       return;
     }
-    if (!(this.coap as any).validate()) {
-      (this.dialog as any).setActiveTab(0);
+    if (!this.coap.validate()) {
+      this.dialog.setActiveTab(0);
       return;
     }
 
-    var payload = this.generatePayload();
+    const payload = this.generatePayload();
     this.$emit("payload", payload);
   }
 }

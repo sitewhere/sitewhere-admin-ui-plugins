@@ -11,13 +11,10 @@ import { ICoapCommandDestinationConfiguration } from "sitewhere-configuration-mo
 
 import NoConfiguration from "../NoConfiguration.vue";
 
-import { required } from "vuelidate/lib/validators";
-
 @Component({
   components: {
     NoConfiguration
-  },
-  validations: {}
+  }
 })
 export default class CoapFields extends DialogSection {
   /** Reset section content */
@@ -32,6 +29,7 @@ export default class CoapFields extends DialogSection {
   }
 
   /** Load form data from an object */
+  /* eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars */
   load(input: ICoapCommandDestinationConfiguration): void {}
 
   /** Save form data to an object */

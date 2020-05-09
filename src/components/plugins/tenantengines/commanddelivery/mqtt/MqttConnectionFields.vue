@@ -52,9 +52,9 @@ import { required } from "vuelidate/lib/validators";
   }
 })
 export default class MqttConnectionFields extends DialogSection {
-  protocol: string = "tcp";
+  protocol = "tcp";
   hostname: string | null = null;
-  port: number = 1883;
+  port = 1883;
 
   protocols: { text: string; value: string }[] = [
     {

@@ -1,14 +1,14 @@
 <template>
-  <sw-content-section :icon="icon" title="Batch Operation Manager">
-    <sw-content-field name="throttle delay(ms)" :value="throttleDelayMs" />
-    <sw-content-link
+  <content-section :icon="icon" title="Batch Operation Manager">
+    <content-field name="throttle delay(ms)" :value="throttleDelayMs" />
+    <content-link
       class="mt-3"
       icon="fa-edit"
       text="Edit batch operation manager settings."
       @linkClicked="onEditBatchOperationManager"
     />
     <batch-operation-manager-dialog ref="dialog" @update="onBatchOperationManagerUpdate" />
-  </sw-content-section>
+  </content-section>
 </template>
 
 <script lang="ts">
@@ -20,8 +20,19 @@ import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-mod
 
 import BatchOperationManagerDialog from "./BatchOperationManagerDialog.vue";
 
+import {
+  ContentSection,
+  ContentField,
+  ContentLink
+} from "sitewhere-ide-components";
+
 @Component({
-  components: { BatchOperationManagerDialog }
+  components: {
+    ContentSection,
+    ContentField,
+    ContentLink,
+    BatchOperationManagerDialog
+  }
 })
 export default class BatchOperationManagerSection extends Vue {
   @Prop() readonly configuration!: IBatchOperationManagerConfiguration;

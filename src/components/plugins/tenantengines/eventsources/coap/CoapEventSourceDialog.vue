@@ -28,17 +28,16 @@
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
-import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
+import { DialogComponent } from "sitewhere-ide-components";
+import { VTab, VTabItem } from "vuetify/lib";
+
+import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 import EventSourceDialog from "../EventSourceDialog.vue";
 import CoapServerFields from "./CoapServerFields.vue";
 
 @Component({
-  components: {
-    EventSourceDialog,
-    CoapServerFields
-  }
+  components: { VTab, VTabItem, EventSourceDialog, CoapServerFields }
 })
 export default class CoapEventSourceDialog extends DialogComponent<
   IEventSourceGenericConfiguration

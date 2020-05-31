@@ -31,14 +31,12 @@ import { MicroserviceIcon } from "sitewhere-ide-common";
 import { DialogComponent } from "sitewhere-ide-components";
 import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
+import { VTab, VTabItem } from "vuetify/lib";
 import EventSourceDialog from "../EventSourceDialog.vue";
 import RabbitMqFields from "./RabbitMqFields.vue";
 
 @Component({
-  components: {
-    EventSourceDialog,
-    RabbitMqFields
-  }
+  components: { VTab, VTabItem, EventSourceDialog, RabbitMqFields }
 })
 export default class RabbitMqEventSourceDialog extends DialogComponent<
   IEventSourceGenericConfiguration

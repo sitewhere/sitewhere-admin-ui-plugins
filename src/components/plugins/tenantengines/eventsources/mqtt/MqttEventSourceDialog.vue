@@ -35,12 +35,15 @@ import { MicroserviceIcon } from "sitewhere-ide-common";
 import { DialogComponent } from "sitewhere-ide-components";
 import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
+import { VTab, VTabItem } from "vuetify/lib";
 import EventSourceDialog from "../EventSourceDialog.vue";
 import MqttConnectionFields from "./MqttConnectionFields.vue";
 import MqttAuthenticationFields from "./MqttAuthenticationFields.vue";
 
 @Component({
   components: {
+    VTab,
+    VTabItem,
     EventSourceDialog,
     MqttConnectionFields,
     MqttAuthenticationFields

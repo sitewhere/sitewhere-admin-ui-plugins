@@ -1,6 +1,6 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
-    <sw-content-section icon="fa-database" title="Batch Operations Datastore">
+    <content-section icon="fa-database" title="Batch Operations Datastore">
       <datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
@@ -8,7 +8,7 @@
         @update="onUpdateDatastore"
         @unset="onUnsetDatastore"
       />
-    </sw-content-section>
+    </content-section>
     <v-divider class="mt-4 mb-4" />
     <batch-operation-manager-section
       :configuration="batchOperationManager"
@@ -25,16 +25,24 @@ import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import DatastoreSelector from "../common/DatastoreSelector.vue";
 import BatchOperationManagerSection from "./batchoperationmanager/BatchOperationManagerSection.vue";
 
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import { ContentSection } from "sitewhere-ide-components";
+
+import { VDivider } from "vuetify/lib";
+
+import {
+  ITenantEngineConfiguration,
+  IInstanceConfiguration
+} from "sitewhere-rest-api";
 import {
   IBatchOperationsConfiguration,
   IBatchOperationManagerConfiguration,
   IDatastoreDefinition
 } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
   components: {
+    VDivider,
+    ContentSection,
     TenantEnginePlugin,
     DatastoreSelector,
     BatchOperationManagerSection

@@ -9,15 +9,15 @@
 
 <script lang="ts">
 import { Component, Prop, Ref, Watch } from "vue-property-decorator";
+
 import { DialogSection } from "sitewhere-ide-components";
+import { VCard } from "vuetify/lib";
 
 import DefaultMqttParameterExtractorConfiguration from "./mqtt/DefaultMqttParameterExtractorConfiguration.vue";
 import { IParameterExtractorGenericConfiguration } from "sitewhere-configuration-model";
 
 @Component({
-  components: {
-    DefaultMqttParameterExtractorConfiguration
-  }
+  components: { VCard, DefaultMqttParameterExtractorConfiguration }
 })
 export default class ParameterExtractorConfiguration extends DialogSection {
   @Prop() readonly tenantId!: string;

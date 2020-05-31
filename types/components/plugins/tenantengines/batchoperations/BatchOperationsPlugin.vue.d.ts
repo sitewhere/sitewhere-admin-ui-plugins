@@ -1,7 +1,6 @@
 import Vue from "vue";
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import { ITenantEngineConfiguration, IInstanceConfiguration } from "sitewhere-rest-api";
 import { IBatchOperationsConfiguration, IBatchOperationManagerConfiguration, IDatastoreDefinition } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 export default class BatchOperationsPlugin extends Vue {
     readonly configuration: ITenantEngineConfiguration;
     /** Get tenant configuration for batch operations */

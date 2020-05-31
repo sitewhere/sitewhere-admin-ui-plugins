@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Server port"
         title="CoAP server port."
@@ -9,19 +9,22 @@
         type="number"
       >
         <span v-if="!$v.port.required && $v.$dirty">Port is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { ICoapServerConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { ICoapServerConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, FormText },
   validations: {
     port: {
       required

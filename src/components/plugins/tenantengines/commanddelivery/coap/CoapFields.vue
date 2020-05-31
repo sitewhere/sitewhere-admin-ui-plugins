@@ -6,15 +6,14 @@
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { ICoapCommandDestinationConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm } from "sitewhere-ide-components";
 import NoConfiguration from "../NoConfiguration.vue";
 
+import { ICoapCommandDestinationConfiguration } from "sitewhere-configuration-model";
+
 @Component({
-  components: {
-    NoConfiguration
-  }
+  components: { DialogForm, NoConfiguration }
 })
 export default class CoapFields extends DialogSection {
   /** Reset section content */

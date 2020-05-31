@@ -12,7 +12,9 @@
 
 <script lang="ts">
 import { Component, Prop, Ref, Watch } from "vue-property-decorator";
+
 import { DialogSection } from "sitewhere-ide-components";
+import { VCard } from "vuetify/lib";
 
 import JsonDecoderConfiguration from "./json/JsonDecoderConfiguration.vue";
 import ProtobufDecoderConfiguration from "./protobuf/ProtobufDecoderConfiguration.vue";
@@ -21,6 +23,7 @@ import { IEventDecoderGenericConfiguration } from "sitewhere-configuration-model
 
 @Component({
   components: {
+    VCard,
     JsonDecoderConfiguration,
     ProtobufDecoderConfiguration,
     ScriptedEventDecoderConfiguration

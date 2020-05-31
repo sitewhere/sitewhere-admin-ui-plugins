@@ -1,6 +1,6 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
-    <sw-content-section icon="fa-database" title="Asset Management Datastore">
+    <content-section icon="fa-database" title="Asset Management Datastore">
       <datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
@@ -8,7 +8,7 @@
         @update="onUpdateDatastore"
         @unset="onUnsetDatastore"
       />
-    </sw-content-section>
+    </content-section>
   </tenant-engine-plugin>
 </template>
 
@@ -19,15 +19,19 @@ import { Component, Prop } from "vue-property-decorator";
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import DatastoreSelector from "../common/DatastoreSelector.vue";
 
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import { ContentSection } from "sitewhere-ide-components";
+
+import {
+  ITenantEngineConfiguration,
+  IInstanceConfiguration
+} from "sitewhere-rest-api";
 import {
   IAssetManagementConfiguration,
   IDatastoreDefinition
 } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
-  components: { TenantEnginePlugin, DatastoreSelector }
+  components: { ContentSection, TenantEnginePlugin, DatastoreSelector }
 })
 export default class AssetManagementPlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;

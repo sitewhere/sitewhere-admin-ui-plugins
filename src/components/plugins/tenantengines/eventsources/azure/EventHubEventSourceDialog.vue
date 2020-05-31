@@ -28,14 +28,18 @@
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
-import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 
+import { DialogComponent } from "sitewhere-ide-components";
+import { VTab, VTabItem } from "vuetify/lib";
+
+import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
 import EventSourceDialog from "../EventSourceDialog.vue";
 import EventHubFields from "./EventHubFields.vue";
 
 @Component({
   components: {
+    VTab,
+    VTabItem,
     EventSourceDialog,
     EventHubFields
   }

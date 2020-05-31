@@ -8,7 +8,9 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-@Component({})
+import { VCard, VCardText } from "vuetify/lib";
+
+@Component({ components: { VCard, VCardText } })
 export default class NoConfiguration extends Vue {}
 </script>
 

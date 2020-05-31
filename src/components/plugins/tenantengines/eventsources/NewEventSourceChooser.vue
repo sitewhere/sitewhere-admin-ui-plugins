@@ -1,34 +1,35 @@
 <template>
-  <sw-new-element-chooser ref="dialog" :icon="icon" title="Add Event Source" width="500">
-    <sw-new-element-entry
+  <new-element-chooser ref="dialog" :icon="icon" title="Add Event Source" width="500">
+    <new-element-entry
       icon="fa-globe"
       itemid="activemq-broker"
       @chosen="onChosen"
-    >ActiveMQ Broker Event Source</sw-new-element-entry>
-    <sw-new-element-entry
+    >ActiveMQ Broker Event Source</new-element-entry>
+    <new-element-entry
       icon="fa-globe"
       itemid="activemq-client"
       @chosen="onChosen"
-    >ActiveMQ Client Event Source</sw-new-element-entry>
-    <sw-new-element-entry
+    >ActiveMQ Client Event Source</new-element-entry>
+    <new-element-entry
       icon="fa-globe"
       itemid="eventhub"
       @chosen="onChosen"
-    >Azure Event Hub Event Source</sw-new-element-entry>
-    <sw-new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Server Event Source</sw-new-element-entry>
-    <sw-new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Event Source</sw-new-element-entry>
-    <sw-new-element-entry icon="fa-globe" itemid="rabbitmq" @chosen="onChosen">RabbitMQ Event Source</sw-new-element-entry>
-  </sw-new-element-chooser>
+    >Azure Event Hub Event Source</new-element-entry>
+    <new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Server Event Source</new-element-entry>
+    <new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Event Source</new-element-entry>
+    <new-element-entry icon="fa-globe" itemid="rabbitmq" @chosen="onChosen">RabbitMQ Event Source</new-element-entry>
+  </new-element-chooser>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { NewElementChooser } from "sitewhere-ide-components";
+
+import { NewElementChooser, NewElementEntry } from "sitewhere-ide-components";
 
 @Component({
-  components: {}
+  components: { NewElementChooser, NewElementEntry }
 })
 export default class NewEventSourceChooser extends Vue {
   @Ref() readonly dialog!: NewElementChooser;

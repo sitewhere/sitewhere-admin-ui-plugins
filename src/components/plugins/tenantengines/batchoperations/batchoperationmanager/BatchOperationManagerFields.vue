@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Throttle delay(ms)"
         title="Throttle delay in milliseconds."
@@ -10,19 +10,22 @@
         type="number"
       >
         <span v-if="!$v.throttleDelayMs.required && $v.$dirty">Throttle delay is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
-import { DialogSection } from "sitewhere-ide-components";
+
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
 
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, FormText },
   validations: {
     throttleDelayMs: {
       required

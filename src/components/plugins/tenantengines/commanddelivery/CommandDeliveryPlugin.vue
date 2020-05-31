@@ -24,6 +24,7 @@ import { MicroserviceIcon } from "sitewhere-ide-common";
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import CommandDestinationsTable from "./CommandDestinationsTable.vue";
 import CommandRouterSection from "./CommandRouterSection.vue";
+import { VDivider } from "vuetify/lib";
 
 import { ITenantEngineConfiguration } from "sitewhere-rest-api";
 import {
@@ -35,6 +36,7 @@ import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
   components: {
+    VDivider,
     TenantEnginePlugin,
     CommandDestinationsTable,
     CommandRouterSection

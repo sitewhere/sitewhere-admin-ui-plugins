@@ -1,24 +1,24 @@
 <template>
-  <sw-content-section icon="fa-sitemap" :fa="true" title="Command Router">
+  <content-section icon="fa-sitemap" :fa="true" title="Command Router">
     <v-card flat v-if="router">
       <device-type-mapping-router-summary v-if="isDeviceTypeMappingRouter" :router="router" />
-      <sw-content-link
+      <content-link
         class="mb-2"
         icon="fa-edit"
         text="Edit command router settings"
         @linkClicked="onUpdateCommandRouter"
       />
-      <sw-content-link
+      <content-link
         icon="fa-trash"
         text="Unset command router"
         @linkClicked="onUnsetCommandRouter"
       />
     </v-card>
     <v-card flat v-else>
-      <sw-content-warning
+      <content-warning
         text="No command router is set. This will cause tenant engine startup to fail!"
       />
-      <sw-content-link
+      <content-link
         class="mt-3"
         icon="fa-plus-circle"
         text="Add new command router"
@@ -27,7 +27,7 @@
     </v-card>
     <new-command-router-chooser ref="chooser" @chosen="onCommandRouterChosen" />
     <device-type-mapping-router-create-dialog ref="dtmRouterCreate" />
-  </sw-content-section>
+  </content-section>
 </template>
 
 <script lang="ts">
@@ -42,8 +42,19 @@ import NewCommandRouterChooser from "./NewCommandRouterChooser.vue";
 import DeviceTypeMappingRouterSummary from "./routers/devicetypemapping/DeviceTypeMappingRouterSummary.vue";
 import DeviceTypeMappingRouterCreateDialog from "./routers/devicetypemapping/DeviceTypeMappingRouterCreateDialog.vue";
 
+import {
+  ContentSection,
+  ContentLink,
+  ContentWarning
+} from "sitewhere-ide-components";
+import { VCard } from "vuetify/lib";
+
 @Component({
   components: {
+    VCard,
+    ContentSection,
+    ContentLink,
+    ContentWarning,
     NewCommandRouterChooser,
     DeviceTypeMappingRouterSummary,
     DeviceTypeMappingRouterCreateDialog

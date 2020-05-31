@@ -1,5 +1,5 @@
 <template>
-  <sw-base-dialog
+  <base-dialog
     ref="dialog"
     :icon="icon"
     title="Edit Batch Operation Manager Settings"
@@ -19,19 +19,21 @@
         <batch-operation-manager-fields ref="manager" />
       </v-tab-item>
     </template>
-  </sw-base-dialog>
+  </base-dialog>
 </template>
 
 <script lang="ts">
 import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon, ITabbedComponent } from "sitewhere-ide-common";
 import { IBatchOperationManagerConfiguration } from "sitewhere-configuration-model";
-import { DialogComponent } from "sitewhere-ide-components";
+import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
 
 import BatchOperationManagerFields from "./BatchOperationManagerFields.vue";
 
+import { VTab, VTabItem } from "vuetify/lib";
+
 @Component({
-  components: { BatchOperationManagerFields }
+  components: { VTab, VTabItem, BaseDialog, BatchOperationManagerFields }
 })
 export default class BatchOperationManagerDialog extends DialogComponent<
   IBatchOperationManagerConfiguration

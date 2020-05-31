@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-select
+      <form-select
         :items="deviceTypes"
         title="Choose default command destination"
         label="Default Destination"
@@ -11,18 +11,25 @@
         icon="fa-check"
       />
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component, Prop } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
+
+import { VFlex } from "vuetify/lib";
+import {
+  DialogSection,
+  DialogForm,
+  FormSelect
+} from "sitewhere-ide-components";
+
 import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 import { IDeviceType } from "sitewhere-rest-api";
-
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogSection, DialogForm, FormSelect },
   validations: {
     defaultDestination: {
       required

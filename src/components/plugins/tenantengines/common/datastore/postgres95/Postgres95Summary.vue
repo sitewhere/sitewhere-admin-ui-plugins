@@ -1,12 +1,12 @@
 <template>
   <v-card flat>
-    <sw-content-field name="type" value="PostgreSQL" />
-    <sw-content-field :alt="true" name="dialect" value="postgres95" />
-    <sw-content-field name="hostname" :value="hostname" />
-    <sw-content-field :alt="true" name="port" :value="port" />
-    <sw-content-field name="username" :value="username" />
-    <sw-content-field :alt="true" name="password" :password="true" :value="password" />
-    <sw-content-field name="max connections" :value="maxConnections" />
+    <content-field name="type" value="PostgreSQL" />
+    <content-field :alt="true" name="dialect" value="postgres95" />
+    <content-field name="hostname" :value="hostname" />
+    <content-field :alt="true" name="port" :value="port" />
+    <content-field name="username" :value="username" />
+    <content-field :alt="true" name="password" :password="true" :value="password" />
+    <content-field name="max connections" :value="maxConnections" />
   </v-card>
 </template>
 
@@ -15,8 +15,11 @@ import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 import { Postgres95Configuration } from "sitewhere-configuration-model";
 
+import { ContentField } from "sitewhere-ide-components";
+import { VCard } from "vuetify/lib";
+
 @Component({
-  components: {}
+  components: { VCard, ContentField }
 })
 export default class Postgres95Summary extends Vue {
   @Prop() readonly configuration!: Postgres95Configuration;

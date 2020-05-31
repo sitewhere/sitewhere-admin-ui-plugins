@@ -1,9 +1,9 @@
 import { MicroserviceIcon } from "sitewhere-ide-common";
 import { DialogComponent } from "sitewhere-ide-components";
-import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 import CommandDestinationDialog from "../CommandDestinationDialog.vue";
 import MqttConnectionFields from "./MqttConnectionFields.vue";
 import MqttAuthenticationFields from "./MqttAuthenticationFields.vue";
+import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 export default class MqttCommandDestinationDialog extends DialogComponent<ICommandDestinationGenericConfiguration> {
     readonly tenantId: string;
     readonly title: string;

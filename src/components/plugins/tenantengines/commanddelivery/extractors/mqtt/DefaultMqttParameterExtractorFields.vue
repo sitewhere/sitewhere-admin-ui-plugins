@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         label="Command topic expression"
         title="Expression used to determine command MQTT topic."
         v-model="commandTopicExpression"
@@ -11,10 +11,10 @@
         <span
           v-if="!$v.commandTopicExpression.required && $v.$dirty"
         >Command topic expression is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         label="System topic expression"
         title="Expression used to determine system MQTT topic."
         v-model="systemTopicExpression"
@@ -24,19 +24,23 @@
         <span
           v-if="!$v.systemTopicExpression.required && $v.$dirty"
         >System topic expression is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component, Prop } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
+
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
 import { IDefaultMqttParameterExtractorConfiguration } from "sitewhere-configuration-model";
 
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogSection, DialogForm, FormText },
   validations: {
     commandTopicExpression: {
       required

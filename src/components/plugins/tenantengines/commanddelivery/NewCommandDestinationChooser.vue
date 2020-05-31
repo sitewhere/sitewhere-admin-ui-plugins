@@ -1,18 +1,19 @@
 <template>
-  <sw-new-element-chooser ref="dialog" :icon="icon" title="Add Command Destination" width="500">
-    <sw-new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Command Destination</sw-new-element-entry>
-    <sw-new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Command Destination</sw-new-element-entry>
-  </sw-new-element-chooser>
+  <new-element-chooser ref="dialog" :icon="icon" title="Add Command Destination" width="500">
+    <new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Command Destination</new-element-entry>
+    <new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Command Destination</new-element-entry>
+  </new-element-chooser>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { NewElementChooser } from "sitewhere-ide-components";
+
+import { NewElementChooser, NewElementEntry } from "sitewhere-ide-components";
 
 @Component({
-  components: {}
+  components: { NewElementChooser, NewElementEntry }
 })
 export default class NewCommandDestinationChooser extends Vue {
   @Ref() readonly dialog!: NewElementChooser;

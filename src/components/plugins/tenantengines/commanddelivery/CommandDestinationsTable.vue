@@ -1,25 +1,25 @@
 <template>
-  <sw-datatable-section
+  <datatable-section
     :icon="icon"
     title="Command Destinations"
     :headers="headers"
     :items="commandDestsAsSortedArray"
     width="50%"
   >
-    <template v-slot:items="props">
+    <template v-slot:item="props">
       <td>
-        <sw-datatable-link
+        <datatable-link
           @linkClicked="onOpenCommandDestination(props.item.meta.id)"
           :text="props.item.meta.id"
         />
       </td>
       <td>{{ props.item.meta.type }}</td>
       <td>
-        <sw-content-delete-icon @delete="onDeleteCommandDestination(props.item.meta.id)" />
+        <content-delete-icon @delete="onDeleteCommandDestination(props.item.meta.id)" />
       </td>
     </template>
     <template v-slot:datatable-footer>
-      <sw-content-link
+      <content-link
         class="mt-3"
         icon="fa-plus-circle"
         text="Add new command destination."
@@ -49,7 +49,7 @@
         @update="onCommandDestinationUpdated"
       />
     </template>
-  </sw-datatable-section>
+  </datatable-section>
 </template>
 
 <script lang="ts">
@@ -63,10 +63,21 @@ import CoapCommandDestinationUpdateDialog from "./coap/CoapCommandDestinationUpd
 import MqttCommandDestinationCreateDialog from "./mqtt/MqttCommandDestinationCreateDialog.vue";
 import MqttCommandDestinationUpdateDialog from "./mqtt/MqttCommandDestinationUpdateDialog.vue";
 
+import {
+  DatatableSection,
+  DatatableLink,
+  ContentDeleteIcon,
+  ContentLink
+} from "sitewhere-ide-components";
+
 import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 
 @Component({
   components: {
+    DatatableSection,
+    DatatableLink,
+    ContentDeleteIcon,
+    ContentLink,
     NewCommandDestinationChooser,
     CoapCommandDestinationCreateDialog,
     CoapCommandDestinationUpdateDialog,

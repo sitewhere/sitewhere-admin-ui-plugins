@@ -1,5 +1,5 @@
 <template>
-  <sw-base-dialog
+  <base-dialog
     ref="dialog"
     :icon="icon"
     :title="title"
@@ -12,10 +12,10 @@
     @cancelClicked="onCancelClicked"
   >
     <template slot="header">
-      <sw-dialog-header class="pl-3 pr-3 pt-2 pb-2">
+      <dialog-header class="pl-3 pr-3 pt-2 pb-2">
         <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
           <v-flex xs5>
-            <sw-form-text
+            <form-text
               v-if="visible"
               label="Command destination id"
               title="Unique command destination identifier."
@@ -27,10 +27,10 @@
             >
               <span v-if="!$v.id.required && $v.$dirty">Id is required.</span>
               <span v-if="!$v.id.idConflict && $v.$dirty">Id already in use.</span>
-            </sw-form-text>
+            </form-text>
           </v-flex>
           <v-flex xs7>
-            <sw-form-select
+            <form-select
               :items="parameterExtractors"
               title="Choose parameter extractor for command destination"
               label="Parameter extractor"
@@ -41,7 +41,7 @@
             />
           </v-flex>
         </v-layout>
-      </sw-dialog-header>
+      </dialog-header>
     </template>
     <template slot="tabs">
       <slot name="command-destination-tabs" />
@@ -57,13 +57,19 @@
         />
       </v-tab-item>
     </template>
-  </sw-base-dialog>
+  </base-dialog>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop, Ref } from "vue-property-decorator";
-import { BaseDialog } from "sitewhere-ide-components";
+import {
+  BaseDialog,
+  DialogHeader,
+  FormText,
+  FormSelect
+} from "sitewhere-ide-components";
+import { VFlex, VLayout, VTab, VTabItem } from "vuetify/lib";
 
 import ParameterExtractorConfiguration from "./extractors/ParameterExtractorConfiguration.vue";
 
@@ -90,6 +96,14 @@ const idConflict: ValidationRule = helpers.withParams(
 
 @Component({
   components: {
+    BaseDialog,
+    DialogHeader,
+    FormText,
+    FormSelect,
+    VFlex,
+    VLayout,
+    VTab,
+    VTabItem,
     ParameterExtractorConfiguration
   },
   validations: {

@@ -20,12 +20,19 @@
 
 <script lang="ts">
 import { Component, Prop, Ref } from "vue-property-decorator";
-import { DialogSection, ScriptChooser } from "sitewhere-ide-components";
-import { IScriptedEventDecoderConfiguration } from "sitewhere-configuration-model";
 
+import {
+  DialogSection,
+  DialogForm,
+  ScriptChooser
+} from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IScriptedEventDecoderConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, ScriptChooser },
   validations: {
     scriptId: {
       required

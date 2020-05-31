@@ -29,17 +29,16 @@
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { DialogComponent } from "sitewhere-ide-components";
-import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 
+import { DialogComponent } from "sitewhere-ide-components";
+import { VTab, VTabItem } from "vuetify/lib";
 import CommandDestinationDialog from "../CommandDestinationDialog.vue";
 import CoapFields from "./CoapFields.vue";
 
+import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
+
 @Component({
-  components: {
-    CommandDestinationDialog,
-    CoapFields
-  }
+  components: { VTab, VTabItem, CommandDestinationDialog, CoapFields }
 })
 export default class CoapCommandDestinationDialog extends DialogComponent<
   ICommandDestinationGenericConfiguration

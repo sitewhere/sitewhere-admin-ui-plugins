@@ -1,21 +1,22 @@
 <template>
-  <sw-new-element-chooser ref="dialog" :icon="icon" title="Add Command Router" width="500">
-    <sw-new-element-entry
+  <new-element-chooser ref="dialog" :icon="icon" title="Add Command Router" width="500">
+    <new-element-entry
       icon="fa-globe"
       itemid="device-type-mapping"
       @chosen="onChosen"
-    >Device Type Mapping Router</sw-new-element-entry>
-  </sw-new-element-chooser>
+    >Device Type Mapping Router</new-element-entry>
+  </new-element-chooser>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Component, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { NewElementChooser } from "sitewhere-ide-components";
+
+import { NewElementChooser, NewElementEntry } from "sitewhere-ide-components";
 
 @Component({
-  components: {}
+  components: { NewElementChooser, NewElementEntry }
 })
 export default class NewCommandRouterChooser extends Vue {
   @Ref() readonly dialog!: NewElementChooser;

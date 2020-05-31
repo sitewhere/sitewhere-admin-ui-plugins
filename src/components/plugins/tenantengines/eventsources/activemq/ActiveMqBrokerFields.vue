@@ -51,12 +51,15 @@
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IActiveMqBrokerConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IActiveMqBrokerConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, FormText },
   validations: {
     brokerName: {
       required

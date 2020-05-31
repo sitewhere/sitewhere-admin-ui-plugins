@@ -1,5 +1,5 @@
 <template>
-  <sw-base-dialog
+  <base-dialog
     ref="dialog"
     icon="fa-sitemap"
     :title="title"
@@ -19,15 +19,17 @@
         <device-type-mapping-router-fields :deviceTypes="deviceTypes" ref="mappings" />
       </v-tab-item>
     </template>
-  </sw-base-dialog>
+  </base-dialog>
 </template>
 
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { showError, listDeviceTypes } from "sitewhere-ide-common";
-import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
-import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 
+import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
+import { VTab, VTabItem } from "vuetify/lib";
+
+import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
 import { AxiosResponse } from "axios";
 import {
   IDeviceType,
@@ -39,7 +41,13 @@ import {
 import DeviceTypeMappingRouterFields from "./DeviceTypeMappingRouterFields.vue";
 
 @Component({
-  components: { DeviceTypeMappingRouterFields }
+  components: {
+    VTab,
+    VTabItem,
+    DialogComponent,
+    BaseDialog,
+    DeviceTypeMappingRouterFields
+  }
 })
 export default class DeviceTypeMappingRouterDialog extends DialogComponent<
   IDeviceTypeMappingRouterConfiguration

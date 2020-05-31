@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs2>
-      <sw-form-select
+      <form-select
         :items="protocols"
         title="Choose connection protocol"
         label="Protocol"
@@ -12,7 +12,7 @@
       />
     </v-flex>
     <v-flex xs8>
-      <sw-form-text
+      <form-text
         required
         label="Hostname"
         title="MQTT broker hostname."
@@ -21,15 +21,15 @@
         class="ml-3 mr-3"
       >
         <span v-if="!$v.hostname.required && $v.$dirty">Hostname is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs2>
-      <sw-form-text required label="Port" title="MQTT broker port." v-model="port" type="number">
+      <form-text required label="Port" title="MQTT broker port." v-model="port" type="number">
         <span v-if="!$v.port.required && $v.$dirty">Required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Topic"
         title="MQTT topic to listen on."
@@ -38,10 +38,10 @@
         class="mb-4"
       >
         <span v-if="!$v.topic.required && $v.$dirty">Topic is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-select
+      <form-select
         :items="qosValues"
         title="Choose quality of service (QoS)"
         label="QoS"
@@ -53,7 +53,7 @@
       />
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Number of threads"
         title="Number of threads used to handle processing."
@@ -62,19 +62,27 @@
         type="number"
       >
         <span v-if="!$v.numThreads.required && $v.$dirty">Number of threads is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IMqttEventSourceConfiguration } from "sitewhere-configuration-model";
 
+import {
+  DialogSection,
+  DialogForm,
+  FormText,
+  FormSelect
+} from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IMqttEventSourceConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { DialogForm, FormText, FormSelect, VFlex },
   validations: {
     protocol: {
       required

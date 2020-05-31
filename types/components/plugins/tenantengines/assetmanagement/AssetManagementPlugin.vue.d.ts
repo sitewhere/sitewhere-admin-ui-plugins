@@ -1,7 +1,6 @@
 import Vue from "vue";
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import { ITenantEngineConfiguration, IInstanceConfiguration } from "sitewhere-rest-api";
 import { IAssetManagementConfiguration, IDatastoreDefinition } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 export default class AssetManagementPlugin extends Vue {
     readonly configuration: ITenantEngineConfiguration;
     /** Get tenant configuration for asset management */

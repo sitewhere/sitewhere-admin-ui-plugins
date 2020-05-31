@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs7>
-      <sw-form-text
+      <form-text
         label="Username"
         title="Username for authentication."
         v-model="username"
@@ -10,7 +10,7 @@
       />
     </v-flex>
     <v-flex xs5>
-      <sw-form-text
+      <form-text
         label="Password"
         title="Password for authentication."
         v-model="password"
@@ -19,7 +19,7 @@
       />
     </v-flex>
     <v-flex xs7>
-      <sw-form-text
+      <form-text
         label="Truststore path"
         title="Truststore path."
         v-model="trustStorePath"
@@ -28,7 +28,7 @@
       />
     </v-flex>
     <v-flex xs5>
-      <sw-form-text
+      <form-text
         label="Truststore password"
         title="Truststore password."
         v-model="trustStorePassword"
@@ -37,7 +37,7 @@
       />
     </v-flex>
     <v-flex xs7>
-      <sw-form-text
+      <form-text
         label="Keystore path"
         title="Keystore path."
         v-model="keyStorePath"
@@ -46,7 +46,7 @@
       />
     </v-flex>
     <v-flex xs5>
-      <sw-form-text
+      <form-text
         label="Keystore password"
         title="Keystore password."
         v-model="keyStorePassword"
@@ -54,18 +54,21 @@
         type="password"
       />
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
+
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
 import {
   IMqttEventSourceConfiguration,
   IMqttSecurityFields
 } from "sitewhere-configuration-model";
 
-@Component({})
+@Component({ components: { VFlex, DialogForm, FormText } })
 export default class MqttAuthenticationFields extends DialogSection {
   username: string | null = null;
   password: string | null = null;

@@ -3,7 +3,7 @@
     <div>Device Type Mapping Router</div>
     <v-divider class="mt-2 mb-3" style="width: 50%" />
     <v-card flat class="mb-3" v-if="hasMappings">
-      <sw-content-field
+      <content-field
         :name="mapping.token"
         :value="mappings[mapping.token]"
         :alt="index % 2 == 1"
@@ -13,10 +13,10 @@
     </v-card>
     <v-card flat class="mb-3" v-else>No mappings have been assigned.</v-card>
     <v-card flat class="mb-4" v-if="defaultDestination">
-      <sw-content-field name="default destination" :value="defaultDestination" />
+      <content-field name="default destination" :value="defaultDestination" />
     </v-card>
     <v-card flat class="mb-4" v-else>
-      <sw-content-warning
+      <content-warning
         text="No default destination is set. This will cause tenant engine startup to fail!"
       />
     </v-card>
@@ -26,13 +26,17 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
+
+import { VCard, VDivider } from "vuetify/lib";
+import { ContentField, ContentWarning } from "sitewhere-ide-components";
+
 import {
   IRouterGenericConfiguration,
   IDeviceTypeMappingRouterConfiguration,
   IDeviceTypeMapping
 } from "sitewhere-configuration-model";
 
-@Component({})
+@Component({ components: { VCard, VDivider, ContentField, ContentWarning } })
 export default class DeviceTypeMappingRouterSummary extends Vue {
   @Prop() readonly router!: IRouterGenericConfiguration;
 

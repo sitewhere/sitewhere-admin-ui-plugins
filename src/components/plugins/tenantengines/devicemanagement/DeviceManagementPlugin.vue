@@ -1,12 +1,12 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
-    <sw-content-section icon="fa-database" title="Device Management Datastore">
+    <content-section icon="fa-database" title="Device Management Datastore">
       <datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
         @unsetDatastore="onUnsetDatastore"
       />
-    </sw-content-section>
+    </content-section>
   </tenant-engine-plugin>
 </template>
 
@@ -17,6 +17,8 @@ import { Component, Prop } from "vue-property-decorator";
 import TenantEnginePlugin from "..//TenantEnginePlugin.vue";
 import DatastoreSelector from "../common/DatastoreSelector.vue";
 
+import { ContentSection } from "sitewhere-ide-components";
+
 import { ITenantEngineConfiguration } from "sitewhere-rest-api";
 import {
   IDeviceManagementConfiguration,
@@ -25,7 +27,7 @@ import {
 import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
-  components: { TenantEnginePlugin, DatastoreSelector }
+  components: { ContentSection, TenantEnginePlugin, DatastoreSelector }
 })
 export default class DeviceManagementPlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;

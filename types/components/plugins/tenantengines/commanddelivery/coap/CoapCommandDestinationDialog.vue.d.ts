@@ -1,8 +1,8 @@
 import { MicroserviceIcon } from "sitewhere-ide-common";
 import { DialogComponent } from "sitewhere-ide-components";
-import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 import CommandDestinationDialog from "../CommandDestinationDialog.vue";
 import CoapFields from "./CoapFields.vue";
+import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 export default class CoapCommandDestinationDialog extends DialogComponent<ICommandDestinationGenericConfiguration> {
     readonly tenantId: string;
     readonly title: string;

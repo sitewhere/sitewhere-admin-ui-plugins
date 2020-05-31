@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Consumer group name"
         title="Consumer group name."
@@ -10,10 +10,10 @@
         class="mr-3"
       >
         <span v-if="!$v.consumerGroupName.required && $v.$dirty">Consumer group name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Namespace name"
         title="Namespace name."
@@ -21,10 +21,10 @@
         icon="info"
       >
         <span v-if="!$v.namespaceName.required && $v.$dirty">Namespace name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Event Hub name"
         title="Event Hub name."
@@ -33,10 +33,10 @@
         class="mr-3"
       >
         <span v-if="!$v.eventHubName.required && $v.$dirty">Event Hub name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Host name prefix"
         title="Host name prefix."
@@ -44,10 +44,10 @@
         icon="info"
       >
         <span v-if="!$v.hostNamePrefix.required && $v.$dirty">Host name prefix is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="SAS key name"
         title="SAS key name."
@@ -56,15 +56,15 @@
         class="mr-3"
       >
         <span v-if="!$v.sasKeyName.required && $v.$dirty">SAS key name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text required label="SAS key" title="SAS key." v-model="sasKey" icon="info">
+      <form-text required label="SAS key" title="SAS key." v-model="sasKey" icon="info">
         <span v-if="!$v.sasKey.required && $v.$dirty">SAS key is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Storage connection string"
         title="Storage connection string."
@@ -75,10 +75,10 @@
         <span
           v-if="!$v.storageConnectionString.required && $v.$dirty"
         >Storage connection string is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Storage container name"
         title="Storage container name."
@@ -88,19 +88,22 @@
         <span
           v-if="!$v.storageContainerName.required && $v.$dirty"
         >Storage container name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IEventHubConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IEventHubConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, FormText },
   validations: {
     consumerGroupName: {
       required

@@ -33,15 +33,20 @@
 <script lang="ts">
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
+
 import { DialogComponent } from "sitewhere-ide-components";
-import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
+import { VTab, VTabItem } from "vuetify/lib";
 
 import CommandDestinationDialog from "../CommandDestinationDialog.vue";
 import MqttConnectionFields from "./MqttConnectionFields.vue";
 import MqttAuthenticationFields from "./MqttAuthenticationFields.vue";
 
+import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
+
 @Component({
   components: {
+    VTab,
+    VTabItem,
     CommandDestinationDialog,
     MqttConnectionFields,
     MqttAuthenticationFields

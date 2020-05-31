@@ -1,18 +1,12 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
-        required
-        label="Remote URI"
-        title="Remote URI."
-        v-model="remoteUri"
-        icon="router"
-      >
+      <form-text required label="Remote URI" title="Remote URI." v-model="remoteUri" icon="router">
         <span v-if="!$v.remoteUri.required && $v.$dirty">Remote URI is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Queue name"
         title="Queue name."
@@ -21,10 +15,10 @@
         class="mr-3"
       >
         <span v-if="!$v.queueName.required && $v.$dirty">Queue name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Number of consumers"
         title="Number of consumers."
@@ -33,19 +27,22 @@
         type="number"
       >
         <span v-if="!$v.numConsumers.required && $v.$dirty">Number of consumers is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IActiveMqClientConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IActiveMqClientConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { VFlex, DialogForm, FormText },
   validations: {
     remoteUri: {
       required

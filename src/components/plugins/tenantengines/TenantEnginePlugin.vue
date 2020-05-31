@@ -1,10 +1,10 @@
 <template>
-  <v-card flat style="height: 100%">
+  <v-card flat tile style="height: 100%">
     <v-card-text>
       <div class="flex-rows">
         <div v-if="microservice && tenant" class="plugin-header">
           <slot name="header">
-            <sw-page-header :text="header" />
+            <page-header :text="header" />
           </slot>
         </div>
         <div class="plugin-content">
@@ -23,6 +23,10 @@
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
+import { PageHeader } from "sitewhere-ide-components";
+
+import { VCard, VCardText } from "vuetify/lib";
+
 import {
   ITenantEngineConfiguration,
   IMicroserviceSummary,
@@ -30,7 +34,7 @@ import {
 } from "sitewhere-rest-api";
 
 @Component({
-  components: {}
+  components: { VCard, VCardText, PageHeader }
 })
 export default class TenantEnginePlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;

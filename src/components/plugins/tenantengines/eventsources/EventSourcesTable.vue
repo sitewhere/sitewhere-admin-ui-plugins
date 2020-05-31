@@ -1,14 +1,14 @@
 <template>
-  <sw-datatable-section
+  <datatable-section
     :icon="icon"
     title="Event Sources"
     :headers="headers"
     :items="eventSourcesAsSortedArray"
     width="50%"
   >
-    <template v-slot:items="props">
+    <template v-slot:item="props">
       <td>
-        <sw-datatable-link
+        <datatable-link
           @linkClicked="onOpenEventSource(props.item.meta.id)"
           :text="props.item.meta.id"
         />
@@ -16,11 +16,11 @@
       <td>{{ props.item.meta.type }}</td>
       <td>{{ props.item.decoder.type }}</td>
       <td>
-        <sw-content-delete-icon @delete="onDeleteEventSource(props.item.meta.id)" />
+        <content-delete-icon @delete="onDeleteEventSource(props.item.meta.id)" />
       </td>
     </template>
     <template v-slot:datatable-footer>
-      <sw-content-link
+      <content-link
         class="mt-3"
         icon="fa-plus-circle"
         text="Add new event source."
@@ -86,13 +86,20 @@
         @update="onEventSourceUpdated"
       />
     </template>
-  </sw-datatable-section>
+  </datatable-section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop, Watch, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
+
+import {
+  DatatableSection,
+  DatatableLink,
+  ContentDeleteIcon,
+  ContentLink
+} from "sitewhere-ide-components";
 
 import NewEventSourceChooser from "./NewEventSourceChooser.vue";
 import ActiveMqBrokerEventSourceCreateDialog from "./activemq/ActiveMqBrokerEventSourceCreateDialog.vue";
@@ -112,6 +119,10 @@ import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model"
 
 @Component({
   components: {
+    DatatableSection,
+    DatatableLink,
+    ContentDeleteIcon,
+    ContentLink,
     NewEventSourceChooser,
     ActiveMqBrokerEventSourceCreateDialog,
     ActiveMqBrokerEventSourceUpdateDialog,

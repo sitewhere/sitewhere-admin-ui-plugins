@@ -1,5 +1,5 @@
 <template>
-  <sw-base-dialog
+  <base-dialog
     ref="dialog"
     :icon="icon"
     :title="title"
@@ -12,10 +12,10 @@
     @cancelClicked="onCancelClicked"
   >
     <template slot="header">
-      <sw-dialog-header class="pl-3 pr-3 pt-2 pb-1">
+      <dialog-header class="pl-3 pr-3 pt-2 pb-1">
         <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
           <v-flex xs5>
-            <sw-form-text
+            <form-text
               v-if="visible"
               label="Event source id"
               title="Unique event source identifier."
@@ -27,10 +27,10 @@
             >
               <span v-if="!$v.id.required && $v.$dirty">Id is required.</span>
               <span v-if="!$v.id.idConflict && $v.$dirty">Id already in use.</span>
-            </sw-form-text>
+            </form-text>
           </v-flex>
           <v-flex xs7>
-            <sw-form-select
+            <form-select
               :items="decoderTypes"
               title="Choose decoder for event source"
               label="Decoder"
@@ -41,7 +41,7 @@
             />
           </v-flex>
         </v-layout>
-      </sw-dialog-header>
+      </dialog-header>
     </template>
     <template slot="tabs">
       <slot name="event-source-tabs" />
@@ -53,13 +53,20 @@
         <decoder-configuration ref="decoder" :decoder="decoder" :tenantId="tenantId" />
       </v-tab-item>
     </template>
-  </sw-base-dialog>
+  </base-dialog>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Ref } from "vue-property-decorator";
-import { DialogComponent, BaseDialog } from "sitewhere-ide-components";
 
+import {
+  DialogComponent,
+  BaseDialog,
+  DialogHeader,
+  FormText,
+  FormSelect
+} from "sitewhere-ide-components";
+import { VFlex, VTab, VTabItem } from "vuetify/lib";
 import DecoderConfiguration from "./decoders/DecoderConfiguration.vue";
 
 import {
@@ -84,7 +91,16 @@ const idConflict: ValidationRule = helpers.withParams(
 );
 
 @Component({
-  components: { DecoderConfiguration },
+  components: {
+    BaseDialog,
+    DialogHeader,
+    FormText,
+    FormSelect,
+    VFlex,
+    VTab,
+    VTabItem,
+    DecoderConfiguration
+  },
   validations: {
     id: {
       required,

@@ -29,13 +29,17 @@
 import { Component, Ref, Prop } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
 import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model";
+
 import { DialogComponent } from "sitewhere-ide-components";
+import { VTab, VTabItem } from "vuetify/lib";
 
 import EventSourceDialog from "../EventSourceDialog.vue";
 import ActiveMqBrokerFields from "./ActiveMqBrokerFields.vue";
 
 @Component({
   components: {
+    VTab,
+    VTabItem,
     EventSourceDialog,
     ActiveMqBrokerFields
   }

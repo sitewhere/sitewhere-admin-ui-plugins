@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Connection URI"
         title="Connection URI."
@@ -9,10 +9,10 @@
         icon="router"
       >
         <span v-if="!$v.connectionUri.required && $v.$dirty">Connection URI is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Queue name"
         title="Queue name."
@@ -21,10 +21,10 @@
         class="mr-3"
       >
         <span v-if="!$v.queueName.required && $v.$dirty">Queue name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Number of consumers"
         title="Number of consumers."
@@ -33,10 +33,10 @@
         type="number"
       >
         <span v-if="!$v.numConsumers.required && $v.$dirty">Number of consumers is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Reconnection interval"
         title="Reconnection interval (in seconds)."
@@ -45,19 +45,22 @@
         type="number"
       >
         <span v-if="!$v.reconnectInterval.required && $v.$dirty">Number of consumers is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IRabbitMqConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex } from "vuetify/lib";
+
+import { IRabbitMqConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { DialogForm, FormText, VFlex },
   validations: {
     connectionUri: {
       required

@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs2>
-      <sw-form-select
+      <form-select
         :items="protocols"
         title="Choose connection protocol"
         label="Protocol"
@@ -12,7 +12,7 @@
       />
     </v-flex>
     <v-flex xs8>
-      <sw-form-text
+      <form-text
         required
         label="Hostname"
         title="MQTT broker hostname."
@@ -21,21 +21,23 @@
         class="ml-3 mr-3"
       >
         <span v-if="!$v.hostname.required && $v.$dirty">Hostname is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs2>
-      <sw-form-text required label="Port" title="MQTT broker port." v-model="port" type="number">
+      <form-text required label="Port" title="MQTT broker port." v-model="port" type="number">
         <span v-if="!$v.port.required && $v.$dirty">Required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
 import { Component } from "vue-property-decorator";
-import { DialogSection } from "sitewhere-ide-components";
-import { IMqttCommandDestinationConfiguration } from "sitewhere-configuration-model";
 
+import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import { VFlex, VTab, VTabItem } from "vuetify/lib";
+
+import { IMqttCommandDestinationConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({

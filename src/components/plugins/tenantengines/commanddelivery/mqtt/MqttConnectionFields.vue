@@ -41,6 +41,7 @@ import { IMqttCommandDestinationConfiguration } from "sitewhere-configuration-mo
 import { required } from "vuelidate/lib/validators";
 
 @Component({
+  components: { DialogForm, FormText, VFlex, VTab, VTabItem },
   validations: {
     protocol: {
       required

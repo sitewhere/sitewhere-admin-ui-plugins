@@ -1,14 +1,14 @@
-import Vue from "vue";
 import { NavigationIcon } from "sitewhere-ide-common";
 import { DialogComponent, DialogSection, BaseDialog } from "sitewhere-ide-components";
+import Postgres95Fields from "./postgres95/Postgres95Fields.vue";
 import { IDatastoreDefinition, IDatastoreDefinitionLocal } from "sitewhere-configuration-model";
 import { IInstanceConfiguration, IRdbConfigurationMap } from "sitewhere-rest-api";
 export default class DatastoreDialog extends DialogComponent<IDatastoreDefinition> {
     readonly instance: IInstanceConfiguration;
     readonly title: string;
     readonly createLabel: string;
-    readonly dialog: Vue;
-    readonly details: Vue;
+    readonly dialog: BaseDialog;
+    readonly details: Postgres95Fields;
     scope: number;
     reference: string | null;
     type: string;

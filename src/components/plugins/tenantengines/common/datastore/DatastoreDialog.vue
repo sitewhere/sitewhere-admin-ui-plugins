@@ -55,7 +55,6 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import { Component, Ref, Prop, Watch } from "vue-property-decorator";
 import { NavigationIcon } from "sitewhere-ide-common";
 import {
@@ -106,8 +105,8 @@ export default class DatastoreDialog extends DialogComponent<
   @Prop() readonly instance!: IInstanceConfiguration;
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
-  @Ref() readonly dialog!: Vue;
-  @Ref() readonly details!: Vue;
+  @Ref() readonly dialog!: BaseDialog;
+  @Ref() readonly details!: Postgres95Fields;
 
   scope = 0;
   reference: string | null = null;

@@ -19,4 +19,6 @@ export default class BatchOperationsPlugin extends Vue {
     onUnsetDatastore(): void;
     /** Handle batch operation manager updates */
     onBatchOperationManagerUpdate(updated: IBatchOperationManagerConfiguration): void;
+    /** Mark data as having been updated */
+    markDirty(): void;
 }

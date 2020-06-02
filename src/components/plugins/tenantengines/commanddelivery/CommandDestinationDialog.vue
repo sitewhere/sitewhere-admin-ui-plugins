@@ -12,7 +12,7 @@
     @cancelClicked="onCancelClicked"
   >
     <template slot="header">
-      <dialog-header class="pl-3 pr-3 pt-2 pb-2">
+      <dialog-header>
         <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
           <v-flex xs5>
             <form-text

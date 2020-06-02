@@ -81,6 +81,7 @@ export default class BatchOperationsPlugin extends Vue {
   /** Update datastore */
   onUpdateDatastore(definition: IDatastoreDefinition) {
     this.batchOperations.datastore = definition;
+    this.markDirty();
   }
 
   /** Unset the datastore */
@@ -88,6 +89,7 @@ export default class BatchOperationsPlugin extends Vue {
     if (this.batchOperations) {
       /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.batchOperations as any).datastore = null;
+      this.markDirty();
     }
   }
 
@@ -95,9 +97,13 @@ export default class BatchOperationsPlugin extends Vue {
   onBatchOperationManagerUpdate(updated: IBatchOperationManagerConfiguration) {
     if (this.batchOperations) {
       this.batchOperations.batchOperationManager = updated;
+      this.markDirty();
     }
+  }
+
+  /** Mark data as having been updated */
+  markDirty(): void {
+    this.$emit("dirty");
   }
 }
 </script>
-
-<style scoped></style>

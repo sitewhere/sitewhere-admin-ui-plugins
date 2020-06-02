@@ -1,8 +1,8 @@
 <template>
   <content-section :icon="icon" title="Batch Operation Manager">
-    <content-field name="throttle delay(ms)" :value="throttleDelayMs" />
+    <content-field class="mt-5" name="throttle delay(ms)" :value="throttleDelayMs" />
     <content-link
-      class="mt-3"
+      class="mt-5"
       icon="fa-edit"
       text="Edit batch operation manager settings."
       @linkClicked="onEditBatchOperationManager"

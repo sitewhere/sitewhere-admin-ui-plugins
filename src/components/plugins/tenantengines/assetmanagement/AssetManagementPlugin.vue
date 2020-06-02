@@ -59,6 +59,7 @@ export default class AssetManagementPlugin extends Vue {
   /** Update datastore */
   onUpdateDatastore(definition: IDatastoreDefinition) {
     this.assetManagement.datastore = definition;
+    this.markDirty();
   }
 
   /** Unset the datastore */
@@ -66,7 +67,13 @@ export default class AssetManagementPlugin extends Vue {
     if (this.assetManagement) {
       /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (this.assetManagement as any).datastore = null;
+      this.markDirty();
     }
+  }
+
+  /** Mark data as having been updated */
+  markDirty(): void {
+    this.$emit("dirty");
   }
 }
 </script>

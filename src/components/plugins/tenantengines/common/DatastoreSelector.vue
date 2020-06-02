@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-card flat v-if="datastore">
-      <v-card flat class="mb-3" v-if="datastoreReference">
+      <v-card flat class="mb-5" v-if="datastoreReference">
         <v-icon small class="mr-2">fa-globe</v-icon>Configured globally as
-        <a style="color: #2255cc;">{{ datastoreReference }}</a>.
+        <strong>{{ datastoreReference }}</strong>.
       </v-card>
       <postgres-95-summary v-if="isPostgres95" :configuration="configuration" />
       <content-link
-        class="mt-3"
+        class="mt-5"
         icon="fa-edit"
         text="Update datastore settings"
         @linkClicked="onUpdateDatastore"

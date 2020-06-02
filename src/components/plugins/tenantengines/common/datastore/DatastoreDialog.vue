@@ -11,8 +11,8 @@
     @createClicked="onCreateClicked"
     @cancelClicked="onCancelClicked"
   >
-    <dialog-header class="pl-3 pr-3 pt-1">
-      <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
+    <dialog-header>
+      <v-layout class="pl-3 pr-3 pt-0 pb-0" row wrap>
         <v-flex xs4>
           <v-btn-toggle mandatory class="mt-3" v-model="scope">
             <v-btn text>Local</v-btn>

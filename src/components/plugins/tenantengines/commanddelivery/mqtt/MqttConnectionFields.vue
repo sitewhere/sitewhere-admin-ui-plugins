@@ -34,14 +34,19 @@
 <script lang="ts">
 import { Component } from "vue-property-decorator";
 
-import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
+import {
+  DialogSection,
+  DialogForm,
+  FormText,
+  FormSelect
+} from "sitewhere-ide-components";
 import { VFlex, VTab, VTabItem } from "vuetify/lib";
 
 import { IMqttCommandDestinationConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
-  components: { DialogForm, FormText, VFlex, VTab, VTabItem },
+  components: { DialogForm, FormText, FormSelect, VFlex, VTab, VTabItem },
   validations: {
     protocol: {
       required

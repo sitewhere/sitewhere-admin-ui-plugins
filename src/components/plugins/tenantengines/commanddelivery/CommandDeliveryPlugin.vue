@@ -118,5 +118,3 @@ export default class CommandDeliveryPlugin extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

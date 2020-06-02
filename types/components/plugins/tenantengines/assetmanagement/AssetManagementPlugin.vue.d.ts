@@ -15,4 +15,6 @@ export default class AssetManagementPlugin extends Vue {
     onUpdateDatastore(definition: IDatastoreDefinition): void;
     /** Unset the datastore */
     onUnsetDatastore(): void;
+    /** Mark data as having been updated */
+    markDirty(): void;
 }

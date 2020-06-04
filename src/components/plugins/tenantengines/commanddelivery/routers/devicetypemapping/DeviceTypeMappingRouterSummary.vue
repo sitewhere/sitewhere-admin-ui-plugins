@@ -63,5 +63,3 @@ export default class DeviceTypeMappingRouterSummary extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

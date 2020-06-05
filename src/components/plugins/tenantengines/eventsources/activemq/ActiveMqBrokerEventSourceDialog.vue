@@ -18,7 +18,7 @@
       <v-tab key="broker">Broker</v-tab>
     </template>
     <template slot="event-source-tab-items">
-      <v-tab-item key="broker">
+      <v-tab-item key="broker" eager>
         <active-mq-broker-fields ref="broker" />
       </v-tab-item>
     </template>

@@ -18,7 +18,7 @@
       <v-tab key="client">Client</v-tab>
     </template>
     <template slot="event-source-tab-items">
-      <v-tab-item key="client">
+      <v-tab-item key="client" eager>
         <active-mq-client-fields ref="client" />
       </v-tab-item>
     </template>

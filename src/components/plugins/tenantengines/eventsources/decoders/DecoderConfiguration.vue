@@ -53,10 +53,8 @@ export default class DecoderConfiguration extends DialogSection {
 
   /** Perform validation */
   validate(): boolean {
-    if (this.details) {
-      if (!this.details.validate()) {
-        return false;
-      }
+    if (this.details && !this.details.validate()) {
+      return false;
     }
     return true;
   }

@@ -1,7 +1,7 @@
 <template>
   <new-element-chooser ref="dialog" :icon="icon" title="Add Command Destination" width="500">
-    <new-element-entry icon="fa-globe" itemid="coap" @chosen="onChosen">CoAP Command Destination</new-element-entry>
-    <new-element-entry icon="fa-globe" itemid="mqtt" @chosen="onChosen">MQTT Command Destination</new-element-entry>
+    <new-element-entry icon="fa-globe" item-id="coap" @chosen="onChosen">CoAP Command Destination</new-element-entry>
+    <new-element-entry icon="fa-globe" item-id="mqtt" @chosen="onChosen">MQTT Command Destination</new-element-entry>
   </new-element-chooser>
 </template>
 

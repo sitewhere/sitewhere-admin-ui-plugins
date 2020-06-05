@@ -1,22 +1,22 @@
 <template>
-  <default-mqtt-parameter-extractor-fields ref="fields" :tenantId="tenantId" />
+  <metadata-coap-parameter-extractor-fields ref="fields" :tenantId="tenantId" />
 </template>
 
 <script lang="ts">
 import { Component, Prop, Ref } from "vue-property-decorator";
 import { DialogSection } from "sitewhere-ide-components";
 
-import DefaultMqttParameterExtractorFields from "./DefaultMqttParameterExtractorFields.vue";
-import { IDefaultMqttParameterExtractorConfiguration } from "sitewhere-configuration-model";
+import MetadataCoapParameterExtractorFields from "./MetadataCoapParameterExtractorFields.vue";
+import { IMetadataCoapParameterExtractorConfiguration } from "sitewhere-configuration-model";
 
 @Component({
   components: {
-    DefaultMqttParameterExtractorFields
+    MetadataCoapParameterExtractorFields
   }
 })
-export default class DefaultMqttParameterExtractorConfiguration extends DialogSection {
+export default class MetadataCoapParameterExtractorConfiguration extends DialogSection {
   @Prop() readonly tenantId!: string;
-  @Ref() readonly fields!: DefaultMqttParameterExtractorFields;
+  @Ref() readonly fields!: MetadataCoapParameterExtractorFields;
 
   /** Reset section content */
   reset(): void {
@@ -34,7 +34,7 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
   }
 
   /** Load form data from an object */
-  load(input: IDefaultMqttParameterExtractorConfiguration): void {
+  load(input: IMetadataCoapParameterExtractorConfiguration): void {
     this.reset();
     if (this.fields) {
       this.fields.load(input);
@@ -42,7 +42,7 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
   }
 
   /** Save form data to an object */
-  save(): IDefaultMqttParameterExtractorConfiguration {
+  save(): IMetadataCoapParameterExtractorConfiguration {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const payload: any = {};
     if (this.fields) {

@@ -20,10 +20,10 @@
       <v-tab key="authentication">Authentication</v-tab>
     </template>
     <template slot="command-destination-tab-items">
-      <v-tab-item key="connection">
+      <v-tab-item key="connection" eager>
         <mqtt-connection-fields ref="connection" />
       </v-tab-item>
-      <v-tab-item key="authentication">
+      <v-tab-item key="authentication" eager>
         <mqtt-authentication-fields ref="authentication" />
       </v-tab-item>
     </template>
@@ -101,7 +101,9 @@ export default class MqttCommandDestinationDialog extends DialogComponent<
     if (this.authentication) {
       this.authentication.reset();
     }
-    this.dialog.reset();
+    if (this.dialog) {
+      this.dialog.reset();
+    }
   }
 
   /** Load dialog from a given configuration */

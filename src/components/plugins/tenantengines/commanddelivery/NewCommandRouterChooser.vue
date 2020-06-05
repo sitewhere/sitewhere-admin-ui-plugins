@@ -2,7 +2,7 @@
   <new-element-chooser ref="dialog" :icon="icon" title="Add Command Router" width="500">
     <new-element-entry
       icon="fa-globe"
-      itemid="device-type-mapping"
+      item-id="device-type-mapping"
       @chosen="onChosen"
     >Device Type Mapping Router</new-element-entry>
   </new-element-chooser>

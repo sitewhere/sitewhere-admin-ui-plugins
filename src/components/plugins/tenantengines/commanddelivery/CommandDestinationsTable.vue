@@ -1,60 +1,68 @@
 <template>
-  <datatable-section
-    :icon="icon"
-    title="Command Destinations"
-    :headers="headers"
-    :items="commandDestsAsSortedArray"
-    width="50%"
-  >
-    <template v-slot:item="props">
-      <td>
-        <datatable-link
-          @linkClicked="onOpenCommandDestination(props.item.meta.id)"
-          :text="props.item.meta.id"
+  <content-section :icon="icon" title="Command Destinations">
+    <section-overview title="Configured Command Destinations">
+      Command destinations are configured to deliver device commands
+      over various communication protocols. A command router chooses which
+      destinations will receive a given command.
+    </section-overview>
+    <datatable-section
+      :headers="headers"
+      :items="displayCommandDestinations"
+      no-data-text="No commmand destinations have been defined"
+      width="50%"
+    >
+      <template v-slot:item="props">
+        <tr>
+          <td width="48%">
+            <datatable-link
+              @linkClicked="onOpenCommandDestination(props.item.meta.id)"
+              :text="props.item.meta.id"
+            />
+          </td>
+          <td width="48%">{{ props.item.meta.type }}</td>
+          <td width="4%">
+            <content-delete-icon @delete="onDeleteCommandDestination(props.item.meta.id)" />
+          </td>
+        </tr>
+      </template>
+      <template v-slot:datatable-footer>
+        <content-link
+          class="mt-5"
+          icon="fa-plus-circle"
+          text="Add new command destination."
+          @linkClicked="onAddCommandDestination"
         />
-      </td>
-      <td>{{ props.item.meta.type }}</td>
-      <td>
-        <content-delete-icon @delete="onDeleteCommandDestination(props.item.meta.id)" />
-      </td>
-    </template>
-    <template v-slot:datatable-footer>
-      <content-link
-        class="mt-3"
-        icon="fa-plus-circle"
-        text="Add new command destination."
-        @linkClicked="onAddCommandDestination"
-      />
-    </template>
-    <template v-slot:datatable-dialogs>
-      <new-command-destination-chooser ref="chooser" @chosen="onCommandDestinationCreate" />
-      <coap-command-destination-create-dialog
-        ref="coapCreate"
-        :tenantId="tenantId"
-        @create="onCommandDestinationAdded"
-      />
-      <coap-command-destination-update-dialog
-        ref="coapUpdate"
-        :tenantId="tenantId"
-        @update="onCommandDestinationUpdated"
-      />
-      <mqtt-command-destination-create-dialog
-        ref="mqttCreate"
-        :tenantId="tenantId"
-        @create="onCommandDestinationAdded"
-      />
-      <mqtt-command-destination-update-dialog
-        ref="mqttUpdate"
-        :tenantId="tenantId"
-        @update="onCommandDestinationUpdated"
-      />
-    </template>
-  </datatable-section>
+      </template>
+      <template v-slot:datatable-dialogs>
+        <new-command-destination-chooser ref="chooser" @chosen="onCommandDestinationCreate" />
+        <coap-command-destination-create-dialog
+          ref="coapCreate"
+          :tenantId="tenantId"
+          @create="onCommandDestinationAdded"
+        />
+        <coap-command-destination-update-dialog
+          ref="coapUpdate"
+          :tenantId="tenantId"
+          @update="onCommandDestinationUpdated"
+        />
+        <mqtt-command-destination-create-dialog
+          ref="mqttCreate"
+          :tenantId="tenantId"
+          @create="onCommandDestinationAdded"
+        />
+        <mqtt-command-destination-update-dialog
+          ref="mqttUpdate"
+          :tenantId="tenantId"
+          @update="onCommandDestinationUpdated"
+        />
+      </template>
+    </datatable-section>
+  </content-section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Watch, Ref } from "vue-property-decorator";
+import { Component, Prop, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
 
 import NewCommandDestinationChooser from "./NewCommandDestinationChooser.vue";
@@ -64,20 +72,31 @@ import MqttCommandDestinationCreateDialog from "./mqtt/MqttCommandDestinationCre
 import MqttCommandDestinationUpdateDialog from "./mqtt/MqttCommandDestinationUpdateDialog.vue";
 
 import {
+  ContentSection,
+  ContentDeleteIcon,
   DatatableSection,
   DatatableLink,
-  ContentDeleteIcon,
-  ContentLink
+  ContentLink,
+  SectionOverview
 } from "sitewhere-ide-components";
 
 import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
 
+/** Format for displaying data */
+interface IDisplayedDestination {
+  meta: { id: string; type: string };
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+  config: any;
+}
+
 @Component({
   components: {
+    ContentSection,
     DatatableSection,
     DatatableLink,
     ContentDeleteIcon,
     ContentLink,
+    SectionOverview,
     NewCommandDestinationChooser,
     CoapCommandDestinationCreateDialog,
     CoapCommandDestinationUpdateDialog,
@@ -87,8 +106,7 @@ import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration
 })
 export default class CommandDeliveryTable extends Vue {
   @Prop() readonly tenantId!: string;
-  @Prop()
-  readonly commandDestinations!: ICommandDestinationGenericConfiguration[];
+  @Prop() readonly destinations!: ICommandDestinationGenericConfiguration[];
   @Ref() readonly chooser!: NewCommandDestinationChooser;
   @Ref() readonly coapCreate!: CoapCommandDestinationCreateDialog;
   @Ref() readonly coapUpdate!: CoapCommandDestinationUpdateDialog;
@@ -101,18 +119,6 @@ export default class CommandDeliveryTable extends Vue {
     { text: "", value: "delete" }
   ];
 
-  /** Command destinations in format for display */
-  commandDestsAsSortedArray: {
-    meta: { id: string; type: string };
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    config: any;
-  }[] = [];
-
-  @Watch("commandDestinations", { immediate: true })
-  onCommandDestinationsUpdated() {
-    this.calculateCommandDestinationsAsSortedArray();
-  }
-
   /** Get page icon */
   get icon(): MicroserviceIcon {
     return MicroserviceIcon.CommandDelivery;
@@ -121,8 +127,8 @@ export default class CommandDeliveryTable extends Vue {
   /** Get list of ids already in use */
   findIdsInUse(exclude?: string): string[] {
     const ids: string[] = [];
-    if (this.commandDestinations) {
-      this.commandDestinations.forEach(dest => {
+    if (this.destinations) {
+      this.destinations.forEach(dest => {
         if (dest.id != exclude) {
           ids.push(dest.id);
         }
@@ -134,8 +140,8 @@ export default class CommandDeliveryTable extends Vue {
   /** Get command destination index based on id */
   getCommandDestinationIndex(id: string): number | null {
     let match: number | null = null;
-    if (this.commandDestinations) {
-      this.commandDestinations.forEach((dest, index) => {
+    if (this.destinations) {
+      this.destinations.forEach((dest, index) => {
         if (dest.id === id) {
           match = index;
         }
@@ -149,18 +155,17 @@ export default class CommandDeliveryTable extends Vue {
     id: string
   ): ICommandDestinationGenericConfiguration | null {
     const index: number | null = this.getCommandDestinationIndex(id);
-    if (this.commandDestinations && index != null) {
-      return this.commandDestinations[index];
+    if (this.destinations && index != null) {
+      return this.destinations[index];
     }
     return null;
   }
 
   /** Get command destinations as a sorted array */
-  calculateCommandDestinationsAsSortedArray(): void {
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    const all: { meta: { id: string; type: string }; config: any }[] = [];
-    if (this.commandDestinations) {
-      this.commandDestinations.forEach(dest => {
+  get displayCommandDestinations(): IDisplayedDestination[] {
+    const all: IDisplayedDestination[] = [];
+    if (this.destinations) {
+      this.destinations.forEach(dest => {
         const meta: { id: string; type: string } = {
           id: dest.id,
           type: dest.type
@@ -173,7 +178,7 @@ export default class CommandDeliveryTable extends Vue {
     all.sort(function(a, b) {
       return a.meta.id.localeCompare(b.meta.id);
     });
-    this.commandDestsAsSortedArray = all;
+    return all;
   }
 
   /** Add new command destination */
@@ -195,9 +200,8 @@ export default class CommandDeliveryTable extends Vue {
   onCommandDestinationAdded(
     config: ICommandDestinationGenericConfiguration
   ): void {
-    if (this.commandDestinations) {
-      this.commandDestinations.push(config);
-      this.calculateCommandDestinationsAsSortedArray();
+    if (this.destinations) {
+      this.destinations.push(config);
     }
     this.$emit("create", config);
   }
@@ -223,9 +227,8 @@ export default class CommandDeliveryTable extends Vue {
     config: ICommandDestinationGenericConfiguration
   ): void {
     const index: number | null = this.getCommandDestinationIndex(originalId);
-    if (this.commandDestinations && index != null) {
-      Vue.set(this.commandDestinations, index, config);
-      this.calculateCommandDestinationsAsSortedArray();
+    if (this.destinations && index != null) {
+      Vue.set(this.destinations, index, config);
     }
     this.$emit("update", originalId, config);
   }
@@ -233,9 +236,8 @@ export default class CommandDeliveryTable extends Vue {
   /** Delete command destination by id */
   onDeleteCommandDestination(id: string) {
     const index: number | null = this.getCommandDestinationIndex(id);
-    if (this.commandDestinations && index != null) {
-      this.commandDestinations.splice(index);
-      this.calculateCommandDestinationsAsSortedArray();
+    if (this.destinations && index != null) {
+      this.destinations.splice(index, 1);
     }
     this.$emit("delete", id);
   }

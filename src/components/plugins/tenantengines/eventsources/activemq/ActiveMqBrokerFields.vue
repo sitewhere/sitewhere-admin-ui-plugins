@@ -1,18 +1,12 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <v-flex xs12>
-      <sw-form-text
-        required
-        label="Broker name"
-        title="Broker name."
-        v-model="brokerName"
-        icon="info"
-      >
+      <form-text required label="Broker name" title="Broker name." v-model="brokerName" icon="info">
         <span v-if="!$v.brokerName.required && $v.$dirty">Broker name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs12>
-      <sw-form-text
+      <form-text
         required
         label="Transport URI"
         title="Transport URI."
@@ -20,10 +14,10 @@
         icon="router"
       >
         <span v-if="!$v.transportUri.required && $v.$dirty">Transport URI is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Queue name"
         title="Queue name."
@@ -32,10 +26,10 @@
         class="mr-3"
       >
         <span v-if="!$v.queueName.required && $v.$dirty">Queue name is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
     <v-flex xs6>
-      <sw-form-text
+      <form-text
         required
         label="Number of consumers"
         title="Number of consumers."
@@ -44,9 +38,9 @@
         type="number"
       >
         <span v-if="!$v.numConsumers.required && $v.$dirty">Number of consumers is required.</span>
-      </sw-form-text>
+      </form-text>
     </v-flex>
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">

@@ -1,8 +1,7 @@
 import Vue from "vue";
 import { MicroserviceIcon } from "sitewhere-ide-common";
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import { ITenantEngineConfiguration, IInstanceConfiguration } from "sitewhere-rest-api";
 import { ICommandDeliveryConfiguration, ICommandDestinationGenericConfiguration, IRouterGenericConfiguration } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 export default class CommandDeliveryPlugin extends Vue {
     readonly configuration: ITenantEngineConfiguration;
     /** Get page icon */
@@ -14,7 +13,7 @@ export default class CommandDeliveryPlugin extends Vue {
     /** Get instance configuraton information */
     get instanceManagement(): IInstanceConfiguration | null;
     /** Get command destinations list */
-    get commandDestinations(): ICommandDestinationGenericConfiguration[] | null;
+    get destinations(): ICommandDestinationGenericConfiguration[] | null;
     /** Get configured router */
     get router(): IRouterGenericConfiguration | null;
     /** Handle command destination created */
@@ -23,6 +22,8 @@ export default class CommandDeliveryPlugin extends Vue {
     onCommandDestinationUpdated(originalId: string, config: ICommandDestinationGenericConfiguration): void;
     /** Handle command destination deleted */
     onCommandDestinationDeleted(id: string): void;
+    /** Handle command router updated */
+    onCommandRouterUpdated(): void;
     /** Handle unsetting router */
     onUnsetCommandRouter(): void;
     /** Mark data as having been updated */

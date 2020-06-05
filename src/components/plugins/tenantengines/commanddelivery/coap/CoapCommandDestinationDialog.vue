@@ -19,7 +19,7 @@
       <v-tab key="coap">Configuration</v-tab>
     </template>
     <template slot="command-destination-tab-items">
-      <v-tab-item key="coap">
+      <v-tab-item key="coap" eager>
         <coap-fields ref="coap" />
       </v-tab-item>
     </template>
@@ -84,7 +84,9 @@ export default class CoapCommandDestinationDialog extends DialogComponent<
     if (this.coap) {
       this.coap.reset();
     }
-    this.dialog.reset();
+    if (this.dialog) {
+      this.dialog.reset();
+    }
   }
 
   /** Load dialog from a given configuration */

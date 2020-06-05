@@ -2,11 +2,11 @@
   <dialog-form>
     <v-flex xs12>
       <form-select
-        :items="deviceTypes"
+        :items="destinations"
         title="Choose default command destination"
         label="Default Destination"
-        item-text="name"
-        item-value="token"
+        item-text="id"
+        item-value="id"
         v-model="defaultDestination"
         icon="fa-check"
       />
@@ -24,8 +24,10 @@ import {
   FormSelect
 } from "sitewhere-ide-components";
 
-import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
-import { IDeviceType } from "sitewhere-rest-api";
+import {
+  ICommandDestinationGenericConfiguration,
+  IDeviceTypeMappingRouterConfiguration
+} from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
@@ -36,10 +38,11 @@ import { required } from "vuelidate/lib/validators";
     }
   }
 })
-export default class DeviceTypeMappingRouterFields extends DialogSection {
-  @Prop() readonly deviceTypes!: IDeviceType[];
+export default class SettingsFields extends DialogSection {
+  @Prop() readonly destinations!: ICommandDestinationGenericConfiguration[];
 
   defaultDestination: string | null = null;
+  configuration!: IDeviceTypeMappingRouterConfiguration;
 
   /** Reset section content */
   reset(): void {
@@ -55,6 +58,7 @@ export default class DeviceTypeMappingRouterFields extends DialogSection {
 
   /** Load form data from an object */
   load(input: IDeviceTypeMappingRouterConfiguration): void {
+    this.configuration = input;
     this.defaultDestination = input.defaultDestination || null;
   }
 

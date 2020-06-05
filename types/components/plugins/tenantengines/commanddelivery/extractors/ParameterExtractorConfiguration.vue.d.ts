@@ -14,5 +14,5 @@ export default class ParameterExtractorConfiguration extends DialogSection {
     /** Load form data from an object */
     load(input: IParameterExtractorGenericConfiguration): void;
     /** Save form data to an object */
-    save(): {};
+    save(): IParameterExtractorGenericConfiguration;
 }

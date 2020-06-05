@@ -18,7 +18,7 @@
       <v-tab key="server">Server</v-tab>
     </template>
     <template slot="event-source-tab-items">
-      <v-tab-item key="server">
+      <v-tab-item key="server" eager>
         <coap-server-fields ref="server" />
       </v-tab-item>
     </template>

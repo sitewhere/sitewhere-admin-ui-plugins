@@ -6,9 +6,17 @@ import CoapCommandDestinationUpdateDialog from "./coap/CoapCommandDestinationUpd
 import MqttCommandDestinationCreateDialog from "./mqtt/MqttCommandDestinationCreateDialog.vue";
 import MqttCommandDestinationUpdateDialog from "./mqtt/MqttCommandDestinationUpdateDialog.vue";
 import { ICommandDestinationGenericConfiguration } from "sitewhere-configuration-model";
+/** Format for displaying data */
+interface IDisplayedDestination {
+    meta: {
+        id: string;
+        type: string;
+    };
+    config: any;
+}
 export default class CommandDeliveryTable extends Vue {
     readonly tenantId: string;
-    readonly commandDestinations: ICommandDestinationGenericConfiguration[];
+    readonly destinations: ICommandDestinationGenericConfiguration[];
     readonly chooser: NewCommandDestinationChooser;
     readonly coapCreate: CoapCommandDestinationCreateDialog;
     readonly coapUpdate: CoapCommandDestinationUpdateDialog;
@@ -18,15 +26,6 @@ export default class CommandDeliveryTable extends Vue {
         text: string;
         value: string;
     }[];
-    /** Command destinations in format for display */
-    commandDestsAsSortedArray: {
-        meta: {
-            id: string;
-            type: string;
-        };
-        config: any;
-    }[];
-    onCommandDestinationsUpdated(): void;
     /** Get page icon */
     get icon(): MicroserviceIcon;
     /** Get list of ids already in use */
@@ -36,7 +35,7 @@ export default class CommandDeliveryTable extends Vue {
     /** Get a command destination by id */
     getCommandDestinationById(id: string): ICommandDestinationGenericConfiguration | null;
     /** Get command destinations as a sorted array */
-    calculateCommandDestinationsAsSortedArray(): void;
+    get displayCommandDestinations(): IDisplayedDestination[];
     /** Add new command destination */
     onAddCommandDestination(): void;
     /** Called to create a new command destination based on type */
@@ -50,3 +49,4 @@ export default class CommandDeliveryTable extends Vue {
     /** Delete command destination by id */
     onDeleteCommandDestination(id: string): void;
 }
+export {};

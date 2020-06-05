@@ -4,6 +4,10 @@
       ref="details"
       v-if="extractorType == 'mqtt-default'"
     />
+    <metadata-coap-parameter-extractor-configuration
+      ref="details"
+      v-if="extractorType == 'coap-default'"
+    />
   </v-card>
 </template>
 
@@ -14,10 +18,16 @@ import { DialogSection } from "sitewhere-ide-components";
 import { VCard } from "vuetify/lib";
 
 import DefaultMqttParameterExtractorConfiguration from "./mqtt/DefaultMqttParameterExtractorConfiguration.vue";
+import MetadataCoapParameterExtractorConfiguration from "./coap/MetadataCoapParameterExtractorConfiguration.vue";
+
 import { IParameterExtractorGenericConfiguration } from "sitewhere-configuration-model";
 
 @Component({
-  components: { VCard, DefaultMqttParameterExtractorConfiguration }
+  components: {
+    VCard,
+    DefaultMqttParameterExtractorConfiguration,
+    MetadataCoapParameterExtractorConfiguration
+  }
 })
 export default class ParameterExtractorConfiguration extends DialogSection {
   @Prop() readonly tenantId!: string;
@@ -61,7 +71,7 @@ export default class ParameterExtractorConfiguration extends DialogSection {
   }
 
   /** Save form data to an object */
-  save(): {} {
+  save(): IParameterExtractorGenericConfiguration {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const config: any = {};
     if (this.details) {

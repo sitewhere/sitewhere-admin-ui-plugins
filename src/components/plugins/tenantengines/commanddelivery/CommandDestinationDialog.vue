@@ -13,7 +13,7 @@
   >
     <template slot="header">
       <dialog-header>
-        <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
+        <v-layout class="pl-4 pr-4 pt-0 pb-0" row wrap>
           <v-flex xs5>
             <form-text
               v-if="visible"
@@ -49,7 +49,7 @@
     </template>
     <template slot="tab-items">
       <slot name="command-destination-tab-items" />
-      <v-tab-item key="extractor">
+      <v-tab-item key="extractor" eager>
         <parameter-extractor-configuration
           ref="extractor"
           :parameterExtractor="parameterExtractor"
@@ -146,12 +146,23 @@ export default class CommandDestinationDialog extends Vue {
   }
 
   /** Save dialog fields */
-  save(): { id: string | null; type: string } {
-    const config: { id: string | null; type: string } = {
-      id: this.id,
-      type: this.type
-    };
-    return config;
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+  save(): any {
+    if (this.id && this.type && this.extractorType && this.extractor) {
+      const peConfig: IParameterExtractorGenericConfiguration = this.extractor.save();
+      const parameterExtractor: IParameterExtractorGenericConfiguration = {
+        type: this.extractorType,
+        configuration: peConfig
+      };
+
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      const config: any = {
+        id: this.id,
+        type: this.type,
+        parameterExtractor: parameterExtractor
+      };
+      return config;
+    }
   }
 
   /** Reset the dialog */
@@ -159,11 +170,17 @@ export default class CommandDestinationDialog extends Vue {
     this.id = null;
     this.setActiveTab(0);
     this.$v.$reset();
+
+    /** Reset to choose first available extractor */
+    if (this.parameterExtractors) {
+      const etype: string = this.parameterExtractors[0].value;
+      this.extractorType = etype;
+    }
   }
 
   /** Validate fields */
   validate(): boolean {
-    if (!this.extractor.validate()) {
+    if (!this.extractor || !this.extractor.validate()) {
       return false;
     }
     this.$v.$touch();

@@ -12,8 +12,8 @@
     @cancelClicked="onCancelClicked"
   >
     <template slot="header">
-      <dialog-header class="pl-3 pr-3 pt-2 pb-1">
-        <v-layout class="pl-2 pr-2 pt-0 pb-0" row wrap>
+      <dialog-header>
+        <v-layout class="pl-4 pr-4 pt-0 pb-0" row wrap>
           <v-flex xs5>
             <form-text
               v-if="visible"
@@ -49,8 +49,8 @@
     </template>
     <template slot="tab-items">
       <slot name="event-source-tab-items" />
-      <v-tab-item key="decoder">
-        <decoder-configuration ref="decoder" :decoder="decoder" :tenantId="tenantId" />
+      <v-tab-item key="decoder" eager>
+        <decoder-configuration ref="decoderConfiguration" :decoder="decoder" :tenantId="tenantId" />
       </v-tab-item>
     </template>
   </base-dialog>
@@ -66,7 +66,7 @@ import {
   FormText,
   FormSelect
 } from "sitewhere-ide-components";
-import { VFlex, VTab, VTabItem } from "vuetify/lib";
+import { VFlex, VTab, VTabItem, VLayout } from "vuetify/lib";
 import DecoderConfiguration from "./decoders/DecoderConfiguration.vue";
 
 import {
@@ -99,6 +99,7 @@ const idConflict: ValidationRule = helpers.withParams(
     VFlex,
     VTab,
     VTabItem,
+    VLayout,
     DecoderConfiguration
   },
   validations: {
@@ -180,13 +181,15 @@ export default class EventSourceDialog extends DialogComponent<
     this.id = null;
     this.decoder = this.defaultDecoder;
     this.setActiveTab(0);
-    this.decoderConfiguration.reset();
+    if (this.decoderConfiguration) {
+      this.decoderConfiguration.reset();
+    }
     this.$v.$reset();
   }
 
   /** Validate fields */
   validate(): boolean {
-    if (!this.decoderConfiguration.validate()) {
+    if (this.decoderConfiguration && !this.decoderConfiguration.validate()) {
       return false;
     }
     this.$v.$touch();

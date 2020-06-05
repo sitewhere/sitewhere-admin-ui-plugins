@@ -19,10 +19,10 @@
       <v-tab key="authentication">Authentication</v-tab>
     </template>
     <template slot="event-source-tab-items">
-      <v-tab-item key="connection">
+      <v-tab-item key="connection" eager>
         <mqtt-connection-fields ref="connection" />
       </v-tab-item>
-      <v-tab-item key="authentication">
+      <v-tab-item key="authentication" eager>
         <mqtt-authentication-fields ref="authentication" />
       </v-tab-item>
     </template>

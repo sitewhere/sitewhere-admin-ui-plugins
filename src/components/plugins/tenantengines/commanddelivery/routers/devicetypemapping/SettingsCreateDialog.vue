@@ -1,27 +1,32 @@
 <template>
-  <device-type-mapping-router-dialog
+  <settings-dialog
     ref="dialog"
     title="Create Device Type Mapping Router"
     createLabel="Create"
+    :destinations="destinations"
     @payload="onPayload"
   />
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Ref } from "vue-property-decorator";
+import { Component, Prop, Ref } from "vue-property-decorator";
 
-import DeviceTypeMappingRouterDialog from "./DeviceTypeMappingRouterDialog.vue";
+import SettingsDialog from "./SettingsDialog.vue";
 
-import { IDeviceTypeMappingRouterConfiguration } from "sitewhere-configuration-model";
+import {
+  ICommandDestinationGenericConfiguration,
+  IDeviceTypeMappingRouterConfiguration
+} from "sitewhere-configuration-model";
 
 @Component({
   components: {
-    DeviceTypeMappingRouterDialog
+    SettingsDialog
   }
 })
-export default class DeviceTypeMappingRouterCreateDialog extends Vue {
-  @Ref() readonly dialog!: DeviceTypeMappingRouterDialog;
+export default class SettingsCreateDialog extends Vue {
+  @Prop() readonly destinations!: ICommandDestinationGenericConfiguration[];
+  @Ref() readonly dialog!: SettingsDialog;
 
   idsInUse: string[] = [];
 
@@ -38,4 +43,3 @@ export default class DeviceTypeMappingRouterCreateDialog extends Vue {
   }
 }
 </script>
-

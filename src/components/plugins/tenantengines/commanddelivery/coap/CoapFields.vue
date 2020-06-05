@@ -1,7 +1,7 @@
 <template>
-  <sw-dialog-form>
+  <dialog-form>
     <no-configuration />
-  </sw-dialog-form>
+  </dialog-form>
 </template>
 
 <script lang="ts">
@@ -17,14 +17,12 @@ import { ICoapCommandDestinationConfiguration } from "sitewhere-configuration-mo
 })
 export default class CoapFields extends DialogSection {
   /** Reset section content */
-  reset(): void {
-    this.$v.$reset();
-  }
+  /* eslint-disable-next-line @typescript-eslint/no-empty-function */
+  reset(): void {}
 
   /** Perform validation */
   validate(): boolean {
-    this.$v.$touch();
-    return !this.$v.$invalid;
+    return true;
   }
 
   /** Load form data from an object */

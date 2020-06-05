@@ -2,15 +2,16 @@
   <tenant-engine-plugin :configuration="configuration">
     <command-destinations-table
       :tenantId="tenantId"
-      :commandDestinations="commandDestinations"
+      :destinations="destinations"
       @create="onCommandDestinationCreated"
       @update="onCommandDestinationUpdated"
       @delete="onCommandDestinationDeleted"
     />
-    <v-divider class="mt-4 mb-4" />
+    <content-divider />
     <command-router-section
       :router="router"
-      :commandDestinations="commandDestinations"
+      :destinations="destinations"
+      @update="onCommandRouterUpdated"
       @unset="onUnsetCommandRouter"
     />
   </tenant-engine-plugin>
@@ -24,22 +25,24 @@ import { MicroserviceIcon } from "sitewhere-ide-common";
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import CommandDestinationsTable from "./CommandDestinationsTable.vue";
 import CommandRouterSection from "./CommandRouterSection.vue";
-import { VDivider } from "vuetify/lib";
+import { ContentDivider } from "sitewhere-ide-components";
 
-import { ITenantEngineConfiguration } from "sitewhere-rest-api";
+import {
+  ITenantEngineConfiguration,
+  IInstanceConfiguration
+} from "sitewhere-rest-api";
 import {
   ICommandDeliveryConfiguration,
   ICommandDestinationGenericConfiguration,
   IRouterGenericConfiguration
 } from "sitewhere-configuration-model";
-import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
   components: {
-    VDivider,
     TenantEnginePlugin,
     CommandDestinationsTable,
-    CommandRouterSection
+    CommandRouterSection,
+    ContentDivider
   }
 })
 export default class CommandDeliveryPlugin extends Vue {
@@ -66,7 +69,7 @@ export default class CommandDeliveryPlugin extends Vue {
   }
 
   /** Get command destinations list */
-  get commandDestinations(): ICommandDestinationGenericConfiguration[] | null {
+  get destinations(): ICommandDestinationGenericConfiguration[] | null {
     return this.commandDeliveryConfiguration
       ? this.commandDeliveryConfiguration.commandDestinations
       : null;
@@ -100,6 +103,11 @@ export default class CommandDeliveryPlugin extends Vue {
   /** Handle command destination deleted */
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   onCommandDestinationDeleted(id: string): void {
+    this.markDirty();
+  }
+
+  /** Handle command router updated */
+  onCommandRouterUpdated(): void {
     this.markDirty();
   }
 

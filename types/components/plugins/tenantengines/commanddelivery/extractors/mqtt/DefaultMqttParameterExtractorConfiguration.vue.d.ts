@@ -1,5 +1,6 @@
 import { DialogSection } from "sitewhere-ide-components";
 import DefaultMqttParameterExtractorFields from "./DefaultMqttParameterExtractorFields.vue";
+import { IDefaultMqttParameterExtractorConfiguration } from "sitewhere-configuration-model";
 export default class DefaultMqttParameterExtractorConfiguration extends DialogSection {
     readonly tenantId: string;
     readonly fields: DefaultMqttParameterExtractorFields;
@@ -8,7 +9,7 @@ export default class DefaultMqttParameterExtractorConfiguration extends DialogSe
     /** Perform validation */
     validate(): boolean;
     /** Load form data from an object */
-    load(input: any): void;
+    load(input: IDefaultMqttParameterExtractorConfiguration): void;
     /** Save form data to an object */
-    save(): {};
+    save(): IDefaultMqttParameterExtractorConfiguration;
 }

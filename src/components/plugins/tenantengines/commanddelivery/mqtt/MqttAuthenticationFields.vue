@@ -68,7 +68,10 @@ import {
   IMqttSecurityFields
 } from "sitewhere-configuration-model";
 
-@Component({ components: { VFlex, DialogSection, DialogForm, FormText } })
+@Component({
+  components: { VFlex, DialogSection, DialogForm, FormText },
+  validations: {}
+})
 export default class MqttAuthenticationFields extends DialogSection {
   username: string | null = null;
   password: string | null = null;

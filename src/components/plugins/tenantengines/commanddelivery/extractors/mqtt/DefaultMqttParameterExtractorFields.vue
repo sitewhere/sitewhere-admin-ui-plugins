@@ -71,8 +71,10 @@ export default class DefaultMqttParameterExtractorFields extends DialogSection {
 
   /** Load form data from an object */
   load(input: IDefaultMqttParameterExtractorConfiguration): void {
-    this.commandTopicExpression = input.commandTopicExpression;
-    this.systemTopicExpression = input.systemTopicExpression;
+    this.commandTopicExpression =
+      input.commandTopicExpression || "SiteWhere/${tenant}/command/${device}";
+    this.systemTopicExpression =
+      input.systemTopicExpression || "SiteWhere/${tenant}/system/${device}";
   }
 
   /** Save form data to an object */

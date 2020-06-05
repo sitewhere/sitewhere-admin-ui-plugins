@@ -18,7 +18,7 @@
       <v-tab key="connection">Connection</v-tab>
     </template>
     <template slot="event-source-tab-items">
-      <v-tab-item key="connection">
+      <v-tab-item key="connection" eager>
         <event-hub-fields ref="connection" />
       </v-tab-item>
     </template>

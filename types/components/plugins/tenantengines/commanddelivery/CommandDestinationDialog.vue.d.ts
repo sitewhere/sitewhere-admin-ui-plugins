@@ -25,10 +25,7 @@ export default class CommandDestinationDialog extends Vue {
     /** Blank configuration if type updated */
     set extractorType(value: string | null);
     /** Save dialog fields */
-    save(): {
-        id: string | null;
-        type: string;
-    };
+    save(): any;
     /** Reset the dialog */
     reset(): void;
     /** Validate fields */

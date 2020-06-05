@@ -1,12 +1,12 @@
 <template>
   <content-section icon="fa-sitemap" :fa="true" title="Command Router">
     <v-card flat v-if="router">
-      <device-type-mapping-router-summary v-if="isDeviceTypeMappingRouter" :router="router" />
-      <content-link
+      <device-type-mapping-router-summary
+        v-if="isDeviceTypeMappingRouter"
         class="mb-2"
-        icon="fa-edit"
-        text="Edit command router settings"
-        @linkClicked="onUpdateCommandRouter"
+        :destinations="destinations"
+        :router="router"
+        @update="onCommandRouterUpdate"
       />
       <content-link
         icon="fa-trash"
@@ -39,8 +39,8 @@ import {
 } from "sitewhere-configuration-model";
 
 import NewCommandRouterChooser from "./NewCommandRouterChooser.vue";
-import DeviceTypeMappingRouterSummary from "./routers/devicetypemapping/DeviceTypeMappingRouterSummary.vue";
-import DeviceTypeMappingRouterCreateDialog from "./routers/devicetypemapping/DeviceTypeMappingRouterCreateDialog.vue";
+import DeviceTypeMappingRouterSummary from "./routers/devicetypemapping/Summary.vue";
+import DeviceTypeMappingRouterCreateDialog from "./routers/devicetypemapping/SettingsCreateDialog.vue";
 
 import {
   ContentSection,
@@ -62,8 +62,7 @@ import { VCard } from "vuetify/lib";
 })
 export default class CommandRouterSection extends Vue {
   @Prop() readonly router!: IRouterGenericConfiguration;
-  @Prop()
-  readonly commandDestinations!: ICommandDestinationGenericConfiguration[];
+  @Prop() readonly destinations!: ICommandDestinationGenericConfiguration[];
   @Ref() readonly chooser!: NewCommandRouterChooser;
   @Ref() readonly dtmRouterCreate!: DeviceTypeMappingRouterCreateDialog;
 
@@ -82,15 +81,16 @@ export default class CommandRouterSection extends Vue {
     this.chooser.openChooser();
   }
 
-  /** Update command router settings */
-  /* eslint-disable-next-line @typescript-eslint/no-empty-function */
-  onUpdateCommandRouter(): void {}
-
   /** Show dialog for creating command router */
   onCommandRouterChosen(type: string): void {
     if (type == "device-type-mapping") {
       this.dtmRouterCreate.openDialog();
     }
+  }
+
+  /** Indicate that updates were made to command router */
+  onCommandRouterUpdate(): void {
+    this.$emit("update");
   }
 }
 </script>

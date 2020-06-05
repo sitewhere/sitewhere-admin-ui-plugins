@@ -1,92 +1,95 @@
 <template>
-  <datatable-section
-    :icon="icon"
-    title="Event Sources"
-    :headers="headers"
-    :items="eventSourcesAsSortedArray"
-    width="50%"
-  >
-    <template v-slot:item="props">
-      <td>
-        <datatable-link
-          @linkClicked="onOpenEventSource(props.item.meta.id)"
-          :text="props.item.meta.id"
+  <content-section :icon="icon" title="Event Sources">
+    <section-overview title="Configured Event Sources">
+      Event sources receive events from external providers
+      and covert them into a standardized format for
+      further processing.
+    </section-overview>
+    <datatable-section :headers="headers" :items="eventSourcesAsSortedArray" width="50%">
+      <template v-slot:item="props">
+        <tr>
+          <td width="32%">
+            <datatable-link
+              @linkClicked="onOpenEventSource(props.item.meta.id)"
+              :text="props.item.meta.id"
+            />
+          </td>
+          <td width="32%">{{ props.item.meta.type }}</td>
+          <td width="32%">{{ props.item.decoder.type }}</td>
+          <td width="4%">
+            <content-delete-icon @delete="onDeleteEventSource(props.item.meta.id)" />
+          </td>
+        </tr>
+      </template>
+      <template v-slot:datatable-footer>
+        <content-link
+          class="mt-7"
+          icon="fa-plus-circle"
+          text="Add new event source."
+          @linkClicked="onAddEventSource"
         />
-      </td>
-      <td>{{ props.item.meta.type }}</td>
-      <td>{{ props.item.decoder.type }}</td>
-      <td>
-        <content-delete-icon @delete="onDeleteEventSource(props.item.meta.id)" />
-      </td>
-    </template>
-    <template v-slot:datatable-footer>
-      <content-link
-        class="mt-3"
-        icon="fa-plus-circle"
-        text="Add new event source."
-        @linkClicked="onAddEventSource"
-      />
-    </template>
-    <template v-slot:datatable-dialogs>
-      <new-event-source-chooser ref="chooser" @chosen="onEventSourceCreate" />
-      <active-mq-broker-event-source-create-dialog
-        ref="amqBrokerCreate"
-        :tenantId="tenantId"
-        @create="onEventSourceAdded"
-      />
-      <active-mq-broker-event-source-update-dialog
-        ref="amqBrokerUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-      <active-mq-client-event-source-create-dialog
-        ref="amqClientCreate"
-        :tenantId="tenantId"
-        @create="onEventSourceAdded"
-      />
-      <active-mq-client-event-source-update-dialog
-        ref="amqClientUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-      <coap-event-source-create-dialog
-        ref="coapCreate"
-        :tenantId="tenantId"
-        @create="onEventSourceAdded"
-      />
-      <coap-event-source-update-dialog
-        ref="coapUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-      <event-hub-event-source-create-dialog ref="eventHubCreate" @create="onEventSourceAdded" />
-      <event-hub-event-source-update-dialog
-        ref="eventHubUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-      <mqtt-event-source-create-dialog
-        ref="mqttCreate"
-        :tenantId="tenantId"
-        @create="onEventSourceAdded"
-      />
-      <mqtt-event-source-update-dialog
-        ref="mqttUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-      <rabbit-mq-event-source-create-dialog
-        ref="rabbitMqCreate"
-        :tenantId="tenantId"
-        @create="onEventSourceAdded"
-      />
-      <rabbit-mq-event-source-update-dialog
-        ref="rabbitMqUpdate"
-        :tenantId="tenantId"
-        @update="onEventSourceUpdated"
-      />
-    </template>
-  </datatable-section>
+      </template>
+      <template v-slot:datatable-dialogs>
+        <new-event-source-chooser ref="chooser" @chosen="onEventSourceCreate" />
+        <active-mq-broker-event-source-create-dialog
+          ref="amqBrokerCreate"
+          :tenantId="tenantId"
+          @create="onEventSourceAdded"
+        />
+        <active-mq-broker-event-source-update-dialog
+          ref="amqBrokerUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+        <active-mq-client-event-source-create-dialog
+          ref="amqClientCreate"
+          :tenantId="tenantId"
+          @create="onEventSourceAdded"
+        />
+        <active-mq-client-event-source-update-dialog
+          ref="amqClientUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+        <coap-event-source-create-dialog
+          ref="coapCreate"
+          :tenantId="tenantId"
+          @create="onEventSourceAdded"
+        />
+        <coap-event-source-update-dialog
+          ref="coapUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+        <event-hub-event-source-create-dialog ref="eventHubCreate" @create="onEventSourceAdded" />
+        <event-hub-event-source-update-dialog
+          ref="eventHubUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+        <mqtt-event-source-create-dialog
+          ref="mqttCreate"
+          :tenantId="tenantId"
+          @create="onEventSourceAdded"
+        />
+        <mqtt-event-source-update-dialog
+          ref="mqttUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+        <rabbit-mq-event-source-create-dialog
+          ref="rabbitMqCreate"
+          :tenantId="tenantId"
+          @create="onEventSourceAdded"
+        />
+        <rabbit-mq-event-source-update-dialog
+          ref="rabbitMqUpdate"
+          :tenantId="tenantId"
+          @update="onEventSourceUpdated"
+        />
+      </template>
+    </datatable-section>
+  </content-section>
 </template>
 
 <script lang="ts">
@@ -95,10 +98,12 @@ import { Component, Prop, Watch, Ref } from "vue-property-decorator";
 import { MicroserviceIcon } from "sitewhere-ide-common";
 
 import {
+  ContentSection,
   DatatableSection,
   DatatableLink,
   ContentDeleteIcon,
-  ContentLink
+  ContentLink,
+  SectionOverview
 } from "sitewhere-ide-components";
 
 import NewEventSourceChooser from "./NewEventSourceChooser.vue";
@@ -119,10 +124,12 @@ import { IEventSourceGenericConfiguration } from "sitewhere-configuration-model"
 
 @Component({
   components: {
+    ContentSection,
     DatatableSection,
     DatatableLink,
     ContentDeleteIcon,
     ContentLink,
+    SectionOverview,
     NewEventSourceChooser,
     ActiveMqBrokerEventSourceCreateDialog,
     ActiveMqBrokerEventSourceUpdateDialog,

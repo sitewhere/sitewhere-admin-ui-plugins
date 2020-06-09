@@ -5,6 +5,7 @@ import AssetManagementPlugin from "./components/plugins/tenantengines/assetmanag
 import BatchOperationsPlugin from "./components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue";
 import CommandDeliveryPlugin from "./components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue";
 import DeviceManagementPlugin from "./components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue";
+import DeviceRegistrationPlugin from "./components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue";
 import EventSourcesPlugin from "./components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue";
 
 /** Common */
@@ -19,5 +20,6 @@ export {
     BatchOperationsPlugin,
     CommandDeliveryPlugin,
     DeviceManagementPlugin,
+    DeviceRegistrationPlugin,
     EventSourcesPlugin
 }

@@ -1732,6 +1732,7 @@ __webpack_require__.d(__webpack_exports__, "BatchOperationsPlugin", function() {
 __webpack_require__.d(__webpack_exports__, "CommandDeliveryPlugin", function() { return /* reexport */ commanddelivery_CommandDeliveryPlugin; });
 __webpack_require__.d(__webpack_exports__, "DeviceManagementPlugin", function() { return /* reexport */ devicemanagement_DeviceManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "DeviceRegistrationPlugin", function() { return /* reexport */ DeviceRegistrationPlugin; });
+__webpack_require__.d(__webpack_exports__, "DeviceStatePlugin", function() { return /* reexport */ devicestate_DeviceStatePlugin; });
 __webpack_require__.d(__webpack_exports__, "EventSourcesPlugin", function() { return /* reexport */ eventsources_EventSourcesPlugin; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
@@ -1758,12 +1759,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=f4f4fffa&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=3c47acb4&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause\n  tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=f4f4fffa&scoped=true&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=3c47acb4&
 
 // CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
@@ -2845,7 +2846,7 @@ var DatastoreSelector_component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "f4f4fffa",
+  null,
   null
   
 )
@@ -6365,12 +6366,12 @@ var CommandDeliveryPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_CommandDeliveryPlugin = (CommandDeliveryPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=533c5c06&
-var DeviceManagementPluginvue_type_template_id_533c5c06_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device Management Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"unsetDatastore":_vm.onUnsetDatastore}})],1)],1)}
-var DeviceManagementPluginvue_type_template_id_533c5c06_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=085e38a5&
+var DeviceManagementPluginvue_type_template_id_085e38a5_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device Management Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
+var DeviceManagementPluginvue_type_template_id_085e38a5_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=533c5c06&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=085e38a5&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=script&lang=ts&
 
@@ -6408,11 +6409,26 @@ var DeviceManagementPluginvue_type_script_lang_ts_DeviceManagementPlugin = /** @
         enumerable: true,
         configurable: true
     });
+    /** Create new datastore */
+    DeviceManagementPlugin.prototype.onCreateDatastore = function (definition) {
+        this.deviceManagement.datastore = definition;
+    };
+    /** Update datastore */
+    DeviceManagementPlugin.prototype.onUpdateDatastore = function (definition) {
+        this.deviceManagement.datastore = definition;
+        this.markDirty();
+    };
+    /** Unset the datastore */
     DeviceManagementPlugin.prototype.onUnsetDatastore = function () {
         if (this.deviceManagement) {
             /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
             this.deviceManagement.datastore = null;
+            this.markDirty();
         }
+    };
+    /** Mark data as having been updated */
+    DeviceManagementPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
@@ -6438,8 +6454,8 @@ var DeviceManagementPluginvue_type_script_lang_ts_DeviceManagementPlugin = /** @
 
 var DeviceManagementPlugin_component = normalizeComponent(
   devicemanagement_DeviceManagementPluginvue_type_script_lang_ts_,
-  DeviceManagementPluginvue_type_template_id_533c5c06_render,
-  DeviceManagementPluginvue_type_template_id_533c5c06_staticRenderFns,
+  DeviceManagementPluginvue_type_template_id_085e38a5_render,
+  DeviceManagementPluginvue_type_template_id_085e38a5_staticRenderFns,
   false,
   null,
   null,
@@ -6674,6 +6690,104 @@ var DeviceRegistrationPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var DeviceRegistrationPlugin = (DeviceRegistrationPlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=69c3f008&
+var DeviceStatePluginvue_type_template_id_69c3f008_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device State Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unsetDatastore":_vm.onUnsetDatastore}})],1)],1)}
+var DeviceStatePluginvue_type_template_id_69c3f008_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=69c3f008&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+var DeviceStatePluginvue_type_script_lang_ts_DeviceStatePlugin = /** @class */ (function (_super) {
+    __extends(DeviceStatePlugin, _super);
+    function DeviceStatePlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(DeviceStatePlugin.prototype, "deviceState", {
+        /** Get tenant configuration for device state */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DeviceStatePlugin.prototype, "instanceManagement", {
+        /** Get instance configuraton information */
+        get: function () {
+            return this.configuration ? this.configuration.instanceConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DeviceStatePlugin.prototype, "datastore", {
+        /** Get datastore definition */
+        get: function () {
+            return this.deviceState ? this.deviceState.datastore : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Create new datastore */
+    DeviceStatePlugin.prototype.onCreateDatastore = function (definition) {
+        this.deviceState.datastore = definition;
+    };
+    /** Update datastore */
+    DeviceStatePlugin.prototype.onUpdateDatastore = function (definition) {
+        this.deviceState.datastore = definition;
+        this.markDirty();
+    };
+    /** Unset the datastore */
+    DeviceStatePlugin.prototype.onUnsetDatastore = function () {
+        if (this.deviceState) {
+            /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+            this.deviceState.datastore = null;
+            this.markDirty();
+        }
+    };
+    /** Mark data as having been updated */
+    DeviceStatePlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], DeviceStatePlugin.prototype, "configuration", void 0);
+    DeviceStatePlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, DatastoreSelector: common_DatastoreSelector }
+        })
+    ], DeviceStatePlugin);
+    return DeviceStatePlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var DeviceStatePluginvue_type_script_lang_ts_ = (DeviceStatePluginvue_type_script_lang_ts_DeviceStatePlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var devicestate_DeviceStatePluginvue_type_script_lang_ts_ = (DeviceStatePluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var DeviceStatePlugin_component = normalizeComponent(
+  devicestate_DeviceStatePluginvue_type_script_lang_ts_,
+  DeviceStatePluginvue_type_template_id_69c3f008_render,
+  DeviceStatePluginvue_type_template_id_69c3f008_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var devicestate_DeviceStatePlugin = (DeviceStatePlugin_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 var EventSourcesPluginvue_type_template_id_5f6048b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('event-sources-table',{attrs:{"tenantId":_vm.tenantId,"eventSources":_vm.eventSources},on:{"create":_vm.onEventSourceCreated,"update":_vm.onEventSourceUpdated,"delete":_vm.onEventSourceDeleted}})],1)}
 var EventSourcesPluginvue_type_template_id_5f6048b3_staticRenderFns = []
@@ -10145,6 +10259,7 @@ var EventSourcesPlugin_component = normalizeComponent(
 
 /* harmony default export */ var eventsources_EventSourcesPlugin = (EventSourcesPlugin_component.exports);
 // CONCATENATED MODULE: ./src/index.ts
+
 
 
 

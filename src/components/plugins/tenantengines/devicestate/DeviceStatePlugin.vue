@@ -1,12 +1,12 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
-    <content-section icon="fa-database" title="Device Management Datastore">
+    <content-section icon="fa-database" title="Device State Datastore">
       <datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
         @create="onCreateDatastore"
         @update="onUpdateDatastore"
-        @unset="onUnsetDatastore"
+        @unsetDatastore="onUnsetDatastore"
       />
     </content-section>
   </tenant-engine-plugin>
@@ -23,7 +23,7 @@ import { ContentSection } from "sitewhere-ide-components";
 
 import { ITenantEngineConfiguration } from "sitewhere-rest-api";
 import {
-  IDeviceManagementConfiguration,
+  IDeviceStateConfiguration,
   IDatastoreDefinition
 } from "sitewhere-configuration-model";
 import { IInstanceConfiguration } from "sitewhere-rest-api";
@@ -31,11 +31,11 @@ import { IInstanceConfiguration } from "sitewhere-rest-api";
 @Component({
   components: { ContentSection, TenantEnginePlugin, DatastoreSelector }
 })
-export default class DeviceManagementPlugin extends Vue {
+export default class DeviceStatePlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;
 
-  /** Get tenant configuration for device management */
-  get deviceManagement(): IDeviceManagementConfiguration {
+  /** Get tenant configuration for device state */
+  get deviceState(): IDeviceStateConfiguration {
     return this.configuration ? this.configuration.tenantConfiguration : null;
   }
 
@@ -46,25 +46,25 @@ export default class DeviceManagementPlugin extends Vue {
 
   /** Get datastore definition */
   get datastore(): IDatastoreDefinition | null {
-    return this.deviceManagement ? this.deviceManagement.datastore : null;
+    return this.deviceState ? this.deviceState.datastore : null;
   }
 
   /** Create new datastore */
   onCreateDatastore(definition: IDatastoreDefinition) {
-    this.deviceManagement.datastore = definition;
+    this.deviceState.datastore = definition;
   }
 
   /** Update datastore */
   onUpdateDatastore(definition: IDatastoreDefinition) {
-    this.deviceManagement.datastore = definition;
+    this.deviceState.datastore = definition;
     this.markDirty();
   }
 
   /** Unset the datastore */
   onUnsetDatastore(): void {
-    if (this.deviceManagement) {
+    if (this.deviceState) {
       /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-      (this.deviceManagement as any).datastore = null;
+      (this.deviceState as any).datastore = null;
       this.markDirty();
     }
   }

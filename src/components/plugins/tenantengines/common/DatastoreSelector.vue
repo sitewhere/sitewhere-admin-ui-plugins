@@ -159,5 +159,3 @@ export default class DatastoreSelector extends Vue {
   }
 }
 </script>
-
-<style scoped></style>

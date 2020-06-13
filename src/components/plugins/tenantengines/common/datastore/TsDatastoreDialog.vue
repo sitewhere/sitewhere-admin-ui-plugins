@@ -50,7 +50,7 @@
       </v-layout>
     </dialog-header>
     <v-divider class="mb-2" />
-    <postgres-95-fields v-if="isPostgres95" :readonly="isGlobalScope" ref="details" />
+    <warp-10-fields v-if="isWarp10" :readonly="isGlobalScope" ref="details" />
   </base-dialog>
 </template>
 
@@ -64,7 +64,7 @@ import {
   BaseDialog
 } from "sitewhere-ide-components";
 
-import Postgres95Fields from "./postgres95/Postgres95Fields.vue";
+import Warp10Fields from "./warp10/Warp10Fields.vue";
 
 import {
   VLayout,
@@ -82,8 +82,8 @@ import {
 } from "sitewhere-configuration-model";
 import {
   IInstanceConfiguration,
-  IRdbConfigurationMap,
-  IRdbConfiguration
+  ITimeSeriesConfigurationMap,
+  ITimeSeriesConfiguration
 } from "sitewhere-rest-api";
 
 @Component({
@@ -96,29 +96,33 @@ import {
     VBtn,
     VSelect,
     VDivider,
-    Postgres95Fields
+    Warp10Fields
   }
 })
-export default class DatastoreDialog extends DialogComponent<
+export default class RdbDatastoreDialog extends DialogComponent<
   IDatastoreDefinition
 > {
   @Prop() readonly instance!: IInstanceConfiguration;
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
   @Ref() readonly dialog!: BaseDialog;
-  @Ref() readonly details!: Postgres95Fields;
+  @Ref() readonly details!: Warp10Fields;
 
   scope = 0;
   reference: string | null = null;
-  type = "postgres95";
+  type = "warp10";
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   configuration: any;
 
   /** List of supported database types */
   databaseTypes: { text: string; value: string }[] = [
     {
-      text: "PostgreSQL",
-      value: "postgres95"
+      text: "Warp 10",
+      value: "warp10"
+    },
+    {
+      text: "InfluxDB",
+      value: "influxdb"
     }
   ];
 
@@ -165,18 +169,18 @@ export default class DatastoreDialog extends DialogComponent<
     return this.scope == 1;
   }
 
-  /** Global RDB configurations */
-  get rdbConfigurations(): IRdbConfigurationMap | null {
+  /** Global time series configurations */
+  get timeSeriesConfigurations(): ITimeSeriesConfigurationMap | null {
     return this.instance && this.instance.persistenceConfigurations
       ? this.instance.persistenceConfigurations.rdbConfigurations
       : null;
   }
 
-  /** Get list of available global databases */
+  /** Get list of available global time series databases */
   get globalDatabases(): { text: string; value: string }[] {
     const databases: { text: string; value: string }[] = [];
-    if (this.rdbConfigurations) {
-      const keys: string[] = Object.keys(this.rdbConfigurations);
+    if (this.timeSeriesConfigurations) {
+      const keys: string[] = Object.keys(this.timeSeriesConfigurations);
       keys.forEach(key => {
         databases.push({ text: key, value: key });
       });
@@ -186,10 +190,12 @@ export default class DatastoreDialog extends DialogComponent<
 
   /** Find a referenced persistence configuration */
   findGlobalDefinition(reference: string): IDatastoreDefinitionLocal | null {
-    if (!this.rdbConfigurations) {
+    if (!this.timeSeriesConfigurations) {
       return null;
     }
-    const match: IRdbConfiguration = this.rdbConfigurations[reference];
+    const match: ITimeSeriesConfiguration = this.timeSeriesConfigurations[
+      reference
+    ];
     if (!match) {
       return null;
     }
@@ -225,10 +231,16 @@ export default class DatastoreDialog extends DialogComponent<
     }
   }
 
-  /** Indicates whether database is Postgres95 */
-  get isPostgres95(): boolean {
+  /** Indicates whether database is Warp 10 */
+  get isWarp10(): boolean {
     const type: string | null = this.getDatastoreType();
-    return type == "postgres95";
+    return type == "warp10";
+  }
+
+  /** Indicates whether database is InfluxDB */
+  get isInfluxDB(): boolean {
+    const type: string | null = this.getDatastoreType();
+    return type == "inlfuxdb";
   }
 
   /** Generate configuration from detail panel */

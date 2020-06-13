@@ -1,7 +1,7 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
     <content-section icon="fa-database" title="Asset Management Datastore">
-      <datastore-selector
+      <rdb-datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
         @create="onCreateDatastore"
@@ -17,7 +17,7 @@ import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
-import DatastoreSelector from "../common/DatastoreSelector.vue";
+import RdbDatastoreSelector from "../common/datastore/RdbDatastoreSelector.vue";
 
 import { ContentSection } from "sitewhere-ide-components";
 
@@ -31,7 +31,7 @@ import {
 } from "sitewhere-configuration-model";
 
 @Component({
-  components: { ContentSection, TenantEnginePlugin, DatastoreSelector }
+  components: { ContentSection, TenantEnginePlugin, RdbDatastoreSelector }
 })
 export default class AssetManagementPlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;

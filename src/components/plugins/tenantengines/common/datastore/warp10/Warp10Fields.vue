@@ -29,39 +29,24 @@
       <form-text
         required
         :readonly="readonly"
-        label="Max Connections"
-        title="Maximum number of connections to server."
-        type="number"
-        v-model="maxConnections"
+        label="Application"
+        title="Warp 10 application name."
+        v-model="application"
         icon="fa-stream"
       >
-        <span v-if="$v.maxConnections.$invalid && $v.$dirty">Max connections is required.</span>
+        <span v-if="$v.application.$invalid && $v.$dirty">Application is required.</span>
       </form-text>
     </v-flex>
-    <v-flex xs6>
+    <v-flex xs12>
       <form-text
         required
         :readonly="readonly"
-        label="Username"
-        title="Username."
-        v-model="username"
-        icon="fa-user"
-        class="mr-3"
+        label="Token secret"
+        title="Warp 10 token secret."
+        v-model="tokenSecret"
+        icon="fa-stream"
       >
-        <span v-if="$v.username.$invalid && $v.$dirty">Username is required.</span>
-      </form-text>
-    </v-flex>
-    <v-flex xs6>
-      <form-text
-        required
-        :readonly="readonly"
-        label="Password"
-        title="Password."
-        v-model="password"
-        icon="fa-lock"
-        type="password"
-      >
-        <span v-if="$v.password.$invalid && $v.$dirty">Password is required.</span>
+        <span v-if="$v.tokenSecret.$invalid && $v.$dirty">Token secret is required.</span>
       </form-text>
     </v-flex>
   </dialog-form>
@@ -81,38 +66,24 @@ import { Validation } from "vuelidate";
   validations: {
     hostname: {
       required
-    },
-    port: {
-      required
-    },
-    maxConnections: {
-      required
-    },
-    username: {
-      required
-    },
-    password: {
-      required
     }
   }
 })
-export default class Postgres95Fields extends DialogSection {
+export default class Warp10Fields extends DialogSection {
   dummy!: Validation;
   @Prop() readonly readonly!: boolean;
 
   hostname: string | null = null;
   port: number | null = null;
-  username: string | null = null;
-  password: string | null = null;
-  maxConnections: number | null = null;
+  application: string | null = null;
+  tokenSecret: string | null = null;
 
   /** Reset section content */
   reset(): void {
     this.hostname = null;
     this.port = null;
-    this.username = null;
-    this.password = null;
-    this.maxConnections = null;
+    this.application = null;
+    this.tokenSecret = null;
     this.$v.$reset();
   }
 
@@ -127,9 +98,6 @@ export default class Postgres95Fields extends DialogSection {
   load(configuration: any): void {
     this.hostname = configuration.hostname;
     this.port = configuration.port;
-    this.username = configuration.username;
-    this.password = configuration.password;
-    this.maxConnections = configuration.maxConnections;
   }
 
   /** Save form data to an object */
@@ -137,9 +105,8 @@ export default class Postgres95Fields extends DialogSection {
     return {
       hostname: this.hostname,
       port: this.port,
-      username: this.username,
-      password: this.password,
-      maxConnections: this.maxConnections
+      application: this.application,
+      tokenSecret: this.tokenSecret
     };
   }
 }

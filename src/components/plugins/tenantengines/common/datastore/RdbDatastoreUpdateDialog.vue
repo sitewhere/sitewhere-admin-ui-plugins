@@ -1,8 +1,8 @@
 <template>
-  <datastore-dialog
+  <rdb-datastore-dialog
     ref="dialog"
-    title="Create Datastore"
-    createLabel="Create"
+    title="Update Relational Datastore"
+    createLabel="Update"
     :instance="instance"
     @payload="onPayload"
   />
@@ -12,32 +12,30 @@
 import Vue from "vue";
 import { Component, Ref, Prop } from "vue-property-decorator";
 
-import DatastoreDialog from "./DatastoreDialog.vue";
+import RdbDatastoreDialog from "./RdbDatastoreDialog.vue";
 
 import { IDatastoreDefinition } from "sitewhere-configuration-model";
 import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
   components: {
-    DatastoreDialog
+    RdbDatastoreDialog
   }
 })
-export default class DatastoreCreateDialog extends Vue {
+export default class RdbDatastoreUpdateDialog extends Vue {
   @Prop() readonly instance!: IInstanceConfiguration;
-  @Ref() readonly dialog!: DatastoreDialog;
-
-  idsInUse: string[] = [];
+  @Ref() readonly dialog!: RdbDatastoreDialog;
 
   /** Emit payload */
-  onPayload(payload: IDatastoreDefinition): void {
+  onPayload(definition: IDatastoreDefinition): void {
     this.dialog.closeDialog();
-    this.$emit("create", payload);
+    this.$emit("update", definition);
   }
 
   /** Open dialog */
-  openDialog(): void {
-    this.dialog.reset();
+  openDialog(definition: IDatastoreDefinition): void {
     this.dialog.openDialog();
+    this.dialog.load(definition);
   }
 }
 </script>

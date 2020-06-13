@@ -13,7 +13,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
-import { Postgres95Configuration } from "sitewhere-configuration-model";
+import { IPostgres95Configuration } from "sitewhere-configuration-model";
 
 import { ContentField } from "sitewhere-ide-components";
 import { VCard } from "vuetify/lib";
@@ -22,7 +22,7 @@ import { VCard } from "vuetify/lib";
   components: { VCard, ContentField }
 })
 export default class Postgres95Summary extends Vue {
-  @Prop() readonly configuration!: Postgres95Configuration;
+  @Prop() readonly configuration!: IPostgres95Configuration;
 
   /** Hostname */
   get hostname(): string | null {
@@ -51,4 +51,3 @@ export default class Postgres95Summary extends Vue {
 }
 </script>
 
-<style scoped></style>

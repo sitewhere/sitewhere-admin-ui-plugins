@@ -1,5 +1,8 @@
-import DatastoreSelector from "./components/plugins/tenantengines/common/DatastoreSelector.vue";
+import RdbDatastoreSelector from "./components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue";
 import TenantEnginePlugin from "./components/plugins/tenantengines/TenantEnginePlugin.vue";
+
+import Postgres95Fields from "./components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue";
+import Warp10Fields from "./components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue";
 
 import AssetManagementPlugin from "./components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue";
 import BatchOperationsPlugin from "./components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue";
@@ -11,8 +14,14 @@ import EventSourcesPlugin from "./components/plugins/tenantengines/eventsources/
 
 /** Common */
 export {
-    DatastoreSelector,
+    RdbDatastoreSelector,
     TenantEnginePlugin
+}
+
+/** Form elements */
+export {
+    Postgres95Fields,
+    Warp10Fields
 }
 
 /** Plugins */

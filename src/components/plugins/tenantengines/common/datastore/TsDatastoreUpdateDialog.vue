@@ -1,7 +1,7 @@
 <template>
-  <datastore-dialog
+  <ts-datastore-dialog
     ref="dialog"
-    title="Update Datastore"
+    title="Update Timeseries Datastore"
     createLabel="Update"
     :instance="instance"
     @payload="onPayload"
@@ -12,19 +12,19 @@
 import Vue from "vue";
 import { Component, Ref, Prop } from "vue-property-decorator";
 
-import DatastoreDialog from "./DatastoreDialog.vue";
+import TsDatastoreDialog from "./TsDatastoreDialog.vue";
 
 import { IDatastoreDefinition } from "sitewhere-configuration-model";
 import { IInstanceConfiguration } from "sitewhere-rest-api";
 
 @Component({
   components: {
-    DatastoreDialog
+    TsDatastoreDialog
   }
 })
-export default class DatastoreUpdateDialog extends Vue {
+export default class TsDatastoreUpdateDialog extends Vue {
   @Prop() readonly instance!: IInstanceConfiguration;
-  @Ref() readonly dialog!: DatastoreDialog;
+  @Ref() readonly dialog!: TsDatastoreDialog;
 
   /** Emit payload */
   onPayload(definition: IDatastoreDefinition): void {
@@ -39,4 +39,3 @@ export default class DatastoreUpdateDialog extends Vue {
   }
 }
 </script>
-

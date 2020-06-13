@@ -1,7 +1,7 @@
 <template>
   <tenant-engine-plugin :configuration="configuration">
     <content-section icon="fa-database" title="Batch Operations Datastore">
-      <datastore-selector
+      <rdb-datastore-selector
         :datastore="datastore"
         :instance="instanceManagement"
         @create="onCreateDatastore"
@@ -22,7 +22,7 @@ import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
-import DatastoreSelector from "../common/DatastoreSelector.vue";
+import RdbDatastoreSelector from "../common/datastore/RdbDatastoreSelector.vue";
 import BatchOperationManagerSection from "./batchoperationmanager/BatchOperationManagerSection.vue";
 
 import { ContentSection } from "sitewhere-ide-components";
@@ -44,7 +44,7 @@ import {
     VDivider,
     ContentSection,
     TenantEnginePlugin,
-    DatastoreSelector,
+    RdbDatastoreSelector,
     BatchOperationManagerSection
   }
 })

@@ -1716,8 +1716,10 @@ exports.default = _default;
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "DatastoreSelector", function() { return /* reexport */ common_DatastoreSelector; });
+__webpack_require__.d(__webpack_exports__, "RdbDatastoreSelector", function() { return /* reexport */ datastore_RdbDatastoreSelector; });
 __webpack_require__.d(__webpack_exports__, "TenantEnginePlugin", function() { return /* reexport */ tenantengines_TenantEnginePlugin; });
+__webpack_require__.d(__webpack_exports__, "Postgres95Fields", function() { return /* reexport */ postgres95_Postgres95Fields; });
+__webpack_require__.d(__webpack_exports__, "Warp10Fields", function() { return /* reexport */ warp10_Warp10Fields; });
 __webpack_require__.d(__webpack_exports__, "AssetManagementPlugin", function() { return /* reexport */ assetmanagement_AssetManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "BatchOperationsPlugin", function() { return /* reexport */ batchoperations_BatchOperationsPlugin; });
 __webpack_require__.d(__webpack_exports__, "CommandDeliveryPlugin", function() { return /* reexport */ commanddelivery_CommandDeliveryPlugin; });
@@ -1750,12 +1752,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=3c47acb4&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause\n  tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('rdb-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('rdb-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=template&id=3c47acb4&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
 
 // CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
@@ -1985,29 +1987,29 @@ var lib_ = __webpack_require__("4875");
 // EXTERNAL MODULE: external "sitewhere-ide-components"
 var external_sitewhere_ide_components_ = __webpack_require__("9092");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreCreateDialog.vue?vue&type=template&id=d836d36c&
-var DatastoreCreateDialogvue_type_template_id_d836d36c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('datastore-dialog',{ref:"dialog",attrs:{"title":"Create Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
-var DatastoreCreateDialogvue_type_template_id_d836d36c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
+var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Relational Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
+var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreCreateDialog.vue?vue&type=template&id=d836d36c&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreDialog.vue?vue&type=template&id=75e99384&
-var DatastoreDialogvue_type_template_id_75e99384_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),(_vm.isPostgres95)?_c('postgres-95-fields',{ref:"details",attrs:{"readonly":_vm.isGlobalScope}}):_vm._e()],1)}
-var DatastoreDialogvue_type_template_id_75e99384_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=299ccd38&
+var RdbDatastoreDialogvue_type_template_id_299ccd38_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),(_vm.isPostgres95)?_c('postgres-95-fields',{ref:"details",attrs:{"readonly":_vm.isGlobalScope}}):_vm._e()],1)}
+var RdbDatastoreDialogvue_type_template_id_299ccd38_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreDialog.vue?vue&type=template&id=75e99384&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=299ccd38&
 
 // EXTERNAL MODULE: external "sitewhere-ide-common"
 var external_sitewhere_ide_common_ = __webpack_require__("403e");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=2ffa5f55&
-var Postgres95Fieldsvue_type_template_id_2ffa5f55_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}})],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}})],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Max Connections","title":"Maximum number of connections to server.","type":"number","icon":"fa-stream"},model:{value:(_vm.maxConnections),callback:function ($$v) {_vm.maxConnections=$$v},expression:"maxConnections"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Username","title":"Username.","icon":"fa-user"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Password","title":"Password.","icon":"fa-lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1)],1)}
-var Postgres95Fieldsvue_type_template_id_2ffa5f55_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
+var Postgres95Fieldsvue_type_template_id_1a674a09_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Max Connections","title":"Maximum number of connections to server.","type":"number","icon":"fa-stream"},model:{value:(_vm.maxConnections),callback:function ($$v) {_vm.maxConnections=$$v},expression:"maxConnections"}},[(_vm.$v.maxConnections.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Max connections is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Username","title":"Username.","icon":"fa-user"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}},[(_vm.$v.username.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Username is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Password","title":"Password.","icon":"fa-lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}},[(_vm.$v.password.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Password is required.")]):_vm._e()])],1)],1)}
+var Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=2ffa5f55&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
 
 // EXTERNAL MODULE: ./node_modules/vuelidate/lib/validators/index.js
 var validators = __webpack_require__("b5ae");
@@ -2070,6 +2072,18 @@ var Postgres95Fieldsvue_type_script_lang_ts_Postgres95Fields = /** @class */ (fu
             components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
             validations: {
                 hostname: {
+                    required: validators["required"]
+                },
+                port: {
+                    required: validators["required"]
+                },
+                maxConnections: {
+                    required: validators["required"]
+                },
+                username: {
+                    required: validators["required"]
+                },
+                password: {
                     required: validators["required"]
                 }
             }
@@ -2191,8 +2205,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   postgres95_Postgres95Fieldsvue_type_script_lang_ts_,
-  Postgres95Fieldsvue_type_template_id_2ffa5f55_render,
-  Postgres95Fieldsvue_type_template_id_2ffa5f55_staticRenderFns,
+  Postgres95Fieldsvue_type_template_id_1a674a09_render,
+  Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns,
   false,
   null,
   null,
@@ -2201,16 +2215,16 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var postgres95_Postgres95Fields = (component.exports);
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreDialog.vue?vue&type=script&lang=ts&
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=script&lang=ts&
 
 
 
 
 
 
-var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (function (_super) {
-    __extends(DatastoreDialog, _super);
-    function DatastoreDialog() {
+var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */ (function (_super) {
+    __extends(RdbDatastoreDialog, _super);
+    function RdbDatastoreDialog() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.scope = 0;
         _this.reference = null;
@@ -2224,7 +2238,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         ];
         return _this;
     }
-    Object.defineProperty(DatastoreDialog.prototype, "dialogComponent", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "dialogComponent", {
         /** Convert to dialog */
         get: function () {
             return this.dialog;
@@ -2232,7 +2246,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreDialog.prototype, "detailsSection", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "detailsSection", {
         /** Convert to dialog section */
         get: function () {
             return this.details;
@@ -2240,7 +2254,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    DatastoreDialog.prototype.onScopeChanged = function () {
+    RdbDatastoreDialog.prototype.onScopeChanged = function () {
         if (!this.isLocalScope) {
             if (!this.reference) {
                 var refs = this.globalDatabases;
@@ -2251,10 +2265,10 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         }
         this.reloadDetails();
     };
-    DatastoreDialog.prototype.onReferenceChanged = function () {
+    RdbDatastoreDialog.prototype.onReferenceChanged = function () {
         this.reloadDetails();
     };
-    Object.defineProperty(DatastoreDialog.prototype, "icon", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "icon", {
         /** Get icon for dialog */
         get: function () {
             return external_sitewhere_ide_common_["NavigationIcon"].Datastore;
@@ -2262,7 +2276,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreDialog.prototype, "isLocalScope", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "isLocalScope", {
         /** Indicates if local scope is chosen */
         get: function () {
             return this.scope == 0;
@@ -2270,7 +2284,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreDialog.prototype, "isGlobalScope", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "isGlobalScope", {
         /** Indicates if global scope is chosen */
         get: function () {
             return this.scope == 1;
@@ -2278,7 +2292,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreDialog.prototype, "rdbConfigurations", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "rdbConfigurations", {
         /** Global RDB configurations */
         get: function () {
             return this.instance && this.instance.persistenceConfigurations
@@ -2288,7 +2302,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreDialog.prototype, "globalDatabases", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "globalDatabases", {
         /** Get list of available global databases */
         get: function () {
             var databases = [];
@@ -2304,7 +2318,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         configurable: true
     });
     /** Find a referenced persistence configuration */
-    DatastoreDialog.prototype.findGlobalDefinition = function (reference) {
+    RdbDatastoreDialog.prototype.findGlobalDefinition = function (reference) {
         if (!this.rdbConfigurations) {
             return null;
         }
@@ -2318,7 +2332,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         };
     };
     /** Local or global datastore type */
-    DatastoreDialog.prototype.getDatastoreType = function () {
+    RdbDatastoreDialog.prototype.getDatastoreType = function () {
         if (!this.isLocalScope && this.reference) {
             var global = this.findGlobalDefinition(this.reference);
             return global ? global.type : null;
@@ -2327,7 +2341,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
     };
     /** Local or global datastore configuration */
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    DatastoreDialog.prototype.getDatastoreConfiguration = function () {
+    RdbDatastoreDialog.prototype.getDatastoreConfiguration = function () {
         if (this.isLocalScope) {
             return this.configuration;
         }
@@ -2339,7 +2353,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
             throw new Error("Neither local nor reference!");
         }
     };
-    Object.defineProperty(DatastoreDialog.prototype, "isPostgres95", {
+    Object.defineProperty(RdbDatastoreDialog.prototype, "isPostgres95", {
         /** Indicates whether database is Postgres95 */
         get: function () {
             var type = this.getDatastoreType();
@@ -2350,14 +2364,14 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
     });
     /** Generate configuration from detail panel */
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    DatastoreDialog.prototype.generateConfiguration = function () {
+    RdbDatastoreDialog.prototype.generateConfiguration = function () {
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         var configuration = {};
         Object.assign(configuration, this.detailsSection.save());
         return configuration;
     };
     /** Generate payload from UI data */
-    DatastoreDialog.prototype.generatePayload = function () {
+    RdbDatastoreDialog.prototype.generatePayload = function () {
         if (this.scope == 1 && this.reference) {
             return {
                 reference: this.reference
@@ -2370,14 +2384,14 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         }
     };
     /** Reset dialog content to default */
-    DatastoreDialog.prototype.reset = function () {
+    RdbDatastoreDialog.prototype.reset = function () {
         if (this.details) {
             this.detailsSection.reset();
         }
         this.dialogComponent.setActiveTab(0);
     };
     /** Load data from an existing configuration */
-    DatastoreDialog.prototype.load = function (payload) {
+    RdbDatastoreDialog.prototype.load = function (payload) {
         this.reset();
         this.type = payload.type || "postgres95";
         this.configuration =
@@ -2387,7 +2401,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
         this.reloadDetails();
     };
     /** Reload details panel based on updated configuration */
-    DatastoreDialog.prototype.reloadDetails = function () {
+    RdbDatastoreDialog.prototype.reloadDetails = function () {
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         var config = this.getDatastoreConfiguration();
         if (this.details && config) {
@@ -2396,7 +2410,7 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
     };
     /** Called after create button is clicked */
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
-    DatastoreDialog.prototype.onCreateClicked = function (e) {
+    RdbDatastoreDialog.prototype.onCreateClicked = function (e) {
         if (!this.detailsSection.validate()) {
             this.dialogComponent.setActiveTab(0);
             return;
@@ -2406,26 +2420,26 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreDialog.prototype, "instance", void 0);
+    ], RdbDatastoreDialog.prototype, "instance", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreDialog.prototype, "title", void 0);
+    ], RdbDatastoreDialog.prototype, "title", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreDialog.prototype, "createLabel", void 0);
+    ], RdbDatastoreDialog.prototype, "createLabel", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreDialog.prototype, "dialog", void 0);
+    ], RdbDatastoreDialog.prototype, "dialog", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreDialog.prototype, "details", void 0);
+    ], RdbDatastoreDialog.prototype, "details", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("scope")
-    ], DatastoreDialog.prototype, "onScopeChanged", null);
+    ], RdbDatastoreDialog.prototype, "onScopeChanged", null);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("reference")
-    ], DatastoreDialog.prototype, "onReferenceChanged", null);
-    DatastoreDialog = __decorate([
+    ], RdbDatastoreDialog.prototype, "onReferenceChanged", null);
+    RdbDatastoreDialog = __decorate([
         Object(external_vue_property_decorator_["Component"])({
             components: {
                 BaseDialog: external_sitewhere_ide_components_["BaseDialog"],
@@ -2439,14 +2453,14 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
                 Postgres95Fields: postgres95_Postgres95Fields
             }
         })
-    ], DatastoreDialog);
-    return DatastoreDialog;
+    ], RdbDatastoreDialog);
+    return RdbDatastoreDialog;
 }(external_sitewhere_ide_components_["DialogComponent"]));
-/* harmony default export */ var DatastoreDialogvue_type_script_lang_ts_ = (DatastoreDialogvue_type_script_lang_ts_DatastoreDialog);
+/* harmony default export */ var RdbDatastoreDialogvue_type_script_lang_ts_ = (RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog);
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreDialog.vue?vue&type=script&lang=ts&
- /* harmony default export */ var datastore_DatastoreDialogvue_type_script_lang_ts_ = (DatastoreDialogvue_type_script_lang_ts_); 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreDialog.vue
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_RdbDatastoreDialogvue_type_script_lang_ts_ = (RdbDatastoreDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue
 
 
 
@@ -2454,10 +2468,10 @@ var DatastoreDialogvue_type_script_lang_ts_DatastoreDialog = /** @class */ (func
 
 /* normalize component */
 
-var DatastoreDialog_component = normalizeComponent(
-  datastore_DatastoreDialogvue_type_script_lang_ts_,
-  DatastoreDialogvue_type_template_id_75e99384_render,
-  DatastoreDialogvue_type_template_id_75e99384_staticRenderFns,
+var RdbDatastoreDialog_component = normalizeComponent(
+  datastore_RdbDatastoreDialogvue_type_script_lang_ts_,
+  RdbDatastoreDialogvue_type_template_id_299ccd38_render,
+  RdbDatastoreDialogvue_type_template_id_299ccd38_staticRenderFns,
   false,
   null,
   null,
@@ -2465,49 +2479,49 @@ var DatastoreDialog_component = normalizeComponent(
   
 )
 
-/* harmony default export */ var datastore_DatastoreDialog = (DatastoreDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreCreateDialog.vue?vue&type=script&lang=ts&
+/* harmony default export */ var datastore_RdbDatastoreDialog = (RdbDatastoreDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=script&lang=ts&
 
 
 
 
-var DatastoreCreateDialogvue_type_script_lang_ts_DatastoreCreateDialog = /** @class */ (function (_super) {
-    __extends(DatastoreCreateDialog, _super);
-    function DatastoreCreateDialog() {
+var RdbDatastoreCreateDialogvue_type_script_lang_ts_RdbDatastoreCreateDialog = /** @class */ (function (_super) {
+    __extends(RdbDatastoreCreateDialog, _super);
+    function RdbDatastoreCreateDialog() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.idsInUse = [];
         return _this;
     }
     /** Emit payload */
-    DatastoreCreateDialog.prototype.onPayload = function (payload) {
+    RdbDatastoreCreateDialog.prototype.onPayload = function (payload) {
         this.dialog.closeDialog();
         this.$emit("create", payload);
     };
     /** Open dialog */
-    DatastoreCreateDialog.prototype.openDialog = function () {
+    RdbDatastoreCreateDialog.prototype.openDialog = function () {
         this.dialog.reset();
         this.dialog.openDialog();
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreCreateDialog.prototype, "instance", void 0);
+    ], RdbDatastoreCreateDialog.prototype, "instance", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreCreateDialog.prototype, "dialog", void 0);
-    DatastoreCreateDialog = __decorate([
+    ], RdbDatastoreCreateDialog.prototype, "dialog", void 0);
+    RdbDatastoreCreateDialog = __decorate([
         Object(external_vue_property_decorator_["Component"])({
             components: {
-                DatastoreDialog: datastore_DatastoreDialog
+                RdbDatastoreDialog: datastore_RdbDatastoreDialog
             }
         })
-    ], DatastoreCreateDialog);
-    return DatastoreCreateDialog;
+    ], RdbDatastoreCreateDialog);
+    return RdbDatastoreCreateDialog;
 }(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
-/* harmony default export */ var DatastoreCreateDialogvue_type_script_lang_ts_ = (DatastoreCreateDialogvue_type_script_lang_ts_DatastoreCreateDialog);
+/* harmony default export */ var RdbDatastoreCreateDialogvue_type_script_lang_ts_ = (RdbDatastoreCreateDialogvue_type_script_lang_ts_RdbDatastoreCreateDialog);
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreCreateDialog.vue?vue&type=script&lang=ts&
- /* harmony default export */ var datastore_DatastoreCreateDialogvue_type_script_lang_ts_ = (DatastoreCreateDialogvue_type_script_lang_ts_); 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreCreateDialog.vue
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_RdbDatastoreCreateDialogvue_type_script_lang_ts_ = (RdbDatastoreCreateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue
 
 
 
@@ -2515,10 +2529,10 @@ var DatastoreCreateDialogvue_type_script_lang_ts_DatastoreCreateDialog = /** @cl
 
 /* normalize component */
 
-var DatastoreCreateDialog_component = normalizeComponent(
-  datastore_DatastoreCreateDialogvue_type_script_lang_ts_,
-  DatastoreCreateDialogvue_type_template_id_d836d36c_render,
-  DatastoreCreateDialogvue_type_template_id_d836d36c_staticRenderFns,
+var RdbDatastoreCreateDialog_component = normalizeComponent(
+  datastore_RdbDatastoreCreateDialogvue_type_script_lang_ts_,
+  RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_render,
+  RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_staticRenderFns,
   false,
   null,
   null,
@@ -2526,54 +2540,54 @@ var DatastoreCreateDialog_component = normalizeComponent(
   
 )
 
-/* harmony default export */ var datastore_DatastoreCreateDialog = (DatastoreCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreUpdateDialog.vue?vue&type=template&id=26c26f99&
-var DatastoreUpdateDialogvue_type_template_id_26c26f99_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('datastore-dialog',{ref:"dialog",attrs:{"title":"Update Datastore","createLabel":"Update","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
-var DatastoreUpdateDialogvue_type_template_id_26c26f99_staticRenderFns = []
+/* harmony default export */ var datastore_RdbDatastoreCreateDialog = (RdbDatastoreCreateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=template&id=a1536d1c&
+var RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Update Relational Datastore","createLabel":"Update","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
+var RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreUpdateDialog.vue?vue&type=template&id=26c26f99&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=template&id=a1536d1c&
 
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/DatastoreUpdateDialog.vue?vue&type=script&lang=ts&
-
-
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=script&lang=ts&
 
 
-var DatastoreUpdateDialogvue_type_script_lang_ts_DatastoreUpdateDialog = /** @class */ (function (_super) {
-    __extends(DatastoreUpdateDialog, _super);
-    function DatastoreUpdateDialog() {
+
+
+var RdbDatastoreUpdateDialogvue_type_script_lang_ts_RdbDatastoreUpdateDialog = /** @class */ (function (_super) {
+    __extends(RdbDatastoreUpdateDialog, _super);
+    function RdbDatastoreUpdateDialog() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /** Emit payload */
-    DatastoreUpdateDialog.prototype.onPayload = function (definition) {
+    RdbDatastoreUpdateDialog.prototype.onPayload = function (definition) {
         this.dialog.closeDialog();
         this.$emit("update", definition);
     };
     /** Open dialog */
-    DatastoreUpdateDialog.prototype.openDialog = function (definition) {
+    RdbDatastoreUpdateDialog.prototype.openDialog = function (definition) {
         this.dialog.openDialog();
         this.dialog.load(definition);
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreUpdateDialog.prototype, "instance", void 0);
+    ], RdbDatastoreUpdateDialog.prototype, "instance", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreUpdateDialog.prototype, "dialog", void 0);
-    DatastoreUpdateDialog = __decorate([
+    ], RdbDatastoreUpdateDialog.prototype, "dialog", void 0);
+    RdbDatastoreUpdateDialog = __decorate([
         Object(external_vue_property_decorator_["Component"])({
             components: {
-                DatastoreDialog: datastore_DatastoreDialog
+                RdbDatastoreDialog: datastore_RdbDatastoreDialog
             }
         })
-    ], DatastoreUpdateDialog);
-    return DatastoreUpdateDialog;
+    ], RdbDatastoreUpdateDialog);
+    return RdbDatastoreUpdateDialog;
 }(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
-/* harmony default export */ var DatastoreUpdateDialogvue_type_script_lang_ts_ = (DatastoreUpdateDialogvue_type_script_lang_ts_DatastoreUpdateDialog);
+/* harmony default export */ var RdbDatastoreUpdateDialogvue_type_script_lang_ts_ = (RdbDatastoreUpdateDialogvue_type_script_lang_ts_RdbDatastoreUpdateDialog);
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreUpdateDialog.vue?vue&type=script&lang=ts&
- /* harmony default export */ var datastore_DatastoreUpdateDialogvue_type_script_lang_ts_ = (DatastoreUpdateDialogvue_type_script_lang_ts_); 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/DatastoreUpdateDialog.vue
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_RdbDatastoreUpdateDialogvue_type_script_lang_ts_ = (RdbDatastoreUpdateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue
 
 
 
@@ -2581,10 +2595,10 @@ var DatastoreUpdateDialogvue_type_script_lang_ts_DatastoreUpdateDialog = /** @cl
 
 /* normalize component */
 
-var DatastoreUpdateDialog_component = normalizeComponent(
-  datastore_DatastoreUpdateDialogvue_type_script_lang_ts_,
-  DatastoreUpdateDialogvue_type_template_id_26c26f99_render,
-  DatastoreUpdateDialogvue_type_template_id_26c26f99_staticRenderFns,
+var RdbDatastoreUpdateDialog_component = normalizeComponent(
+  datastore_RdbDatastoreUpdateDialogvue_type_script_lang_ts_,
+  RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_render,
+  RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_staticRenderFns,
   false,
   null,
   null,
@@ -2592,13 +2606,13 @@ var DatastoreUpdateDialog_component = normalizeComponent(
   
 )
 
-/* harmony default export */ var datastore_DatastoreUpdateDialog = (DatastoreUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=1a218c85&scoped=true&
-var Postgres95Summaryvue_type_template_id_1a218c85_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"PostgreSQL"}}),_c('content-field',{attrs:{"alt":true,"name":"dialect","value":"postgres95"}}),_c('content-field',{attrs:{"name":"hostname","value":_vm.hostname}}),_c('content-field',{attrs:{"alt":true,"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"name":"username","value":_vm.username}}),_c('content-field',{attrs:{"alt":true,"name":"password","password":true,"value":_vm.password}}),_c('content-field',{attrs:{"name":"max connections","value":_vm.maxConnections}})],1)}
-var Postgres95Summaryvue_type_template_id_1a218c85_scoped_true_staticRenderFns = []
+/* harmony default export */ var datastore_RdbDatastoreUpdateDialog = (RdbDatastoreUpdateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=7c614893&
+var Postgres95Summaryvue_type_template_id_7c614893_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"PostgreSQL"}}),_c('content-field',{attrs:{"alt":true,"name":"dialect","value":"postgres95"}}),_c('content-field',{attrs:{"name":"hostname","value":_vm.hostname}}),_c('content-field',{attrs:{"alt":true,"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"name":"username","value":_vm.username}}),_c('content-field',{attrs:{"alt":true,"name":"password","password":true,"value":_vm.password}}),_c('content-field',{attrs:{"name":"max connections","value":_vm.maxConnections}})],1)}
+var Postgres95Summaryvue_type_template_id_7c614893_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=1a218c85&scoped=true&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=7c614893&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=script&lang=ts&
 
@@ -2675,17 +2689,17 @@ var Postgres95Summaryvue_type_script_lang_ts_Postgres95Summary = /** @class */ (
 
 var Postgres95Summary_component = normalizeComponent(
   postgres95_Postgres95Summaryvue_type_script_lang_ts_,
-  Postgres95Summaryvue_type_template_id_1a218c85_scoped_true_render,
-  Postgres95Summaryvue_type_template_id_1a218c85_scoped_true_staticRenderFns,
+  Postgres95Summaryvue_type_template_id_7c614893_render,
+  Postgres95Summaryvue_type_template_id_7c614893_staticRenderFns,
   false,
   null,
-  "1a218c85",
+  null,
   null
   
 )
 
 /* harmony default export */ var postgres95_Postgres95Summary = (Postgres95Summary_component.exports);
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=script&lang=ts&
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=script&lang=ts&
 
 
 
@@ -2694,12 +2708,12 @@ var Postgres95Summary_component = normalizeComponent(
 
 
 
-var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (function (_super) {
-    __extends(DatastoreSelector, _super);
-    function DatastoreSelector() {
+var RdbDatastoreSelectorvue_type_script_lang_ts_RdbDatastoreSelector = /** @class */ (function (_super) {
+    __extends(RdbDatastoreSelector, _super);
+    function RdbDatastoreSelector() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Object.defineProperty(DatastoreSelector.prototype, "rdbConfigurations", {
+    Object.defineProperty(RdbDatastoreSelector.prototype, "rdbConfigurations", {
         /** Global RDB configurations */
         get: function () {
             return this.instance && this.instance.persistenceConfigurations
@@ -2709,7 +2723,7 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreSelector.prototype, "datastoreReference", {
+    Object.defineProperty(RdbDatastoreSelector.prototype, "datastoreReference", {
         /** Get reference name */
         get: function () {
             return this.datastore
@@ -2719,7 +2733,7 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreSelector.prototype, "datastoreType", {
+    Object.defineProperty(RdbDatastoreSelector.prototype, "datastoreType", {
         /** Local or global datastore type */
         get: function () {
             var reference = this.datastoreReference;
@@ -2734,7 +2748,7 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreSelector.prototype, "configuration", {
+    Object.defineProperty(RdbDatastoreSelector.prototype, "configuration", {
         /** Local or global datastore configuration */
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         get: function () {
@@ -2750,7 +2764,7 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DatastoreSelector.prototype, "isPostgres95", {
+    Object.defineProperty(RdbDatastoreSelector.prototype, "isPostgres95", {
         /** Postgres95 datastore */
         get: function () {
             return this.datastoreType ? this.datastoreType == "postgres95" : false;
@@ -2759,7 +2773,7 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         configurable: true
     });
     /** Find a referenced persistence configuration */
-    DatastoreSelector.prototype.findGlobalDefinition = function (reference) {
+    RdbDatastoreSelector.prototype.findGlobalDefinition = function (reference) {
         if (!this.rdbConfigurations) {
             return null;
         }
@@ -2773,57 +2787,57 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
         };
     };
     /** Add datastore */
-    DatastoreSelector.prototype.onAddDatastore = function () {
+    RdbDatastoreSelector.prototype.onAddDatastore = function () {
         this.create.openDialog();
     };
     /** Called to create datastore based on UI data */
-    DatastoreSelector.prototype.onDatastoreCreate = function (definition) {
+    RdbDatastoreSelector.prototype.onDatastoreCreate = function (definition) {
         this.$emit("create", definition);
     };
     /** Update datastore */
-    DatastoreSelector.prototype.onUpdateDatastore = function () {
+    RdbDatastoreSelector.prototype.onUpdateDatastore = function () {
         this.update.openDialog(this.datastore);
     };
     /** Called to update datastore based on UI data */
-    DatastoreSelector.prototype.onDatastoreUpdate = function (definition) {
+    RdbDatastoreSelector.prototype.onDatastoreUpdate = function (definition) {
         this.$emit("update", definition);
     };
     /** Unset datastore */
-    DatastoreSelector.prototype.onUnsetDatastore = function () {
+    RdbDatastoreSelector.prototype.onUnsetDatastore = function () {
         this.$emit("unset");
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreSelector.prototype, "datastore", void 0);
+    ], RdbDatastoreSelector.prototype, "datastore", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DatastoreSelector.prototype, "instance", void 0);
+    ], RdbDatastoreSelector.prototype, "instance", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreSelector.prototype, "create", void 0);
+    ], RdbDatastoreSelector.prototype, "create", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Ref"])()
-    ], DatastoreSelector.prototype, "update", void 0);
-    DatastoreSelector = __decorate([
+    ], RdbDatastoreSelector.prototype, "update", void 0);
+    RdbDatastoreSelector = __decorate([
         Object(external_vue_property_decorator_["Component"])({
             components: {
                 VCard: lib_["VCard"],
                 VIcon: lib_["VIcon"],
                 ContentLink: external_sitewhere_ide_components_["ContentLink"],
                 ContentWarning: external_sitewhere_ide_components_["ContentWarning"],
-                DatastoreCreateDialog: datastore_DatastoreCreateDialog,
-                DatastoreUpdateDialog: datastore_DatastoreUpdateDialog,
+                RdbDatastoreCreateDialog: datastore_RdbDatastoreCreateDialog,
+                RdbDatastoreUpdateDialog: datastore_RdbDatastoreUpdateDialog,
                 Postgres95Summary: postgres95_Postgres95Summary
             }
         })
-    ], DatastoreSelector);
-    return DatastoreSelector;
+    ], RdbDatastoreSelector);
+    return RdbDatastoreSelector;
 }(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
-/* harmony default export */ var DatastoreSelectorvue_type_script_lang_ts_ = (DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector);
+/* harmony default export */ var RdbDatastoreSelectorvue_type_script_lang_ts_ = (RdbDatastoreSelectorvue_type_script_lang_ts_RdbDatastoreSelector);
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/DatastoreSelector.vue?vue&type=script&lang=ts&
- /* harmony default export */ var common_DatastoreSelectorvue_type_script_lang_ts_ = (DatastoreSelectorvue_type_script_lang_ts_); 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/DatastoreSelector.vue
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_RdbDatastoreSelectorvue_type_script_lang_ts_ = (RdbDatastoreSelectorvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue
 
 
 
@@ -2831,8 +2845,8 @@ var DatastoreSelectorvue_type_script_lang_ts_DatastoreSelector = /** @class */ (
 
 /* normalize component */
 
-var DatastoreSelector_component = normalizeComponent(
-  common_DatastoreSelectorvue_type_script_lang_ts_,
+var RdbDatastoreSelector_component = normalizeComponent(
+  datastore_RdbDatastoreSelectorvue_type_script_lang_ts_,
   render,
   staticRenderFns,
   false,
@@ -2842,8 +2856,8 @@ var DatastoreSelector_component = normalizeComponent(
   
 )
 
-/* harmony default export */ var common_DatastoreSelector = (DatastoreSelector_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
+/* harmony default export */ var datastore_RdbDatastoreSelector = (RdbDatastoreSelector_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
 var TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"height":"100%"},attrs:{"flat":"","tile":""}},[_c('v-card-text',[_c('div',{staticClass:"flex-rows"},[(_vm.microservice && _vm.tenant)?_c('div',{staticClass:"plugin-header"},[_vm._t("header",[_c('page-header',{attrs:{"text":_vm.header}})])],2):_vm._e(),_c('div',{staticClass:"plugin-content"},[_vm._t("default")],2),_c('div',{staticClass:"plugin-footer"},[_vm._t("footer")],2)])]),_vm._t("dialogs")],2)}
 var TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_staticRenderFns = []
 
@@ -2925,12 +2939,102 @@ var TenantEnginePlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var tenantengines_TenantEnginePlugin = (TenantEnginePlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=62914695&
-var AssetManagementPluginvue_type_template_id_62914695_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Asset Management Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
-var AssetManagementPluginvue_type_template_id_62914695_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=0218d968&
+var Warp10Fieldsvue_type_template_id_0218d968_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Application","title":"Warp 10 application name.","icon":"fa-stream"},model:{value:(_vm.application),callback:function ($$v) {_vm.application=$$v},expression:"application"}},[(_vm.$v.application.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Application is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Token secret","title":"Warp 10 token secret.","icon":"fa-stream"},model:{value:(_vm.tokenSecret),callback:function ($$v) {_vm.tokenSecret=$$v},expression:"tokenSecret"}},[(_vm.$v.tokenSecret.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Token secret is required.")]):_vm._e()])],1)],1)}
+var Warp10Fieldsvue_type_template_id_0218d968_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=62914695&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=0218d968&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var Warp10Fieldsvue_type_script_lang_ts_Warp10Fields = /** @class */ (function (_super) {
+    __extends(Warp10Fields, _super);
+    function Warp10Fields() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.hostname = null;
+        _this.port = null;
+        _this.application = null;
+        _this.tokenSecret = null;
+        return _this;
+    }
+    /** Reset section content */
+    Warp10Fields.prototype.reset = function () {
+        this.hostname = null;
+        this.port = null;
+        this.application = null;
+        this.tokenSecret = null;
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    Warp10Fields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    Warp10Fields.prototype.load = function (configuration) {
+        this.hostname = configuration.hostname;
+        this.port = configuration.port;
+    };
+    /** Save form data to an object */
+    Warp10Fields.prototype.save = function () {
+        return {
+            hostname: this.hostname,
+            port: this.port,
+            application: this.application,
+            tokenSecret: this.tokenSecret
+        };
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], Warp10Fields.prototype, "readonly", void 0);
+    Warp10Fields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
+            validations: {
+                hostname: {
+                    required: validators["required"]
+                }
+            }
+        })
+    ], Warp10Fields);
+    return Warp10Fields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var Warp10Fieldsvue_type_script_lang_ts_ = (Warp10Fieldsvue_type_script_lang_ts_Warp10Fields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var warp10_Warp10Fieldsvue_type_script_lang_ts_ = (Warp10Fieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue
+
+
+
+
+
+/* normalize component */
+
+var Warp10Fields_component = normalizeComponent(
+  warp10_Warp10Fieldsvue_type_script_lang_ts_,
+  Warp10Fieldsvue_type_template_id_0218d968_render,
+  Warp10Fieldsvue_type_template_id_0218d968_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var warp10_Warp10Fields = (Warp10Fields_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=775757e0&
+var AssetManagementPluginvue_type_template_id_775757e0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Asset Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
+var AssetManagementPluginvue_type_template_id_775757e0_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=775757e0&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=script&lang=ts&
 
@@ -2994,7 +3098,7 @@ var AssetManagementPluginvue_type_script_lang_ts_AssetManagementPlugin = /** @cl
     ], AssetManagementPlugin.prototype, "configuration", void 0);
     AssetManagementPlugin = __decorate([
         Object(external_vue_property_decorator_["Component"])({
-            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, DatastoreSelector: common_DatastoreSelector }
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, RdbDatastoreSelector: datastore_RdbDatastoreSelector }
         })
     ], AssetManagementPlugin);
     return AssetManagementPlugin;
@@ -3013,8 +3117,8 @@ var AssetManagementPluginvue_type_script_lang_ts_AssetManagementPlugin = /** @cl
 
 var AssetManagementPlugin_component = normalizeComponent(
   assetmanagement_AssetManagementPluginvue_type_script_lang_ts_,
-  AssetManagementPluginvue_type_template_id_62914695_render,
-  AssetManagementPluginvue_type_template_id_62914695_staticRenderFns,
+  AssetManagementPluginvue_type_template_id_775757e0_render,
+  AssetManagementPluginvue_type_template_id_775757e0_staticRenderFns,
   false,
   null,
   null,
@@ -3023,28 +3127,28 @@ var AssetManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var assetmanagement_AssetManagementPlugin = (AssetManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=681d4ea0&
-var BatchOperationsPluginvue_type_template_id_681d4ea0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Batch Operations Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1),_c('v-divider',{staticClass:"mt-4 mb-4"}),_c('batch-operation-manager-section',{attrs:{"configuration":_vm.batchOperationManager},on:{"update":_vm.onBatchOperationManagerUpdate}})],1)}
-var BatchOperationsPluginvue_type_template_id_681d4ea0_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=51a21e82&
+var BatchOperationsPluginvue_type_template_id_51a21e82_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Batch Operations Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1),_c('v-divider',{staticClass:"mt-4 mb-4"}),_c('batch-operation-manager-section',{attrs:{"configuration":_vm.batchOperationManager},on:{"update":_vm.onBatchOperationManagerUpdate}})],1)}
+var BatchOperationsPluginvue_type_template_id_51a21e82_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=681d4ea0&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=51a21e82&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
 var BatchOperationManagerSectionvue_type_template_id_4c195150_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Batch Operation Manager"}},[_c('content-field',{staticClass:"mt-5",attrs:{"name":"throttle delay(ms)","value":_vm.throttleDelayMs}}),_c('content-link',{staticClass:"mt-5",attrs:{"icon":"fa-edit","text":"Edit batch operation manager settings."},on:{"linkClicked":_vm.onEditBatchOperationManager}}),_c('batch-operation-manager-dialog',{ref:"dialog",on:{"update":_vm.onBatchOperationManagerUpdate}})],1)}
 var BatchOperationManagerSectionvue_type_template_id_4c195150_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
 var BatchOperationManagerDialogvue_type_template_id_39986495_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Edit Batch Operation Manager Settings","width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":"Update","cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"manager"},[_vm._v("Manager")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"manager"},[_c('batch-operation-manager-fields',{ref:"manager"})],1)],1)],2)}
 var BatchOperationManagerDialogvue_type_template_id_39986495_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerFields.vue?vue&type=template&id=b799d2bc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerFields.vue?vue&type=template&id=b799d2bc&
 var BatchOperationManagerFieldsvue_type_template_id_b799d2bc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Throttle delay(ms)","title":"Throttle delay in milliseconds.","icon":"fa-clock","type":"number"},model:{value:(_vm.throttleDelayMs),callback:function ($$v) {_vm.throttleDelayMs=$$v},expression:"throttleDelayMs"}},[(!_vm.$v.throttleDelayMs.required && _vm.$v.$dirty)?_c('span',[_vm._v("Throttle delay is required.")]):_vm._e()])],1)],1)}
 var BatchOperationManagerFieldsvue_type_template_id_b799d2bc_staticRenderFns = []
 
@@ -3372,7 +3476,7 @@ var BatchOperationsPluginvue_type_script_lang_ts_BatchOperationsPlugin = /** @cl
                 VDivider: lib_["VDivider"],
                 ContentSection: external_sitewhere_ide_components_["ContentSection"],
                 TenantEnginePlugin: tenantengines_TenantEnginePlugin,
-                DatastoreSelector: common_DatastoreSelector,
+                RdbDatastoreSelector: datastore_RdbDatastoreSelector,
                 BatchOperationManagerSection: batchoperationmanager_BatchOperationManagerSection
             }
         })
@@ -3393,8 +3497,8 @@ var BatchOperationsPluginvue_type_script_lang_ts_BatchOperationsPlugin = /** @cl
 
 var BatchOperationsPlugin_component = normalizeComponent(
   batchoperations_BatchOperationsPluginvue_type_script_lang_ts_,
-  BatchOperationsPluginvue_type_template_id_681d4ea0_render,
-  BatchOperationsPluginvue_type_template_id_681d4ea0_staticRenderFns,
+  BatchOperationsPluginvue_type_template_id_51a21e82_render,
+  BatchOperationsPluginvue_type_template_id_51a21e82_staticRenderFns,
   false,
   null,
   null,
@@ -3403,21 +3507,21 @@ var BatchOperationsPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var batchoperations_BatchOperationsPlugin = (BatchOperationsPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
 var CommandDeliveryPluginvue_type_template_id_63c1d72b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('command-destinations-table',{attrs:{"tenantId":_vm.tenantId,"destinations":_vm.destinations},on:{"create":_vm.onCommandDestinationCreated,"update":_vm.onCommandDestinationUpdated,"delete":_vm.onCommandDestinationDeleted}}),_c('content-divider'),_c('command-router-section',{attrs:{"router":_vm.router,"destinations":_vm.destinations},on:{"update":_vm.onCommandRouterUpdated,"unset":_vm.onUnsetCommandRouter}})],1)}
 var CommandDeliveryPluginvue_type_template_id_63c1d72b_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
 var CommandDestinationsTablevue_type_template_id_60bfaf3d_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Command Destinations"}},[_c('section-overview',{attrs:{"title":"Configured Command Destinations"}},[_vm._v(" Command destinations are configured to deliver device commands over various communication protocols. A command router chooses which destinations will receive a given command. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.displayCommandDestinations,"no-data-text":"No commmand destinations have been defined","width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"48%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenCommandDestination(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteCommandDestination(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-5",attrs:{"icon":"fa-plus-circle","text":"Add new command destination."},on:{"linkClicked":_vm.onAddCommandDestination}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-command-destination-chooser',{ref:"chooser",on:{"chosen":_vm.onCommandDestinationCreate}}),_c('coap-command-destination-create-dialog',{ref:"coapCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onCommandDestinationAdded}}),_c('coap-command-destination-update-dialog',{ref:"coapUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onCommandDestinationUpdated}}),_c('mqtt-command-destination-create-dialog',{ref:"mqttCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onCommandDestinationAdded}}),_c('mqtt-command-destination-update-dialog',{ref:"mqttUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onCommandDestinationUpdated}})]},proxy:true}])})],1)}
 var CommandDestinationsTablevue_type_template_id_60bfaf3d_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandDestinationChooser.vue?vue&type=template&id=386c7d50&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandDestinationChooser.vue?vue&type=template&id=386c7d50&
 var NewCommandDestinationChooservue_type_template_id_386c7d50_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Command Destination","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"coap"},on:{"chosen":_vm.onChosen}},[_vm._v("CoAP Command Destination")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"mqtt"},on:{"chosen":_vm.onChosen}},[_vm._v("MQTT Command Destination")])],1)}
 var NewCommandDestinationChooservue_type_template_id_386c7d50_staticRenderFns = []
 
@@ -3490,42 +3594,42 @@ var NewCommandDestinationChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_NewCommandDestinationChooser = (NewCommandDestinationChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
 var CoapCommandDestinationCreateDialogvue_type_template_id_30271060_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-command-destination-dialog',{ref:"dialog",attrs:{"title":"Create CoAP Command Destination","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapCommandDestinationCreateDialogvue_type_template_id_30271060_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
 var CoapCommandDestinationDialogvue_type_template_id_8dd18bfc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('command-destination-dialog',{ref:"dialog",attrs:{"type":"coap","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel,"parameterExtractors":_vm.parameterExtractors},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"command-destination-tabs"},[_c('v-tab',{key:"coap"},[_vm._v("Configuration")])],1),_c('template',{slot:"command-destination-tab-items"},[_c('v-tab-item',{key:"coap",attrs:{"eager":""}},[_c('coap-fields',{ref:"coap"})],1)],1)],2)}
 var CoapCommandDestinationDialogvue_type_template_id_8dd18bfc_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
 var CommandDestinationDialogvue_type_template_id_ad32c380_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs5":""}},[(_vm.visible)?_c('form-text',{staticClass:"mr-3",attrs:{"label":"Command destination id","title":"Unique command destination identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-select',{attrs:{"items":_vm.parameterExtractors,"title":"Choose parameter extractor for command destination","label":"Parameter extractor","item-text":"text","item-value":"value","icon":"settings"},model:{value:(_vm.extractorType),callback:function ($$v) {_vm.extractorType=$$v},expression:"extractorType"}})],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("command-destination-tabs"),_c('v-tab',{key:"extractor"},[_vm._v("Parameter Extractor")])],2),_c('template',{slot:"tab-items"},[_vm._t("command-destination-tab-items"),_c('v-tab-item',{key:"extractor",attrs:{"eager":""}},[_c('parameter-extractor-configuration',{ref:"extractor",attrs:{"parameterExtractor":_vm.parameterExtractor,"tenantId":_vm.tenantId}})],1)],2)],2)}
 var CommandDestinationDialogvue_type_template_id_ad32c380_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
 var ParameterExtractorConfigurationvue_type_template_id_08ae0c4e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[(_vm.extractorType == 'mqtt-default')?_c('default-mqtt-parameter-extractor-configuration',{ref:"details"}):_vm._e(),(_vm.extractorType == 'coap-default')?_c('metadata-coap-parameter-extractor-configuration',{ref:"details"}):_vm._e()],1)}
 var ParameterExtractorConfigurationvue_type_template_id_08ae0c4e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
 var DefaultMqttParameterExtractorConfigurationvue_type_template_id_86c9f9ca_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('default-mqtt-parameter-extractor-fields',{ref:"fields",attrs:{"tenantId":_vm.tenantId}})}
 var DefaultMqttParameterExtractorConfigurationvue_type_template_id_86c9f9ca_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorFields.vue?vue&type=template&id=2a45ccad&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorFields.vue?vue&type=template&id=2a45ccad&
 var DefaultMqttParameterExtractorFieldsvue_type_template_id_2a45ccad_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Command topic expression","title":"Expression used to determine command MQTT topic.","icon":"settings"},model:{value:(_vm.commandTopicExpression),callback:function ($$v) {_vm.commandTopicExpression=$$v},expression:"commandTopicExpression"}},[(!_vm.$v.commandTopicExpression.required && _vm.$v.$dirty)?_c('span',[_vm._v("Command topic expression is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"System topic expression","title":"Expression used to determine system MQTT topic.","icon":"settings"},model:{value:(_vm.systemTopicExpression),callback:function ($$v) {_vm.systemTopicExpression=$$v},expression:"systemTopicExpression"}},[(!_vm.$v.systemTopicExpression.required && _vm.$v.$dirty)?_c('span',[_vm._v("System topic expression is required.")]):_vm._e()])],1)],1)}
 var DefaultMqttParameterExtractorFieldsvue_type_template_id_2a45ccad_staticRenderFns = []
 
@@ -3691,14 +3795,14 @@ var DefaultMqttParameterExtractorConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_DefaultMqttParameterExtractorConfiguration = (DefaultMqttParameterExtractorConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
 var MetadataCoapParameterExtractorConfigurationvue_type_template_id_5c6ae16c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('metadata-coap-parameter-extractor-fields',{ref:"fields",attrs:{"tenantId":_vm.tenantId}})}
 var MetadataCoapParameterExtractorConfigurationvue_type_template_id_5c6ae16c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorFields.vue?vue&type=template&id=1d923e8c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorFields.vue?vue&type=template&id=1d923e8c&
 var MetadataCoapParameterExtractorFieldsvue_type_template_id_1d923e8c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Hostname metadata field","title":"Metadata field that provides CoAP server hostname.","icon":"settings"},model:{value:(_vm.hostnameMetadataField),callback:function ($$v) {_vm.hostnameMetadataField=$$v},expression:"hostnameMetadataField"}},[(!_vm.$v.hostnameMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Port metadata field","title":"Metadata field that provides CoAP server port.","icon":"settings"},model:{value:(_vm.portMetadataField),callback:function ($$v) {_vm.portMetadataField=$$v},expression:"portMetadataField"}},[(!_vm.$v.portMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Port metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"URL metadata field","title":"Metadata field that provides CoAP server URL.","icon":"settings"},model:{value:(_vm.urlMetadataField),callback:function ($$v) {_vm.urlMetadataField=$$v},expression:"urlMetadataField"}},[(!_vm.$v.urlMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("URL metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Method metadata field","title":"Metadata field that provides CoAP server method.","icon":"settings"},model:{value:(_vm.methodMetadataField),callback:function ($$v) {_vm.methodMetadataField=$$v},expression:"methodMetadataField"}},[(!_vm.$v.methodMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Method metadata field is required.")]):_vm._e()])],1)],1)}
 var MetadataCoapParameterExtractorFieldsvue_type_template_id_1d923e8c_staticRenderFns = []
 
@@ -4163,14 +4267,14 @@ var CommandDestinationDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_CommandDestinationDialog = (CommandDestinationDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
 var CoapFieldsvue_type_template_id_1a5924a4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('no-configuration')],1)}
 var CoapFieldsvue_type_template_id_1a5924a4_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NoConfiguration.vue?vue&type=template&id=078e8cd9&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NoConfiguration.vue?vue&type=template&id=078e8cd9&scoped=true&
 var NoConfigurationvue_type_template_id_078e8cd9_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"width":"100%"},attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This command destination has no configurable attributes.")])],1)}
 var NoConfigurationvue_type_template_id_078e8cd9_scoped_true_staticRenderFns = []
 
@@ -4464,7 +4568,7 @@ var CoapCommandDestinationCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapCommandDestinationCreateDialog = (CoapCommandDestinationCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationUpdateDialog.vue?vue&type=template&id=2130d30a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationUpdateDialog.vue?vue&type=template&id=2130d30a&
 var CoapCommandDestinationUpdateDialogvue_type_template_id_2130d30a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-command-destination-dialog',{ref:"dialog",attrs:{"title":"Update CoAP Command Destination","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapCommandDestinationUpdateDialogvue_type_template_id_2130d30a_staticRenderFns = []
 
@@ -4536,21 +4640,21 @@ var CoapCommandDestinationUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapCommandDestinationUpdateDialog = (CoapCommandDestinationUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
 var MqttCommandDestinationCreateDialogvue_type_template_id_3c5219c7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-command-destination-dialog',{ref:"dialog",attrs:{"title":"Create MQTT Command Destination","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttCommandDestinationCreateDialogvue_type_template_id_3c5219c7_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
 var MqttCommandDestinationDialogvue_type_template_id_7550561c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('command-destination-dialog',{ref:"dialog",attrs:{"type":"mqtt","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel,"parameterExtractors":_vm.parameterExtractors},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"command-destination-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")]),_c('v-tab',{key:"authentication"},[_vm._v("Authentication")])],1),_c('template',{slot:"command-destination-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('mqtt-connection-fields',{ref:"connection"})],1),_c('v-tab-item',{key:"authentication",attrs:{"eager":""}},[_c('mqtt-authentication-fields',{ref:"authentication"})],1)],1)],2)}
 var MqttCommandDestinationDialogvue_type_template_id_7550561c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttConnectionFields.vue?vue&type=template&id=f297cdfc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttConnectionFields.vue?vue&type=template&id=f297cdfc&
 var MqttConnectionFieldsvue_type_template_id_f297cdfc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs2":""}},[_c('form-select',{attrs:{"items":_vm.protocols,"title":"Choose connection protocol","label":"Protocol","item-text":"text","item-value":"value","icon":"lock"},model:{value:(_vm.protocol),callback:function ($$v) {_vm.protocol=$$v},expression:"protocol"}})],1),_c('v-flex',{attrs:{"xs8":""}},[_c('form-text',{staticClass:"ml-3 mr-3",attrs:{"required":"","label":"Hostname","title":"MQTT broker hostname.","icon":"router"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(!_vm.$v.hostname.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs2":""}},[_c('form-text',{attrs:{"required":"","label":"Port","title":"MQTT broker port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Required.")]):_vm._e()])],1)],1)}
 var MqttConnectionFieldsvue_type_template_id_f297cdfc_staticRenderFns = []
 
@@ -4664,7 +4768,7 @@ var MqttConnectionFields_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttConnectionFields = (MqttConnectionFields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=62565818&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=62565818&
 var MqttAuthenticationFieldsvue_type_template_id_62565818_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Username","title":"Username for authentication.","icon":"account_circle"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Password","title":"Password for authentication.","icon":"lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Truststore path","title":"Truststore path.","icon":"info"},model:{value:(_vm.trustStorePath),callback:function ($$v) {_vm.trustStorePath=$$v},expression:"trustStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Truststore password","title":"Truststore password.","icon":"lock","type":"password"},model:{value:(_vm.trustStorePassword),callback:function ($$v) {_vm.trustStorePassword=$$v},expression:"trustStorePassword"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Keystore path","title":"Keystore path.","icon":"info"},model:{value:(_vm.keyStorePath),callback:function ($$v) {_vm.keyStorePath=$$v},expression:"keyStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Keystore password","title":"Keystore password.","icon":"lock","type":"password"},model:{value:(_vm.keyStorePassword),callback:function ($$v) {_vm.keyStorePassword=$$v},expression:"keyStorePassword"}})],1)],1)}
 var MqttAuthenticationFieldsvue_type_template_id_62565818_staticRenderFns = []
 
@@ -4969,7 +5073,7 @@ var MqttCommandDestinationCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttCommandDestinationCreateDialog = (MqttCommandDestinationCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationUpdateDialog.vue?vue&type=template&id=4dc49373&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationUpdateDialog.vue?vue&type=template&id=4dc49373&
 var MqttCommandDestinationUpdateDialogvue_type_template_id_4dc49373_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-command-destination-dialog',{ref:"dialog",attrs:{"title":"Update MQTT Command Destination","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttCommandDestinationUpdateDialogvue_type_template_id_4dc49373_staticRenderFns = []
 
@@ -5240,14 +5344,14 @@ var CommandDestinationsTable_component = normalizeComponent(
 )
 
 /* harmony default export */ var CommandDestinationsTable = (CommandDestinationsTable_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
 var CommandRouterSectionvue_type_template_id_371ab6b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":"fa-sitemap","fa":true,"title":"Command Router"}},[(_vm.router)?_c('v-card',{attrs:{"flat":""}},[(_vm.isDeviceTypeMappingRouter)?_c('device-type-mapping-router-summary',{staticClass:"mb-2",attrs:{"destinations":_vm.destinations,"router":_vm.router},on:{"update":_vm.onCommandRouterUpdate}}):_vm._e(),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset command router"},on:{"linkClicked":_vm.onUnsetCommandRouter}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No command router is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add new command router"},on:{"linkClicked":_vm.onAddCommandRouter}})],1),_c('new-command-router-chooser',{ref:"chooser",on:{"chosen":_vm.onCommandRouterChosen}}),_c('device-type-mapping-router-create-dialog',{ref:"dtmRouterCreate"})],1)}
 var CommandRouterSectionvue_type_template_id_371ab6b3_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandRouterChooser.vue?vue&type=template&id=19995281&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandRouterChooser.vue?vue&type=template&id=19995281&
 var NewCommandRouterChooservue_type_template_id_19995281_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Command Router","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"device-type-mapping"},on:{"chosen":_vm.onChosen}},[_vm._v("Device Type Mapping Router")])],1)}
 var NewCommandRouterChooservue_type_template_id_19995281_staticRenderFns = []
 
@@ -5320,28 +5424,28 @@ var NewCommandRouterChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_NewCommandRouterChooser = (NewCommandRouterChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
 var Summaryvue_type_template_id_558cb726_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('section-overview',{attrs:{"title":"Device Type Mapping Router"}},[_vm._v(" The mappings below will direct device commands to be delivered via command destinations based on device type. Any commands that do not match the mappings are delivered to the default destination. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.displayedMappings,"no-data-text":"No mappings have been defined","width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.deviceTypeName))]),_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.destinationId))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteMapping(props.item.deviceTypeToken, props.item.destinationId)}}})],1)])]}}])}),(_vm.defaultDestination)?_c('v-card',{staticClass:"mb-7",attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"default destination","value":_vm.defaultDestination}})],1):_c('v-card',{staticClass:"mb-7",attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No default destination is set. This will cause tenant engine startup to fail!"}})],1),_c('content-link',{staticClass:"mb-2",attrs:{"icon":"fa-plus-circle","text":"Add device type mapping"},on:{"linkClicked":_vm.onAddMapping}}),_c('content-link',{attrs:{"icon":"fa-edit","text":"Update default destination"},on:{"linkClicked":_vm.onUpdateSettings}}),_c('settings-update-dialog',{ref:"settings",attrs:{"destinations":_vm.destinations},on:{"update":_vm.onSettingsUpdated}}),_c('mapping-create-dialog',{ref:"mapping",attrs:{"destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes},on:{"create":_vm.onMappingAdded}})],1)}
 var Summaryvue_type_template_id_558cb726_scoped_true_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
 var SettingsUpdateDialogvue_type_template_id_582d03f5_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('settings-dialog',{ref:"dialog",attrs:{"title":"Update Device Type Mapping Router","createLabel":"Update","destinations":_vm.destinations},on:{"payload":_vm.onPayload}})}
 var SettingsUpdateDialogvue_type_template_id_582d03f5_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
 var SettingsDialogvue_type_template_id_0f9071b6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":"fa-sitemap","title":_vm.title,"width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"manager"},[_vm._v("Settings")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"manager"},[_c('settings-fields',{ref:"settings",attrs:{"destinations":_vm.destinations}})],1)],1)],2)}
 var SettingsDialogvue_type_template_id_0f9071b6_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsFields.vue?vue&type=template&id=235610b4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsFields.vue?vue&type=template&id=235610b4&
 var SettingsFieldsvue_type_template_id_235610b4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.destinations,"title":"Choose default command destination","label":"Default Destination","item-text":"id","item-value":"id","icon":"fa-check"},model:{value:(_vm.defaultDestination),callback:function ($$v) {_vm.defaultDestination=$$v},expression:"defaultDestination"}})],1)],1)}
 var SettingsFieldsvue_type_template_id_235610b4_staticRenderFns = []
 
@@ -5577,21 +5681,21 @@ var SettingsUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicetypemapping_SettingsUpdateDialog = (SettingsUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
 var MappingCreateDialogvue_type_template_id_e27b7cee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mapping-dialog',{ref:"dialog",attrs:{"title":"Create Device Type Mapping","createLabel":"Create","destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes},on:{"payload":_vm.onPayload}})}
 var MappingCreateDialogvue_type_template_id_e27b7cee_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
 var MappingDialogvue_type_template_id_364dd9f7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":"fa-sitemap","title":_vm.title,"width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"mapping"},[_vm._v("Mapping")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"mapping"},[_c('mapping-fields',{ref:"mapping",attrs:{"destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes}})],1)],1)],2)}
 var MappingDialogvue_type_template_id_364dd9f7_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingFields.vue?vue&type=template&id=39d4a7f6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingFields.vue?vue&type=template&id=39d4a7f6&
 var MappingFieldsvue_type_template_id_39d4a7f6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.deviceTypes,"title":"Choose device type to map","label":"Device Type","item-text":"name","item-value":"token","icon":"settings"},model:{value:(_vm.deviceType),callback:function ($$v) {_vm.deviceType=$$v},expression:"deviceType"}},[(_vm.$v.deviceType.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Device type is required.")]):_vm._e()])],1),_c('v-flex',{staticClass:"mb-2",attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.destinations,"title":"Choose command destination","label":"Command Destination","item-text":"id","item-value":"id","icon":"fa-sitemap"},model:{value:(_vm.destination),callback:function ($$v) {_vm.destination=$$v},expression:"destination"}},[(_vm.$v.destination.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Destination is required.")]):_vm._e()])],1)],1)}
 var MappingFieldsvue_type_template_id_39d4a7f6_staticRenderFns = []
 
@@ -6058,7 +6162,7 @@ var Summary_component = normalizeComponent(
 )
 
 /* harmony default export */ var Summary = (Summary_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsCreateDialog.vue?vue&type=template&id=1bf0e8b6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsCreateDialog.vue?vue&type=template&id=1bf0e8b6&
 var SettingsCreateDialogvue_type_template_id_1bf0e8b6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('settings-dialog',{ref:"dialog",attrs:{"title":"Create Device Type Mapping Router","createLabel":"Create","destinations":_vm.destinations},on:{"payload":_vm.onPayload}})}
 var SettingsCreateDialogvue_type_template_id_1bf0e8b6_staticRenderFns = []
 
@@ -6357,12 +6461,12 @@ var CommandDeliveryPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_CommandDeliveryPlugin = (CommandDeliveryPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=085e38a5&
-var DeviceManagementPluginvue_type_template_id_085e38a5_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device Management Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
-var DeviceManagementPluginvue_type_template_id_085e38a5_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=6135ee9c&
+var DeviceManagementPluginvue_type_template_id_6135ee9c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
+var DeviceManagementPluginvue_type_template_id_6135ee9c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=085e38a5&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=6135ee9c&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=script&lang=ts&
 
@@ -6426,7 +6530,7 @@ var DeviceManagementPluginvue_type_script_lang_ts_DeviceManagementPlugin = /** @
     ], DeviceManagementPlugin.prototype, "configuration", void 0);
     DeviceManagementPlugin = __decorate([
         Object(external_vue_property_decorator_["Component"])({
-            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, DatastoreSelector: common_DatastoreSelector }
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, RdbDatastoreSelector: datastore_RdbDatastoreSelector }
         })
     ], DeviceManagementPlugin);
     return DeviceManagementPlugin;
@@ -6445,8 +6549,8 @@ var DeviceManagementPluginvue_type_script_lang_ts_DeviceManagementPlugin = /** @
 
 var DeviceManagementPlugin_component = normalizeComponent(
   devicemanagement_DeviceManagementPluginvue_type_script_lang_ts_,
-  DeviceManagementPluginvue_type_template_id_085e38a5_render,
-  DeviceManagementPluginvue_type_template_id_085e38a5_staticRenderFns,
+  DeviceManagementPluginvue_type_template_id_6135ee9c_render,
+  DeviceManagementPluginvue_type_template_id_6135ee9c_staticRenderFns,
   false,
   null,
   null,
@@ -6455,7 +6559,7 @@ var DeviceManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicemanagement_DeviceManagementPlugin = (DeviceManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=e690caf2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=e690caf2&
 var DeviceRegistrationPluginvue_type_template_id_e690caf2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-check","title":"Device Registration"}},[_c('section-overview',{attrs:{"title":"Automatic Registration"}},[_vm._v(" New devices may be automatically registered with the system if they provide a valid token for the given tenant. If new device registration is permitted, the devices may be assigned to assets, customers, or areas. ")]),_c('v-checkbox',{staticClass:"pt-1",attrs:{"dense":""},scopedSlots:_vm._u([{key:"label",fn:function(){return [_c('span',{staticClass:"body-2"},[_vm._v("Allow new device registration for this tenant")])]},proxy:true}]),model:{value:(_vm.allowNewRegistrations),callback:function ($$v) {_vm.allowNewRegistrations=$$v},expression:"allowNewRegistrations"}}),_c('section-overview',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"title":"Defaults for New Devices"}},[_vm._v(" If registration requests for new devices do not provide metadata regarding aspects such as device type or preferred assignment information, the values may be automatically assigned. Choose default behavior below. ")]),_c('v-card',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"flat":"","width":"60%"}},[_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.deviceTypes,"checkboxTitle":"Use default device type if not provided","selectLabel":"Choose device type","selectTitle":"Choose a default device type for new devices","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.deviceTypeToken),callback:function ($$v) {_vm.deviceTypeToken=$$v},expression:"deviceTypeToken"}}),_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.customers,"checkboxTitle":"Use default customer if not provided","selectLabel":"Choose customer","selectTitle":"Choose a default customer for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.customerToken),callback:function ($$v) {_vm.customerToken=$$v},expression:"customerToken"}}),_c('optional-selection',{attrs:{"items":_vm.areas,"checkboxTitle":"Use default area if not provided","selectLabel":"Choose area","selectTitle":"Choose a default area for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.areaToken),callback:function ($$v) {_vm.areaToken=$$v},expression:"areaToken"}})],1)],1)],1)}
 var DeviceRegistrationPluginvue_type_template_id_e690caf2_staticRenderFns = []
 
@@ -6681,12 +6785,12 @@ var DeviceRegistrationPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var DeviceRegistrationPlugin = (DeviceRegistrationPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=69c3f008&
-var DeviceStatePluginvue_type_template_id_69c3f008_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device State Datastore"}},[_c('datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unsetDatastore":_vm.onUnsetDatastore}})],1)],1)}
-var DeviceStatePluginvue_type_template_id_69c3f008_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=12934e46&
+var DeviceStatePluginvue_type_template_id_12934e46_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device State Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unsetDatastore":_vm.onUnsetDatastore}})],1)],1)}
+var DeviceStatePluginvue_type_template_id_12934e46_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=69c3f008&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=12934e46&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=script&lang=ts&
 
@@ -6750,7 +6854,7 @@ var DeviceStatePluginvue_type_script_lang_ts_DeviceStatePlugin = /** @class */ (
     ], DeviceStatePlugin.prototype, "configuration", void 0);
     DeviceStatePlugin = __decorate([
         Object(external_vue_property_decorator_["Component"])({
-            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, DatastoreSelector: common_DatastoreSelector }
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, RdbDatastoreSelector: datastore_RdbDatastoreSelector }
         })
     ], DeviceStatePlugin);
     return DeviceStatePlugin;
@@ -6769,8 +6873,8 @@ var DeviceStatePluginvue_type_script_lang_ts_DeviceStatePlugin = /** @class */ (
 
 var DeviceStatePlugin_component = normalizeComponent(
   devicestate_DeviceStatePluginvue_type_script_lang_ts_,
-  DeviceStatePluginvue_type_template_id_69c3f008_render,
-  DeviceStatePluginvue_type_template_id_69c3f008_staticRenderFns,
+  DeviceStatePluginvue_type_template_id_12934e46_render,
+  DeviceStatePluginvue_type_template_id_12934e46_staticRenderFns,
   false,
   null,
   null,
@@ -6779,21 +6883,21 @@ var DeviceStatePlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicestate_DeviceStatePlugin = (DeviceStatePlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 var EventSourcesPluginvue_type_template_id_5f6048b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('event-sources-table',{attrs:{"tenantId":_vm.tenantId,"eventSources":_vm.eventSources},on:{"create":_vm.onEventSourceCreated,"update":_vm.onEventSourceUpdated,"delete":_vm.onEventSourceDeleted}})],1)}
 var EventSourcesPluginvue_type_template_id_5f6048b3_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
 var EventSourcesTablevue_type_template_id_17ae5b0a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Event Sources"}},[_c('section-overview',{attrs:{"title":"Configured Event Sources"}},[_vm._v(" Event sources receive events from external providers and covert them into a standardized format for further processing. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.eventSourcesAsSortedArray,"width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"32%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenEventSource(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"32%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"32%"}},[_vm._v(_vm._s(props.item.decoder.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteEventSource(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-7",attrs:{"icon":"fa-plus-circle","text":"Add new event source."},on:{"linkClicked":_vm.onAddEventSource}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-event-source-chooser',{ref:"chooser",on:{"chosen":_vm.onEventSourceCreate}}),_c('active-mq-broker-event-source-create-dialog',{ref:"amqBrokerCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('active-mq-broker-event-source-update-dialog',{ref:"amqBrokerUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('active-mq-client-event-source-create-dialog',{ref:"amqClientCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('active-mq-client-event-source-update-dialog',{ref:"amqClientUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('coap-event-source-create-dialog',{ref:"coapCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('coap-event-source-update-dialog',{ref:"coapUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('event-hub-event-source-create-dialog',{ref:"eventHubCreate",on:{"create":_vm.onEventSourceAdded}}),_c('event-hub-event-source-update-dialog',{ref:"eventHubUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('mqtt-event-source-create-dialog',{ref:"mqttCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('mqtt-event-source-update-dialog',{ref:"mqttUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('rabbit-mq-event-source-create-dialog',{ref:"rabbitMqCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('rabbit-mq-event-source-update-dialog',{ref:"rabbitMqUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}})]},proxy:true}])})],1)}
 var EventSourcesTablevue_type_template_id_17ae5b0a_scoped_true_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/NewEventSourceChooser.vue?vue&type=template&id=3d83f064&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/NewEventSourceChooser.vue?vue&type=template&id=3d83f064&
 var NewEventSourceChooservue_type_template_id_3d83f064_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Event Source","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"activemq-broker"},on:{"chosen":_vm.onChosen}},[_vm._v("ActiveMQ Broker Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"activemq-client"},on:{"chosen":_vm.onChosen}},[_vm._v("ActiveMQ Client Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"eventhub"},on:{"chosen":_vm.onChosen}},[_vm._v("Azure Event Hub Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"coap"},on:{"chosen":_vm.onChosen}},[_vm._v("CoAP Server Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"mqtt"},on:{"chosen":_vm.onChosen}},[_vm._v("MQTT Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"rabbitmq"},on:{"chosen":_vm.onChosen}},[_vm._v("RabbitMQ Event Source")])],1)}
 var NewEventSourceChooservue_type_template_id_3d83f064_staticRenderFns = []
 
@@ -6866,42 +6970,42 @@ var NewEventSourceChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_NewEventSourceChooser = (NewEventSourceChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
 var ActiveMqBrokerEventSourceCreateDialogvue_type_template_id_31472f16_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-broker-event-source-dialog',{ref:"dialog",attrs:{"title":"Create ActiveMQ Broker Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqBrokerEventSourceCreateDialogvue_type_template_id_31472f16_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
 var ActiveMqBrokerEventSourceDialogvue_type_template_id_8769847a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"activemq-broker","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"broker"},[_vm._v("Broker")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"broker",attrs:{"eager":""}},[_c('active-mq-broker-fields',{ref:"broker"})],1)],1)],2)}
 var ActiveMqBrokerEventSourceDialogvue_type_template_id_8769847a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
 var EventSourceDialogvue_type_template_id_1e8a069f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs5":""}},[(_vm.visible)?_c('form-text',{staticClass:"mr-3",attrs:{"label":"Event source id","title":"Unique event source identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-select',{attrs:{"items":_vm.decoderTypes,"title":"Choose decoder for event source","label":"Decoder","item-text":"text","item-value":"value","icon":"settings"},model:{value:(_vm.decoderType),callback:function ($$v) {_vm.decoderType=$$v},expression:"decoderType"}})],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("event-source-tabs"),_c('v-tab',{key:"decoder"},[_vm._v("Decoder")])],2),_c('template',{slot:"tab-items"},[_vm._t("event-source-tab-items"),_c('v-tab-item',{key:"decoder",attrs:{"eager":""}},[_c('decoder-configuration',{ref:"decoderConfiguration",attrs:{"decoder":_vm.decoder,"tenantId":_vm.tenantId}})],1)],2)],2)}
 var EventSourceDialogvue_type_template_id_1e8a069f_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
 var DecoderConfigurationvue_type_template_id_3dbd4fee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[(_vm.decoderType == 'json')?_c('json-decoder-configuration',{ref:"details"}):_vm._e(),(_vm.decoderType == 'protobuf')?_c('protobuf-decoder-configuration',{ref:"details"}):_vm._e(),(_vm.decoderType == 'scripted')?_c('scripted-event-decoder-configuration',{ref:"details",attrs:{"tenantId":_vm.tenantId}}):_vm._e()],1)}
 var DecoderConfigurationvue_type_template_id_3dbd4fee_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
 var JsonDecoderConfigurationvue_type_template_id_4706678f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('no-configuration')}
 var JsonDecoderConfigurationvue_type_template_id_4706678f_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/NoConfiguration.vue?vue&type=template&id=ff1f015a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/NoConfiguration.vue?vue&type=template&id=ff1f015a&scoped=true&
 var NoConfigurationvue_type_template_id_ff1f015a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This decoder has no configurable attributes.")])],1)}
 var NoConfigurationvue_type_template_id_ff1f015a_scoped_true_staticRenderFns = []
 
@@ -7008,7 +7112,7 @@ var JsonDecoderConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var json_JsonDecoderConfiguration = (JsonDecoderConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/protobuf/ProtobufDecoderConfiguration.vue?vue&type=template&id=7861155c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/protobuf/ProtobufDecoderConfiguration.vue?vue&type=template&id=7861155c&
 var ProtobufDecoderConfigurationvue_type_template_id_7861155c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('no-configuration')}
 var ProtobufDecoderConfigurationvue_type_template_id_7861155c_staticRenderFns = []
 
@@ -7072,14 +7176,14 @@ var ProtobufDecoderConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var protobuf_ProtobufDecoderConfiguration = (ProtobufDecoderConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
 var ScriptedEventDecoderConfigurationvue_type_template_id_e83a6384_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('scripted-event-decoder-fields',{ref:"script",attrs:{"tenantId":_vm.tenantId}})}
 var ScriptedEventDecoderConfigurationvue_type_template_id_e83a6384_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderFields.vue?vue&type=template&id=c534bf74&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderFields.vue?vue&type=template&id=c534bf74&
 var ScriptedEventDecoderFieldsvue_type_template_id_c534bf74_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('sw-dialog-form',[_c('v-flex',{attrs:{"xs8":""}},[_c('sw-script-chooser',{ref:"chooser",staticClass:"mr-3",attrs:{"label":"Event Decoder Script","title":"Script used to decode event payloads.","tenantId":_vm.tenantId,"functionalArea":"event-sources","category":"event-sources-event-decoder-category","icon":"fa-code"},model:{value:(_vm.scriptId),callback:function ($$v) {_vm.scriptId=$$v},expression:"scriptId"}},[(!_vm.$v.scriptId.required && _vm.$v.$dirty)?_c('span',[_vm._v("Event decoder script is required.")]):_vm._e()])],1)],1)}
 var ScriptedEventDecoderFieldsvue_type_template_id_c534bf74_staticRenderFns = []
 
@@ -7538,7 +7642,7 @@ var EventSourceDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_EventSourceDialog = (EventSourceDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerFields.vue?vue&type=template&id=43ba2606&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerFields.vue?vue&type=template&id=43ba2606&
 var ActiveMqBrokerFieldsvue_type_template_id_43ba2606_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Broker name","title":"Broker name.","icon":"info"},model:{value:(_vm.brokerName),callback:function ($$v) {_vm.brokerName=$$v},expression:"brokerName"}},[(!_vm.$v.brokerName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Broker name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Transport URI","title":"Transport URI.","icon":"router"},model:{value:(_vm.transportUri),callback:function ($$v) {_vm.transportUri=$$v},expression:"transportUri"}},[(!_vm.$v.transportUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Transport URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var ActiveMqBrokerFieldsvue_type_template_id_43ba2606_staticRenderFns = []
 
@@ -7819,7 +7923,7 @@ var ActiveMqBrokerEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqBrokerEventSourceCreateDialog = (ActiveMqBrokerEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceUpdateDialog.vue?vue&type=template&id=1a344a0c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceUpdateDialog.vue?vue&type=template&id=1a344a0c&
 var ActiveMqBrokerEventSourceUpdateDialogvue_type_template_id_1a344a0c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-broker-event-source-dialog',{ref:"dialog",attrs:{"title":"Update ActiveMQ Broker Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqBrokerEventSourceUpdateDialogvue_type_template_id_1a344a0c_staticRenderFns = []
 
@@ -7891,21 +7995,21 @@ var ActiveMqBrokerEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqBrokerEventSourceUpdateDialog = (ActiveMqBrokerEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
 var ActiveMqClientEventSourceCreateDialogvue_type_template_id_22cf6ec0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-client-event-source-dialog',{ref:"dialog",attrs:{"title":"Create ActiveMQ Client Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqClientEventSourceCreateDialogvue_type_template_id_22cf6ec0_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
 var ActiveMqClientEventSourceDialogvue_type_template_id_0a36f18e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"activemq-client","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"client"},[_vm._v("Client")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"client",attrs:{"eager":""}},[_c('active-mq-client-fields',{ref:"client"})],1)],1)],2)}
 var ActiveMqClientEventSourceDialogvue_type_template_id_0a36f18e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientFields.vue?vue&type=template&id=43a8b8cb&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientFields.vue?vue&type=template&id=43a8b8cb&
 var ActiveMqClientFieldsvue_type_template_id_43a8b8cb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Remote URI","title":"Remote URI.","icon":"router"},model:{value:(_vm.remoteUri),callback:function ($$v) {_vm.remoteUri=$$v},expression:"remoteUri"}},[(!_vm.$v.remoteUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Remote URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var ActiveMqClientFieldsvue_type_template_id_43a8b8cb_staticRenderFns = []
 
@@ -8179,7 +8283,7 @@ var ActiveMqClientEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var ActiveMqClientEventSourceCreateDialog = (ActiveMqClientEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceUpdateDialog.vue?vue&type=template&id=d2aac8a2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceUpdateDialog.vue?vue&type=template&id=d2aac8a2&
 var ActiveMqClientEventSourceUpdateDialogvue_type_template_id_d2aac8a2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-client-event-source-dialog',{ref:"dialog",attrs:{"title":"Update ActiveMQ Client Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqClientEventSourceUpdateDialogvue_type_template_id_d2aac8a2_staticRenderFns = []
 
@@ -8251,21 +8355,21 @@ var ActiveMqClientEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqClientEventSourceUpdateDialog = (ActiveMqClientEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
 var CoapEventSourceCreateDialogvue_type_template_id_4d5c7d2a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-event-source-dialog',{ref:"dialog",attrs:{"title":"Create CoAP Server Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapEventSourceCreateDialogvue_type_template_id_4d5c7d2a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
 var CoapEventSourceDialogvue_type_template_id_1fe6757a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"coap","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"server"},[_vm._v("Server")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"server",attrs:{"eager":""}},[_c('coap-server-fields',{ref:"server"})],1)],1)],2)}
 var CoapEventSourceDialogvue_type_template_id_1fe6757a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapServerFields.vue?vue&type=template&id=200abc8a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapServerFields.vue?vue&type=template&id=200abc8a&
 var CoapServerFieldsvue_type_template_id_200abc8a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Server port","title":"CoAP server port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1)],1)}
 var CoapServerFieldsvue_type_template_id_200abc8a_staticRenderFns = []
 
@@ -8521,7 +8625,7 @@ var CoapEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapEventSourceCreateDialog = (CoapEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceUpdateDialog.vue?vue&type=template&id=2f67a5e7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceUpdateDialog.vue?vue&type=template&id=2f67a5e7&
 var CoapEventSourceUpdateDialogvue_type_template_id_2f67a5e7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-event-source-dialog',{ref:"dialog",attrs:{"title":"Update CoAP Server Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapEventSourceUpdateDialogvue_type_template_id_2f67a5e7_staticRenderFns = []
 
@@ -8593,21 +8697,21 @@ var CoapEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapEventSourceUpdateDialog = (CoapEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
 var EventHubEventSourceCreateDialogvue_type_template_id_67d40668_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-hub-event-source-dialog',{ref:"dialog",attrs:{"title":"Create Azure Event Hub Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var EventHubEventSourceCreateDialogvue_type_template_id_67d40668_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
 var EventHubEventSourceDialogvue_type_template_id_3be01832_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"eventhub","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('event-hub-fields',{ref:"connection"})],1)],1)],2)}
 var EventHubEventSourceDialogvue_type_template_id_3be01832_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubFields.vue?vue&type=template&id=4ced9c11&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubFields.vue?vue&type=template&id=4ced9c11&
 var EventHubFieldsvue_type_template_id_4ced9c11_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Consumer group name","title":"Consumer group name.","icon":"info"},model:{value:(_vm.consumerGroupName),callback:function ($$v) {_vm.consumerGroupName=$$v},expression:"consumerGroupName"}},[(!_vm.$v.consumerGroupName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Consumer group name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Namespace name","title":"Namespace name.","icon":"info"},model:{value:(_vm.namespaceName),callback:function ($$v) {_vm.namespaceName=$$v},expression:"namespaceName"}},[(!_vm.$v.namespaceName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Namespace name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Event Hub name","title":"Event Hub name.","icon":"info"},model:{value:(_vm.eventHubName),callback:function ($$v) {_vm.eventHubName=$$v},expression:"eventHubName"}},[(!_vm.$v.eventHubName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Event Hub name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Host name prefix","title":"Host name prefix.","icon":"info"},model:{value:(_vm.hostNamePrefix),callback:function ($$v) {_vm.hostNamePrefix=$$v},expression:"hostNamePrefix"}},[(!_vm.$v.hostNamePrefix.required && _vm.$v.$dirty)?_c('span',[_vm._v("Host name prefix is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"SAS key name","title":"SAS key name.","icon":"info"},model:{value:(_vm.sasKeyName),callback:function ($$v) {_vm.sasKeyName=$$v},expression:"sasKeyName"}},[(!_vm.$v.sasKeyName.required && _vm.$v.$dirty)?_c('span',[_vm._v("SAS key name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"SAS key","title":"SAS key.","icon":"info"},model:{value:(_vm.sasKey),callback:function ($$v) {_vm.sasKey=$$v},expression:"sasKey"}},[(!_vm.$v.sasKey.required && _vm.$v.$dirty)?_c('span',[_vm._v("SAS key is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Storage connection string","title":"Storage connection string.","icon":"info"},model:{value:(_vm.storageConnectionString),callback:function ($$v) {_vm.storageConnectionString=$$v},expression:"storageConnectionString"}},[(!_vm.$v.storageConnectionString.required && _vm.$v.$dirty)?_c('span',[_vm._v("Storage connection string is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Storage container name","title":"Storage container name.","icon":"info"},model:{value:(_vm.storageContainerName),callback:function ($$v) {_vm.storageContainerName=$$v},expression:"storageContainerName"}},[(!_vm.$v.storageContainerName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Storage container name is required.")]):_vm._e()])],1)],1)}
 var EventHubFieldsvue_type_template_id_4ced9c11_staticRenderFns = []
 
@@ -8916,7 +9020,7 @@ var EventHubEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var azure_EventHubEventSourceCreateDialog = (EventHubEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceUpdateDialog.vue?vue&type=template&id=65772122&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceUpdateDialog.vue?vue&type=template&id=65772122&
 var EventHubEventSourceUpdateDialogvue_type_template_id_65772122_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-hub-event-source-dialog',{ref:"dialog",attrs:{"title":"Update Azure Event Hub Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var EventHubEventSourceUpdateDialogvue_type_template_id_65772122_staticRenderFns = []
 
@@ -8988,21 +9092,21 @@ var EventHubEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var azure_EventHubEventSourceUpdateDialog = (EventHubEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
 var MqttEventSourceCreateDialogvue_type_template_id_1a7dd8bb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-event-source-dialog',{ref:"dialog",attrs:{"title":"Create MQTT Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttEventSourceCreateDialogvue_type_template_id_1a7dd8bb_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
 var MqttEventSourceDialogvue_type_template_id_4b073c9e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"mqtt","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")]),_c('v-tab',{key:"authentication"},[_vm._v("Authentication")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('mqtt-connection-fields',{ref:"connection"})],1),_c('v-tab-item',{key:"authentication",attrs:{"eager":""}},[_c('mqtt-authentication-fields',{ref:"authentication"})],1)],1)],2)}
 var MqttEventSourceDialogvue_type_template_id_4b073c9e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttConnectionFields.vue?vue&type=template&id=16a68db7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttConnectionFields.vue?vue&type=template&id=16a68db7&
 var MqttConnectionFieldsvue_type_template_id_16a68db7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs2":""}},[_c('form-select',{attrs:{"items":_vm.protocols,"title":"Choose connection protocol","label":"Protocol","item-text":"text","item-value":"value","icon":"lock"},model:{value:(_vm.protocol),callback:function ($$v) {_vm.protocol=$$v},expression:"protocol"}})],1),_c('v-flex',{attrs:{"xs8":""}},[_c('form-text',{staticClass:"ml-3 mr-3",attrs:{"required":"","label":"Hostname","title":"MQTT broker hostname.","icon":"router"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(!_vm.$v.hostname.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs2":""}},[_c('form-text',{attrs:{"required":"","label":"Port","title":"MQTT broker port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mb-4",attrs:{"required":"","label":"Topic","title":"MQTT topic to listen on.","icon":"arrow_forward"},model:{value:(_vm.topic),callback:function ($$v) {_vm.topic=$$v},expression:"topic"}},[(!_vm.$v.topic.required && _vm.$v.$dirty)?_c('span',[_vm._v("Topic is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-select',{staticClass:"mr-3",attrs:{"items":_vm.qosValues,"title":"Choose quality of service (QoS)","label":"QoS","item-text":"text","item-value":"value","icon":"done"},model:{value:(_vm.qos),callback:function ($$v) {_vm.qos=$$v},expression:"qos"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of threads","title":"Number of threads used to handle processing.","icon":"settings","type":"number"},model:{value:(_vm.numThreads),callback:function ($$v) {_vm.numThreads=$$v},expression:"numThreads"}},[(!_vm.$v.numThreads.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of threads is required.")]):_vm._e()])],1)],1)}
 var MqttConnectionFieldsvue_type_template_id_16a68db7_staticRenderFns = []
 
@@ -9137,7 +9241,7 @@ var mqtt_MqttConnectionFields_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_mqtt_MqttConnectionFields = (mqtt_MqttConnectionFields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=263e83f2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=263e83f2&
 var MqttAuthenticationFieldsvue_type_template_id_263e83f2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Username","title":"Username for authentication.","icon":"account_circle"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Password","title":"Password for authentication.","icon":"lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Truststore path","title":"Truststore path.","icon":"info"},model:{value:(_vm.trustStorePath),callback:function ($$v) {_vm.trustStorePath=$$v},expression:"trustStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Truststore password","title":"Truststore password.","icon":"lock","type":"password"},model:{value:(_vm.trustStorePassword),callback:function ($$v) {_vm.trustStorePassword=$$v},expression:"trustStorePassword"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Keystore path","title":"Keystore path.","icon":"info"},model:{value:(_vm.keyStorePath),callback:function ($$v) {_vm.keyStorePath=$$v},expression:"keyStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Keystore password","title":"Keystore password.","icon":"lock","type":"password"},model:{value:(_vm.keyStorePassword),callback:function ($$v) {_vm.keyStorePassword=$$v},expression:"keyStorePassword"}})],1)],1)}
 var MqttAuthenticationFieldsvue_type_template_id_263e83f2_staticRenderFns = []
 
@@ -9429,7 +9533,7 @@ var MqttEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttEventSourceCreateDialog = (MqttEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceUpdateDialog.vue?vue&type=template&id=380de0d4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceUpdateDialog.vue?vue&type=template&id=380de0d4&
 var MqttEventSourceUpdateDialogvue_type_template_id_380de0d4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-event-source-dialog',{ref:"dialog",attrs:{"title":"Update MQTT Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttEventSourceUpdateDialogvue_type_template_id_380de0d4_staticRenderFns = []
 
@@ -9501,21 +9605,21 @@ var MqttEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttEventSourceUpdateDialog = (MqttEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
 var RabbitMqEventSourceCreateDialogvue_type_template_id_12249a2b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rabbit-mq-event-source-dialog',{ref:"dialog",attrs:{"title":"Create RabbitMQ Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var RabbitMqEventSourceCreateDialogvue_type_template_id_12249a2b_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
 var RabbitMqEventSourceDialogvue_type_template_id_3458e370_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"rabbitmq","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"client"},[_vm._v("Client")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"client",attrs:{"eager":""}},[_c('rabbit-mq-fields',{ref:"client"})],1)],1)],2)}
 var RabbitMqEventSourceDialogvue_type_template_id_3458e370_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqFields.vue?vue&type=template&id=d8edb300&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqFields.vue?vue&type=template&id=d8edb300&
 var RabbitMqFieldsvue_type_template_id_d8edb300_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Connection URI","title":"Connection URI.","icon":"router"},model:{value:(_vm.connectionUri),callback:function ($$v) {_vm.connectionUri=$$v},expression:"connectionUri"}},[(!_vm.$v.connectionUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Connection URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Reconnection interval","title":"Reconnection interval (in seconds).","icon":"settings","type":"number"},model:{value:(_vm.reconnectInterval),callback:function ($$v) {_vm.reconnectInterval=$$v},expression:"reconnectInterval"}},[(!_vm.$v.reconnectInterval.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var RabbitMqFieldsvue_type_template_id_d8edb300_staticRenderFns = []
 
@@ -9790,7 +9894,7 @@ var RabbitMqEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var rabbitmq_RabbitMqEventSourceCreateDialog = (RabbitMqEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"237c2964-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceUpdateDialog.vue?vue&type=template&id=75b37b02&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceUpdateDialog.vue?vue&type=template&id=75b37b02&scoped=true&
 var RabbitMqEventSourceUpdateDialogvue_type_template_id_75b37b02_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rabbit-mq-event-source-dialog',{ref:"dialog",attrs:{"title":"Update RabbitMQ Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var RabbitMqEventSourceUpdateDialogvue_type_template_id_75b37b02_scoped_true_staticRenderFns = []
 
@@ -10259,7 +10363,11 @@ var EventSourcesPlugin_component = normalizeComponent(
 
 
 
+
+
 /** Common */
+
+/** Form elements */
 
 /** Plugins */
 

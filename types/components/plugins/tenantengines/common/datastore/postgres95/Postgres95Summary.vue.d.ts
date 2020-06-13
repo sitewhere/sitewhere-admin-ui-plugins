@@ -1,7 +1,7 @@
 import Vue from "vue";
-import { Postgres95Configuration } from "sitewhere-configuration-model";
+import { IPostgres95Configuration } from "sitewhere-configuration-model";
 export default class Postgres95Summary extends Vue {
-    readonly configuration: Postgres95Configuration;
+    readonly configuration: IPostgres95Configuration;
     /** Hostname */
     get hostname(): string | null;
     /** Port */

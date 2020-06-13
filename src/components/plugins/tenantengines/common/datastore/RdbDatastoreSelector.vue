@@ -15,10 +15,7 @@
       <content-link icon="fa-trash" text="Unset datastore" @linkClicked="onUnsetDatastore" />
     </v-card>
     <v-card flat v-else>
-      <content-warning
-        text="No datastore is set. This will cause
-    tenant engine startup to fail!"
-      />
+      <content-warning text="No datastore is set. This will cause tenant engine startup to fail!" />
       <content-link
         class="mt-3"
         icon="fa-plus-circle"
@@ -26,8 +23,8 @@
         @linkClicked="onAddDatastore"
       />
     </v-card>
-    <datastore-create-dialog :instance="instance" ref="create" @create="onDatastoreCreate" />
-    <datastore-update-dialog :instance="instance" ref="update" @update="onDatastoreUpdate" />
+    <rdb-datastore-create-dialog :instance="instance" ref="create" @create="onDatastoreCreate" />
+    <rdb-datastore-update-dialog :instance="instance" ref="update" @update="onDatastoreUpdate" />
   </div>
 </template>
 
@@ -49,9 +46,9 @@ import {
   IRdbConfiguration
 } from "sitewhere-rest-api";
 
-import DatastoreCreateDialog from "./datastore/DatastoreCreateDialog.vue";
-import DatastoreUpdateDialog from "./datastore/DatastoreUpdateDialog.vue";
-import Postgres95Summary from "./datastore/postgres95/Postgres95Summary.vue";
+import RdbDatastoreCreateDialog from "./RdbDatastoreCreateDialog.vue";
+import RdbDatastoreUpdateDialog from "./RdbDatastoreUpdateDialog.vue";
+import Postgres95Summary from "./postgres95/Postgres95Summary.vue";
 
 @Component({
   components: {
@@ -59,16 +56,16 @@ import Postgres95Summary from "./datastore/postgres95/Postgres95Summary.vue";
     VIcon,
     ContentLink,
     ContentWarning,
-    DatastoreCreateDialog,
-    DatastoreUpdateDialog,
+    RdbDatastoreCreateDialog,
+    RdbDatastoreUpdateDialog,
     Postgres95Summary
   }
 })
-export default class DatastoreSelector extends Vue {
+export default class RdbDatastoreSelector extends Vue {
   @Prop() readonly datastore!: IDatastoreDefinition;
   @Prop() readonly instance!: IInstanceConfiguration;
-  @Ref() readonly create!: DatastoreCreateDialog;
-  @Ref() readonly update!: DatastoreUpdateDialog;
+  @Ref() readonly create!: RdbDatastoreCreateDialog;
+  @Ref() readonly update!: RdbDatastoreUpdateDialog;
 
   /** Global RDB configurations */
   get rdbConfigurations(): IRdbConfigurationMap | null {

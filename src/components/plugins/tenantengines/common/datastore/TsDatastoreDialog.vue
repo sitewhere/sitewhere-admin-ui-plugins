@@ -50,7 +50,9 @@
       </v-layout>
     </dialog-header>
     <v-divider class="mb-2" />
-    <warp-10-fields v-if="isWarp10" :readonly="isGlobalScope" ref="details" />
+    <warp-10-fields v-show="isWarp10" :readonly="isGlobalScope" ref="warp10" />
+    <influx-db-fields v-show="isInfluxDB" :readonly="isGlobalScope" ref="influxdb" />
+    <no-fields v-show="isUnknown" :readonly="isGlobalScope" ref="unknown" />
   </base-dialog>
 </template>
 
@@ -65,6 +67,8 @@ import {
 } from "sitewhere-ide-components";
 
 import Warp10Fields from "./warp10/Warp10Fields.vue";
+import InfluxDbFields from "./influxdb/InfluxDbFields.vue";
+import NoFields from "./NoFields.vue";
 
 import {
   VLayout,
@@ -96,17 +100,22 @@ import {
     VBtn,
     VSelect,
     VDivider,
-    Warp10Fields
+    Warp10Fields,
+    InfluxDbFields,
+    NoFields
   }
 })
-export default class RdbDatastoreDialog extends DialogComponent<
+export default class TsDatastoreDialog extends DialogComponent<
   IDatastoreDefinition
 > {
   @Prop() readonly instance!: IInstanceConfiguration;
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
   @Ref() readonly dialog!: BaseDialog;
-  @Ref() readonly details!: Warp10Fields;
+
+  @Ref() readonly warp10!: Warp10Fields;
+  @Ref() readonly influxdb!: InfluxDbFields;
+  @Ref() readonly unknown!: NoFields;
 
   scope = 0;
   reference: string | null = null;
@@ -126,14 +135,15 @@ export default class RdbDatastoreDialog extends DialogComponent<
     }
   ];
 
-  /** Convert to dialog */
-  get dialogComponent(): BaseDialog {
-    return this.dialog as BaseDialog;
-  }
-
-  /** Convert to dialog section */
-  get detailsSection(): DialogSection {
-    return this.details as DialogSection;
+  /** Get displayed summary panel */
+  get details(): DialogSection {
+    if (this.isWarp10) {
+      return this.warp10;
+    } else if (this.isInfluxDB) {
+      return this.influxdb;
+    } else {
+      return this.unknown;
+    }
   }
 
   @Watch("scope")
@@ -172,7 +182,7 @@ export default class RdbDatastoreDialog extends DialogComponent<
   /** Global time series configurations */
   get timeSeriesConfigurations(): ITimeSeriesConfigurationMap | null {
     return this.instance && this.instance.persistenceConfigurations
-      ? this.instance.persistenceConfigurations.rdbConfigurations
+      ? this.instance.persistenceConfigurations.timeSeriesConfigurations
       : null;
   }
 
@@ -240,7 +250,12 @@ export default class RdbDatastoreDialog extends DialogComponent<
   /** Indicates whether database is InfluxDB */
   get isInfluxDB(): boolean {
     const type: string | null = this.getDatastoreType();
-    return type == "inlfuxdb";
+    return type == "influxdb";
+  }
+
+  /** Indicates if database type is unknown */
+  get isUnknown(): boolean {
+    return !this.isWarp10 && !this.isInfluxDB;
   }
 
   /** Generate configuration from detail panel */
@@ -248,7 +263,7 @@ export default class RdbDatastoreDialog extends DialogComponent<
   generateConfiguration(): any {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const configuration: any = {};
-    Object.assign(configuration, this.detailsSection.save());
+    Object.assign(configuration, this.details.save());
     return configuration;
   }
 
@@ -268,15 +283,14 @@ export default class RdbDatastoreDialog extends DialogComponent<
   /** Reset dialog content to default */
   reset() {
     if (this.details) {
-      this.detailsSection.reset();
+      this.details.reset();
     }
-    this.dialogComponent.setActiveTab(0);
   }
 
   /** Load data from an existing configuration */
   load(payload: IDatastoreDefinition) {
     this.reset();
-    this.type = (payload as IDatastoreDefinitionLocal).type || "postgres95";
+    this.type = (payload as IDatastoreDefinitionLocal).type || "warp10";
     this.configuration =
       (payload as IDatastoreDefinitionLocal).configuration || {};
     this.reference = (payload as IDatastoreDefinitionReference).reference;
@@ -289,15 +303,14 @@ export default class RdbDatastoreDialog extends DialogComponent<
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const config: any = this.getDatastoreConfiguration();
     if (this.details && config) {
-      this.detailsSection.load(config);
+      this.details.load(config);
     }
   }
 
   /** Called after create button is clicked */
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!this.detailsSection.validate()) {
-      this.dialogComponent.setActiveTab(0);
+    if (!this.details.validate()) {
       return;
     }
 

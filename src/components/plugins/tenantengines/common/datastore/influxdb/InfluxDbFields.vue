@@ -5,7 +5,7 @@
         required
         :readonly="readonly"
         label="Hostname"
-        title="Hostname of Warp 10 server."
+        title="Hostname of InfluxDB server."
         v-model="hostname"
         icon="fa-server"
         class="mr-3"
@@ -18,7 +18,7 @@
         required
         :readonly="readonly"
         label="Port"
-        title="Port for Warp 10 server."
+        title="Port for InfluxDB server."
         type="number"
         v-model="port"
       >
@@ -29,24 +29,12 @@
       <form-text
         required
         :readonly="readonly"
-        label="Application"
-        title="Warp 10 application name."
-        v-model="application"
+        label="Database name"
+        title="InfluxDB database name."
+        v-model="databaseName"
         icon="fa-stream"
       >
-        <span v-if="$v.application.$invalid && $v.$dirty">Application is required.</span>
-      </form-text>
-    </v-flex>
-    <v-flex xs12>
-      <form-text
-        required
-        :readonly="readonly"
-        label="Token secret"
-        title="Warp 10 token secret."
-        v-model="tokenSecret"
-        icon="fa-stream"
-      >
-        <span v-if="$v.tokenSecret.$invalid && $v.$dirty">Token secret is required.</span>
+        <span v-if="$v.databaseName.$invalid && $v.$dirty">Database name is required.</span>
       </form-text>
     </v-flex>
   </dialog-form>
@@ -59,7 +47,7 @@ import { DialogSection, DialogForm, FormText } from "sitewhere-ide-components";
 import { VFlex } from "vuetify/lib";
 
 import { required } from "vuelidate/lib/validators";
-import { IWarp10Configuration } from "sitewhere-configuration-model";
+import { IInfluxDBConfiguration } from "sitewhere-configuration-model";
 
 @Component({
   components: { DialogForm, FormText, VFlex },
@@ -70,28 +58,23 @@ import { IWarp10Configuration } from "sitewhere-configuration-model";
     port: {
       required
     },
-    application: {
-      required
-    },
-    tokenSecret: {
+    databaseName: {
       required
     }
   }
 })
-export default class Warp10Fields extends DialogSection {
+export default class InfluxDbFields extends DialogSection {
   @Prop() readonly readonly!: boolean;
 
   hostname: string | null = null;
   port: number | null = null;
-  application: string | null = null;
-  tokenSecret: string | null = null;
+  databaseName: string | null = null;
 
   /** Reset section content */
   reset(): void {
     this.hostname = null;
     this.port = null;
-    this.application = null;
-    this.tokenSecret = null;
+    this.databaseName = null;
     this.$v.$reset();
   }
 
@@ -102,12 +85,10 @@ export default class Warp10Fields extends DialogSection {
   }
 
   /** Load form data from an object */
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-  load(configuration: IWarp10Configuration): void {
+  load(configuration: IInfluxDBConfiguration): void {
     this.hostname = configuration.hostname;
     this.port = configuration.port;
-    this.application = configuration.application;
-    this.tokenSecret = configuration.tokenSecret;
+    this.databaseName = configuration.databaseName;
   }
 
   /** Save form data to an object */
@@ -115,8 +96,7 @@ export default class Warp10Fields extends DialogSection {
     return {
       hostname: this.hostname,
       port: this.port,
-      application: this.application,
-      tokenSecret: this.tokenSecret
+      databaseName: this.databaseName
     };
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "sitewhere-admin-ui-plugins",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.3",
   "description": "Pluggable components for SiteWhere admin user interface",
   "main": "dist/sitewhere-admin-ui-plugins.common.js",
   "types": "types/index.d.ts",

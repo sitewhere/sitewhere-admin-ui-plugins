@@ -1017,6 +1017,20 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "8783":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".padded-message[data-v-5cea9d8b]{padding:50px;padding-top:35px;text-align:center}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "8875":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1525,6 +1539,17 @@ var nibbleValid = function nibbleValid(nibble) {
 
 /***/ }),
 
+/***/ "cb38":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoFields_vue_vue_type_style_index_0_id_5cea9d8b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ff99");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoFields_vue_vue_type_style_index_0_id_5cea9d8b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoFields_vue_vue_type_style_index_0_id_5cea9d8b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoFields_vue_vue_type_style_index_0_id_5cea9d8b_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "cb69":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1716,16 +1741,20 @@ exports.default = _default;
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "RdbDatastoreSelector", function() { return /* reexport */ datastore_RdbDatastoreSelector; });
 __webpack_require__.d(__webpack_exports__, "TenantEnginePlugin", function() { return /* reexport */ tenantengines_TenantEnginePlugin; });
+__webpack_require__.d(__webpack_exports__, "RdbDatastoreSelector", function() { return /* reexport */ datastore_RdbDatastoreSelector; });
+__webpack_require__.d(__webpack_exports__, "TsDatastoreSelector", function() { return /* reexport */ datastore_TsDatastoreSelector; });
 __webpack_require__.d(__webpack_exports__, "Postgres95Fields", function() { return /* reexport */ postgres95_Postgres95Fields; });
 __webpack_require__.d(__webpack_exports__, "Warp10Fields", function() { return /* reexport */ warp10_Warp10Fields; });
+__webpack_require__.d(__webpack_exports__, "InfluxDbFields", function() { return /* reexport */ influxdb_InfluxDbFields; });
+__webpack_require__.d(__webpack_exports__, "NoFields", function() { return /* reexport */ datastore_NoFields; });
 __webpack_require__.d(__webpack_exports__, "AssetManagementPlugin", function() { return /* reexport */ assetmanagement_AssetManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "BatchOperationsPlugin", function() { return /* reexport */ batchoperations_BatchOperationsPlugin; });
 __webpack_require__.d(__webpack_exports__, "CommandDeliveryPlugin", function() { return /* reexport */ commanddelivery_CommandDeliveryPlugin; });
 __webpack_require__.d(__webpack_exports__, "DeviceManagementPlugin", function() { return /* reexport */ devicemanagement_DeviceManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "DeviceRegistrationPlugin", function() { return /* reexport */ DeviceRegistrationPlugin; });
 __webpack_require__.d(__webpack_exports__, "DeviceStatePlugin", function() { return /* reexport */ devicestate_DeviceStatePlugin; });
+__webpack_require__.d(__webpack_exports__, "EventManagementPlugin", function() { return /* reexport */ eventmanagement_EventManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "EventSourcesPlugin", function() { return /* reexport */ eventsources_EventSourcesPlugin; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
@@ -1752,12 +1781,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('rdb-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('rdb-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"height":"100%"},attrs:{"flat":"","tile":""}},[_c('v-card-text',[_c('div',{staticClass:"flex-rows"},[(_vm.microservice && _vm.tenant)?_c('div',{staticClass:"plugin-header"},[_vm._t("header",[_c('page-header',{attrs:{"text":_vm.header}})])],2):_vm._e(),_c('div',{staticClass:"plugin-content"},[_vm._t("default")],2),_c('div',{staticClass:"plugin-footer"},[_vm._t("footer")],2)])]),_vm._t("dialogs")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
@@ -1981,120 +2010,66 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpac
 // EXTERNAL MODULE: external "vue-property-decorator"
 var external_vue_property_decorator_ = __webpack_require__("01a6");
 
-// EXTERNAL MODULE: external "vuetify/lib"
-var lib_ = __webpack_require__("4875");
-
 // EXTERNAL MODULE: external "sitewhere-ide-components"
 var external_sitewhere_ide_components_ = __webpack_require__("9092");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
-var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Relational Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
-var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_staticRenderFns = []
+// EXTERNAL MODULE: external "vuetify/lib"
+var lib_ = __webpack_require__("4875");
 
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=299ccd38&
-var RdbDatastoreDialogvue_type_template_id_299ccd38_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),(_vm.isPostgres95)?_c('postgres-95-fields',{ref:"details",attrs:{"readonly":_vm.isGlobalScope}}):_vm._e()],1)}
-var RdbDatastoreDialogvue_type_template_id_299ccd38_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=299ccd38&
-
-// EXTERNAL MODULE: external "sitewhere-ide-common"
-var external_sitewhere_ide_common_ = __webpack_require__("403e");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
-var Postgres95Fieldsvue_type_template_id_1a674a09_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Max Connections","title":"Maximum number of connections to server.","type":"number","icon":"fa-stream"},model:{value:(_vm.maxConnections),callback:function ($$v) {_vm.maxConnections=$$v},expression:"maxConnections"}},[(_vm.$v.maxConnections.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Max connections is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Username","title":"Username.","icon":"fa-user"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}},[(_vm.$v.username.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Username is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Password","title":"Password.","icon":"fa-lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}},[(_vm.$v.password.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Password is required.")]):_vm._e()])],1)],1)}
-var Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
-
-// EXTERNAL MODULE: ./node_modules/vuelidate/lib/validators/index.js
-var validators = __webpack_require__("b5ae");
-
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=script&lang=ts&
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=script&lang=ts&
 
 
 
 
 
-var Postgres95Fieldsvue_type_script_lang_ts_Postgres95Fields = /** @class */ (function (_super) {
-    __extends(Postgres95Fields, _super);
-    function Postgres95Fields() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.hostname = null;
-        _this.port = null;
-        _this.username = null;
-        _this.password = null;
-        _this.maxConnections = null;
-        return _this;
+var TenantEnginePluginvue_type_script_lang_ts_TenantEnginePlugin = /** @class */ (function (_super) {
+    __extends(TenantEnginePlugin, _super);
+    function TenantEnginePlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    /** Reset section content */
-    Postgres95Fields.prototype.reset = function () {
-        this.hostname = null;
-        this.port = null;
-        this.username = null;
-        this.password = null;
-        this.maxConnections = null;
-        this.$v.$reset();
-    };
-    /** Perform validation */
-    Postgres95Fields.prototype.validate = function () {
-        this.$v.$touch();
-        return !this.$v.$invalid;
-    };
-    /** Load form data from an object */
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    Postgres95Fields.prototype.load = function (configuration) {
-        this.hostname = configuration.hostname;
-        this.port = configuration.port;
-        this.username = configuration.username;
-        this.password = configuration.password;
-        this.maxConnections = configuration.maxConnections;
-    };
-    /** Save form data to an object */
-    Postgres95Fields.prototype.save = function () {
-        return {
-            hostname: this.hostname,
-            port: this.port,
-            username: this.username,
-            password: this.password,
-            maxConnections: this.maxConnections
-        };
-    };
+    Object.defineProperty(TenantEnginePlugin.prototype, "tenant", {
+        /** Get microservice information */
+        get: function () {
+            return this.configuration ? this.configuration.tenant : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TenantEnginePlugin.prototype, "microservice", {
+        /** Get microservice information */
+        get: function () {
+            return this.configuration ? this.configuration.microservice : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TenantEnginePlugin.prototype, "header", {
+        /** Get header displayed at top of page */
+        get: function () {
+            return this.tenant && this.microservice
+                ? this.microservice.name + " Configuration for Tenant '" + this.tenant.name + "'"
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], Postgres95Fields.prototype, "readonly", void 0);
-    Postgres95Fields = __decorate([
+    ], TenantEnginePlugin.prototype, "configuration", void 0);
+    TenantEnginePlugin = __decorate([
         Object(external_vue_property_decorator_["Component"])({
-            components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
-            validations: {
-                hostname: {
-                    required: validators["required"]
-                },
-                port: {
-                    required: validators["required"]
-                },
-                maxConnections: {
-                    required: validators["required"]
-                },
-                username: {
-                    required: validators["required"]
-                },
-                password: {
-                    required: validators["required"]
-                }
-            }
+            components: { VCard: lib_["VCard"], VCardText: lib_["VCardText"], PageHeader: external_sitewhere_ide_components_["PageHeader"] }
         })
-    ], Postgres95Fields);
-    return Postgres95Fields;
-}(external_sitewhere_ide_components_["DialogSection"]));
-/* harmony default export */ var Postgres95Fieldsvue_type_script_lang_ts_ = (Postgres95Fieldsvue_type_script_lang_ts_Postgres95Fields);
+    ], TenantEnginePlugin);
+    return TenantEnginePlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var TenantEnginePluginvue_type_script_lang_ts_ = (TenantEnginePluginvue_type_script_lang_ts_TenantEnginePlugin);
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=script&lang=ts&
- /* harmony default export */ var postgres95_Postgres95Fieldsvue_type_script_lang_ts_ = (Postgres95Fieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var tenantengines_TenantEnginePluginvue_type_script_lang_ts_ = (TenantEnginePluginvue_type_script_lang_ts_); 
+// EXTERNAL MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=style&index=0&id=e5693cf6&scoped=true&lang=css&
+var TenantEnginePluginvue_type_style_index_0_id_e5693cf6_scoped_true_lang_css_ = __webpack_require__("f5f6");
+
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -2195,7 +2170,8 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue
+
 
 
 
@@ -2204,6 +2180,141 @@ function normalizeComponent (
 /* normalize component */
 
 var component = normalizeComponent(
+  tenantengines_TenantEnginePluginvue_type_script_lang_ts_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  "e5693cf6",
+  null
+  
+)
+
+/* harmony default export */ var tenantengines_TenantEnginePlugin = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
+var RdbDatastoreSelectorvue_type_template_id_ad677c7e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('rdb-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('rdb-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
+var RdbDatastoreSelectorvue_type_template_id_ad677c7e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
+var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Relational Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
+var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=2ddff97a&
+var RdbDatastoreDialogvue_type_template_id_2ddff97a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),(_vm.isPostgres95)?_c('postgres-95-fields',{ref:"details",attrs:{"readonly":_vm.isGlobalScope}}):_vm._e()],1)}
+var RdbDatastoreDialogvue_type_template_id_2ddff97a_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=2ddff97a&
+
+// EXTERNAL MODULE: external "sitewhere-ide-common"
+var external_sitewhere_ide_common_ = __webpack_require__("403e");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
+var Postgres95Fieldsvue_type_template_id_1a674a09_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Max Connections","title":"Maximum number of connections to server.","type":"number","icon":"fa-stream"},model:{value:(_vm.maxConnections),callback:function ($$v) {_vm.maxConnections=$$v},expression:"maxConnections"}},[(_vm.$v.maxConnections.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Max connections is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Username","title":"Username.","icon":"fa-user"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}},[(_vm.$v.username.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Username is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Password","title":"Password.","icon":"fa-lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}},[(_vm.$v.password.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Password is required.")]):_vm._e()])],1)],1)}
+var Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
+
+// EXTERNAL MODULE: ./node_modules/vuelidate/lib/validators/index.js
+var validators = __webpack_require__("b5ae");
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var Postgres95Fieldsvue_type_script_lang_ts_Postgres95Fields = /** @class */ (function (_super) {
+    __extends(Postgres95Fields, _super);
+    function Postgres95Fields() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.hostname = null;
+        _this.port = null;
+        _this.username = null;
+        _this.password = null;
+        _this.maxConnections = null;
+        return _this;
+    }
+    /** Reset section content */
+    Postgres95Fields.prototype.reset = function () {
+        this.hostname = null;
+        this.port = null;
+        this.username = null;
+        this.password = null;
+        this.maxConnections = null;
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    Postgres95Fields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    Postgres95Fields.prototype.load = function (configuration) {
+        this.hostname = configuration.hostname;
+        this.port = configuration.port;
+        this.username = configuration.username;
+        this.password = configuration.password;
+        this.maxConnections = configuration.maxConnections;
+    };
+    /** Save form data to an object */
+    Postgres95Fields.prototype.save = function () {
+        return {
+            hostname: this.hostname,
+            port: this.port,
+            username: this.username,
+            password: this.password,
+            maxConnections: this.maxConnections
+        };
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], Postgres95Fields.prototype, "readonly", void 0);
+    Postgres95Fields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
+            validations: {
+                hostname: {
+                    required: validators["required"]
+                },
+                port: {
+                    required: validators["required"]
+                },
+                maxConnections: {
+                    required: validators["required"]
+                },
+                username: {
+                    required: validators["required"]
+                },
+                password: {
+                    required: validators["required"]
+                }
+            }
+        })
+    ], Postgres95Fields);
+    return Postgres95Fields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var Postgres95Fieldsvue_type_script_lang_ts_ = (Postgres95Fieldsvue_type_script_lang_ts_Postgres95Fields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var postgres95_Postgres95Fieldsvue_type_script_lang_ts_ = (Postgres95Fieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue
+
+
+
+
+
+/* normalize component */
+
+var Postgres95Fields_component = normalizeComponent(
   postgres95_Postgres95Fieldsvue_type_script_lang_ts_,
   Postgres95Fieldsvue_type_template_id_1a674a09_render,
   Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns,
@@ -2214,7 +2325,7 @@ var component = normalizeComponent(
   
 )
 
-/* harmony default export */ var postgres95_Postgres95Fields = (component.exports);
+/* harmony default export */ var postgres95_Postgres95Fields = (Postgres95Fields_component.exports);
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=script&lang=ts&
 
 
@@ -2238,22 +2349,6 @@ var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */
         ];
         return _this;
     }
-    Object.defineProperty(RdbDatastoreDialog.prototype, "dialogComponent", {
-        /** Convert to dialog */
-        get: function () {
-            return this.dialog;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RdbDatastoreDialog.prototype, "detailsSection", {
-        /** Convert to dialog section */
-        get: function () {
-            return this.details;
-        },
-        enumerable: true,
-        configurable: true
-    });
     RdbDatastoreDialog.prototype.onScopeChanged = function () {
         if (!this.isLocalScope) {
             if (!this.reference) {
@@ -2367,7 +2462,7 @@ var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */
     RdbDatastoreDialog.prototype.generateConfiguration = function () {
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         var configuration = {};
-        Object.assign(configuration, this.detailsSection.save());
+        Object.assign(configuration, this.details.save());
         return configuration;
     };
     /** Generate payload from UI data */
@@ -2386,9 +2481,8 @@ var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */
     /** Reset dialog content to default */
     RdbDatastoreDialog.prototype.reset = function () {
         if (this.details) {
-            this.detailsSection.reset();
+            this.details.reset();
         }
-        this.dialogComponent.setActiveTab(0);
     };
     /** Load data from an existing configuration */
     RdbDatastoreDialog.prototype.load = function (payload) {
@@ -2405,14 +2499,13 @@ var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
         var config = this.getDatastoreConfiguration();
         if (this.details && config) {
-            this.detailsSection.load(config);
+            this.details.load(config);
         }
     };
     /** Called after create button is clicked */
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
     RdbDatastoreDialog.prototype.onCreateClicked = function (e) {
-        if (!this.detailsSection.validate()) {
-            this.dialogComponent.setActiveTab(0);
+        if (!this.details.validate()) {
             return;
         }
         var payload = this.generatePayload();
@@ -2470,8 +2563,8 @@ var RdbDatastoreDialogvue_type_script_lang_ts_RdbDatastoreDialog = /** @class */
 
 var RdbDatastoreDialog_component = normalizeComponent(
   datastore_RdbDatastoreDialogvue_type_script_lang_ts_,
-  RdbDatastoreDialogvue_type_template_id_299ccd38_render,
-  RdbDatastoreDialogvue_type_template_id_299ccd38_staticRenderFns,
+  RdbDatastoreDialogvue_type_template_id_2ddff97a_render,
+  RdbDatastoreDialogvue_type_template_id_2ddff97a_staticRenderFns,
   false,
   null,
   null,
@@ -2847,8 +2940,8 @@ var RdbDatastoreSelectorvue_type_script_lang_ts_RdbDatastoreSelector = /** @clas
 
 var RdbDatastoreSelector_component = normalizeComponent(
   datastore_RdbDatastoreSelectorvue_type_script_lang_ts_,
-  render,
-  staticRenderFns,
+  RdbDatastoreSelectorvue_type_template_id_ad677c7e_render,
+  RdbDatastoreSelectorvue_type_template_id_ad677c7e_staticRenderFns,
   false,
   null,
   null,
@@ -2857,94 +2950,33 @@ var RdbDatastoreSelector_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_RdbDatastoreSelector = (RdbDatastoreSelector_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
-var TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"height":"100%"},attrs:{"flat":"","tile":""}},[_c('v-card-text',[_c('div',{staticClass:"flex-rows"},[(_vm.microservice && _vm.tenant)?_c('div',{staticClass:"plugin-header"},[_vm._t("header",[_c('page-header',{attrs:{"text":_vm.header}})])],2):_vm._e(),_c('div',{staticClass:"plugin-content"},[_vm._t("default")],2),_c('div',{staticClass:"plugin-footer"},[_vm._t("footer")],2)])]),_vm._t("dialogs")],2)}
-var TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=template&id=1544e2a1&
+var TsDatastoreSelectorvue_type_template_id_1544e2a1_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),_c('warp-10-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isWarp10),expression:"isWarp10"}],ref:"warp10",attrs:{"configuration":_vm.configuration}}),_c('influx-db-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isInfluxDB),expression:"isInfluxDB"}],ref:"influxdb",attrs:{"configuration":_vm.configuration}}),_c('no-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isUnknown),expression:"isUnknown"}],ref:"unknown"}),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('ts-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('ts-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
+var TsDatastoreSelectorvue_type_template_id_1544e2a1_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=template&id=1544e2a1&
 
-// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=script&lang=ts&
-
-
-
-
-
-var TenantEnginePluginvue_type_script_lang_ts_TenantEnginePlugin = /** @class */ (function (_super) {
-    __extends(TenantEnginePlugin, _super);
-    function TenantEnginePlugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Object.defineProperty(TenantEnginePlugin.prototype, "tenant", {
-        /** Get microservice information */
-        get: function () {
-            return this.configuration ? this.configuration.tenant : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TenantEnginePlugin.prototype, "microservice", {
-        /** Get microservice information */
-        get: function () {
-            return this.configuration ? this.configuration.microservice : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(TenantEnginePlugin.prototype, "header", {
-        /** Get header displayed at top of page */
-        get: function () {
-            return this.tenant && this.microservice
-                ? this.microservice.name + " Configuration for Tenant '" + this.tenant.name + "'"
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        Object(external_vue_property_decorator_["Prop"])()
-    ], TenantEnginePlugin.prototype, "configuration", void 0);
-    TenantEnginePlugin = __decorate([
-        Object(external_vue_property_decorator_["Component"])({
-            components: { VCard: lib_["VCard"], VCardText: lib_["VCardText"], PageHeader: external_sitewhere_ide_components_["PageHeader"] }
-        })
-    ], TenantEnginePlugin);
-    return TenantEnginePlugin;
-}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
-/* harmony default export */ var TenantEnginePluginvue_type_script_lang_ts_ = (TenantEnginePluginvue_type_script_lang_ts_TenantEnginePlugin);
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=script&lang=ts&
- /* harmony default export */ var tenantengines_TenantEnginePluginvue_type_script_lang_ts_ = (TenantEnginePluginvue_type_script_lang_ts_); 
-// EXTERNAL MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=style&index=0&id=e5693cf6&scoped=true&lang=css&
-var TenantEnginePluginvue_type_style_index_0_id_e5693cf6_scoped_true_lang_css_ = __webpack_require__("f5f6");
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/TenantEnginePlugin.vue
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=template&id=6a2a8a0e&
+var TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ts-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Time Series Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
+var TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_staticRenderFns = []
 
 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=template&id=6a2a8a0e&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=template&id=2e77d89c&
+var TsDatastoreDialogvue_type_template_id_2e77d89c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),_c('warp-10-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isWarp10),expression:"isWarp10"}],ref:"warp10",attrs:{"readonly":_vm.isGlobalScope}}),_c('influx-db-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isInfluxDB),expression:"isInfluxDB"}],ref:"influxdb",attrs:{"readonly":_vm.isGlobalScope}}),_c('no-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isUnknown),expression:"isUnknown"}],ref:"unknown",attrs:{"readonly":_vm.isGlobalScope}})],1)}
+var TsDatastoreDialogvue_type_template_id_2e77d89c_staticRenderFns = []
 
 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=template&id=2e77d89c&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=5e5d397f&
+var Warp10Fieldsvue_type_template_id_5e5d397f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of Warp 10 server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for Warp 10 server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Application","title":"Warp 10 application name.","icon":"fa-stream"},model:{value:(_vm.application),callback:function ($$v) {_vm.application=$$v},expression:"application"}},[(_vm.$v.application.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Application is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Token secret","title":"Warp 10 token secret.","icon":"fa-stream"},model:{value:(_vm.tokenSecret),callback:function ($$v) {_vm.tokenSecret=$$v},expression:"tokenSecret"}},[(_vm.$v.tokenSecret.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Token secret is required.")]):_vm._e()])],1)],1)}
+var Warp10Fieldsvue_type_template_id_5e5d397f_staticRenderFns = []
 
 
-/* normalize component */
-
-var TenantEnginePlugin_component = normalizeComponent(
-  tenantengines_TenantEnginePluginvue_type_script_lang_ts_,
-  TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_render,
-  TenantEnginePluginvue_type_template_id_e5693cf6_scoped_true_staticRenderFns,
-  false,
-  null,
-  "e5693cf6",
-  null
-  
-)
-
-/* harmony default export */ var tenantengines_TenantEnginePlugin = (TenantEnginePlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=0218d968&
-var Warp10Fieldsvue_type_template_id_0218d968_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Application","title":"Warp 10 application name.","icon":"fa-stream"},model:{value:(_vm.application),callback:function ($$v) {_vm.application=$$v},expression:"application"}},[(_vm.$v.application.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Application is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Token secret","title":"Warp 10 token secret.","icon":"fa-stream"},model:{value:(_vm.tokenSecret),callback:function ($$v) {_vm.tokenSecret=$$v},expression:"tokenSecret"}},[(_vm.$v.tokenSecret.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Token secret is required.")]):_vm._e()])],1)],1)}
-var Warp10Fieldsvue_type_template_id_0218d968_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=0218d968&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=5e5d397f&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=script&lang=ts&
 
@@ -2980,6 +3012,8 @@ var Warp10Fieldsvue_type_script_lang_ts_Warp10Fields = /** @class */ (function (
     Warp10Fields.prototype.load = function (configuration) {
         this.hostname = configuration.hostname;
         this.port = configuration.port;
+        this.application = configuration.application;
+        this.tokenSecret = configuration.tokenSecret;
     };
     /** Save form data to an object */
     Warp10Fields.prototype.save = function () {
@@ -2998,6 +3032,15 @@ var Warp10Fieldsvue_type_script_lang_ts_Warp10Fields = /** @class */ (function (
             components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
             validations: {
                 hostname: {
+                    required: validators["required"]
+                },
+                port: {
+                    required: validators["required"]
+                },
+                application: {
+                    required: validators["required"]
+                },
+                tokenSecret: {
                     required: validators["required"]
                 }
             }
@@ -3019,8 +3062,8 @@ var Warp10Fieldsvue_type_script_lang_ts_Warp10Fields = /** @class */ (function (
 
 var Warp10Fields_component = normalizeComponent(
   warp10_Warp10Fieldsvue_type_script_lang_ts_,
-  Warp10Fieldsvue_type_template_id_0218d968_render,
-  Warp10Fieldsvue_type_template_id_0218d968_staticRenderFns,
+  Warp10Fieldsvue_type_template_id_5e5d397f_render,
+  Warp10Fieldsvue_type_template_id_5e5d397f_staticRenderFns,
   false,
   null,
   null,
@@ -3029,6 +3072,1002 @@ var Warp10Fields_component = normalizeComponent(
 )
 
 /* harmony default export */ var warp10_Warp10Fields = (Warp10Fields_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=template&id=692d1601&
+var InfluxDbFieldsvue_type_template_id_692d1601_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of InfluxDB server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for InfluxDB server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Database name","title":"InfluxDB database name.","icon":"fa-stream"},model:{value:(_vm.databaseName),callback:function ($$v) {_vm.databaseName=$$v},expression:"databaseName"}},[(_vm.$v.databaseName.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Database name is required.")]):_vm._e()])],1)],1)}
+var InfluxDbFieldsvue_type_template_id_692d1601_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=template&id=692d1601&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var InfluxDbFieldsvue_type_script_lang_ts_InfluxDbFields = /** @class */ (function (_super) {
+    __extends(InfluxDbFields, _super);
+    function InfluxDbFields() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.hostname = null;
+        _this.port = null;
+        _this.databaseName = null;
+        return _this;
+    }
+    /** Reset section content */
+    InfluxDbFields.prototype.reset = function () {
+        this.hostname = null;
+        this.port = null;
+        this.databaseName = null;
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    InfluxDbFields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    InfluxDbFields.prototype.load = function (configuration) {
+        this.hostname = configuration.hostname;
+        this.port = configuration.port;
+        this.databaseName = configuration.databaseName;
+    };
+    /** Save form data to an object */
+    InfluxDbFields.prototype.save = function () {
+        return {
+            hostname: this.hostname,
+            port: this.port,
+            databaseName: this.databaseName
+        };
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], InfluxDbFields.prototype, "readonly", void 0);
+    InfluxDbFields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], VFlex: lib_["VFlex"] },
+            validations: {
+                hostname: {
+                    required: validators["required"]
+                },
+                port: {
+                    required: validators["required"]
+                },
+                databaseName: {
+                    required: validators["required"]
+                }
+            }
+        })
+    ], InfluxDbFields);
+    return InfluxDbFields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var InfluxDbFieldsvue_type_script_lang_ts_ = (InfluxDbFieldsvue_type_script_lang_ts_InfluxDbFields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var influxdb_InfluxDbFieldsvue_type_script_lang_ts_ = (InfluxDbFieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue
+
+
+
+
+
+/* normalize component */
+
+var InfluxDbFields_component = normalizeComponent(
+  influxdb_InfluxDbFieldsvue_type_script_lang_ts_,
+  InfluxDbFieldsvue_type_template_id_692d1601_render,
+  InfluxDbFieldsvue_type_template_id_692d1601_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var influxdb_InfluxDbFields = (InfluxDbFields_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=template&id=5cea9d8b&scoped=true&
+var NoFieldsvue_type_template_id_5cea9d8b_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"width":"100%"},attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This database type is not currently supported.")])],1)}
+var NoFieldsvue_type_template_id_5cea9d8b_scoped_true_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=template&id=5cea9d8b&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=script&lang=ts&
+
+
+
+
+var NoFieldsvue_type_script_lang_ts_NoFields = /** @class */ (function (_super) {
+    __extends(NoFields, _super);
+    function NoFields() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /** Reset section content */
+    NoFields.prototype.reset = function () {
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    NoFields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
+    NoFields.prototype.load = function (configuration) { };
+    /** Save form data to an object */
+    NoFields.prototype.save = function () {
+        return {};
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], NoFields.prototype, "readonly", void 0);
+    NoFields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { VCard: lib_["VCard"], VCardText: lib_["VCardText"] },
+            validations: {}
+        })
+    ], NoFields);
+    return NoFields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var NoFieldsvue_type_script_lang_ts_ = (NoFieldsvue_type_script_lang_ts_NoFields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_NoFieldsvue_type_script_lang_ts_ = (NoFieldsvue_type_script_lang_ts_); 
+// EXTERNAL MODULE: ./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=style&index=0&id=5cea9d8b&scoped=true&lang=css&
+var NoFieldsvue_type_style_index_0_id_5cea9d8b_scoped_true_lang_css_ = __webpack_require__("cb38");
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoFields.vue
+
+
+
+
+
+
+/* normalize component */
+
+var NoFields_component = normalizeComponent(
+  datastore_NoFieldsvue_type_script_lang_ts_,
+  NoFieldsvue_type_template_id_5cea9d8b_scoped_true_render,
+  NoFieldsvue_type_template_id_5cea9d8b_scoped_true_staticRenderFns,
+  false,
+  null,
+  "5cea9d8b",
+  null
+  
+)
+
+/* harmony default export */ var datastore_NoFields = (NoFields_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+
+
+var TsDatastoreDialogvue_type_script_lang_ts_TsDatastoreDialog = /** @class */ (function (_super) {
+    __extends(TsDatastoreDialog, _super);
+    function TsDatastoreDialog() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.scope = 0;
+        _this.reference = null;
+        _this.type = "warp10";
+        /** List of supported database types */
+        _this.databaseTypes = [
+            {
+                text: "Warp 10",
+                value: "warp10"
+            },
+            {
+                text: "InfluxDB",
+                value: "influxdb"
+            }
+        ];
+        return _this;
+    }
+    Object.defineProperty(TsDatastoreDialog.prototype, "details", {
+        /** Get displayed summary panel */
+        get: function () {
+            if (this.isWarp10) {
+                return this.warp10;
+            }
+            else if (this.isInfluxDB) {
+                return this.influxdb;
+            }
+            else {
+                return this.unknown;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TsDatastoreDialog.prototype.onScopeChanged = function () {
+        if (!this.isLocalScope) {
+            if (!this.reference) {
+                var refs = this.globalDatabases;
+                if (refs.length) {
+                    this.reference = refs[0].value;
+                }
+            }
+        }
+        this.reloadDetails();
+    };
+    TsDatastoreDialog.prototype.onReferenceChanged = function () {
+        this.reloadDetails();
+    };
+    Object.defineProperty(TsDatastoreDialog.prototype, "icon", {
+        /** Get icon for dialog */
+        get: function () {
+            return external_sitewhere_ide_common_["NavigationIcon"].Datastore;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "isLocalScope", {
+        /** Indicates if local scope is chosen */
+        get: function () {
+            return this.scope == 0;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "isGlobalScope", {
+        /** Indicates if global scope is chosen */
+        get: function () {
+            return this.scope == 1;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "timeSeriesConfigurations", {
+        /** Global time series configurations */
+        get: function () {
+            return this.instance && this.instance.persistenceConfigurations
+                ? this.instance.persistenceConfigurations.timeSeriesConfigurations
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "globalDatabases", {
+        /** Get list of available global time series databases */
+        get: function () {
+            var databases = [];
+            if (this.timeSeriesConfigurations) {
+                var keys = Object.keys(this.timeSeriesConfigurations);
+                keys.forEach(function (key) {
+                    databases.push({ text: key, value: key });
+                });
+            }
+            return databases;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Find a referenced persistence configuration */
+    TsDatastoreDialog.prototype.findGlobalDefinition = function (reference) {
+        if (!this.timeSeriesConfigurations) {
+            return null;
+        }
+        var match = this.timeSeriesConfigurations[reference];
+        if (!match) {
+            return null;
+        }
+        return {
+            type: match.type,
+            configuration: match.configuration
+        };
+    };
+    /** Local or global datastore type */
+    TsDatastoreDialog.prototype.getDatastoreType = function () {
+        if (!this.isLocalScope && this.reference) {
+            var global = this.findGlobalDefinition(this.reference);
+            return global ? global.type : null;
+        }
+        return this.type;
+    };
+    /** Local or global datastore configuration */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    TsDatastoreDialog.prototype.getDatastoreConfiguration = function () {
+        if (this.isLocalScope) {
+            return this.configuration;
+        }
+        else if (this.reference) {
+            var global = this.findGlobalDefinition(this.reference);
+            return global ? global.configuration : {};
+        }
+        else {
+            throw new Error("Neither local nor reference!");
+        }
+    };
+    Object.defineProperty(TsDatastoreDialog.prototype, "isWarp10", {
+        /** Indicates whether database is Warp 10 */
+        get: function () {
+            var type = this.getDatastoreType();
+            return type == "warp10";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "isInfluxDB", {
+        /** Indicates whether database is InfluxDB */
+        get: function () {
+            var type = this.getDatastoreType();
+            return type == "influxdb";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreDialog.prototype, "isUnknown", {
+        /** Indicates if database type is unknown */
+        get: function () {
+            return !this.isWarp10 && !this.isInfluxDB;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Generate configuration from detail panel */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    TsDatastoreDialog.prototype.generateConfiguration = function () {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var configuration = {};
+        Object.assign(configuration, this.details.save());
+        return configuration;
+    };
+    /** Generate payload from UI data */
+    TsDatastoreDialog.prototype.generatePayload = function () {
+        if (this.scope == 1 && this.reference) {
+            return {
+                reference: this.reference
+            };
+        }
+        else {
+            /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+            var configuration = this.generateConfiguration();
+            return { type: this.type, configuration: configuration };
+        }
+    };
+    /** Reset dialog content to default */
+    TsDatastoreDialog.prototype.reset = function () {
+        if (this.details) {
+            this.details.reset();
+        }
+    };
+    /** Load data from an existing configuration */
+    TsDatastoreDialog.prototype.load = function (payload) {
+        this.reset();
+        this.type = payload.type || "warp10";
+        this.configuration =
+            payload.configuration || {};
+        this.reference = payload.reference;
+        this.scope = this.reference ? 1 : 0;
+        this.reloadDetails();
+    };
+    /** Reload details panel based on updated configuration */
+    TsDatastoreDialog.prototype.reloadDetails = function () {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var config = this.getDatastoreConfiguration();
+        if (this.details && config) {
+            this.details.load(config);
+        }
+    };
+    /** Called after create button is clicked */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
+    TsDatastoreDialog.prototype.onCreateClicked = function (e) {
+        if (!this.details.validate()) {
+            return;
+        }
+        var payload = this.generatePayload();
+        this.$emit("payload", payload);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreDialog.prototype, "instance", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreDialog.prototype, "title", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreDialog.prototype, "createLabel", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreDialog.prototype, "dialog", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreDialog.prototype, "warp10", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreDialog.prototype, "influxdb", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreDialog.prototype, "unknown", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Watch"])("scope")
+    ], TsDatastoreDialog.prototype, "onScopeChanged", null);
+    __decorate([
+        Object(external_vue_property_decorator_["Watch"])("reference")
+    ], TsDatastoreDialog.prototype, "onReferenceChanged", null);
+    TsDatastoreDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                BaseDialog: external_sitewhere_ide_components_["BaseDialog"],
+                DialogHeader: external_sitewhere_ide_components_["DialogHeader"],
+                VLayout: lib_["VLayout"],
+                VFlex: lib_["VFlex"],
+                VBtnToggle: lib_["VBtnToggle"],
+                VBtn: lib_["VBtn"],
+                VSelect: lib_["VSelect"],
+                VDivider: lib_["VDivider"],
+                Warp10Fields: warp10_Warp10Fields,
+                InfluxDbFields: influxdb_InfluxDbFields,
+                NoFields: datastore_NoFields
+            }
+        })
+    ], TsDatastoreDialog);
+    return TsDatastoreDialog;
+}(external_sitewhere_ide_components_["DialogComponent"]));
+/* harmony default export */ var TsDatastoreDialogvue_type_script_lang_ts_ = (TsDatastoreDialogvue_type_script_lang_ts_TsDatastoreDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_TsDatastoreDialogvue_type_script_lang_ts_ = (TsDatastoreDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var TsDatastoreDialog_component = normalizeComponent(
+  datastore_TsDatastoreDialogvue_type_script_lang_ts_,
+  TsDatastoreDialogvue_type_template_id_2e77d89c_render,
+  TsDatastoreDialogvue_type_template_id_2e77d89c_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var datastore_TsDatastoreDialog = (TsDatastoreDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+var TsDatastoreCreateDialogvue_type_script_lang_ts_TsDatastoreCreateDialog = /** @class */ (function (_super) {
+    __extends(TsDatastoreCreateDialog, _super);
+    function TsDatastoreCreateDialog() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.idsInUse = [];
+        return _this;
+    }
+    /** Emit payload */
+    TsDatastoreCreateDialog.prototype.onPayload = function (payload) {
+        this.dialog.closeDialog();
+        this.$emit("create", payload);
+    };
+    /** Open dialog */
+    TsDatastoreCreateDialog.prototype.openDialog = function () {
+        this.dialog.reset();
+        this.dialog.openDialog();
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreCreateDialog.prototype, "instance", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreCreateDialog.prototype, "dialog", void 0);
+    TsDatastoreCreateDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                TsDatastoreDialog: datastore_TsDatastoreDialog
+            }
+        })
+    ], TsDatastoreCreateDialog);
+    return TsDatastoreCreateDialog;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var TsDatastoreCreateDialogvue_type_script_lang_ts_ = (TsDatastoreCreateDialogvue_type_script_lang_ts_TsDatastoreCreateDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_TsDatastoreCreateDialogvue_type_script_lang_ts_ = (TsDatastoreCreateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var TsDatastoreCreateDialog_component = normalizeComponent(
+  datastore_TsDatastoreCreateDialogvue_type_script_lang_ts_,
+  TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_render,
+  TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var datastore_TsDatastoreCreateDialog = (TsDatastoreCreateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=template&id=6781a004&
+var TsDatastoreUpdateDialogvue_type_template_id_6781a004_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ts-datastore-dialog',{ref:"dialog",attrs:{"title":"Update Time Series Datastore","createLabel":"Update","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
+var TsDatastoreUpdateDialogvue_type_template_id_6781a004_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=template&id=6781a004&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+var TsDatastoreUpdateDialogvue_type_script_lang_ts_TsDatastoreUpdateDialog = /** @class */ (function (_super) {
+    __extends(TsDatastoreUpdateDialog, _super);
+    function TsDatastoreUpdateDialog() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /** Emit payload */
+    TsDatastoreUpdateDialog.prototype.onPayload = function (definition) {
+        this.dialog.closeDialog();
+        this.$emit("update", definition);
+    };
+    /** Open dialog */
+    TsDatastoreUpdateDialog.prototype.openDialog = function (definition) {
+        this.dialog.openDialog();
+        this.dialog.load(definition);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreUpdateDialog.prototype, "instance", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreUpdateDialog.prototype, "dialog", void 0);
+    TsDatastoreUpdateDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                TsDatastoreDialog: datastore_TsDatastoreDialog
+            }
+        })
+    ], TsDatastoreUpdateDialog);
+    return TsDatastoreUpdateDialog;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var TsDatastoreUpdateDialogvue_type_script_lang_ts_ = (TsDatastoreUpdateDialogvue_type_script_lang_ts_TsDatastoreUpdateDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_TsDatastoreUpdateDialogvue_type_script_lang_ts_ = (TsDatastoreUpdateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var TsDatastoreUpdateDialog_component = normalizeComponent(
+  datastore_TsDatastoreUpdateDialogvue_type_script_lang_ts_,
+  TsDatastoreUpdateDialogvue_type_template_id_6781a004_render,
+  TsDatastoreUpdateDialogvue_type_template_id_6781a004_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var datastore_TsDatastoreUpdateDialog = (TsDatastoreUpdateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=template&id=04d59c36&
+var Warp10Summaryvue_type_template_id_04d59c36_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"Warp 10"}}),_c('content-field',{attrs:{"alt":true,"name":"hostname","value":"hostname"}}),_c('content-field',{attrs:{"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"alt":true,"name":"application","value":"application"}}),_c('content-field',{attrs:{"name":"tokenSecret","value":_vm.tokenSecret}})],1)}
+var Warp10Summaryvue_type_template_id_04d59c36_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=template&id=04d59c36&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var Warp10Summaryvue_type_script_lang_ts_Warp10Summary = /** @class */ (function (_super) {
+    __extends(Warp10Summary, _super);
+    function Warp10Summary() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(Warp10Summary.prototype, "hostname", {
+        /** Hostname */
+        get: function () {
+            return this.configuration ? this.configuration.hostname : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Warp10Summary.prototype, "port", {
+        /** Port */
+        get: function () {
+            return this.configuration ? this.configuration.port : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Warp10Summary.prototype, "application", {
+        /** Application */
+        get: function () {
+            return this.configuration ? this.configuration.application : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Warp10Summary.prototype, "tokenSecret", {
+        /** Token secret */
+        get: function () {
+            return this.configuration ? this.configuration.tokenSecret : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], Warp10Summary.prototype, "configuration", void 0);
+    Warp10Summary = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { VCard: lib_["VCard"], ContentField: external_sitewhere_ide_components_["ContentField"] }
+        })
+    ], Warp10Summary);
+    return Warp10Summary;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var Warp10Summaryvue_type_script_lang_ts_ = (Warp10Summaryvue_type_script_lang_ts_Warp10Summary);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var warp10_Warp10Summaryvue_type_script_lang_ts_ = (Warp10Summaryvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue
+
+
+
+
+
+/* normalize component */
+
+var Warp10Summary_component = normalizeComponent(
+  warp10_Warp10Summaryvue_type_script_lang_ts_,
+  Warp10Summaryvue_type_template_id_04d59c36_render,
+  Warp10Summaryvue_type_template_id_04d59c36_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var warp10_Warp10Summary = (Warp10Summary_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=template&id=79d36974&
+var InfluxDbSummaryvue_type_template_id_79d36974_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"InfluxDB"}}),_c('content-field',{attrs:{"alt":true,"name":"hostname","value":_vm.hostname}}),_c('content-field',{attrs:{"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"alt":true,"name":"database name","value":_vm.databaseName}})],1)}
+var InfluxDbSummaryvue_type_template_id_79d36974_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=template&id=79d36974&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var InfluxDbSummaryvue_type_script_lang_ts_InfluxDbSummary = /** @class */ (function (_super) {
+    __extends(InfluxDbSummary, _super);
+    function InfluxDbSummary() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(InfluxDbSummary.prototype, "hostname", {
+        /** Hostname */
+        get: function () {
+            return this.configuration ? this.configuration.hostname : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(InfluxDbSummary.prototype, "port", {
+        /** Port */
+        get: function () {
+            return this.configuration ? this.configuration.port : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(InfluxDbSummary.prototype, "databaseName", {
+        /** Application */
+        get: function () {
+            return this.configuration ? this.configuration.databaseName : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], InfluxDbSummary.prototype, "configuration", void 0);
+    InfluxDbSummary = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { VCard: lib_["VCard"], ContentField: external_sitewhere_ide_components_["ContentField"] }
+        })
+    ], InfluxDbSummary);
+    return InfluxDbSummary;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var InfluxDbSummaryvue_type_script_lang_ts_ = (InfluxDbSummaryvue_type_script_lang_ts_InfluxDbSummary);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var influxdb_InfluxDbSummaryvue_type_script_lang_ts_ = (InfluxDbSummaryvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue
+
+
+
+
+
+/* normalize component */
+
+var InfluxDbSummary_component = normalizeComponent(
+  influxdb_InfluxDbSummaryvue_type_script_lang_ts_,
+  InfluxDbSummaryvue_type_template_id_79d36974_render,
+  InfluxDbSummaryvue_type_template_id_79d36974_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var influxdb_InfluxDbSummary = (InfluxDbSummary_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=template&id=50523800&
+var NoSummaryvue_type_template_id_50523800_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"unknown","value":"Database type is unknown"}})],1)}
+var NoSummaryvue_type_template_id_50523800_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=template&id=50523800&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var NoSummaryvue_type_script_lang_ts_NoSummary = /** @class */ (function (_super) {
+    __extends(NoSummary, _super);
+    function NoSummary() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NoSummary = __decorate([
+        Object(external_vue_property_decorator_["Component"])({ components: { VCard: lib_["VCard"], ContentField: external_sitewhere_ide_components_["ContentField"] } })
+    ], NoSummary);
+    return NoSummary;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var NoSummaryvue_type_script_lang_ts_ = (NoSummaryvue_type_script_lang_ts_NoSummary);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_NoSummaryvue_type_script_lang_ts_ = (NoSummaryvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/NoSummary.vue
+
+
+
+
+
+/* normalize component */
+
+var NoSummary_component = normalizeComponent(
+  datastore_NoSummaryvue_type_script_lang_ts_,
+  NoSummaryvue_type_template_id_50523800_render,
+  NoSummaryvue_type_template_id_50523800_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var datastore_NoSummary = (NoSummary_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+
+
+
+
+var TsDatastoreSelectorvue_type_script_lang_ts_TsDatastoreSelector = /** @class */ (function (_super) {
+    __extends(TsDatastoreSelector, _super);
+    function TsDatastoreSelector() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(TsDatastoreSelector.prototype, "summary", {
+        /** Get displayed summary panel */
+        get: function () {
+            if (this.isWarp10) {
+                return this.warp10;
+            }
+            else if (this.isInfluxDB) {
+                return this.influxdb;
+            }
+            else {
+                return this.unknown;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "timeSeriesConfigurations", {
+        /** Global time series configurations */
+        get: function () {
+            return this.instance && this.instance.persistenceConfigurations
+                ? this.instance.persistenceConfigurations.timeSeriesConfigurations
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "datastoreReference", {
+        /** Get reference name */
+        get: function () {
+            return this.datastore
+                ? this.datastore.reference
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "datastoreType", {
+        /** Local or global datastore type */
+        get: function () {
+            var reference = this.datastoreReference;
+            if (reference) {
+                var global = this.findGlobalDefinition(reference);
+                return global ? global.type : null;
+            }
+            return this.datastore
+                ? this.datastore.type
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "configuration", {
+        /** Local or global datastore configuration */
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        get: function () {
+            var reference = this.datastoreReference;
+            if (reference) {
+                var global = this.findGlobalDefinition(reference);
+                return global ? global.configuration : null;
+            }
+            return this.datastore
+                ? this.datastore.configuration
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "isWarp10", {
+        /** Warp 10 datastore */
+        get: function () {
+            return this.datastoreType ? this.datastoreType == "warp10" : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "isInfluxDB", {
+        /** InfluxDB datastore */
+        get: function () {
+            return this.datastoreType ? this.datastoreType == "influxdb" : false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TsDatastoreSelector.prototype, "isUnknown", {
+        /** Unknown datastore */
+        get: function () {
+            return !this.isWarp10 && !this.isInfluxDB;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Find a referenced persistence configuration */
+    TsDatastoreSelector.prototype.findGlobalDefinition = function (reference) {
+        if (!this.timeSeriesConfigurations) {
+            return null;
+        }
+        var match = this.timeSeriesConfigurations[reference];
+        if (!match) {
+            return null;
+        }
+        return {
+            type: match.type,
+            configuration: match.configuration
+        };
+    };
+    /** Add datastore */
+    TsDatastoreSelector.prototype.onAddDatastore = function () {
+        this.create.openDialog();
+    };
+    /** Called to create datastore based on UI data */
+    TsDatastoreSelector.prototype.onDatastoreCreate = function (definition) {
+        this.$emit("create", definition);
+    };
+    /** Update datastore */
+    TsDatastoreSelector.prototype.onUpdateDatastore = function () {
+        this.update.openDialog(this.datastore);
+    };
+    /** Called to update datastore based on UI data */
+    TsDatastoreSelector.prototype.onDatastoreUpdate = function (definition) {
+        this.$emit("update", definition);
+    };
+    /** Unset datastore */
+    TsDatastoreSelector.prototype.onUnsetDatastore = function () {
+        this.$emit("unset");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreSelector.prototype, "datastore", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], TsDatastoreSelector.prototype, "instance", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreSelector.prototype, "create", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreSelector.prototype, "update", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreSelector.prototype, "warp10", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreSelector.prototype, "influxdb", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], TsDatastoreSelector.prototype, "unknown", void 0);
+    TsDatastoreSelector = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                VCard: lib_["VCard"],
+                VIcon: lib_["VIcon"],
+                ContentLink: external_sitewhere_ide_components_["ContentLink"],
+                ContentWarning: external_sitewhere_ide_components_["ContentWarning"],
+                TsDatastoreCreateDialog: datastore_TsDatastoreCreateDialog,
+                TsDatastoreUpdateDialog: datastore_TsDatastoreUpdateDialog,
+                Warp10Summary: warp10_Warp10Summary,
+                InfluxDbSummary: influxdb_InfluxDbSummary,
+                NoSummary: datastore_NoSummary
+            }
+        })
+    ], TsDatastoreSelector);
+    return TsDatastoreSelector;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var TsDatastoreSelectorvue_type_script_lang_ts_ = (TsDatastoreSelectorvue_type_script_lang_ts_TsDatastoreSelector);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var datastore_TsDatastoreSelectorvue_type_script_lang_ts_ = (TsDatastoreSelectorvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue
+
+
+
+
+
+/* normalize component */
+
+var TsDatastoreSelector_component = normalizeComponent(
+  datastore_TsDatastoreSelectorvue_type_script_lang_ts_,
+  TsDatastoreSelectorvue_type_template_id_1544e2a1_render,
+  TsDatastoreSelectorvue_type_template_id_1544e2a1_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var datastore_TsDatastoreSelector = (TsDatastoreSelector_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=775757e0&
 var AssetManagementPluginvue_type_template_id_775757e0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Asset Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
 var AssetManagementPluginvue_type_template_id_775757e0_staticRenderFns = []
@@ -6883,6 +7922,104 @@ var DeviceStatePlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicestate_DeviceStatePlugin = (DeviceStatePlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=template&id=0a37c152&
+var EventManagementPluginvue_type_template_id_0a37c152_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Event Management Datastore"}},[_c('ts-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
+var EventManagementPluginvue_type_template_id_0a37c152_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=template&id=0a37c152&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+var EventManagementPluginvue_type_script_lang_ts_EventManagementPlugin = /** @class */ (function (_super) {
+    __extends(EventManagementPlugin, _super);
+    function EventManagementPlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(EventManagementPlugin.prototype, "eventManagement", {
+        /** Get tenant configuration for event management */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EventManagementPlugin.prototype, "instanceManagement", {
+        /** Get instance configuraton information */
+        get: function () {
+            return this.configuration ? this.configuration.instanceConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EventManagementPlugin.prototype, "datastore", {
+        /** Get datastore definition */
+        get: function () {
+            return this.eventManagement ? this.eventManagement.datastore : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Create new datastore */
+    EventManagementPlugin.prototype.onCreateDatastore = function (definition) {
+        this.eventManagement.datastore = definition;
+    };
+    /** Update datastore */
+    EventManagementPlugin.prototype.onUpdateDatastore = function (definition) {
+        this.eventManagement.datastore = definition;
+        this.markDirty();
+    };
+    /** Unset the datastore */
+    EventManagementPlugin.prototype.onUnsetDatastore = function () {
+        if (this.eventManagement) {
+            /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+            this.eventManagement.datastore = null;
+            this.markDirty();
+        }
+    };
+    /** Mark data as having been updated */
+    EventManagementPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], EventManagementPlugin.prototype, "configuration", void 0);
+    EventManagementPlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, TsDatastoreSelector: datastore_TsDatastoreSelector }
+        })
+    ], EventManagementPlugin);
+    return EventManagementPlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var EventManagementPluginvue_type_script_lang_ts_ = (EventManagementPluginvue_type_script_lang_ts_EventManagementPlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var eventmanagement_EventManagementPluginvue_type_script_lang_ts_ = (EventManagementPluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var EventManagementPlugin_component = normalizeComponent(
+  eventmanagement_EventManagementPluginvue_type_script_lang_ts_,
+  EventManagementPluginvue_type_template_id_0a37c152_render,
+  EventManagementPluginvue_type_template_id_0a37c152_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var eventmanagement_EventManagementPlugin = (EventManagementPlugin_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 var EventSourcesPluginvue_type_template_id_5f6048b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('event-sources-table',{attrs:{"tenantId":_vm.tenantId,"eventSources":_vm.eventSources},on:{"create":_vm.onEventSourceCreated,"update":_vm.onEventSourceUpdated,"delete":_vm.onEventSourceDeleted}})],1)}
 var EventSourcesPluginvue_type_template_id_5f6048b3_staticRenderFns = []
@@ -10365,6 +11502,10 @@ var EventSourcesPlugin_component = normalizeComponent(
 
 
 
+
+
+
+
 /** Common */
 
 /** Form elements */
@@ -10405,6 +11546,21 @@ exports.push([module.i, ".flex-rows[data-v-e5693cf6]{display:flex;flex-direction
 // Exports
 module.exports = exports;
 
+
+/***/ }),
+
+/***/ "ff99":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("8783");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("6f5b31fb", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ })
 

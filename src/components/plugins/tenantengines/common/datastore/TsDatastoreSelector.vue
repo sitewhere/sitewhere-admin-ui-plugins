@@ -5,7 +5,9 @@
         <v-icon small class="mr-2">fa-globe</v-icon>Configured globally as
         <strong>{{ datastoreReference }}</strong>.
       </v-card>
-      <warp-10-summary v-if="isWarp10" :configuration="configuration" />
+      <warp-10-summary v-show="isWarp10" ref="warp10" :configuration="configuration" />
+      <influx-db-summary v-show="isInfluxDB" ref="influxdb" :configuration="configuration" />
+      <no-summary v-show="isUnknown" ref="unknown" />
       <content-link
         class="mt-5 mb-2"
         icon="fa-edit"
@@ -49,6 +51,8 @@ import {
 import TsDatastoreCreateDialog from "./TsDatastoreCreateDialog.vue";
 import TsDatastoreUpdateDialog from "./TsDatastoreUpdateDialog.vue";
 import Warp10Summary from "./warp10/Warp10Summary.vue";
+import InfluxDbSummary from "./influxdb/InfluxDbSummary.vue";
+import NoSummary from "./NoSummary.vue";
 
 @Component({
   components: {
@@ -58,7 +62,9 @@ import Warp10Summary from "./warp10/Warp10Summary.vue";
     ContentWarning,
     TsDatastoreCreateDialog,
     TsDatastoreUpdateDialog,
-    Warp10Summary
+    Warp10Summary,
+    InfluxDbSummary,
+    NoSummary
   }
 })
 export default class TsDatastoreSelector extends Vue {
@@ -66,6 +72,21 @@ export default class TsDatastoreSelector extends Vue {
   @Prop() readonly instance!: IInstanceConfiguration;
   @Ref() readonly create!: TsDatastoreCreateDialog;
   @Ref() readonly update!: TsDatastoreUpdateDialog;
+
+  @Ref() readonly warp10!: Warp10Summary;
+  @Ref() readonly influxdb!: InfluxDbSummary;
+  @Ref() readonly unknown!: NoSummary;
+
+  /** Get displayed summary panel */
+  get summary(): Vue {
+    if (this.isWarp10) {
+      return this.warp10;
+    } else if (this.isInfluxDB) {
+      return this.influxdb;
+    } else {
+      return this.unknown;
+    }
+  }
 
   /** Global time series configurations */
   get timeSeriesConfigurations(): ITimeSeriesConfigurationMap | null {
@@ -113,6 +134,16 @@ export default class TsDatastoreSelector extends Vue {
   /** Warp 10 datastore */
   get isWarp10(): boolean {
     return this.datastoreType ? this.datastoreType == "warp10" : false;
+  }
+
+  /** InfluxDB datastore */
+  get isInfluxDB(): boolean {
+    return this.datastoreType ? this.datastoreType == "influxdb" : false;
+  }
+
+  /** Unknown datastore */
+  get isUnknown(): boolean {
+    return !this.isWarp10 && !this.isInfluxDB;
   }
 
   /** Find a referenced persistence configuration */

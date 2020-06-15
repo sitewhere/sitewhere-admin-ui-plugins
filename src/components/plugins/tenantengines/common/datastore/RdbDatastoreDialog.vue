@@ -106,7 +106,7 @@ export default class RdbDatastoreDialog extends DialogComponent<
   @Prop() readonly title!: string;
   @Prop() readonly createLabel!: string;
   @Ref() readonly dialog!: BaseDialog;
-  @Ref() readonly details!: Postgres95Fields;
+  @Ref() readonly details!: DialogSection;
 
   scope = 0;
   reference: string | null = null;
@@ -121,16 +121,6 @@ export default class RdbDatastoreDialog extends DialogComponent<
       value: "postgres95"
     }
   ];
-
-  /** Convert to dialog */
-  get dialogComponent(): BaseDialog {
-    return this.dialog as BaseDialog;
-  }
-
-  /** Convert to dialog section */
-  get detailsSection(): DialogSection {
-    return this.details as DialogSection;
-  }
 
   @Watch("scope")
   onScopeChanged() {
@@ -236,7 +226,7 @@ export default class RdbDatastoreDialog extends DialogComponent<
   generateConfiguration(): any {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const configuration: any = {};
-    Object.assign(configuration, this.detailsSection.save());
+    Object.assign(configuration, this.details.save());
     return configuration;
   }
 
@@ -256,9 +246,8 @@ export default class RdbDatastoreDialog extends DialogComponent<
   /** Reset dialog content to default */
   reset() {
     if (this.details) {
-      this.detailsSection.reset();
+      this.details.reset();
     }
-    this.dialogComponent.setActiveTab(0);
   }
 
   /** Load data from an existing configuration */
@@ -277,15 +266,14 @@ export default class RdbDatastoreDialog extends DialogComponent<
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     const config: any = this.getDatastoreConfiguration();
     if (this.details && config) {
-      this.detailsSection.load(config);
+      this.details.load(config);
     }
   }
 
   /** Called after create button is clicked */
   /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
   onCreateClicked(e: any) {
-    if (!this.detailsSection.validate()) {
-      this.dialogComponent.setActiveTab(0);
+    if (!this.details.validate()) {
       return;
     }
 

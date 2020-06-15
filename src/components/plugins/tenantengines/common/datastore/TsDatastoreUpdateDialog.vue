@@ -1,7 +1,7 @@
 <template>
   <ts-datastore-dialog
     ref="dialog"
-    title="Update Timeseries Datastore"
+    title="Update Time Series Datastore"
     createLabel="Update"
     :instance="instance"
     @payload="onPayload"

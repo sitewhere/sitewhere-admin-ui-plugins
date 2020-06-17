@@ -13,9 +13,10 @@ import DeviceRegistrationPlugin from "./components/plugins/tenantengines/devicer
 import DeviceStatePlugin from "./components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue";
 import EventManagementPlugin from "./components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue";
 import EventSourcesPlugin from "./components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue";
+import InboundProcessingPlugin from "./components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue";
 /** Common */
 export { TenantEnginePlugin, RdbDatastoreSelector, TsDatastoreSelector };
 /** Form elements */
 export { Postgres95Fields, Warp10Fields, InfluxDbFields, NoFields };
 /** Plugins */
-export { AssetManagementPlugin, BatchOperationsPlugin, CommandDeliveryPlugin, DeviceManagementPlugin, DeviceRegistrationPlugin, DeviceStatePlugin, EventManagementPlugin, EventSourcesPlugin };
+export { AssetManagementPlugin, BatchOperationsPlugin, CommandDeliveryPlugin, DeviceManagementPlugin, DeviceRegistrationPlugin, DeviceStatePlugin, EventManagementPlugin, EventSourcesPlugin, InboundProcessingPlugin };

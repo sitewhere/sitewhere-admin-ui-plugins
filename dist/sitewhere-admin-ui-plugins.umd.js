@@ -1765,6 +1765,7 @@ __webpack_require__.d(__webpack_exports__, "DeviceRegistrationPlugin", function(
 __webpack_require__.d(__webpack_exports__, "DeviceStatePlugin", function() { return /* reexport */ devicestate_DeviceStatePlugin; });
 __webpack_require__.d(__webpack_exports__, "EventManagementPlugin", function() { return /* reexport */ eventmanagement_EventManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "EventSourcesPlugin", function() { return /* reexport */ eventsources_EventSourcesPlugin; });
+__webpack_require__.d(__webpack_exports__, "InboundProcessingPlugin", function() { return /* reexport */ inboundprocessing_InboundProcessingPlugin; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -7607,12 +7608,12 @@ var DeviceManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicemanagement_DeviceManagementPlugin = (DeviceManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=e690caf2&
-var DeviceRegistrationPluginvue_type_template_id_e690caf2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-check","title":"Device Registration"}},[_c('section-overview',{attrs:{"title":"Automatic Registration"}},[_vm._v(" New devices may be automatically registered with the system if they provide a valid token for the given tenant. If new device registration is permitted, the devices may be assigned to assets, customers, or areas. ")]),_c('v-checkbox',{staticClass:"pt-1",attrs:{"dense":""},scopedSlots:_vm._u([{key:"label",fn:function(){return [_c('span',{staticClass:"body-2"},[_vm._v("Allow new device registration for this tenant")])]},proxy:true}]),model:{value:(_vm.allowNewRegistrations),callback:function ($$v) {_vm.allowNewRegistrations=$$v},expression:"allowNewRegistrations"}}),_c('section-overview',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"title":"Defaults for New Devices"}},[_vm._v(" If registration requests for new devices do not provide metadata regarding aspects such as device type or preferred assignment information, the values may be automatically assigned. Choose default behavior below. ")]),_c('v-card',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"flat":"","width":"60%"}},[_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.deviceTypes,"checkboxTitle":"Use default device type if not provided","selectLabel":"Choose device type","selectTitle":"Choose a default device type for new devices","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.deviceTypeToken),callback:function ($$v) {_vm.deviceTypeToken=$$v},expression:"deviceTypeToken"}}),_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.customers,"checkboxTitle":"Use default customer if not provided","selectLabel":"Choose customer","selectTitle":"Choose a default customer for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.customerToken),callback:function ($$v) {_vm.customerToken=$$v},expression:"customerToken"}}),_c('optional-selection',{attrs:{"items":_vm.areas,"checkboxTitle":"Use default area if not provided","selectLabel":"Choose area","selectTitle":"Choose a default area for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.areaToken),callback:function ($$v) {_vm.areaToken=$$v},expression:"areaToken"}})],1)],1)],1)}
-var DeviceRegistrationPluginvue_type_template_id_e690caf2_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=044d03d1&
+var DeviceRegistrationPluginvue_type_template_id_044d03d1_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-check","title":"Device Registration"}},[_c('section-overview',{attrs:{"title":"Automatic Registration"}},[_vm._v(" New devices may be automatically registered with the system if they provide a valid token for the given tenant. If new device registration is permitted, the devices may be assigned to assets, customers, or areas. ")]),_c('v-checkbox',{staticClass:"pt-1",attrs:{"dense":""},scopedSlots:_vm._u([{key:"label",fn:function(){return [_c('span',{staticClass:"body-2"},[_vm._v("Allow new device registration for this tenant")])]},proxy:true}]),model:{value:(_vm.allowNewRegistrations),callback:function ($$v) {_vm.allowNewRegistrations=$$v},expression:"allowNewRegistrations"}}),_c('section-overview',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"title":"Defaults for New Devices"}},[_vm._v(" If registration requests for new devices do not provide metadata regarding aspects such as device type or preferred assignment information, the values may be automatically assigned. Choose default behavior below. ")]),_c('v-card',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"flat":"","width":"60%"}},[_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.deviceTypes,"checkboxTitle":"Use default device type if not provided","selectLabel":"Choose device type","selectTitle":"Choose a default device type for new devices","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.deviceTypeToken),callback:function ($$v) {_vm.deviceTypeToken=$$v},expression:"deviceTypeToken"}}),_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.customers,"checkboxTitle":"Use default customer if not provided","selectLabel":"Choose customer","selectTitle":"Choose a default customer for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.customerToken),callback:function ($$v) {_vm.customerToken=$$v},expression:"customerToken"}}),_c('optional-selection',{attrs:{"items":_vm.areas,"checkboxTitle":"Use default area if not provided","selectLabel":"Choose area","selectTitle":"Choose a default area for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.areaToken),callback:function ($$v) {_vm.areaToken=$$v},expression:"areaToken"}})],1)],1)],1)}
+var DeviceRegistrationPluginvue_type_template_id_044d03d1_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=e690caf2&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=044d03d1&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=script&lang=ts&
 
@@ -7622,9 +7623,9 @@ var DeviceRegistrationPluginvue_type_template_id_e690caf2_staticRenderFns = []
 
 
 
-var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /** @class */ (function (_super) {
-    __extends(DeviceManagementPlugin, _super);
-    function DeviceManagementPlugin() {
+var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceRegsitrationPlugin = /** @class */ (function (_super) {
+    __extends(DeviceRegsitrationPlugin, _super);
+    function DeviceRegsitrationPlugin() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.allowNewRegistrations = false;
         _this.deviceTypes = [];
@@ -7635,7 +7636,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         _this.areaToken = null;
         return _this;
     }
-    Object.defineProperty(DeviceManagementPlugin.prototype, "deviceRegistration", {
+    Object.defineProperty(DeviceRegsitrationPlugin.prototype, "deviceRegistration", {
         /** Get tenant configuration for device registration */
         get: function () {
             return this.configuration ? this.configuration.tenantConfiguration : null;
@@ -7643,7 +7644,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(DeviceManagementPlugin.prototype, "instanceManagement", {
+    Object.defineProperty(DeviceRegsitrationPlugin.prototype, "instanceManagement", {
         /** Get instance configuraton information */
         get: function () {
             return this.configuration ? this.configuration.instanceConfiguration : null;
@@ -7652,7 +7653,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         configurable: true
     });
     /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-    DeviceManagementPlugin.prototype.onConfigurationUpdated = function (updated) {
+    DeviceRegsitrationPlugin.prototype.onConfigurationUpdated = function (updated) {
         // Load data for dropdowns.
         this.loadDeviceTypes();
         this.loadCustomers();
@@ -7665,24 +7666,24 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         this.customerToken = this.deviceRegistration.assignmentDefaults.defaultCustomerToken;
         this.areaToken = this.deviceRegistration.assignmentDefaults.defaultAreaToken;
     };
-    DeviceManagementPlugin.prototype.onAllowNewRegistrationsUpdate = function (updated) {
+    DeviceRegsitrationPlugin.prototype.onAllowNewRegistrationsUpdate = function (updated) {
         this.deviceRegistration.allowNewDevices = updated;
         this.markDirty();
     };
-    DeviceManagementPlugin.prototype.onDeviceTypeTokenUpdated = function (updated) {
+    DeviceRegsitrationPlugin.prototype.onDeviceTypeTokenUpdated = function (updated) {
         this.deviceRegistration.assignmentDefaults.defaultDeviceTypeToken = updated;
         this.markDirty();
     };
-    DeviceManagementPlugin.prototype.onCustomerTokenUpdated = function (updated) {
+    DeviceRegsitrationPlugin.prototype.onCustomerTokenUpdated = function (updated) {
         this.deviceRegistration.assignmentDefaults.defaultCustomerToken = updated;
         this.markDirty();
     };
-    DeviceManagementPlugin.prototype.onAreaTokenUpdated = function (updated) {
+    DeviceRegsitrationPlugin.prototype.onAreaTokenUpdated = function (updated) {
         this.deviceRegistration.assignmentDefaults.defaultAreaToken = updated;
         this.markDirty();
     };
     /** Assure assignment defaults section if null */
-    DeviceManagementPlugin.prototype.assureAssignmentDefaults = function () {
+    DeviceRegsitrationPlugin.prototype.assureAssignmentDefaults = function () {
         if (!this.deviceRegistration.assignmentDefaults) {
             this.deviceRegistration.assignmentDefaults = {
                 defaultDeviceTypeToken: null,
@@ -7692,7 +7693,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         }
     };
     /** Load device types asynchronously */
-    DeviceManagementPlugin.prototype.loadDeviceTypes = function () {
+    DeviceRegsitrationPlugin.prototype.loadDeviceTypes = function () {
         return __awaiter(this, void 0, void 0, function () {
             var criteria, format, response, err_1;
             return __generator(this, function (_a) {
@@ -7719,7 +7720,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         });
     };
     /** Load customers asynchronously */
-    DeviceManagementPlugin.prototype.loadCustomers = function () {
+    DeviceRegsitrationPlugin.prototype.loadCustomers = function () {
         return __awaiter(this, void 0, void 0, function () {
             var criteria, format, response, err_2;
             return __generator(this, function (_a) {
@@ -7746,7 +7747,7 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         });
     };
     /** Load areas asynchronously */
-    DeviceManagementPlugin.prototype.loadAreas = function () {
+    DeviceRegsitrationPlugin.prototype.loadAreas = function () {
         return __awaiter(this, void 0, void 0, function () {
             var criteria, format, response, err_3;
             return __generator(this, function (_a) {
@@ -7773,28 +7774,28 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
         });
     };
     /** Mark data as having been updated */
-    DeviceManagementPlugin.prototype.markDirty = function () {
+    DeviceRegsitrationPlugin.prototype.markDirty = function () {
         this.$emit("dirty");
     };
     __decorate([
         Object(external_vue_property_decorator_["Prop"])()
-    ], DeviceManagementPlugin.prototype, "configuration", void 0);
+    ], DeviceRegsitrationPlugin.prototype, "configuration", void 0);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("deviceRegistration", { immediate: true })
-    ], DeviceManagementPlugin.prototype, "onConfigurationUpdated", null);
+    ], DeviceRegsitrationPlugin.prototype, "onConfigurationUpdated", null);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("allowNewRegistrations")
-    ], DeviceManagementPlugin.prototype, "onAllowNewRegistrationsUpdate", null);
+    ], DeviceRegsitrationPlugin.prototype, "onAllowNewRegistrationsUpdate", null);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("deviceTypeToken")
-    ], DeviceManagementPlugin.prototype, "onDeviceTypeTokenUpdated", null);
+    ], DeviceRegsitrationPlugin.prototype, "onDeviceTypeTokenUpdated", null);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("customerToken")
-    ], DeviceManagementPlugin.prototype, "onCustomerTokenUpdated", null);
+    ], DeviceRegsitrationPlugin.prototype, "onCustomerTokenUpdated", null);
     __decorate([
         Object(external_vue_property_decorator_["Watch"])("areaToken")
-    ], DeviceManagementPlugin.prototype, "onAreaTokenUpdated", null);
-    DeviceManagementPlugin = __decorate([
+    ], DeviceRegsitrationPlugin.prototype, "onAreaTokenUpdated", null);
+    DeviceRegsitrationPlugin = __decorate([
         Object(external_vue_property_decorator_["Component"])({
             components: {
                 VCheckbox: lib_["VCheckbox"],
@@ -7806,10 +7807,10 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
                 OptionalSelection: external_sitewhere_ide_components_["OptionalSelection"]
             }
         })
-    ], DeviceManagementPlugin);
-    return DeviceManagementPlugin;
+    ], DeviceRegsitrationPlugin);
+    return DeviceRegsitrationPlugin;
 }(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
-/* harmony default export */ var DeviceRegistrationPluginvue_type_script_lang_ts_ = (DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin);
+/* harmony default export */ var DeviceRegistrationPluginvue_type_script_lang_ts_ = (DeviceRegistrationPluginvue_type_script_lang_ts_DeviceRegsitrationPlugin);
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=script&lang=ts&
  /* harmony default export */ var deviceregistration_DeviceRegistrationPluginvue_type_script_lang_ts_ = (DeviceRegistrationPluginvue_type_script_lang_ts_); 
@@ -7823,8 +7824,8 @@ var DeviceRegistrationPluginvue_type_script_lang_ts_DeviceManagementPlugin = /**
 
 var DeviceRegistrationPlugin_component = normalizeComponent(
   deviceregistration_DeviceRegistrationPluginvue_type_script_lang_ts_,
-  DeviceRegistrationPluginvue_type_template_id_e690caf2_render,
-  DeviceRegistrationPluginvue_type_template_id_e690caf2_staticRenderFns,
+  DeviceRegistrationPluginvue_type_template_id_044d03d1_render,
+  DeviceRegistrationPluginvue_type_template_id_044d03d1_staticRenderFns,
   false,
   null,
   null,
@@ -11499,7 +11500,95 @@ var EventSourcesPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_EventSourcesPlugin = (EventSourcesPlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"379e6ef2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=template&id=361bcc95&
+var InboundProcessingPluginvue_type_template_id_361bcc95_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-cogs","title":"Inbound Processing"}},[_c('section-overview',{staticClass:"mb-5",attrs:{"title":"Configure Inbound Processing Settings"}},[_vm._v(" The following settings may be adjusted to configure how inbound decoded events are processed and forwarded to other microservices. ")]),_c('v-card',{staticStyle:{"width":"50%"},attrs:{"tile":"","flat":"","color":"transparent"}},[_c('v-text-field',{attrs:{"label":"Processing thread count"},model:{value:(_vm.processingThreadCount),callback:function ($$v) {_vm.processingThreadCount=$$v},expression:"processingThreadCount"}})],1)],1)],1)}
+var InboundProcessingPluginvue_type_template_id_361bcc95_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=template&id=361bcc95&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+var InboundProcessingPluginvue_type_script_lang_ts_InboundProcessingPlugin = /** @class */ (function (_super) {
+    __extends(InboundProcessingPlugin, _super);
+    function InboundProcessingPlugin() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.processingThreadCount = 10;
+        return _this;
+    }
+    Object.defineProperty(InboundProcessingPlugin.prototype, "inboundProcessing", {
+        /** Get tenant configuration for inbound processing */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    InboundProcessingPlugin.prototype.onConfigurationUpdated = function (updated) {
+        this.processingThreadCount = updated.processingThreadCount;
+    };
+    InboundProcessingPlugin.prototype.onProcessingThreadCountUpdated = function (updated) {
+        this.inboundProcessing.processingThreadCount = updated;
+        this.markDirty();
+    };
+    /** Mark data as having been updated */
+    InboundProcessingPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], InboundProcessingPlugin.prototype, "configuration", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Watch"])("inboundProcessing", { immediate: true })
+    ], InboundProcessingPlugin.prototype, "onConfigurationUpdated", null);
+    __decorate([
+        Object(external_vue_property_decorator_["Watch"])("processingThreadCount")
+    ], InboundProcessingPlugin.prototype, "onProcessingThreadCountUpdated", null);
+    InboundProcessingPlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                VCard: lib_["VCard"],
+                VTextField: lib_["VTextField"],
+                ContentSection: external_sitewhere_ide_components_["ContentSection"],
+                TenantEnginePlugin: tenantengines_TenantEnginePlugin,
+                SectionOverview: external_sitewhere_ide_components_["SectionOverview"]
+            }
+        })
+    ], InboundProcessingPlugin);
+    return InboundProcessingPlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var InboundProcessingPluginvue_type_script_lang_ts_ = (InboundProcessingPluginvue_type_script_lang_ts_InboundProcessingPlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var inboundprocessing_InboundProcessingPluginvue_type_script_lang_ts_ = (InboundProcessingPluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var InboundProcessingPlugin_component = normalizeComponent(
+  inboundprocessing_InboundProcessingPluginvue_type_script_lang_ts_,
+  InboundProcessingPluginvue_type_template_id_361bcc95_render,
+  InboundProcessingPluginvue_type_template_id_361bcc95_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var inboundprocessing_InboundProcessingPlugin = (InboundProcessingPlugin_component.exports);
 // CONCATENATED MODULE: ./src/index.ts
+
 
 
 

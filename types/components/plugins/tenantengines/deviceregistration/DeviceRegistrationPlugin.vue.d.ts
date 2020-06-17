@@ -2,7 +2,7 @@ import Vue from "vue";
 import { ITenantEngineConfiguration } from "sitewhere-rest-api";
 import { IDeviceRegistrationConfiguration } from "sitewhere-configuration-model";
 import { IInstanceConfiguration, IDeviceType, ICustomer, IArea } from "sitewhere-rest-api";
-export default class DeviceManagementPlugin extends Vue {
+export default class DeviceRegsitrationPlugin extends Vue {
     readonly configuration: ITenantEngineConfiguration;
     allowNewRegistrations: boolean;
     deviceTypes: IDeviceType[];

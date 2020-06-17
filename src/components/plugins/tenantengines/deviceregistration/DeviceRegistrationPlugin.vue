@@ -103,7 +103,7 @@ import {
     OptionalSelection
   }
 })
-export default class DeviceManagementPlugin extends Vue {
+export default class DeviceRegsitrationPlugin extends Vue {
   @Prop() readonly configuration!: ITenantEngineConfiguration;
 
   allowNewRegistrations = false;

@@ -6483,10 +6483,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sitewhere-configuration-model@3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/sitewhere-configuration-model/-/sitewhere-configuration-model-3.0.0-beta.1.tgz#9ad0ab6d34b5fe26aa18573895c820478c0d6783"
-  integrity sha512-c7K9h10jBpR8nY5wL9UbUvl51SJ4ykzphZMXiMMy13HltTXlES4cdzuqfwDfFxVEHAdTUf9GJW/Hrg1B7ALntQ==
+sitewhere-configuration-model@3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/sitewhere-configuration-model/-/sitewhere-configuration-model-3.0.0-beta.2.tgz#e3d5c6957ef4c0f7a8d81dbb84c4e5b6e131cc26"
+  integrity sha512-/lbN7Q/vHpvQYZ9Z4rl5sTjR5VqxQ2bCiVitInVnczP1AmLCkWhxEijjzGuSkHyOvrckJB7JrzkxxJopHoqxpw==
 
 sitewhere-ide-common@3.0.0-beta.1:
   version "3.0.0-beta.1"
@@ -6497,10 +6497,10 @@ sitewhere-ide-common@3.0.0-beta.1:
     moment "^2.25.1"
     sitewhere-rest-api "3.0.0-beta.1"
 
-sitewhere-ide-components@3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.0-beta.1.tgz#08654a35c42fb1d2007cbc1396b81675eba5a115"
-  integrity sha512-hbQOGt9oHqn2to9N5v/WIT9Jk5EAwvGPpwAuMeCMXR5TnaEJA/KjwaAhQ1Mp0/z2GfuU0rB1CvFgmO5hR/TYhw==
+sitewhere-ide-components@3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.0-beta.2.tgz#61b33c0f141cd96ff148b960b456c76f3a37d638"
+  integrity sha512-m3uS15mhBmu8kXgp1Ey7soEniBdAWdaw25Ii9kxsD1Rxhgw9Kg5aEdxYo1EduurG9IPX7tqQTkRkQRGPhOUa9w==
   dependencies:
     axios "^0.19.2"
     sitewhere-ide-common "3.0.0-beta.1"

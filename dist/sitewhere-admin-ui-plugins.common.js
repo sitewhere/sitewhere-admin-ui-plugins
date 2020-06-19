@@ -1758,6 +1758,8 @@ __webpack_require__.d(__webpack_exports__, "EventManagementPlugin", function() {
 __webpack_require__.d(__webpack_exports__, "EventSourcesPlugin", function() { return /* reexport */ eventsources_EventSourcesPlugin; });
 __webpack_require__.d(__webpack_exports__, "InboundProcessingPlugin", function() { return /* reexport */ inboundprocessing_InboundProcessingPlugin; });
 __webpack_require__.d(__webpack_exports__, "LabelGenerationPlugin", function() { return /* reexport */ labelgeneration_LabelGenerationPlugin; });
+__webpack_require__.d(__webpack_exports__, "OutboundConnectorsPlugin", function() { return /* reexport */ outboundconnectors_OutboundConnectorsPlugin; });
+__webpack_require__.d(__webpack_exports__, "ScheduleManagementPlugin", function() { return /* reexport */ schedulemanagement_ScheduleManagementPlugin; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -1783,7 +1785,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/TenantEnginePlugin.vue?vue&type=template&id=e5693cf6&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"height":"100%"},attrs:{"flat":"","tile":""}},[_c('v-card-text',[_c('div',{staticClass:"flex-rows"},[(_vm.microservice && _vm.tenant)?_c('div',{staticClass:"plugin-header"},[_vm._t("header",[_c('page-header',{attrs:{"text":_vm.header}})])],2):_vm._e(),_c('div',{staticClass:"plugin-content"},[_vm._t("default")],2),_c('div',{staticClass:"plugin-footer"},[_vm._t("footer")],2)])]),_vm._t("dialogs")],2)}
 var staticRenderFns = []
 
@@ -2193,21 +2195,21 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var tenantengines_TenantEnginePlugin = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
 var RdbDatastoreSelectorvue_type_template_id_ad677c7e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),(_vm.isPostgres95)?_c('postgres-95-summary',{attrs:{"configuration":_vm.configuration}}):_vm._e(),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('rdb-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('rdb-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
 var RdbDatastoreSelectorvue_type_template_id_ad677c7e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreSelector.vue?vue&type=template&id=ad677c7e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
 var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Relational Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
 var RdbDatastoreCreateDialogvue_type_template_id_b392c5f0_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/RdbDatastoreCreateDialog.vue?vue&type=template&id=b392c5f0&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=2ddff97a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreDialog.vue?vue&type=template&id=2ddff97a&
 var RdbDatastoreDialogvue_type_template_id_2ddff97a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),(_vm.isPostgres95)?_c('postgres-95-fields',{ref:"details",attrs:{"readonly":_vm.isGlobalScope}}):_vm._e()],1)}
 var RdbDatastoreDialogvue_type_template_id_2ddff97a_staticRenderFns = []
 
@@ -2217,7 +2219,7 @@ var RdbDatastoreDialogvue_type_template_id_2ddff97a_staticRenderFns = []
 // EXTERNAL MODULE: external "sitewhere-ide-common"
 var external_sitewhere_ide_common_ = __webpack_require__("403e");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Fields.vue?vue&type=template&id=1a674a09&
 var Postgres95Fieldsvue_type_template_id_1a674a09_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of PostgreSQL server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for PostgreSQL server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Max Connections","title":"Maximum number of connections to server.","type":"number","icon":"fa-stream"},model:{value:(_vm.maxConnections),callback:function ($$v) {_vm.maxConnections=$$v},expression:"maxConnections"}},[(_vm.$v.maxConnections.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Max connections is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Username","title":"Username.","icon":"fa-user"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}},[(_vm.$v.username.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Username is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Password","title":"Password.","icon":"fa-lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}},[(_vm.$v.password.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Password is required.")]):_vm._e()])],1)],1)}
 var Postgres95Fieldsvue_type_template_id_1a674a09_staticRenderFns = []
 
@@ -2636,7 +2638,7 @@ var RdbDatastoreCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_RdbDatastoreCreateDialog = (RdbDatastoreCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=template&id=a1536d1c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/RdbDatastoreUpdateDialog.vue?vue&type=template&id=a1536d1c&
 var RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rdb-datastore-dialog',{ref:"dialog",attrs:{"title":"Update Relational Datastore","createLabel":"Update","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
 var RdbDatastoreUpdateDialogvue_type_template_id_a1536d1c_staticRenderFns = []
 
@@ -2702,7 +2704,7 @@ var RdbDatastoreUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_RdbDatastoreUpdateDialog = (RdbDatastoreUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=7c614893&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/postgres95/Postgres95Summary.vue?vue&type=template&id=7c614893&
 var Postgres95Summaryvue_type_template_id_7c614893_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"PostgreSQL"}}),_c('content-field',{attrs:{"alt":true,"name":"dialect","value":"postgres95"}}),_c('content-field',{attrs:{"name":"hostname","value":_vm.hostname}}),_c('content-field',{attrs:{"alt":true,"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"name":"username","value":_vm.username}}),_c('content-field',{attrs:{"alt":true,"name":"password","password":true,"value":_vm.password}}),_c('content-field',{attrs:{"name":"max connections","value":_vm.maxConnections}})],1)}
 var Postgres95Summaryvue_type_template_id_7c614893_staticRenderFns = []
 
@@ -2952,28 +2954,28 @@ var RdbDatastoreSelector_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_RdbDatastoreSelector = (RdbDatastoreSelector_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=template&id=1544e2a1&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=template&id=1544e2a1&
 var TsDatastoreSelectorvue_type_template_id_1544e2a1_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.datastore)?_c('v-card',{attrs:{"flat":""}},[(_vm.datastoreReference)?_c('v-card',{staticClass:"mb-5",attrs:{"flat":""}},[_c('v-icon',{staticClass:"mr-2",attrs:{"small":""}},[_vm._v("fa-globe")]),_vm._v("Configured globally as "),_c('strong',[_vm._v(_vm._s(_vm.datastoreReference))]),_vm._v(". ")],1):_vm._e(),_c('warp-10-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isWarp10),expression:"isWarp10"}],ref:"warp10",attrs:{"configuration":_vm.configuration}}),_c('influx-db-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isInfluxDB),expression:"isInfluxDB"}],ref:"influxdb",attrs:{"configuration":_vm.configuration}}),_c('no-summary',{directives:[{name:"show",rawName:"v-show",value:(_vm.isUnknown),expression:"isUnknown"}],ref:"unknown"}),_c('content-link',{staticClass:"mt-5 mb-2",attrs:{"icon":"fa-edit","text":"Update datastore settings"},on:{"linkClicked":_vm.onUpdateDatastore}}),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset datastore"},on:{"linkClicked":_vm.onUnsetDatastore}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No datastore is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add datastore information."},on:{"linkClicked":_vm.onAddDatastore}})],1),_c('ts-datastore-create-dialog',{ref:"create",attrs:{"instance":_vm.instance},on:{"create":_vm.onDatastoreCreate}}),_c('ts-datastore-update-dialog',{ref:"update",attrs:{"instance":_vm.instance},on:{"update":_vm.onDatastoreUpdate}})],1)}
 var TsDatastoreSelectorvue_type_template_id_1544e2a1_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreSelector.vue?vue&type=template&id=1544e2a1&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=template&id=6a2a8a0e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=template&id=6a2a8a0e&
 var TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ts-datastore-dialog',{ref:"dialog",attrs:{"title":"Create Time Series Datastore","createLabel":"Create","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
 var TsDatastoreCreateDialogvue_type_template_id_6a2a8a0e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreCreateDialog.vue?vue&type=template&id=6a2a8a0e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=template&id=2e77d89c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=template&id=2e77d89c&
 var TsDatastoreDialogvue_type_template_id_2e77d89c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":"550","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-3 pr-3 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":""}},[_c('v-btn-toggle',{staticClass:"mt-3",attrs:{"mandatory":""},model:{value:(_vm.scope),callback:function ($$v) {_vm.scope=$$v},expression:"scope"}},[_c('v-btn',{attrs:{"text":""}},[_vm._v("Local")]),_c('v-btn',{attrs:{"text":""}},[_vm._v("Global")])],1)],1),(_vm.isLocalScope)?_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose database type","label":"Database Type","items":_vm.databaseTypes,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.type),callback:function ($$v) {_vm.type=$$v},expression:"type"}})],1):_c('v-flex',{attrs:{"xs8":""}},[_c('v-select',{staticClass:"ml-3",attrs:{"required":true,"title":"Choose global database reference","label":"Global Reference","items":_vm.globalDatabases,"item-text":"text","item-value":"value","prepend-icon":"fa-database","placeholder":" "},model:{value:(_vm.reference),callback:function ($$v) {_vm.reference=$$v},expression:"reference"}})],1)],1)],1),_c('v-divider',{staticClass:"mb-2"}),_c('warp-10-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isWarp10),expression:"isWarp10"}],ref:"warp10",attrs:{"readonly":_vm.isGlobalScope}}),_c('influx-db-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isInfluxDB),expression:"isInfluxDB"}],ref:"influxdb",attrs:{"readonly":_vm.isGlobalScope}}),_c('no-fields',{directives:[{name:"show",rawName:"v-show",value:(_vm.isUnknown),expression:"isUnknown"}],ref:"unknown",attrs:{"readonly":_vm.isGlobalScope}})],1)}
 var TsDatastoreDialogvue_type_template_id_2e77d89c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/common/datastore/TsDatastoreDialog.vue?vue&type=template&id=2e77d89c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=5e5d397f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Fields.vue?vue&type=template&id=5e5d397f&
 var Warp10Fieldsvue_type_template_id_5e5d397f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of Warp 10 server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for Warp 10 server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Application","title":"Warp 10 application name.","icon":"fa-stream"},model:{value:(_vm.application),callback:function ($$v) {_vm.application=$$v},expression:"application"}},[(_vm.$v.application.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Application is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Token secret","title":"Warp 10 token secret.","icon":"fa-stream"},model:{value:(_vm.tokenSecret),callback:function ($$v) {_vm.tokenSecret=$$v},expression:"tokenSecret"}},[(_vm.$v.tokenSecret.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Token secret is required.")]):_vm._e()])],1)],1)}
 var Warp10Fieldsvue_type_template_id_5e5d397f_staticRenderFns = []
 
@@ -3074,7 +3076,7 @@ var Warp10Fields_component = normalizeComponent(
 )
 
 /* harmony default export */ var warp10_Warp10Fields = (Warp10Fields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=template&id=692d1601&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbFields.vue?vue&type=template&id=692d1601&
 var InfluxDbFieldsvue_type_template_id_692d1601_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs9":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","readonly":_vm.readonly,"label":"Hostname","title":"Hostname of InfluxDB server.","icon":"fa-server"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(_vm.$v.hostname.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs3":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Port","title":"Port for InfluxDB server.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(_vm.$v.port.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","readonly":_vm.readonly,"label":"Database name","title":"InfluxDB database name.","icon":"fa-stream"},model:{value:(_vm.databaseName),callback:function ($$v) {_vm.databaseName=$$v},expression:"databaseName"}},[(_vm.$v.databaseName.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Database name is required.")]):_vm._e()])],1)],1)}
 var InfluxDbFieldsvue_type_template_id_692d1601_staticRenderFns = []
 
@@ -3167,7 +3169,7 @@ var InfluxDbFields_component = normalizeComponent(
 )
 
 /* harmony default export */ var influxdb_InfluxDbFields = (InfluxDbFields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=template&id=5cea9d8b&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoFields.vue?vue&type=template&id=5cea9d8b&scoped=true&
 var NoFieldsvue_type_template_id_5cea9d8b_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"width":"100%"},attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This database type is not currently supported.")])],1)}
 var NoFieldsvue_type_template_id_5cea9d8b_scoped_true_staticRenderFns = []
 
@@ -3594,7 +3596,7 @@ var TsDatastoreCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_TsDatastoreCreateDialog = (TsDatastoreCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=template&id=6781a004&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/TsDatastoreUpdateDialog.vue?vue&type=template&id=6781a004&
 var TsDatastoreUpdateDialogvue_type_template_id_6781a004_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ts-datastore-dialog',{ref:"dialog",attrs:{"title":"Update Time Series Datastore","createLabel":"Update","instance":_vm.instance},on:{"payload":_vm.onPayload}})}
 var TsDatastoreUpdateDialogvue_type_template_id_6781a004_staticRenderFns = []
 
@@ -3660,7 +3662,7 @@ var TsDatastoreUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_TsDatastoreUpdateDialog = (TsDatastoreUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=template&id=04d59c36&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/warp10/Warp10Summary.vue?vue&type=template&id=04d59c36&
 var Warp10Summaryvue_type_template_id_04d59c36_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"Warp 10"}}),_c('content-field',{attrs:{"alt":true,"name":"hostname","value":"hostname"}}),_c('content-field',{attrs:{"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"alt":true,"name":"application","value":"application"}}),_c('content-field',{attrs:{"name":"tokenSecret","value":_vm.tokenSecret}})],1)}
 var Warp10Summaryvue_type_template_id_04d59c36_staticRenderFns = []
 
@@ -3744,7 +3746,7 @@ var Warp10Summary_component = normalizeComponent(
 )
 
 /* harmony default export */ var warp10_Warp10Summary = (Warp10Summary_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=template&id=79d36974&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/influxdb/InfluxDbSummary.vue?vue&type=template&id=79d36974&
 var InfluxDbSummaryvue_type_template_id_79d36974_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"type","value":"InfluxDB"}}),_c('content-field',{attrs:{"alt":true,"name":"hostname","value":_vm.hostname}}),_c('content-field',{attrs:{"name":"port","value":_vm.port}}),_c('content-field',{attrs:{"alt":true,"name":"database name","value":_vm.databaseName}})],1)}
 var InfluxDbSummaryvue_type_template_id_79d36974_staticRenderFns = []
 
@@ -3820,7 +3822,7 @@ var InfluxDbSummary_component = normalizeComponent(
 )
 
 /* harmony default export */ var influxdb_InfluxDbSummary = (InfluxDbSummary_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=template&id=50523800&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/common/datastore/NoSummary.vue?vue&type=template&id=50523800&
 var NoSummaryvue_type_template_id_50523800_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"unknown","value":"Database type is unknown"}})],1)}
 var NoSummaryvue_type_template_id_50523800_staticRenderFns = []
 
@@ -4070,7 +4072,7 @@ var TsDatastoreSelector_component = normalizeComponent(
 )
 
 /* harmony default export */ var datastore_TsDatastoreSelector = (TsDatastoreSelector_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=775757e0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/assetmanagement/AssetManagementPlugin.vue?vue&type=template&id=775757e0&
 var AssetManagementPluginvue_type_template_id_775757e0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Asset Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
 var AssetManagementPluginvue_type_template_id_775757e0_staticRenderFns = []
 
@@ -4168,28 +4170,28 @@ var AssetManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var assetmanagement_AssetManagementPlugin = (AssetManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=51a21e82&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=51a21e82&
 var BatchOperationsPluginvue_type_template_id_51a21e82_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Batch Operations Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1),_c('v-divider',{staticClass:"mt-4 mb-4"}),_c('batch-operation-manager-section',{attrs:{"configuration":_vm.batchOperationManager},on:{"update":_vm.onBatchOperationManagerUpdate}})],1)}
 var BatchOperationsPluginvue_type_template_id_51a21e82_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/BatchOperationsPlugin.vue?vue&type=template&id=51a21e82&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
 var BatchOperationManagerSectionvue_type_template_id_4c195150_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Batch Operation Manager"}},[_c('content-field',{staticClass:"mt-5",attrs:{"name":"throttle delay(ms)","value":_vm.throttleDelayMs}}),_c('content-link',{staticClass:"mt-5",attrs:{"icon":"fa-edit","text":"Edit batch operation manager settings."},on:{"linkClicked":_vm.onEditBatchOperationManager}}),_c('batch-operation-manager-dialog',{ref:"dialog",on:{"update":_vm.onBatchOperationManagerUpdate}})],1)}
 var BatchOperationManagerSectionvue_type_template_id_4c195150_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerSection.vue?vue&type=template&id=4c195150&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
 var BatchOperationManagerDialogvue_type_template_id_39986495_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Edit Batch Operation Manager Settings","width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":"Update","cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"manager"},[_vm._v("Manager")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"manager"},[_c('batch-operation-manager-fields',{ref:"manager"})],1)],1)],2)}
 var BatchOperationManagerDialogvue_type_template_id_39986495_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerDialog.vue?vue&type=template&id=39986495&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerFields.vue?vue&type=template&id=b799d2bc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/batchoperations/batchoperationmanager/BatchOperationManagerFields.vue?vue&type=template&id=b799d2bc&
 var BatchOperationManagerFieldsvue_type_template_id_b799d2bc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Throttle delay(ms)","title":"Throttle delay in milliseconds.","icon":"fa-clock","type":"number"},model:{value:(_vm.throttleDelayMs),callback:function ($$v) {_vm.throttleDelayMs=$$v},expression:"throttleDelayMs"}},[(!_vm.$v.throttleDelayMs.required && _vm.$v.$dirty)?_c('span',[_vm._v("Throttle delay is required.")]):_vm._e()])],1)],1)}
 var BatchOperationManagerFieldsvue_type_template_id_b799d2bc_staticRenderFns = []
 
@@ -4548,21 +4550,21 @@ var BatchOperationsPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var batchoperations_BatchOperationsPlugin = (BatchOperationsPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
 var CommandDeliveryPluginvue_type_template_id_63c1d72b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('command-destinations-table',{attrs:{"tenantId":_vm.tenantId,"destinations":_vm.destinations},on:{"create":_vm.onCommandDestinationCreated,"update":_vm.onCommandDestinationUpdated,"delete":_vm.onCommandDestinationDeleted}}),_c('content-divider'),_c('command-router-section',{attrs:{"router":_vm.router,"destinations":_vm.destinations},on:{"update":_vm.onCommandRouterUpdated,"unset":_vm.onUnsetCommandRouter}})],1)}
 var CommandDeliveryPluginvue_type_template_id_63c1d72b_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDeliveryPlugin.vue?vue&type=template&id=63c1d72b&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
 var CommandDestinationsTablevue_type_template_id_60bfaf3d_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Command Destinations"}},[_c('section-overview',{attrs:{"title":"Configured Command Destinations"}},[_vm._v(" Command destinations are configured to deliver device commands over various communication protocols. A command router chooses which destinations will receive a given command. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.displayCommandDestinations,"no-data-text":"No commmand destinations have been defined","width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"48%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenCommandDestination(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteCommandDestination(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-5",attrs:{"icon":"fa-plus-circle","text":"Add new command destination."},on:{"linkClicked":_vm.onAddCommandDestination}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-command-destination-chooser',{ref:"chooser",on:{"chosen":_vm.onCommandDestinationCreate}}),_c('coap-command-destination-create-dialog',{ref:"coapCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onCommandDestinationAdded}}),_c('coap-command-destination-update-dialog',{ref:"coapUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onCommandDestinationUpdated}}),_c('mqtt-command-destination-create-dialog',{ref:"mqttCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onCommandDestinationAdded}}),_c('mqtt-command-destination-update-dialog',{ref:"mqttUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onCommandDestinationUpdated}})]},proxy:true}])})],1)}
 var CommandDestinationsTablevue_type_template_id_60bfaf3d_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDestinationsTable.vue?vue&type=template&id=60bfaf3d&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandDestinationChooser.vue?vue&type=template&id=386c7d50&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandDestinationChooser.vue?vue&type=template&id=386c7d50&
 var NewCommandDestinationChooservue_type_template_id_386c7d50_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Command Destination","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"coap"},on:{"chosen":_vm.onChosen}},[_vm._v("CoAP Command Destination")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"mqtt"},on:{"chosen":_vm.onChosen}},[_vm._v("MQTT Command Destination")])],1)}
 var NewCommandDestinationChooservue_type_template_id_386c7d50_staticRenderFns = []
 
@@ -4635,42 +4637,42 @@ var NewCommandDestinationChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_NewCommandDestinationChooser = (NewCommandDestinationChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
 var CoapCommandDestinationCreateDialogvue_type_template_id_30271060_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-command-destination-dialog',{ref:"dialog",attrs:{"title":"Create CoAP Command Destination","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapCommandDestinationCreateDialogvue_type_template_id_30271060_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationCreateDialog.vue?vue&type=template&id=30271060&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
 var CoapCommandDestinationDialogvue_type_template_id_8dd18bfc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('command-destination-dialog',{ref:"dialog",attrs:{"type":"coap","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel,"parameterExtractors":_vm.parameterExtractors},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"command-destination-tabs"},[_c('v-tab',{key:"coap"},[_vm._v("Configuration")])],1),_c('template',{slot:"command-destination-tab-items"},[_c('v-tab-item',{key:"coap",attrs:{"eager":""}},[_c('coap-fields',{ref:"coap"})],1)],1)],2)}
 var CoapCommandDestinationDialogvue_type_template_id_8dd18bfc_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationDialog.vue?vue&type=template&id=8dd18bfc&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
 var CommandDestinationDialogvue_type_template_id_ad32c380_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs5":""}},[(_vm.visible)?_c('form-text',{staticClass:"mr-3",attrs:{"label":"Command destination id","title":"Unique command destination identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-select',{attrs:{"items":_vm.parameterExtractors,"title":"Choose parameter extractor for command destination","label":"Parameter extractor","item-text":"text","item-value":"value","icon":"settings"},model:{value:(_vm.extractorType),callback:function ($$v) {_vm.extractorType=$$v},expression:"extractorType"}})],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("command-destination-tabs"),_c('v-tab',{key:"extractor"},[_vm._v("Parameter Extractor")])],2),_c('template',{slot:"tab-items"},[_vm._t("command-destination-tab-items"),_c('v-tab-item',{key:"extractor",attrs:{"eager":""}},[_c('parameter-extractor-configuration',{ref:"extractor",attrs:{"parameterExtractor":_vm.parameterExtractor,"tenantId":_vm.tenantId}})],1)],2)],2)}
 var CommandDestinationDialogvue_type_template_id_ad32c380_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandDestinationDialog.vue?vue&type=template&id=ad32c380&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
 var ParameterExtractorConfigurationvue_type_template_id_08ae0c4e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[(_vm.extractorType == 'mqtt-default')?_c('default-mqtt-parameter-extractor-configuration',{ref:"details"}):_vm._e(),(_vm.extractorType == 'coap-default')?_c('metadata-coap-parameter-extractor-configuration',{ref:"details"}):_vm._e()],1)}
 var ParameterExtractorConfigurationvue_type_template_id_08ae0c4e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/ParameterExtractorConfiguration.vue?vue&type=template&id=08ae0c4e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
 var DefaultMqttParameterExtractorConfigurationvue_type_template_id_86c9f9ca_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('default-mqtt-parameter-extractor-fields',{ref:"fields",attrs:{"tenantId":_vm.tenantId}})}
 var DefaultMqttParameterExtractorConfigurationvue_type_template_id_86c9f9ca_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorConfiguration.vue?vue&type=template&id=86c9f9ca&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorFields.vue?vue&type=template&id=2a45ccad&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/mqtt/DefaultMqttParameterExtractorFields.vue?vue&type=template&id=2a45ccad&
 var DefaultMqttParameterExtractorFieldsvue_type_template_id_2a45ccad_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Command topic expression","title":"Expression used to determine command MQTT topic.","icon":"settings"},model:{value:(_vm.commandTopicExpression),callback:function ($$v) {_vm.commandTopicExpression=$$v},expression:"commandTopicExpression"}},[(!_vm.$v.commandTopicExpression.required && _vm.$v.$dirty)?_c('span',[_vm._v("Command topic expression is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"System topic expression","title":"Expression used to determine system MQTT topic.","icon":"settings"},model:{value:(_vm.systemTopicExpression),callback:function ($$v) {_vm.systemTopicExpression=$$v},expression:"systemTopicExpression"}},[(!_vm.$v.systemTopicExpression.required && _vm.$v.$dirty)?_c('span',[_vm._v("System topic expression is required.")]):_vm._e()])],1)],1)}
 var DefaultMqttParameterExtractorFieldsvue_type_template_id_2a45ccad_staticRenderFns = []
 
@@ -4836,14 +4838,14 @@ var DefaultMqttParameterExtractorConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_DefaultMqttParameterExtractorConfiguration = (DefaultMqttParameterExtractorConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
 var MetadataCoapParameterExtractorConfigurationvue_type_template_id_5c6ae16c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('metadata-coap-parameter-extractor-fields',{ref:"fields",attrs:{"tenantId":_vm.tenantId}})}
 var MetadataCoapParameterExtractorConfigurationvue_type_template_id_5c6ae16c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorConfiguration.vue?vue&type=template&id=5c6ae16c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorFields.vue?vue&type=template&id=1d923e8c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/extractors/coap/MetadataCoapParameterExtractorFields.vue?vue&type=template&id=1d923e8c&
 var MetadataCoapParameterExtractorFieldsvue_type_template_id_1d923e8c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Hostname metadata field","title":"Metadata field that provides CoAP server hostname.","icon":"settings"},model:{value:(_vm.hostnameMetadataField),callback:function ($$v) {_vm.hostnameMetadataField=$$v},expression:"hostnameMetadataField"}},[(!_vm.$v.hostnameMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Port metadata field","title":"Metadata field that provides CoAP server port.","icon":"settings"},model:{value:(_vm.portMetadataField),callback:function ($$v) {_vm.portMetadataField=$$v},expression:"portMetadataField"}},[(!_vm.$v.portMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Port metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"URL metadata field","title":"Metadata field that provides CoAP server URL.","icon":"settings"},model:{value:(_vm.urlMetadataField),callback:function ($$v) {_vm.urlMetadataField=$$v},expression:"urlMetadataField"}},[(!_vm.$v.urlMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("URL metadata field is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Method metadata field","title":"Metadata field that provides CoAP server method.","icon":"settings"},model:{value:(_vm.methodMetadataField),callback:function ($$v) {_vm.methodMetadataField=$$v},expression:"methodMetadataField"}},[(!_vm.$v.methodMetadataField.required && _vm.$v.$dirty)?_c('span',[_vm._v("Method metadata field is required.")]):_vm._e()])],1)],1)}
 var MetadataCoapParameterExtractorFieldsvue_type_template_id_1d923e8c_staticRenderFns = []
 
@@ -5308,14 +5310,14 @@ var CommandDestinationDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_CommandDestinationDialog = (CommandDestinationDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
 var CoapFieldsvue_type_template_id_1a5924a4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('no-configuration')],1)}
 var CoapFieldsvue_type_template_id_1a5924a4_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/coap/CoapFields.vue?vue&type=template&id=1a5924a4&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NoConfiguration.vue?vue&type=template&id=078e8cd9&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NoConfiguration.vue?vue&type=template&id=078e8cd9&scoped=true&
 var NoConfigurationvue_type_template_id_078e8cd9_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticStyle:{"width":"100%"},attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This command destination has no configurable attributes.")])],1)}
 var NoConfigurationvue_type_template_id_078e8cd9_scoped_true_staticRenderFns = []
 
@@ -5609,7 +5611,7 @@ var CoapCommandDestinationCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapCommandDestinationCreateDialog = (CoapCommandDestinationCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationUpdateDialog.vue?vue&type=template&id=2130d30a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/coap/CoapCommandDestinationUpdateDialog.vue?vue&type=template&id=2130d30a&
 var CoapCommandDestinationUpdateDialogvue_type_template_id_2130d30a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-command-destination-dialog',{ref:"dialog",attrs:{"title":"Update CoAP Command Destination","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapCommandDestinationUpdateDialogvue_type_template_id_2130d30a_staticRenderFns = []
 
@@ -5681,21 +5683,21 @@ var CoapCommandDestinationUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapCommandDestinationUpdateDialog = (CoapCommandDestinationUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
 var MqttCommandDestinationCreateDialogvue_type_template_id_3c5219c7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-command-destination-dialog',{ref:"dialog",attrs:{"title":"Create MQTT Command Destination","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttCommandDestinationCreateDialogvue_type_template_id_3c5219c7_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationCreateDialog.vue?vue&type=template&id=3c5219c7&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
 var MqttCommandDestinationDialogvue_type_template_id_7550561c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('command-destination-dialog',{ref:"dialog",attrs:{"type":"mqtt","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel,"parameterExtractors":_vm.parameterExtractors},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"command-destination-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")]),_c('v-tab',{key:"authentication"},[_vm._v("Authentication")])],1),_c('template',{slot:"command-destination-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('mqtt-connection-fields',{ref:"connection"})],1),_c('v-tab-item',{key:"authentication",attrs:{"eager":""}},[_c('mqtt-authentication-fields',{ref:"authentication"})],1)],1)],2)}
 var MqttCommandDestinationDialogvue_type_template_id_7550561c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationDialog.vue?vue&type=template&id=7550561c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttConnectionFields.vue?vue&type=template&id=f297cdfc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttConnectionFields.vue?vue&type=template&id=f297cdfc&
 var MqttConnectionFieldsvue_type_template_id_f297cdfc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs2":""}},[_c('form-select',{attrs:{"items":_vm.protocols,"title":"Choose connection protocol","label":"Protocol","item-text":"text","item-value":"value","icon":"lock"},model:{value:(_vm.protocol),callback:function ($$v) {_vm.protocol=$$v},expression:"protocol"}})],1),_c('v-flex',{attrs:{"xs8":""}},[_c('form-text',{staticClass:"ml-3 mr-3",attrs:{"required":"","label":"Hostname","title":"MQTT broker hostname.","icon":"router"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(!_vm.$v.hostname.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs2":""}},[_c('form-text',{attrs:{"required":"","label":"Port","title":"MQTT broker port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Required.")]):_vm._e()])],1)],1)}
 var MqttConnectionFieldsvue_type_template_id_f297cdfc_staticRenderFns = []
 
@@ -5809,7 +5811,7 @@ var MqttConnectionFields_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttConnectionFields = (MqttConnectionFields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=62565818&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=62565818&
 var MqttAuthenticationFieldsvue_type_template_id_62565818_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Username","title":"Username for authentication.","icon":"account_circle"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Password","title":"Password for authentication.","icon":"lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Truststore path","title":"Truststore path.","icon":"info"},model:{value:(_vm.trustStorePath),callback:function ($$v) {_vm.trustStorePath=$$v},expression:"trustStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Truststore password","title":"Truststore password.","icon":"lock","type":"password"},model:{value:(_vm.trustStorePassword),callback:function ($$v) {_vm.trustStorePassword=$$v},expression:"trustStorePassword"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Keystore path","title":"Keystore path.","icon":"info"},model:{value:(_vm.keyStorePath),callback:function ($$v) {_vm.keyStorePath=$$v},expression:"keyStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Keystore password","title":"Keystore password.","icon":"lock","type":"password"},model:{value:(_vm.keyStorePassword),callback:function ($$v) {_vm.keyStorePassword=$$v},expression:"keyStorePassword"}})],1)],1)}
 var MqttAuthenticationFieldsvue_type_template_id_62565818_staticRenderFns = []
 
@@ -6114,7 +6116,7 @@ var MqttCommandDestinationCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttCommandDestinationCreateDialog = (MqttCommandDestinationCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationUpdateDialog.vue?vue&type=template&id=4dc49373&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/mqtt/MqttCommandDestinationUpdateDialog.vue?vue&type=template&id=4dc49373&
 var MqttCommandDestinationUpdateDialogvue_type_template_id_4dc49373_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-command-destination-dialog',{ref:"dialog",attrs:{"title":"Update MQTT Command Destination","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttCommandDestinationUpdateDialogvue_type_template_id_4dc49373_staticRenderFns = []
 
@@ -6385,14 +6387,14 @@ var CommandDestinationsTable_component = normalizeComponent(
 )
 
 /* harmony default export */ var CommandDestinationsTable = (CommandDestinationsTable_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
 var CommandRouterSectionvue_type_template_id_371ab6b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":"fa-sitemap","fa":true,"title":"Command Router"}},[(_vm.router)?_c('v-card',{attrs:{"flat":""}},[(_vm.isDeviceTypeMappingRouter)?_c('device-type-mapping-router-summary',{staticClass:"mb-2",attrs:{"destinations":_vm.destinations,"router":_vm.router},on:{"update":_vm.onCommandRouterUpdate}}):_vm._e(),_c('content-link',{attrs:{"icon":"fa-trash","text":"Unset command router"},on:{"linkClicked":_vm.onUnsetCommandRouter}})],1):_c('v-card',{attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No command router is set. This will cause tenant engine startup to fail!"}}),_c('content-link',{staticClass:"mt-3",attrs:{"icon":"fa-plus-circle","text":"Add new command router"},on:{"linkClicked":_vm.onAddCommandRouter}})],1),_c('new-command-router-chooser',{ref:"chooser",on:{"chosen":_vm.onCommandRouterChosen}}),_c('device-type-mapping-router-create-dialog',{ref:"dtmRouterCreate"})],1)}
 var CommandRouterSectionvue_type_template_id_371ab6b3_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/CommandRouterSection.vue?vue&type=template&id=371ab6b3&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandRouterChooser.vue?vue&type=template&id=19995281&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/NewCommandRouterChooser.vue?vue&type=template&id=19995281&
 var NewCommandRouterChooservue_type_template_id_19995281_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Command Router","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"device-type-mapping"},on:{"chosen":_vm.onChosen}},[_vm._v("Device Type Mapping Router")])],1)}
 var NewCommandRouterChooservue_type_template_id_19995281_staticRenderFns = []
 
@@ -6465,28 +6467,28 @@ var NewCommandRouterChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_NewCommandRouterChooser = (NewCommandRouterChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
 var Summaryvue_type_template_id_558cb726_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('section-overview',{attrs:{"title":"Device Type Mapping Router"}},[_vm._v(" The mappings below will direct device commands to be delivered via command destinations based on device type. Any commands that do not match the mappings are delivered to the default destination. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.displayedMappings,"no-data-text":"No mappings have been defined","width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.deviceTypeName))]),_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.destinationId))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteMapping(props.item.deviceTypeToken, props.item.destinationId)}}})],1)])]}}])}),(_vm.defaultDestination)?_c('v-card',{staticClass:"mb-7",attrs:{"flat":""}},[_c('content-field',{attrs:{"name":"default destination","value":_vm.defaultDestination}})],1):_c('v-card',{staticClass:"mb-7",attrs:{"flat":""}},[_c('content-warning',{attrs:{"text":"No default destination is set. This will cause tenant engine startup to fail!"}})],1),_c('content-link',{staticClass:"mb-2",attrs:{"icon":"fa-plus-circle","text":"Add device type mapping"},on:{"linkClicked":_vm.onAddMapping}}),_c('content-link',{attrs:{"icon":"fa-edit","text":"Update default destination"},on:{"linkClicked":_vm.onUpdateSettings}}),_c('settings-update-dialog',{ref:"settings",attrs:{"destinations":_vm.destinations},on:{"update":_vm.onSettingsUpdated}}),_c('mapping-create-dialog',{ref:"mapping",attrs:{"destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes},on:{"create":_vm.onMappingAdded}})],1)}
 var Summaryvue_type_template_id_558cb726_scoped_true_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/Summary.vue?vue&type=template&id=558cb726&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
 var SettingsUpdateDialogvue_type_template_id_582d03f5_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('settings-dialog',{ref:"dialog",attrs:{"title":"Update Device Type Mapping Router","createLabel":"Update","destinations":_vm.destinations},on:{"payload":_vm.onPayload}})}
 var SettingsUpdateDialogvue_type_template_id_582d03f5_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsUpdateDialog.vue?vue&type=template&id=582d03f5&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
 var SettingsDialogvue_type_template_id_0f9071b6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":"fa-sitemap","title":_vm.title,"width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"manager"},[_vm._v("Settings")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"manager"},[_c('settings-fields',{ref:"settings",attrs:{"destinations":_vm.destinations}})],1)],1)],2)}
 var SettingsDialogvue_type_template_id_0f9071b6_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsDialog.vue?vue&type=template&id=0f9071b6&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsFields.vue?vue&type=template&id=235610b4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsFields.vue?vue&type=template&id=235610b4&
 var SettingsFieldsvue_type_template_id_235610b4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.destinations,"title":"Choose default command destination","label":"Default Destination","item-text":"id","item-value":"id","icon":"fa-check"},model:{value:(_vm.defaultDestination),callback:function ($$v) {_vm.defaultDestination=$$v},expression:"defaultDestination"}})],1)],1)}
 var SettingsFieldsvue_type_template_id_235610b4_staticRenderFns = []
 
@@ -6722,21 +6724,21 @@ var SettingsUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicetypemapping_SettingsUpdateDialog = (SettingsUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
 var MappingCreateDialogvue_type_template_id_e27b7cee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mapping-dialog',{ref:"dialog",attrs:{"title":"Create Device Type Mapping","createLabel":"Create","destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes},on:{"payload":_vm.onPayload}})}
 var MappingCreateDialogvue_type_template_id_e27b7cee_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingCreateDialog.vue?vue&type=template&id=e27b7cee&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
 var MappingDialogvue_type_template_id_364dd9f7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":"fa-sitemap","title":_vm.title,"width":"500","loaded":true,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":"Cancel"},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"tabs"},[_c('v-tab',{key:"mapping"},[_vm._v("Mapping")])],1),_c('template',{slot:"tab-items"},[_c('v-tab-item',{key:"mapping"},[_c('mapping-fields',{ref:"mapping",attrs:{"destinations":_vm.destinations,"deviceTypes":_vm.deviceTypes}})],1)],1)],2)}
 var MappingDialogvue_type_template_id_364dd9f7_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingDialog.vue?vue&type=template&id=364dd9f7&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingFields.vue?vue&type=template&id=39d4a7f6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/MappingFields.vue?vue&type=template&id=39d4a7f6&
 var MappingFieldsvue_type_template_id_39d4a7f6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.deviceTypes,"title":"Choose device type to map","label":"Device Type","item-text":"name","item-value":"token","icon":"settings"},model:{value:(_vm.deviceType),callback:function ($$v) {_vm.deviceType=$$v},expression:"deviceType"}},[(_vm.$v.deviceType.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Device type is required.")]):_vm._e()])],1),_c('v-flex',{staticClass:"mb-2",attrs:{"xs12":""}},[_c('form-select',{attrs:{"items":_vm.destinations,"title":"Choose command destination","label":"Command Destination","item-text":"id","item-value":"id","icon":"fa-sitemap"},model:{value:(_vm.destination),callback:function ($$v) {_vm.destination=$$v},expression:"destination"}},[(_vm.$v.destination.$invalid && _vm.$v.$dirty)?_c('span',[_vm._v("Destination is required.")]):_vm._e()])],1)],1)}
 var MappingFieldsvue_type_template_id_39d4a7f6_staticRenderFns = []
 
@@ -7203,7 +7205,7 @@ var Summary_component = normalizeComponent(
 )
 
 /* harmony default export */ var Summary = (Summary_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsCreateDialog.vue?vue&type=template&id=1bf0e8b6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/commanddelivery/routers/devicetypemapping/SettingsCreateDialog.vue?vue&type=template&id=1bf0e8b6&
 var SettingsCreateDialogvue_type_template_id_1bf0e8b6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('settings-dialog',{ref:"dialog",attrs:{"title":"Create Device Type Mapping Router","createLabel":"Create","destinations":_vm.destinations},on:{"payload":_vm.onPayload}})}
 var SettingsCreateDialogvue_type_template_id_1bf0e8b6_staticRenderFns = []
 
@@ -7502,7 +7504,7 @@ var CommandDeliveryPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var commanddelivery_CommandDeliveryPlugin = (CommandDeliveryPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=6135ee9c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicemanagement/DeviceManagementPlugin.vue?vue&type=template&id=6135ee9c&
 var DeviceManagementPluginvue_type_template_id_6135ee9c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
 var DeviceManagementPluginvue_type_template_id_6135ee9c_staticRenderFns = []
 
@@ -7600,7 +7602,7 @@ var DeviceManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicemanagement_DeviceManagementPlugin = (DeviceManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=044d03d1&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/deviceregistration/DeviceRegistrationPlugin.vue?vue&type=template&id=044d03d1&
 var DeviceRegistrationPluginvue_type_template_id_044d03d1_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-check","title":"Device Registration"}},[_c('section-overview',{attrs:{"title":"Automatic Registration"}},[_vm._v(" New devices may be automatically registered with the system if they provide a valid token for the given tenant. If new device registration is permitted, the devices may be assigned to assets, customers, or areas. ")]),_c('v-checkbox',{staticClass:"pt-1",attrs:{"dense":""},scopedSlots:_vm._u([{key:"label",fn:function(){return [_c('span',{staticClass:"body-2"},[_vm._v("Allow new device registration for this tenant")])]},proxy:true}]),model:{value:(_vm.allowNewRegistrations),callback:function ($$v) {_vm.allowNewRegistrations=$$v},expression:"allowNewRegistrations"}}),_c('section-overview',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"title":"Defaults for New Devices"}},[_vm._v(" If registration requests for new devices do not provide metadata regarding aspects such as device type or preferred assignment information, the values may be automatically assigned. Choose default behavior below. ")]),_c('v-card',{directives:[{name:"show",rawName:"v-show",value:(_vm.allowNewRegistrations),expression:"allowNewRegistrations"}],attrs:{"flat":"","width":"60%"}},[_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.deviceTypes,"checkboxTitle":"Use default device type if not provided","selectLabel":"Choose device type","selectTitle":"Choose a default device type for new devices","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.deviceTypeToken),callback:function ($$v) {_vm.deviceTypeToken=$$v},expression:"deviceTypeToken"}}),_c('optional-selection',{staticClass:"mb-3",attrs:{"items":_vm.customers,"checkboxTitle":"Use default customer if not provided","selectLabel":"Choose customer","selectTitle":"Choose a default customer for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.customerToken),callback:function ($$v) {_vm.customerToken=$$v},expression:"customerToken"}}),_c('optional-selection',{attrs:{"items":_vm.areas,"checkboxTitle":"Use default area if not provided","selectLabel":"Choose area","selectTitle":"Choose a default area for device assignment","selectItemText":"name","selectItemValue":"token"},model:{value:(_vm.areaToken),callback:function ($$v) {_vm.areaToken=$$v},expression:"areaToken"}})],1)],1)],1)}
 var DeviceRegistrationPluginvue_type_template_id_044d03d1_staticRenderFns = []
 
@@ -7826,7 +7828,7 @@ var DeviceRegistrationPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var DeviceRegistrationPlugin = (DeviceRegistrationPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=12934e46&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/devicestate/DeviceStatePlugin.vue?vue&type=template&id=12934e46&
 var DeviceStatePluginvue_type_template_id_12934e46_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Device State Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unsetDatastore":_vm.onUnsetDatastore}})],1)],1)}
 var DeviceStatePluginvue_type_template_id_12934e46_staticRenderFns = []
 
@@ -7924,7 +7926,7 @@ var DeviceStatePlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var devicestate_DeviceStatePlugin = (DeviceStatePlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=template&id=0a37c152&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue?vue&type=template&id=0a37c152&
 var EventManagementPluginvue_type_template_id_0a37c152_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Event Management Datastore"}},[_c('ts-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
 var EventManagementPluginvue_type_template_id_0a37c152_staticRenderFns = []
 
@@ -8022,21 +8024,21 @@ var EventManagementPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventmanagement_EventManagementPlugin = (EventManagementPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 var EventSourcesPluginvue_type_template_id_5f6048b3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('event-sources-table',{attrs:{"tenantId":_vm.tenantId,"eventSources":_vm.eventSources},on:{"create":_vm.onEventSourceCreated,"update":_vm.onEventSourceUpdated,"delete":_vm.onEventSourceDeleted}})],1)}
 var EventSourcesPluginvue_type_template_id_5f6048b3_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue?vue&type=template&id=5f6048b3&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
 var EventSourcesTablevue_type_template_id_17ae5b0a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Event Sources"}},[_c('section-overview',{attrs:{"title":"Configured Event Sources"}},[_vm._v(" Event sources receive events from external providers and covert them into a standardized format for further processing. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.eventSourcesAsSortedArray,"width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"32%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenEventSource(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"32%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"32%"}},[_vm._v(_vm._s(props.item.decoder.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteEventSource(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-7",attrs:{"icon":"fa-plus-circle","text":"Add new event source."},on:{"linkClicked":_vm.onAddEventSource}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-event-source-chooser',{ref:"chooser",on:{"chosen":_vm.onEventSourceCreate}}),_c('active-mq-broker-event-source-create-dialog',{ref:"amqBrokerCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('active-mq-broker-event-source-update-dialog',{ref:"amqBrokerUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('active-mq-client-event-source-create-dialog',{ref:"amqClientCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('active-mq-client-event-source-update-dialog',{ref:"amqClientUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('coap-event-source-create-dialog',{ref:"coapCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('coap-event-source-update-dialog',{ref:"coapUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('event-hub-event-source-create-dialog',{ref:"eventHubCreate",on:{"create":_vm.onEventSourceAdded}}),_c('event-hub-event-source-update-dialog',{ref:"eventHubUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('mqtt-event-source-create-dialog',{ref:"mqttCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('mqtt-event-source-update-dialog',{ref:"mqttUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}}),_c('rabbit-mq-event-source-create-dialog',{ref:"rabbitMqCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onEventSourceAdded}}),_c('rabbit-mq-event-source-update-dialog',{ref:"rabbitMqUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onEventSourceUpdated}})]},proxy:true}])})],1)}
 var EventSourcesTablevue_type_template_id_17ae5b0a_scoped_true_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourcesTable.vue?vue&type=template&id=17ae5b0a&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/NewEventSourceChooser.vue?vue&type=template&id=3d83f064&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/NewEventSourceChooser.vue?vue&type=template&id=3d83f064&
 var NewEventSourceChooservue_type_template_id_3d83f064_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Event Source","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"activemq-broker"},on:{"chosen":_vm.onChosen}},[_vm._v("ActiveMQ Broker Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"activemq-client"},on:{"chosen":_vm.onChosen}},[_vm._v("ActiveMQ Client Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"eventhub"},on:{"chosen":_vm.onChosen}},[_vm._v("Azure Event Hub Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"coap"},on:{"chosen":_vm.onChosen}},[_vm._v("CoAP Server Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"mqtt"},on:{"chosen":_vm.onChosen}},[_vm._v("MQTT Event Source")]),_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"rabbitmq"},on:{"chosen":_vm.onChosen}},[_vm._v("RabbitMQ Event Source")])],1)}
 var NewEventSourceChooservue_type_template_id_3d83f064_staticRenderFns = []
 
@@ -8109,42 +8111,42 @@ var NewEventSourceChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_NewEventSourceChooser = (NewEventSourceChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
 var ActiveMqBrokerEventSourceCreateDialogvue_type_template_id_31472f16_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-broker-event-source-dialog',{ref:"dialog",attrs:{"title":"Create ActiveMQ Broker Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqBrokerEventSourceCreateDialogvue_type_template_id_31472f16_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceCreateDialog.vue?vue&type=template&id=31472f16&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
 var ActiveMqBrokerEventSourceDialogvue_type_template_id_8769847a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"activemq-broker","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"broker"},[_vm._v("Broker")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"broker",attrs:{"eager":""}},[_c('active-mq-broker-fields',{ref:"broker"})],1)],1)],2)}
 var ActiveMqBrokerEventSourceDialogvue_type_template_id_8769847a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceDialog.vue?vue&type=template&id=8769847a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
 var EventSourceDialogvue_type_template_id_1e8a069f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs5":""}},[(_vm.visible)?_c('form-text',{staticClass:"mr-3",attrs:{"label":"Event source id","title":"Unique event source identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-select',{attrs:{"items":_vm.decoderTypes,"title":"Choose decoder for event source","label":"Decoder","item-text":"text","item-value":"value","icon":"settings"},model:{value:(_vm.decoderType),callback:function ($$v) {_vm.decoderType=$$v},expression:"decoderType"}})],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("event-source-tabs"),_c('v-tab',{key:"decoder"},[_vm._v("Decoder")])],2),_c('template',{slot:"tab-items"},[_vm._t("event-source-tab-items"),_c('v-tab-item',{key:"decoder",attrs:{"eager":""}},[_c('decoder-configuration',{ref:"decoderConfiguration",attrs:{"decoder":_vm.decoder,"tenantId":_vm.tenantId}})],1)],2)],2)}
 var EventSourceDialogvue_type_template_id_1e8a069f_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/EventSourceDialog.vue?vue&type=template&id=1e8a069f&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
 var DecoderConfigurationvue_type_template_id_3dbd4fee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[(_vm.decoderType == 'json')?_c('json-decoder-configuration',{ref:"details"}):_vm._e(),(_vm.decoderType == 'protobuf')?_c('protobuf-decoder-configuration',{ref:"details"}):_vm._e(),(_vm.decoderType == 'scripted')?_c('scripted-event-decoder-configuration',{ref:"details",attrs:{"tenantId":_vm.tenantId}}):_vm._e()],1)}
 var DecoderConfigurationvue_type_template_id_3dbd4fee_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/DecoderConfiguration.vue?vue&type=template&id=3dbd4fee&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
 var JsonDecoderConfigurationvue_type_template_id_4706678f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('no-configuration')}
 var JsonDecoderConfigurationvue_type_template_id_4706678f_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/json/JsonDecoderConfiguration.vue?vue&type=template&id=4706678f&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/NoConfiguration.vue?vue&type=template&id=ff1f015a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/NoConfiguration.vue?vue&type=template&id=ff1f015a&scoped=true&
 var NoConfigurationvue_type_template_id_ff1f015a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{attrs:{"flat":""}},[_c('v-card-text',{staticClass:"padded-message subheading"},[_vm._v("This decoder has no configurable attributes.")])],1)}
 var NoConfigurationvue_type_template_id_ff1f015a_scoped_true_staticRenderFns = []
 
@@ -8251,7 +8253,7 @@ var JsonDecoderConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var json_JsonDecoderConfiguration = (JsonDecoderConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/protobuf/ProtobufDecoderConfiguration.vue?vue&type=template&id=7861155c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/protobuf/ProtobufDecoderConfiguration.vue?vue&type=template&id=7861155c&
 var ProtobufDecoderConfigurationvue_type_template_id_7861155c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('no-configuration')}
 var ProtobufDecoderConfigurationvue_type_template_id_7861155c_staticRenderFns = []
 
@@ -8315,14 +8317,14 @@ var ProtobufDecoderConfiguration_component = normalizeComponent(
 )
 
 /* harmony default export */ var protobuf_ProtobufDecoderConfiguration = (ProtobufDecoderConfiguration_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
 var ScriptedEventDecoderConfigurationvue_type_template_id_e83a6384_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('scripted-event-decoder-fields',{ref:"script",attrs:{"tenantId":_vm.tenantId}})}
 var ScriptedEventDecoderConfigurationvue_type_template_id_e83a6384_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderConfiguration.vue?vue&type=template&id=e83a6384&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderFields.vue?vue&type=template&id=c534bf74&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/decoders/scripted/ScriptedEventDecoderFields.vue?vue&type=template&id=c534bf74&
 var ScriptedEventDecoderFieldsvue_type_template_id_c534bf74_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('sw-dialog-form',[_c('v-flex',{attrs:{"xs8":""}},[_c('sw-script-chooser',{ref:"chooser",staticClass:"mr-3",attrs:{"label":"Event Decoder Script","title":"Script used to decode event payloads.","tenantId":_vm.tenantId,"functionalArea":"event-sources","category":"event-sources-event-decoder-category","icon":"fa-code"},model:{value:(_vm.scriptId),callback:function ($$v) {_vm.scriptId=$$v},expression:"scriptId"}},[(!_vm.$v.scriptId.required && _vm.$v.$dirty)?_c('span',[_vm._v("Event decoder script is required.")]):_vm._e()])],1)],1)}
 var ScriptedEventDecoderFieldsvue_type_template_id_c534bf74_staticRenderFns = []
 
@@ -8781,7 +8783,7 @@ var EventSourceDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_EventSourceDialog = (EventSourceDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerFields.vue?vue&type=template&id=43ba2606&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerFields.vue?vue&type=template&id=43ba2606&
 var ActiveMqBrokerFieldsvue_type_template_id_43ba2606_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Broker name","title":"Broker name.","icon":"info"},model:{value:(_vm.brokerName),callback:function ($$v) {_vm.brokerName=$$v},expression:"brokerName"}},[(!_vm.$v.brokerName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Broker name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Transport URI","title":"Transport URI.","icon":"router"},model:{value:(_vm.transportUri),callback:function ($$v) {_vm.transportUri=$$v},expression:"transportUri"}},[(!_vm.$v.transportUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Transport URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var ActiveMqBrokerFieldsvue_type_template_id_43ba2606_staticRenderFns = []
 
@@ -9062,7 +9064,7 @@ var ActiveMqBrokerEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqBrokerEventSourceCreateDialog = (ActiveMqBrokerEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceUpdateDialog.vue?vue&type=template&id=1a344a0c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqBrokerEventSourceUpdateDialog.vue?vue&type=template&id=1a344a0c&
 var ActiveMqBrokerEventSourceUpdateDialogvue_type_template_id_1a344a0c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-broker-event-source-dialog',{ref:"dialog",attrs:{"title":"Update ActiveMQ Broker Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqBrokerEventSourceUpdateDialogvue_type_template_id_1a344a0c_staticRenderFns = []
 
@@ -9134,21 +9136,21 @@ var ActiveMqBrokerEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqBrokerEventSourceUpdateDialog = (ActiveMqBrokerEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
 var ActiveMqClientEventSourceCreateDialogvue_type_template_id_22cf6ec0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-client-event-source-dialog',{ref:"dialog",attrs:{"title":"Create ActiveMQ Client Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqClientEventSourceCreateDialogvue_type_template_id_22cf6ec0_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceCreateDialog.vue?vue&type=template&id=22cf6ec0&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
 var ActiveMqClientEventSourceDialogvue_type_template_id_0a36f18e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"activemq-client","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"client"},[_vm._v("Client")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"client",attrs:{"eager":""}},[_c('active-mq-client-fields',{ref:"client"})],1)],1)],2)}
 var ActiveMqClientEventSourceDialogvue_type_template_id_0a36f18e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceDialog.vue?vue&type=template&id=0a36f18e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientFields.vue?vue&type=template&id=43a8b8cb&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientFields.vue?vue&type=template&id=43a8b8cb&
 var ActiveMqClientFieldsvue_type_template_id_43a8b8cb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Remote URI","title":"Remote URI.","icon":"router"},model:{value:(_vm.remoteUri),callback:function ($$v) {_vm.remoteUri=$$v},expression:"remoteUri"}},[(!_vm.$v.remoteUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Remote URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var ActiveMqClientFieldsvue_type_template_id_43a8b8cb_staticRenderFns = []
 
@@ -9422,7 +9424,7 @@ var ActiveMqClientEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var ActiveMqClientEventSourceCreateDialog = (ActiveMqClientEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceUpdateDialog.vue?vue&type=template&id=d2aac8a2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/activemq/ActiveMqClientEventSourceUpdateDialog.vue?vue&type=template&id=d2aac8a2&
 var ActiveMqClientEventSourceUpdateDialogvue_type_template_id_d2aac8a2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('active-mq-client-event-source-dialog',{ref:"dialog",attrs:{"title":"Update ActiveMQ Client Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var ActiveMqClientEventSourceUpdateDialogvue_type_template_id_d2aac8a2_staticRenderFns = []
 
@@ -9494,21 +9496,21 @@ var ActiveMqClientEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var activemq_ActiveMqClientEventSourceUpdateDialog = (ActiveMqClientEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
 var CoapEventSourceCreateDialogvue_type_template_id_4d5c7d2a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-event-source-dialog',{ref:"dialog",attrs:{"title":"Create CoAP Server Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapEventSourceCreateDialogvue_type_template_id_4d5c7d2a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceCreateDialog.vue?vue&type=template&id=4d5c7d2a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
 var CoapEventSourceDialogvue_type_template_id_1fe6757a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"coap","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"server"},[_vm._v("Server")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"server",attrs:{"eager":""}},[_c('coap-server-fields',{ref:"server"})],1)],1)],2)}
 var CoapEventSourceDialogvue_type_template_id_1fe6757a_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceDialog.vue?vue&type=template&id=1fe6757a&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapServerFields.vue?vue&type=template&id=200abc8a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapServerFields.vue?vue&type=template&id=200abc8a&
 var CoapServerFieldsvue_type_template_id_200abc8a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Server port","title":"CoAP server port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Port is required.")]):_vm._e()])],1)],1)}
 var CoapServerFieldsvue_type_template_id_200abc8a_staticRenderFns = []
 
@@ -9764,7 +9766,7 @@ var CoapEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapEventSourceCreateDialog = (CoapEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceUpdateDialog.vue?vue&type=template&id=2f67a5e7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/coap/CoapEventSourceUpdateDialog.vue?vue&type=template&id=2f67a5e7&
 var CoapEventSourceUpdateDialogvue_type_template_id_2f67a5e7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('coap-event-source-dialog',{ref:"dialog",attrs:{"title":"Update CoAP Server Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var CoapEventSourceUpdateDialogvue_type_template_id_2f67a5e7_staticRenderFns = []
 
@@ -9836,21 +9838,21 @@ var CoapEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var coap_CoapEventSourceUpdateDialog = (CoapEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
 var EventHubEventSourceCreateDialogvue_type_template_id_67d40668_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-hub-event-source-dialog',{ref:"dialog",attrs:{"title":"Create Azure Event Hub Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var EventHubEventSourceCreateDialogvue_type_template_id_67d40668_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceCreateDialog.vue?vue&type=template&id=67d40668&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
 var EventHubEventSourceDialogvue_type_template_id_3be01832_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"eventhub","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('event-hub-fields',{ref:"connection"})],1)],1)],2)}
 var EventHubEventSourceDialogvue_type_template_id_3be01832_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceDialog.vue?vue&type=template&id=3be01832&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubFields.vue?vue&type=template&id=4ced9c11&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubFields.vue?vue&type=template&id=4ced9c11&
 var EventHubFieldsvue_type_template_id_4ced9c11_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Consumer group name","title":"Consumer group name.","icon":"info"},model:{value:(_vm.consumerGroupName),callback:function ($$v) {_vm.consumerGroupName=$$v},expression:"consumerGroupName"}},[(!_vm.$v.consumerGroupName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Consumer group name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Namespace name","title":"Namespace name.","icon":"info"},model:{value:(_vm.namespaceName),callback:function ($$v) {_vm.namespaceName=$$v},expression:"namespaceName"}},[(!_vm.$v.namespaceName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Namespace name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Event Hub name","title":"Event Hub name.","icon":"info"},model:{value:(_vm.eventHubName),callback:function ($$v) {_vm.eventHubName=$$v},expression:"eventHubName"}},[(!_vm.$v.eventHubName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Event Hub name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Host name prefix","title":"Host name prefix.","icon":"info"},model:{value:(_vm.hostNamePrefix),callback:function ($$v) {_vm.hostNamePrefix=$$v},expression:"hostNamePrefix"}},[(!_vm.$v.hostNamePrefix.required && _vm.$v.$dirty)?_c('span',[_vm._v("Host name prefix is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"SAS key name","title":"SAS key name.","icon":"info"},model:{value:(_vm.sasKeyName),callback:function ($$v) {_vm.sasKeyName=$$v},expression:"sasKeyName"}},[(!_vm.$v.sasKeyName.required && _vm.$v.$dirty)?_c('span',[_vm._v("SAS key name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"SAS key","title":"SAS key.","icon":"info"},model:{value:(_vm.sasKey),callback:function ($$v) {_vm.sasKey=$$v},expression:"sasKey"}},[(!_vm.$v.sasKey.required && _vm.$v.$dirty)?_c('span',[_vm._v("SAS key is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Storage connection string","title":"Storage connection string.","icon":"info"},model:{value:(_vm.storageConnectionString),callback:function ($$v) {_vm.storageConnectionString=$$v},expression:"storageConnectionString"}},[(!_vm.$v.storageConnectionString.required && _vm.$v.$dirty)?_c('span',[_vm._v("Storage connection string is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Storage container name","title":"Storage container name.","icon":"info"},model:{value:(_vm.storageContainerName),callback:function ($$v) {_vm.storageContainerName=$$v},expression:"storageContainerName"}},[(!_vm.$v.storageContainerName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Storage container name is required.")]):_vm._e()])],1)],1)}
 var EventHubFieldsvue_type_template_id_4ced9c11_staticRenderFns = []
 
@@ -10159,7 +10161,7 @@ var EventHubEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var azure_EventHubEventSourceCreateDialog = (EventHubEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceUpdateDialog.vue?vue&type=template&id=65772122&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/azure/EventHubEventSourceUpdateDialog.vue?vue&type=template&id=65772122&
 var EventHubEventSourceUpdateDialogvue_type_template_id_65772122_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-hub-event-source-dialog',{ref:"dialog",attrs:{"title":"Update Azure Event Hub Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var EventHubEventSourceUpdateDialogvue_type_template_id_65772122_staticRenderFns = []
 
@@ -10231,21 +10233,21 @@ var EventHubEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var azure_EventHubEventSourceUpdateDialog = (EventHubEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
 var MqttEventSourceCreateDialogvue_type_template_id_1a7dd8bb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-event-source-dialog',{ref:"dialog",attrs:{"title":"Create MQTT Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttEventSourceCreateDialogvue_type_template_id_1a7dd8bb_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceCreateDialog.vue?vue&type=template&id=1a7dd8bb&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
 var MqttEventSourceDialogvue_type_template_id_4b073c9e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"mqtt","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")]),_c('v-tab',{key:"authentication"},[_vm._v("Authentication")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('mqtt-connection-fields',{ref:"connection"})],1),_c('v-tab-item',{key:"authentication",attrs:{"eager":""}},[_c('mqtt-authentication-fields',{ref:"authentication"})],1)],1)],2)}
 var MqttEventSourceDialogvue_type_template_id_4b073c9e_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceDialog.vue?vue&type=template&id=4b073c9e&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttConnectionFields.vue?vue&type=template&id=16a68db7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttConnectionFields.vue?vue&type=template&id=16a68db7&
 var MqttConnectionFieldsvue_type_template_id_16a68db7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs2":""}},[_c('form-select',{attrs:{"items":_vm.protocols,"title":"Choose connection protocol","label":"Protocol","item-text":"text","item-value":"value","icon":"lock"},model:{value:(_vm.protocol),callback:function ($$v) {_vm.protocol=$$v},expression:"protocol"}})],1),_c('v-flex',{attrs:{"xs8":""}},[_c('form-text',{staticClass:"ml-3 mr-3",attrs:{"required":"","label":"Hostname","title":"MQTT broker hostname.","icon":"router"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(!_vm.$v.hostname.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs2":""}},[_c('form-text',{attrs:{"required":"","label":"Port","title":"MQTT broker port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mb-4",attrs:{"required":"","label":"Topic","title":"MQTT topic to listen on.","icon":"arrow_forward"},model:{value:(_vm.topic),callback:function ($$v) {_vm.topic=$$v},expression:"topic"}},[(!_vm.$v.topic.required && _vm.$v.$dirty)?_c('span',[_vm._v("Topic is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-select',{staticClass:"mr-3",attrs:{"items":_vm.qosValues,"title":"Choose quality of service (QoS)","label":"QoS","item-text":"text","item-value":"value","icon":"done"},model:{value:(_vm.qos),callback:function ($$v) {_vm.qos=$$v},expression:"qos"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of threads","title":"Number of threads used to handle processing.","icon":"settings","type":"number"},model:{value:(_vm.numThreads),callback:function ($$v) {_vm.numThreads=$$v},expression:"numThreads"}},[(!_vm.$v.numThreads.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of threads is required.")]):_vm._e()])],1)],1)}
 var MqttConnectionFieldsvue_type_template_id_16a68db7_staticRenderFns = []
 
@@ -10380,7 +10382,7 @@ var mqtt_MqttConnectionFields_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_mqtt_MqttConnectionFields = (mqtt_MqttConnectionFields_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=263e83f2&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=263e83f2&
 var MqttAuthenticationFieldsvue_type_template_id_263e83f2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Username","title":"Username for authentication.","icon":"account_circle"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Password","title":"Password for authentication.","icon":"lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Truststore path","title":"Truststore path.","icon":"info"},model:{value:(_vm.trustStorePath),callback:function ($$v) {_vm.trustStorePath=$$v},expression:"trustStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Truststore password","title":"Truststore password.","icon":"lock","type":"password"},model:{value:(_vm.trustStorePassword),callback:function ($$v) {_vm.trustStorePassword=$$v},expression:"trustStorePassword"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Keystore path","title":"Keystore path.","icon":"info"},model:{value:(_vm.keyStorePath),callback:function ($$v) {_vm.keyStorePath=$$v},expression:"keyStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Keystore password","title":"Keystore password.","icon":"lock","type":"password"},model:{value:(_vm.keyStorePassword),callback:function ($$v) {_vm.keyStorePassword=$$v},expression:"keyStorePassword"}})],1)],1)}
 var MqttAuthenticationFieldsvue_type_template_id_263e83f2_staticRenderFns = []
 
@@ -10672,7 +10674,7 @@ var MqttEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttEventSourceCreateDialog = (MqttEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceUpdateDialog.vue?vue&type=template&id=380de0d4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/mqtt/MqttEventSourceUpdateDialog.vue?vue&type=template&id=380de0d4&
 var MqttEventSourceUpdateDialogvue_type_template_id_380de0d4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-event-source-dialog',{ref:"dialog",attrs:{"title":"Update MQTT Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var MqttEventSourceUpdateDialogvue_type_template_id_380de0d4_staticRenderFns = []
 
@@ -10744,21 +10746,21 @@ var MqttEventSourceUpdateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var mqtt_MqttEventSourceUpdateDialog = (MqttEventSourceUpdateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
 var RabbitMqEventSourceCreateDialogvue_type_template_id_12249a2b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rabbit-mq-event-source-dialog',{ref:"dialog",attrs:{"title":"Create RabbitMQ Event Source","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var RabbitMqEventSourceCreateDialogvue_type_template_id_12249a2b_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceCreateDialog.vue?vue&type=template&id=12249a2b&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
 var RabbitMqEventSourceDialogvue_type_template_id_3458e370_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('event-source-dialog',{ref:"dialog",attrs:{"type":"rabbitmq","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"event-source-tabs"},[_c('v-tab',{key:"client"},[_vm._v("Client")])],1),_c('template',{slot:"event-source-tab-items"},[_c('v-tab-item',{key:"client",attrs:{"eager":""}},[_c('rabbit-mq-fields',{ref:"client"})],1)],1)],2)}
 var RabbitMqEventSourceDialogvue_type_template_id_3458e370_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceDialog.vue?vue&type=template&id=3458e370&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqFields.vue?vue&type=template&id=d8edb300&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqFields.vue?vue&type=template&id=d8edb300&
 var RabbitMqFieldsvue_type_template_id_d8edb300_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{attrs:{"required":"","label":"Connection URI","title":"Connection URI.","icon":"router"},model:{value:(_vm.connectionUri),callback:function ($$v) {_vm.connectionUri=$$v},expression:"connectionUri"}},[(!_vm.$v.connectionUri.required && _vm.$v.$dirty)?_c('span',[_vm._v("Connection URI is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"required":"","label":"Queue name","title":"Queue name.","icon":"info"},model:{value:(_vm.queueName),callback:function ($$v) {_vm.queueName=$$v},expression:"queueName"}},[(!_vm.$v.queueName.required && _vm.$v.$dirty)?_c('span',[_vm._v("Queue name is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of consumers","title":"Number of consumers.","icon":"settings","type":"number"},model:{value:(_vm.numConsumers),callback:function ($$v) {_vm.numConsumers=$$v},expression:"numConsumers"}},[(!_vm.$v.numConsumers.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Reconnection interval","title":"Reconnection interval (in seconds).","icon":"settings","type":"number"},model:{value:(_vm.reconnectInterval),callback:function ($$v) {_vm.reconnectInterval=$$v},expression:"reconnectInterval"}},[(!_vm.$v.reconnectInterval.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of consumers is required.")]):_vm._e()])],1)],1)}
 var RabbitMqFieldsvue_type_template_id_d8edb300_staticRenderFns = []
 
@@ -11033,7 +11035,7 @@ var RabbitMqEventSourceCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var rabbitmq_RabbitMqEventSourceCreateDialog = (RabbitMqEventSourceCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceUpdateDialog.vue?vue&type=template&id=75b37b02&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/eventsources/rabbitmq/RabbitMqEventSourceUpdateDialog.vue?vue&type=template&id=75b37b02&scoped=true&
 var RabbitMqEventSourceUpdateDialogvue_type_template_id_75b37b02_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('rabbit-mq-event-source-dialog',{ref:"dialog",attrs:{"title":"Update RabbitMQ Event Source","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var RabbitMqEventSourceUpdateDialogvue_type_template_id_75b37b02_scoped_true_staticRenderFns = []
 
@@ -11492,7 +11494,7 @@ var EventSourcesPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var eventsources_EventSourcesPlugin = (EventSourcesPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=template&id=361bcc95&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue?vue&type=template&id=361bcc95&
 var InboundProcessingPluginvue_type_template_id_361bcc95_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-cogs","title":"Inbound Processing"}},[_c('section-overview',{staticClass:"mb-5",attrs:{"title":"Configure Inbound Processing Settings"}},[_vm._v(" The following settings may be adjusted to configure how inbound decoded events are processed and forwarded to other microservices. ")]),_c('v-card',{staticStyle:{"width":"50%"},attrs:{"tile":"","flat":"","color":"transparent"}},[_c('v-text-field',{attrs:{"label":"Processing thread count"},model:{value:(_vm.processingThreadCount),callback:function ($$v) {_vm.processingThreadCount=$$v},expression:"processingThreadCount"}})],1)],1)],1)}
 var InboundProcessingPluginvue_type_template_id_361bcc95_staticRenderFns = []
 
@@ -11579,21 +11581,1167 @@ var InboundProcessingPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var inboundprocessing_InboundProcessingPlugin = (InboundProcessingPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGenerationPlugin.vue?vue&type=template&id=34316d8c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue?vue&type=template&id=9c63a3ee&
+var OutboundConnectorsPluginvue_type_template_id_9c63a3ee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('outbound-connectors-table',{attrs:{"tenantId":_vm.tenantId,"connectors":_vm.outboundConnectors},on:{"create":_vm.onOutboundConnectorCreated,"update":_vm.onOutboundConnectorUpdated,"delete":_vm.onOutboundConnectorDeleted}})],1)}
+var OutboundConnectorsPluginvue_type_template_id_9c63a3ee_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue?vue&type=template&id=9c63a3ee&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsTable.vue?vue&type=template&id=89f28f1e&
+var OutboundConnectorsTablevue_type_template_id_89f28f1e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Outbound Connectors"}},[_c('section-overview',{attrs:{"title":"Configured Outbound Connectors"}},[_vm._v(" Outbound connectors allow device event data to be forwarded to external systems for further processing. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.connectorsAsSortedArray,"width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"32%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenConnector(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"32%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteConnector(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-7",attrs:{"icon":"fa-plus-circle","text":"Add new outbound connector."},on:{"linkClicked":_vm.onAddConnector}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-outbound-connector-chooser',{ref:"chooser",on:{"chosen":_vm.onConnectorCreate}}),_c('mqtt-outbound-connector-create-dialog',{ref:"mqttCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onConnectorAdded}}),_c('mqtt-outbound-connector-update-dialog',{ref:"mqttUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onConnectorUpdated}})]},proxy:true}])})],1)}
+var OutboundConnectorsTablevue_type_template_id_89f28f1e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsTable.vue?vue&type=template&id=89f28f1e&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/NewOutboundConnectorChooser.vue?vue&type=template&id=10252bee&
+var NewOutboundConnectorChooservue_type_template_id_10252bee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Outbound Connector","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"mqtt"},on:{"chosen":_vm.onChosen}},[_vm._v("MQTT Outbound Connector")])],1)}
+var NewOutboundConnectorChooservue_type_template_id_10252bee_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/NewOutboundConnectorChooser.vue?vue&type=template&id=10252bee&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/NewOutboundConnectorChooser.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var NewOutboundConnectorChooservue_type_script_lang_ts_NewOutboundConnectorChooser = /** @class */ (function (_super) {
+    __extends(NewOutboundConnectorChooser, _super);
+    function NewOutboundConnectorChooser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(NewOutboundConnectorChooser.prototype, "icon", {
+        /** Get page icon */
+        get: function () {
+            return external_sitewhere_ide_common_["MicroserviceIcon"].OutboundConnectors;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Open chooser */
+    NewOutboundConnectorChooser.prototype.openChooser = function () {
+        this.dialog.openDialog();
+    };
+    /** Close chooser */
+    NewOutboundConnectorChooser.prototype.closeChooser = function () {
+        this.dialog.closeDialog();
+    };
+    /** Close chooser on item click */
+    NewOutboundConnectorChooser.prototype.onChosen = function (id) {
+        this.closeChooser();
+        this.$emit("chosen", id);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], NewOutboundConnectorChooser.prototype, "dialog", void 0);
+    NewOutboundConnectorChooser = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { NewElementChooser: external_sitewhere_ide_components_["NewElementChooser"], NewElementEntry: external_sitewhere_ide_components_["NewElementEntry"] }
+        })
+    ], NewOutboundConnectorChooser);
+    return NewOutboundConnectorChooser;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var NewOutboundConnectorChooservue_type_script_lang_ts_ = (NewOutboundConnectorChooservue_type_script_lang_ts_NewOutboundConnectorChooser);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/NewOutboundConnectorChooser.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var outboundconnectors_NewOutboundConnectorChooservue_type_script_lang_ts_ = (NewOutboundConnectorChooservue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/NewOutboundConnectorChooser.vue
+
+
+
+
+
+/* normalize component */
+
+var NewOutboundConnectorChooser_component = normalizeComponent(
+  outboundconnectors_NewOutboundConnectorChooservue_type_script_lang_ts_,
+  NewOutboundConnectorChooservue_type_template_id_10252bee_render,
+  NewOutboundConnectorChooservue_type_template_id_10252bee_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_NewOutboundConnectorChooser = (NewOutboundConnectorChooser_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorCreateDialog.vue?vue&type=template&id=d0ea7f7e&
+var MqttOutboundConnectorCreateDialogvue_type_template_id_d0ea7f7e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-outbound-connector-dialog',{ref:"dialog",attrs:{"title":"Create MQTT Outbound Connector","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
+var MqttOutboundConnectorCreateDialogvue_type_template_id_d0ea7f7e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorCreateDialog.vue?vue&type=template&id=d0ea7f7e&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorDialog.vue?vue&type=template&id=a7f9600e&
+var MqttOutboundConnectorDialogvue_type_template_id_a7f9600e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('outbound-connector-dialog',{ref:"dialog",attrs:{"type":"mqtt","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"outbound-connector-tabs"},[_c('v-tab',{key:"connection"},[_vm._v("Connection")]),_c('v-tab',{key:"authentication"},[_vm._v("Authentication")])],1),_c('template',{slot:"outbound-connector-tab-items"},[_c('v-tab-item',{key:"connection",attrs:{"eager":""}},[_c('mqtt-connection-fields',{ref:"connection"})],1),_c('v-tab-item',{key:"authentication",attrs:{"eager":""}},[_c('mqtt-authentication-fields',{ref:"authentication"})],1)],1)],2)}
+var MqttOutboundConnectorDialogvue_type_template_id_a7f9600e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorDialog.vue?vue&type=template&id=a7f9600e&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorDialog.vue?vue&type=template&id=a9f975f0&
+var OutboundConnectorDialogvue_type_template_id_a9f975f0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[(_vm.visible)?_c('form-text',{attrs:{"label":"Outbound connector id","title":"Unique outbound connector identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("outbound-connector-tabs")],2),_c('template',{slot:"tab-items"},[_vm._t("outbound-connector-tab-items")],2)],2)}
+var OutboundConnectorDialogvue_type_template_id_a9f975f0_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorDialog.vue?vue&type=template&id=a9f975f0&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+
+/** Validator for checking if id is already used */
+var OutboundConnectorDialogvue_type_script_lang_ts_idConflict = validators["helpers"].withParams({ type: "idConflict" }, 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+function (value, vm) {
+    var idsInUse = vm.idsInUse;
+    var conflict = false;
+    idsInUse.forEach(function (id) {
+        if (vm.id == id)
+            conflict = true;
+    });
+    return !conflict;
+});
+var OutboundConnectorDialogvue_type_script_lang_ts_OutboundConnectorDialog = /** @class */ (function (_super) {
+    __extends(OutboundConnectorDialog, _super);
+    function OutboundConnectorDialog() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.id = null;
+        return _this;
+    }
+    /** Save dialog fields */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    OutboundConnectorDialog.prototype.save = function () {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var config = { id: this.id, type: this.type };
+        return config;
+    };
+    /** Reset the dialog */
+    OutboundConnectorDialog.prototype.reset = function () {
+        this.id = null;
+        this.setActiveTab(0);
+        this.$v.$reset();
+    };
+    /** Validate fields */
+    OutboundConnectorDialog.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load dialog from a given configuration */
+    OutboundConnectorDialog.prototype.load = function (config) {
+        this.id = config.id;
+    };
+    /** Set the active tab */
+    OutboundConnectorDialog.prototype.setActiveTab = function (tab) {
+        this.dialog.setActiveTab(tab);
+    };
+    /** Called after create button is clicked */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    OutboundConnectorDialog.prototype.onCreateClicked = function (e) {
+        this.$emit("createClicked", e);
+    };
+    /** Called after cancel button is clicked */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    OutboundConnectorDialog.prototype.onCancelClicked = function (e) {
+        this.$emit("cancelClicked", e);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "tenantId", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "type", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "icon", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "title", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "width", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "cancelLabel", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "createLabel", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "visible", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorDialog.prototype, "idsInUse", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], OutboundConnectorDialog.prototype, "dialog", void 0);
+    OutboundConnectorDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                BaseDialog: external_sitewhere_ide_components_["BaseDialog"],
+                DialogHeader: external_sitewhere_ide_components_["DialogHeader"],
+                FormText: external_sitewhere_ide_components_["FormText"],
+                FormSelect: external_sitewhere_ide_components_["FormSelect"],
+                VFlex: lib_["VFlex"],
+                VTab: lib_["VTab"],
+                VTabItem: lib_["VTabItem"],
+                VLayout: lib_["VLayout"]
+            },
+            validations: {
+                id: {
+                    required: validators["required"],
+                    idConflict: OutboundConnectorDialogvue_type_script_lang_ts_idConflict
+                }
+            }
+        })
+    ], OutboundConnectorDialog);
+    return OutboundConnectorDialog;
+}(external_sitewhere_ide_components_["DialogComponent"]));
+/* harmony default export */ var OutboundConnectorDialogvue_type_script_lang_ts_ = (OutboundConnectorDialogvue_type_script_lang_ts_OutboundConnectorDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var outboundconnectors_OutboundConnectorDialogvue_type_script_lang_ts_ = (OutboundConnectorDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var OutboundConnectorDialog_component = normalizeComponent(
+  outboundconnectors_OutboundConnectorDialogvue_type_script_lang_ts_,
+  OutboundConnectorDialogvue_type_template_id_a9f975f0_render,
+  OutboundConnectorDialogvue_type_template_id_a9f975f0_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_OutboundConnectorDialog = (OutboundConnectorDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttConnectionFields.vue?vue&type=template&id=97225962&
+var MqttConnectionFieldsvue_type_template_id_97225962_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs2":""}},[_c('form-select',{attrs:{"items":_vm.protocols,"title":"Choose connection protocol","label":"Protocol","item-text":"text","item-value":"value","icon":"lock"},model:{value:(_vm.protocol),callback:function ($$v) {_vm.protocol=$$v},expression:"protocol"}})],1),_c('v-flex',{attrs:{"xs8":""}},[_c('form-text',{staticClass:"ml-3 mr-3",attrs:{"required":"","label":"Hostname","title":"MQTT broker hostname.","icon":"router"},model:{value:(_vm.hostname),callback:function ($$v) {_vm.hostname=$$v},expression:"hostname"}},[(!_vm.$v.hostname.required && _vm.$v.$dirty)?_c('span',[_vm._v("Hostname is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs2":""}},[_c('form-text',{attrs:{"required":"","label":"Port","title":"MQTT broker port.","type":"number"},model:{value:(_vm.port),callback:function ($$v) {_vm.port=$$v},expression:"port"}},[(!_vm.$v.port.required && _vm.$v.$dirty)?_c('span',[_vm._v("Required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs12":""}},[_c('form-text',{staticClass:"mb-4",attrs:{"required":"","label":"Topic","title":"MQTT topic to listen on.","icon":"arrow_forward"},model:{value:(_vm.topic),callback:function ($$v) {_vm.topic=$$v},expression:"topic"}},[(!_vm.$v.topic.required && _vm.$v.$dirty)?_c('span',[_vm._v("Topic is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-select',{staticClass:"mr-3",attrs:{"items":_vm.qosValues,"title":"Choose quality of service (QoS)","label":"QoS","item-text":"text","item-value":"value","icon":"done"},model:{value:(_vm.qos),callback:function ($$v) {_vm.qos=$$v},expression:"qos"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Number of threads","title":"Number of threads used to handle processing.","icon":"settings","type":"number"},model:{value:(_vm.numThreads),callback:function ($$v) {_vm.numThreads=$$v},expression:"numThreads"}},[(!_vm.$v.numThreads.required && _vm.$v.$dirty)?_c('span',[_vm._v("Number of threads is required.")]):_vm._e()])],1)],1)}
+var MqttConnectionFieldsvue_type_template_id_97225962_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttConnectionFields.vue?vue&type=template&id=97225962&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttConnectionFields.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_MqttConnectionFields = /** @class */ (function (_super) {
+    __extends(MqttConnectionFields, _super);
+    function MqttConnectionFields() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.protocol = "tcp";
+        _this.hostname = null;
+        _this.port = 1883;
+        _this.topic = null;
+        _this.qos = 1;
+        _this.numThreads = 3;
+        _this.protocols = [
+            {
+                text: "TCP",
+                value: "tcp"
+            },
+            {
+                text: "TLS",
+                value: "tls"
+            }
+        ];
+        _this.qosValues = [
+            {
+                text: "0 - At Most Once",
+                value: 0
+            },
+            {
+                text: "1 - At Least Once",
+                value: 1
+            },
+            {
+                text: "2 - Exactly Once",
+                value: 3
+            }
+        ];
+        return _this;
+    }
+    /** Reset section content */
+    MqttConnectionFields.prototype.reset = function () {
+        this.protocol = "tcp";
+        this.hostname = null;
+        this.port = 1883;
+        this.topic = null;
+        this.qos = 0;
+        this.numThreads = 3;
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    MqttConnectionFields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    MqttConnectionFields.prototype.load = function (input) {
+        this.protocol = input.protocol || "tcp";
+        this.hostname = input.hostname;
+        this.port = input.port || 1883;
+        this.topic = input.topic;
+        this.qos = input.qos || 0;
+        this.numThreads = input.numThreads || 3;
+    };
+    /** Save form data to an object */
+    MqttConnectionFields.prototype.save = function () {
+        return {
+            protocol: this.protocol,
+            hostname: this.hostname || "",
+            port: this.port,
+            topic: this.topic || "",
+            qos: this.qos,
+            numThreads: this.numThreads
+        };
+    };
+    MqttConnectionFields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"], FormSelect: external_sitewhere_ide_components_["FormSelect"], VFlex: lib_["VFlex"] },
+            validations: {
+                protocol: {
+                    required: validators["required"]
+                },
+                hostname: {
+                    required: validators["required"]
+                },
+                port: {
+                    required: validators["required"]
+                },
+                topic: {
+                    required: validators["required"]
+                },
+                qos: {
+                    required: validators["required"]
+                },
+                numThreads: {
+                    required: validators["required"]
+                }
+            }
+        })
+    ], MqttConnectionFields);
+    return MqttConnectionFields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_ = (outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_MqttConnectionFields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttConnectionFields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var tenantengines_outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_ = (outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttConnectionFields.vue
+
+
+
+
+
+/* normalize component */
+
+var outboundconnectors_mqtt_MqttConnectionFields_component = normalizeComponent(
+  tenantengines_outboundconnectors_mqtt_MqttConnectionFieldsvue_type_script_lang_ts_,
+  MqttConnectionFieldsvue_type_template_id_97225962_render,
+  MqttConnectionFieldsvue_type_template_id_97225962_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_mqtt_MqttConnectionFields = (outboundconnectors_mqtt_MqttConnectionFields_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=120e639f&
+var MqttAuthenticationFieldsvue_type_template_id_120e639f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Username","title":"Username for authentication.","icon":"account_circle"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Password","title":"Password for authentication.","icon":"lock","type":"password"},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Truststore path","title":"Truststore path.","icon":"info"},model:{value:(_vm.trustStorePath),callback:function ($$v) {_vm.trustStorePath=$$v},expression:"trustStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Truststore password","title":"Truststore password.","icon":"lock","type":"password"},model:{value:(_vm.trustStorePassword),callback:function ($$v) {_vm.trustStorePassword=$$v},expression:"trustStorePassword"}})],1),_c('v-flex',{attrs:{"xs7":""}},[_c('form-text',{staticClass:"mr-3",attrs:{"label":"Keystore path","title":"Keystore path.","icon":"info"},model:{value:(_vm.keyStorePath),callback:function ($$v) {_vm.keyStorePath=$$v},expression:"keyStorePath"}})],1),_c('v-flex',{attrs:{"xs5":""}},[_c('form-text',{attrs:{"label":"Keystore password","title":"Keystore password.","icon":"lock","type":"password"},model:{value:(_vm.keyStorePassword),callback:function ($$v) {_vm.keyStorePassword=$$v},expression:"keyStorePassword"}})],1)],1)}
+var MqttAuthenticationFieldsvue_type_template_id_120e639f_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttAuthenticationFields.vue?vue&type=template&id=120e639f&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttAuthenticationFields.vue?vue&type=script&lang=ts&
+
+
+
+
+var outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_MqttAuthenticationFields = /** @class */ (function (_super) {
+    __extends(MqttAuthenticationFields, _super);
+    function MqttAuthenticationFields() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.username = null;
+        _this.password = null;
+        _this.clientId = null;
+        _this.cleanSession = null;
+        _this.trustStorePath = null;
+        _this.trustStorePassword = null;
+        _this.keyStorePath = null;
+        _this.keyStorePassword = null;
+        return _this;
+    }
+    /** Reset section content */
+    MqttAuthenticationFields.prototype.reset = function () {
+        this.username = null;
+        this.password = null;
+        this.clientId = null;
+        this.cleanSession = null;
+        this.trustStorePath = null;
+        this.trustStorePassword = null;
+        this.keyStorePath = null;
+        this.keyStorePassword = null;
+        this.$v.$reset();
+    };
+    /** Perform validation */
+    MqttAuthenticationFields.prototype.validate = function () {
+        this.$v.$touch();
+        return !this.$v.$invalid;
+    };
+    /** Load form data from an object */
+    MqttAuthenticationFields.prototype.load = function (input) {
+        this.username = input.username;
+        this.password = input.password;
+        this.trustStorePath = input.trustStorePath;
+        this.trustStorePassword = input.trustStorePassword;
+        this.keyStorePath = input.keyStorePath;
+        this.keyStorePassword = input.keyStorePassword;
+    };
+    /** Save form data to an object */
+    MqttAuthenticationFields.prototype.save = function () {
+        return {
+            username: this.username || "",
+            password: this.password || "",
+            trustStorePath: this.trustStorePath || "",
+            trustStorePassword: this.trustStorePassword || "",
+            keyStorePath: this.keyStorePath || "",
+            keyStorePassword: this.keyStorePassword || ""
+        };
+    };
+    MqttAuthenticationFields = __decorate([
+        Object(external_vue_property_decorator_["Component"])({ components: { VFlex: lib_["VFlex"], DialogForm: external_sitewhere_ide_components_["DialogForm"], FormText: external_sitewhere_ide_components_["FormText"] }, validations: {} })
+    ], MqttAuthenticationFields);
+    return MqttAuthenticationFields;
+}(external_sitewhere_ide_components_["DialogSection"]));
+/* harmony default export */ var outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_ = (outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_MqttAuthenticationFields);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttAuthenticationFields.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var tenantengines_outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_ = (outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttAuthenticationFields.vue
+
+
+
+
+
+/* normalize component */
+
+var outboundconnectors_mqtt_MqttAuthenticationFields_component = normalizeComponent(
+  tenantengines_outboundconnectors_mqtt_MqttAuthenticationFieldsvue_type_script_lang_ts_,
+  MqttAuthenticationFieldsvue_type_template_id_120e639f_render,
+  MqttAuthenticationFieldsvue_type_template_id_120e639f_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_mqtt_MqttAuthenticationFields = (outboundconnectors_mqtt_MqttAuthenticationFields_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+
+
+var MqttOutboundConnectorDialogvue_type_script_lang_ts_MqttOutboundConnectorDialog = /** @class */ (function (_super) {
+    __extends(MqttOutboundConnectorDialog, _super);
+    function MqttOutboundConnectorDialog() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(MqttOutboundConnectorDialog.prototype, "icon", {
+        /** Get icon for dialog */
+        get: function () {
+            return external_sitewhere_ide_common_["MicroserviceIcon"].EventSources;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Generate payload from UI */
+    MqttOutboundConnectorDialog.prototype.generatePayload = function () {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var config = {};
+        Object.assign(config, this.connection.save());
+        Object.assign(config, this.authentication.save());
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var payload = {};
+        Object.assign(payload, this.dialog.save());
+        payload.configuration = config;
+        return payload;
+    };
+    /** Reset dialog contents */
+    MqttOutboundConnectorDialog.prototype.reset = function () {
+        if (this.connection) {
+            this.connection.reset();
+        }
+        if (this.authentication) {
+            this.authentication.reset();
+        }
+        this.dialog.reset();
+    };
+    /** Load dialog from a given configuration */
+    MqttOutboundConnectorDialog.prototype.load = function (config) {
+        this.reset();
+        if (this.dialog) {
+            this.dialog.load(config);
+        }
+        if (this.connection) {
+            this.connection.load(config.configuration);
+        }
+        if (this.authentication) {
+            this.authentication.load(config.configuration);
+        }
+    };
+    /** Called after create button is clicked */
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
+    MqttOutboundConnectorDialog.prototype.onCreateClicked = function (e) {
+        if (!this.dialog.validate()) {
+            return;
+        }
+        if (!this.connection.validate()) {
+            this.dialog.setActiveTab(0);
+            return;
+        }
+        if (!this.authentication.validate()) {
+            this.dialog.setActiveTab(1);
+            return;
+        }
+        var payload = this.generatePayload();
+        this.$emit("payload", payload);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "tenantId", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "title", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "width", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "createLabel", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "cancelLabel", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorDialog.prototype, "idsInUse", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], MqttOutboundConnectorDialog.prototype, "dialog", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], MqttOutboundConnectorDialog.prototype, "connection", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], MqttOutboundConnectorDialog.prototype, "authentication", void 0);
+    MqttOutboundConnectorDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                VTab: lib_["VTab"],
+                VTabItem: lib_["VTabItem"],
+                OutboundConnectorDialog: outboundconnectors_OutboundConnectorDialog,
+                MqttConnectionFields: outboundconnectors_mqtt_MqttConnectionFields,
+                MqttAuthenticationFields: outboundconnectors_mqtt_MqttAuthenticationFields
+            }
+        })
+    ], MqttOutboundConnectorDialog);
+    return MqttOutboundConnectorDialog;
+}(external_sitewhere_ide_components_["DialogComponent"]));
+/* harmony default export */ var MqttOutboundConnectorDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorDialogvue_type_script_lang_ts_MqttOutboundConnectorDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var mqtt_MqttOutboundConnectorDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var MqttOutboundConnectorDialog_component = normalizeComponent(
+  mqtt_MqttOutboundConnectorDialogvue_type_script_lang_ts_,
+  MqttOutboundConnectorDialogvue_type_template_id_a7f9600e_render,
+  MqttOutboundConnectorDialogvue_type_template_id_a7f9600e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var mqtt_MqttOutboundConnectorDialog = (MqttOutboundConnectorDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorCreateDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+var MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_MqttOutboundConnectorCreateDialog = /** @class */ (function (_super) {
+    __extends(MqttOutboundConnectorCreateDialog, _super);
+    function MqttOutboundConnectorCreateDialog() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.idsInUse = [];
+        return _this;
+    }
+    /** Emit payload */
+    MqttOutboundConnectorCreateDialog.prototype.onPayload = function (payload) {
+        this.dialog.closeDialog();
+        this.$emit("create", payload);
+    };
+    /** Open dialog */
+    MqttOutboundConnectorCreateDialog.prototype.openDialog = function (idsInUse) {
+        this.idsInUse = idsInUse;
+        this.dialog.reset();
+        this.dialog.openDialog();
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorCreateDialog.prototype, "tenantId", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], MqttOutboundConnectorCreateDialog.prototype, "dialog", void 0);
+    MqttOutboundConnectorCreateDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                MqttOutboundConnectorDialog: mqtt_MqttOutboundConnectorDialog
+            }
+        })
+    ], MqttOutboundConnectorCreateDialog);
+    return MqttOutboundConnectorCreateDialog;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_MqttOutboundConnectorCreateDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorCreateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var mqtt_MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorCreateDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var MqttOutboundConnectorCreateDialog_component = normalizeComponent(
+  mqtt_MqttOutboundConnectorCreateDialogvue_type_script_lang_ts_,
+  MqttOutboundConnectorCreateDialogvue_type_template_id_d0ea7f7e_render,
+  MqttOutboundConnectorCreateDialogvue_type_template_id_d0ea7f7e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var mqtt_MqttOutboundConnectorCreateDialog = (MqttOutboundConnectorCreateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorUpdateDialog.vue?vue&type=template&id=1ada6978&
+var MqttOutboundConnectorUpdateDialogvue_type_template_id_1ada6978_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('mqtt-outbound-connector-dialog',{ref:"dialog",attrs:{"title":"Update MQTT Outbound Connector","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
+var MqttOutboundConnectorUpdateDialogvue_type_template_id_1ada6978_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorUpdateDialog.vue?vue&type=template&id=1ada6978&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorUpdateDialog.vue?vue&type=script&lang=ts&
+
+
+
+
+var MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_MqttOutboundConnectorUpdateDialog = /** @class */ (function (_super) {
+    __extends(MqttOutboundConnectorUpdateDialog, _super);
+    function MqttOutboundConnectorUpdateDialog() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.originalId = null;
+        _this.idsInUse = [];
+        return _this;
+    }
+    /** Emit payload */
+    MqttOutboundConnectorUpdateDialog.prototype.onPayload = function (config) {
+        this.dialog.closeDialog();
+        this.$emit("update", this.originalId, config);
+    };
+    /** Open dialog */
+    MqttOutboundConnectorUpdateDialog.prototype.openDialog = function (config, idsInUse) {
+        this.originalId = config.id;
+        this.idsInUse = idsInUse;
+        this.dialog.reset();
+        this.dialog.openDialog();
+        this.dialog.load(config);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], MqttOutboundConnectorUpdateDialog.prototype, "tenantId", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], MqttOutboundConnectorUpdateDialog.prototype, "dialog", void 0);
+    MqttOutboundConnectorUpdateDialog = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                MqttOutboundConnectorDialog: mqtt_MqttOutboundConnectorDialog
+            }
+        })
+    ], MqttOutboundConnectorUpdateDialog);
+    return MqttOutboundConnectorUpdateDialog;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_MqttOutboundConnectorUpdateDialog);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorUpdateDialog.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var mqtt_MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_ = (MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/mqtt/MqttOutboundConnectorUpdateDialog.vue
+
+
+
+
+
+/* normalize component */
+
+var MqttOutboundConnectorUpdateDialog_component = normalizeComponent(
+  mqtt_MqttOutboundConnectorUpdateDialogvue_type_script_lang_ts_,
+  MqttOutboundConnectorUpdateDialogvue_type_template_id_1ada6978_render,
+  MqttOutboundConnectorUpdateDialogvue_type_template_id_1ada6978_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var mqtt_MqttOutboundConnectorUpdateDialog = (MqttOutboundConnectorUpdateDialog_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsTable.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+
+
+var OutboundConnectorsTablevue_type_script_lang_ts_OutboundConnectorsTable = /** @class */ (function (_super) {
+    __extends(OutboundConnectorsTable, _super);
+    function OutboundConnectorsTable() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        _this.headers = [
+            { text: "Id", value: "id" },
+            { text: "Type", value: "type" },
+            { text: "", value: "delete" }
+        ];
+        /** Event sources in format for display */
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        _this.connectorsAsSortedArray = [];
+        return _this;
+    }
+    OutboundConnectorsTable.prototype.onConnectorsUpdated = function () {
+        this.calculateConnectorsAsSortedArray();
+    };
+    Object.defineProperty(OutboundConnectorsTable.prototype, "icon", {
+        /** Get page icon */
+        get: function () {
+            return external_sitewhere_ide_common_["MicroserviceIcon"].EventSources;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Get list of ids already in use */
+    OutboundConnectorsTable.prototype.findIdsInUse = function (exclude) {
+        var ids = [];
+        if (this.connectors) {
+            this.connectors.forEach(function (conn) {
+                if (conn.id != exclude) {
+                    ids.push(conn.id);
+                }
+            });
+        }
+        return ids;
+    };
+    /** Get connector index based on id */
+    OutboundConnectorsTable.prototype.getConnectorIndex = function (id) {
+        var match = null;
+        if (this.connectors) {
+            this.connectors.forEach(function (conn, index) {
+                if (conn.id === id) {
+                    match = index;
+                }
+            });
+        }
+        return match;
+    };
+    /** Get a connector by id */
+    OutboundConnectorsTable.prototype.getConnectorById = function (id) {
+        var index = this.getConnectorIndex(id);
+        if (this.connectors && index != null) {
+            return this.connectors[index];
+        }
+        return null;
+    };
+    /** Get connectors as a sorted array */
+    OutboundConnectorsTable.prototype.calculateConnectorsAsSortedArray = function () {
+        /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+        var all = [];
+        if (this.connectors) {
+            this.connectors.forEach(function (conn) {
+                /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+                var meta = {};
+                meta.id = conn.id;
+                meta.type = conn.type;
+                /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+                var config = conn.configuration;
+                all.push({ meta: meta, config: config });
+            });
+        }
+        all.sort(function (a, b) {
+            return a.meta.id.localeCompare(b.meta.id);
+        });
+        this.connectorsAsSortedArray = all;
+    };
+    /** Add new connector */
+    OutboundConnectorsTable.prototype.onAddConnector = function () {
+        this.chooser.openChooser();
+    };
+    /** Called to create a new connector based on type */
+    OutboundConnectorsTable.prototype.onConnectorCreate = function (id) {
+        var idsInUse = this.findIdsInUse();
+        if (id == "mqtt") {
+            this.mqttCreate.openDialog(idsInUse);
+        }
+    };
+    /** Called when connector is added */
+    OutboundConnectorsTable.prototype.onConnectorAdded = function (config) {
+        if (this.connectors) {
+            this.connectors.push(config);
+            this.calculateConnectorsAsSortedArray();
+        }
+        this.$emit("create", config);
+    };
+    /** Open connector by id */
+    OutboundConnectorsTable.prototype.onOpenConnector = function (id) {
+        var config = this.getConnectorById(id);
+        var idsInUse = this.findIdsInUse(id);
+        if (config) {
+            if (config.type === "mqtt") {
+                this.mqttUpdate.openDialog(config, idsInUse);
+            }
+        }
+    };
+    /** Called when connector is updated */
+    OutboundConnectorsTable.prototype.onConnectorUpdated = function (originalId, config) {
+        var index = this.getConnectorIndex(originalId);
+        if (this.connectors && index != null) {
+            external_commonjs_vue_commonjs2_vue_root_Vue_default.a.set(this.connectors, index, config);
+            this.calculateConnectorsAsSortedArray();
+        }
+        this.$emit("update", originalId, config);
+    };
+    /** Delete connector by id */
+    OutboundConnectorsTable.prototype.onDeleteConnector = function (id) {
+        var index = this.getConnectorIndex(id);
+        if (this.connectors && index != null) {
+            this.connectors.splice(index, 1);
+            this.calculateConnectorsAsSortedArray();
+        }
+        this.$emit("delete", id);
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorsTable.prototype, "tenantId", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorsTable.prototype, "connectors", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], OutboundConnectorsTable.prototype, "chooser", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], OutboundConnectorsTable.prototype, "mqttCreate", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Ref"])()
+    ], OutboundConnectorsTable.prototype, "mqttUpdate", void 0);
+    __decorate([
+        Object(external_vue_property_decorator_["Watch"])("connectors", { immediate: true })
+    ], OutboundConnectorsTable.prototype, "onConnectorsUpdated", null);
+    OutboundConnectorsTable = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                ContentSection: external_sitewhere_ide_components_["ContentSection"],
+                DatatableSection: external_sitewhere_ide_components_["DatatableSection"],
+                DatatableLink: external_sitewhere_ide_components_["DatatableLink"],
+                ContentDeleteIcon: external_sitewhere_ide_components_["ContentDeleteIcon"],
+                ContentLink: external_sitewhere_ide_components_["ContentLink"],
+                SectionOverview: external_sitewhere_ide_components_["SectionOverview"],
+                NewOutboundConnectorChooser: outboundconnectors_NewOutboundConnectorChooser,
+                MqttOutboundConnectorCreateDialog: mqtt_MqttOutboundConnectorCreateDialog,
+                MqttOutboundConnectorUpdateDialog: mqtt_MqttOutboundConnectorUpdateDialog
+            }
+        })
+    ], OutboundConnectorsTable);
+    return OutboundConnectorsTable;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var OutboundConnectorsTablevue_type_script_lang_ts_ = (OutboundConnectorsTablevue_type_script_lang_ts_OutboundConnectorsTable);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsTable.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var outboundconnectors_OutboundConnectorsTablevue_type_script_lang_ts_ = (OutboundConnectorsTablevue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsTable.vue
+
+
+
+
+
+/* normalize component */
+
+var OutboundConnectorsTable_component = normalizeComponent(
+  outboundconnectors_OutboundConnectorsTablevue_type_script_lang_ts_,
+  OutboundConnectorsTablevue_type_template_id_89f28f1e_render,
+  OutboundConnectorsTablevue_type_template_id_89f28f1e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_OutboundConnectorsTable = (OutboundConnectorsTable_component.exports);
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+var OutboundConnectorsPluginvue_type_script_lang_ts_OutboundConnectorsPlugin = /** @class */ (function (_super) {
+    __extends(OutboundConnectorsPlugin, _super);
+    function OutboundConnectorsPlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(OutboundConnectorsPlugin.prototype, "icon", {
+        /** Get page icon */
+        get: function () {
+            return external_sitewhere_ide_common_["MicroserviceIcon"].EventSources;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(OutboundConnectorsPlugin.prototype, "tenantId", {
+        /** Tenant id */
+        get: function () {
+            return this.configuration ? this.configuration.tenant.token : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(OutboundConnectorsPlugin.prototype, "connectorsConfiguration", {
+        /** Get tenant configuration for outbound connectors */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(OutboundConnectorsPlugin.prototype, "instanceManagement", {
+        /** Get instance configuraton information */
+        get: function () {
+            return this.configuration ? this.configuration.instanceConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(OutboundConnectorsPlugin.prototype, "outboundConnectors", {
+        /** Get outbound connectors list */
+        get: function () {
+            return this.connectorsConfiguration
+                ? this.connectorsConfiguration.outboundConnectors
+                : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Handle outbound connector created */
+    OutboundConnectorsPlugin.prototype.onOutboundConnectorCreated = function (
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    config) {
+        this.markDirty();
+    };
+    /** Handle outbound connector updated */
+    OutboundConnectorsPlugin.prototype.onOutboundConnectorUpdated = function (
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    originalId, 
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    config) {
+        this.markDirty();
+    };
+    /** Handle event source deleted */
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    OutboundConnectorsPlugin.prototype.onOutboundConnectorDeleted = function (id) {
+        this.markDirty();
+    };
+    /** Mark data as having been updated */
+    OutboundConnectorsPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], OutboundConnectorsPlugin.prototype, "configuration", void 0);
+    OutboundConnectorsPlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { TenantEnginePlugin: tenantengines_TenantEnginePlugin, OutboundConnectorsTable: outboundconnectors_OutboundConnectorsTable }
+        })
+    ], OutboundConnectorsPlugin);
+    return OutboundConnectorsPlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var OutboundConnectorsPluginvue_type_script_lang_ts_ = (OutboundConnectorsPluginvue_type_script_lang_ts_OutboundConnectorsPlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var outboundconnectors_OutboundConnectorsPluginvue_type_script_lang_ts_ = (OutboundConnectorsPluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var OutboundConnectorsPlugin_component = normalizeComponent(
+  outboundconnectors_OutboundConnectorsPluginvue_type_script_lang_ts_,
+  OutboundConnectorsPluginvue_type_template_id_9c63a3ee_render,
+  OutboundConnectorsPluginvue_type_template_id_9c63a3ee_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var outboundconnectors_OutboundConnectorsPlugin = (OutboundConnectorsPlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue?vue&type=template&id=de1c984c&
+var ScheduleManagementPluginvue_type_template_id_de1c984c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-database","title":"Schedule Management Datastore"}},[_c('rdb-datastore-selector',{attrs:{"datastore":_vm.datastore,"instance":_vm.instanceManagement},on:{"create":_vm.onCreateDatastore,"update":_vm.onUpdateDatastore,"unset":_vm.onUnsetDatastore}})],1)],1)}
+var ScheduleManagementPluginvue_type_template_id_de1c984c_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue?vue&type=template&id=de1c984c&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+
+var ScheduleManagementPluginvue_type_script_lang_ts_ScheduleManagementPlugin = /** @class */ (function (_super) {
+    __extends(ScheduleManagementPlugin, _super);
+    function ScheduleManagementPlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(ScheduleManagementPlugin.prototype, "scheduleManagement", {
+        /** Get tenant configuration for schedule management */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ScheduleManagementPlugin.prototype, "instanceManagement", {
+        /** Get instance configuraton information */
+        get: function () {
+            return this.configuration ? this.configuration.instanceConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ScheduleManagementPlugin.prototype, "datastore", {
+        /** Get datastore definition */
+        get: function () {
+            return this.scheduleManagement ? this.scheduleManagement.datastore : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Create new datastore */
+    ScheduleManagementPlugin.prototype.onCreateDatastore = function (definition) {
+        this.scheduleManagement.datastore = definition;
+    };
+    /** Update datastore */
+    ScheduleManagementPlugin.prototype.onUpdateDatastore = function (definition) {
+        this.scheduleManagement.datastore = definition;
+        this.markDirty();
+    };
+    /** Unset the datastore */
+    ScheduleManagementPlugin.prototype.onUnsetDatastore = function () {
+        if (this.scheduleManagement) {
+            /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+            this.scheduleManagement.datastore = null;
+            this.markDirty();
+        }
+    };
+    /** Mark data as having been updated */
+    ScheduleManagementPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], ScheduleManagementPlugin.prototype, "configuration", void 0);
+    ScheduleManagementPlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: { ContentSection: external_sitewhere_ide_components_["ContentSection"], TenantEnginePlugin: tenantengines_TenantEnginePlugin, RdbDatastoreSelector: datastore_RdbDatastoreSelector }
+        })
+    ], ScheduleManagementPlugin);
+    return ScheduleManagementPlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var ScheduleManagementPluginvue_type_script_lang_ts_ = (ScheduleManagementPluginvue_type_script_lang_ts_ScheduleManagementPlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var schedulemanagement_ScheduleManagementPluginvue_type_script_lang_ts_ = (ScheduleManagementPluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var ScheduleManagementPlugin_component = normalizeComponent(
+  schedulemanagement_ScheduleManagementPluginvue_type_script_lang_ts_,
+  ScheduleManagementPluginvue_type_template_id_de1c984c_render,
+  ScheduleManagementPluginvue_type_template_id_de1c984c_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var schedulemanagement_ScheduleManagementPlugin = (ScheduleManagementPlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGenerationPlugin.vue?vue&type=template&id=34316d8c&
 var LabelGenerationPluginvue_type_template_id_34316d8c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('label-generators-table',{attrs:{"tenantId":_vm.tenantId,"generators":_vm.labelGenerators},on:{"create":_vm.onLabelGeneratorCreated,"update":_vm.onLabelGeneratorUpdated,"delete":_vm.onLabelGeneratorDeleted}})],1)}
 var LabelGenerationPluginvue_type_template_id_34316d8c_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/labelgeneration/LabelGenerationPlugin.vue?vue&type=template&id=34316d8c&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGeneratorsTable.vue?vue&type=template&id=43bb51a9&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGeneratorsTable.vue?vue&type=template&id=43bb51a9&
 var LabelGeneratorsTablevue_type_template_id_43bb51a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('content-section',{attrs:{"icon":_vm.icon,"title":"Label Generators"}},[_c('section-overview',{attrs:{"title":"Configured Label Generators"}},[_vm._v(" Label generators are used to generate images, bar codes, or other artifacts which are based on device information. ")]),_c('datatable-section',{attrs:{"headers":_vm.headers,"items":_vm.displayLabelGenerators,"no-data-text":"No label generators have been defined","width":"50%"},scopedSlots:_vm._u([{key:"item",fn:function(props){return [_c('tr',[_c('td',{attrs:{"width":"48%"}},[_c('datatable-link',{attrs:{"text":props.item.meta.id},on:{"linkClicked":function($event){return _vm.onOpenLabelGenerator(props.item.meta.id)}}})],1),_c('td',{attrs:{"width":"48%"}},[_vm._v(_vm._s(props.item.meta.type))]),_c('td',{attrs:{"width":"4%"}},[_c('content-delete-icon',{on:{"delete":function($event){return _vm.onDeleteLabelGenerator(props.item.meta.id)}}})],1)])]}},{key:"datatable-footer",fn:function(){return [_c('content-link',{staticClass:"mt-5",attrs:{"icon":"fa-plus-circle","text":"Add new label generator."},on:{"linkClicked":_vm.onAddLabelGenerator}})]},proxy:true},{key:"datatable-dialogs",fn:function(){return [_c('new-label-generator-chooser',{ref:"chooser",on:{"chosen":_vm.onLabelGeneratorCreate}}),_c('qr-code-label-generator-create-dialog',{ref:"qrcodeCreate",attrs:{"tenantId":_vm.tenantId},on:{"create":_vm.onLabelGeneratorAdded}}),_c('qr-code-label-generator-update-dialog',{ref:"qrcodeUpdate",attrs:{"tenantId":_vm.tenantId},on:{"update":_vm.onLabelGeneratorUpdated}})]},proxy:true}])})],1)}
 var LabelGeneratorsTablevue_type_template_id_43bb51a9_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/labelgeneration/LabelGeneratorsTable.vue?vue&type=template&id=43bb51a9&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/NewLabelGeneratorChooser.vue?vue&type=template&id=1a39d757&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/NewLabelGeneratorChooser.vue?vue&type=template&id=1a39d757&
 var NewLabelGeneratorChooservue_type_template_id_1a39d757_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('new-element-chooser',{ref:"dialog",attrs:{"icon":_vm.icon,"title":"Add Label Generator","width":"500"}},[_c('new-element-entry',{attrs:{"icon":"fa-globe","item-id":"qr-code"},on:{"chosen":_vm.onChosen}},[_vm._v("QR Code Generator")])],1)}
 var NewLabelGeneratorChooservue_type_template_id_1a39d757_staticRenderFns = []
 
@@ -11666,21 +12814,21 @@ var NewLabelGeneratorChooser_component = normalizeComponent(
 )
 
 /* harmony default export */ var labelgeneration_NewLabelGeneratorChooser = (NewLabelGeneratorChooser_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorCreateDialog.vue?vue&type=template&id=76209307&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorCreateDialog.vue?vue&type=template&id=76209307&
 var QrCodeLabelGeneratorCreateDialogvue_type_template_id_76209307_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('qr-code-label-generator-dialog',{ref:"dialog",attrs:{"title":"Create QR Code Label Generator","width":"700","createLabel":"Create","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var QrCodeLabelGeneratorCreateDialogvue_type_template_id_76209307_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorCreateDialog.vue?vue&type=template&id=76209307&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorDialog.vue?vue&type=template&id=8e416970&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorDialog.vue?vue&type=template&id=8e416970&
 var QrCodeLabelGeneratorDialogvue_type_template_id_8e416970_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label-generator-dialog',{ref:"dialog",attrs:{"type":"qr-code","tenantId":_vm.tenantId,"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"idsInUse":_vm.idsInUse,"visible":_vm.dialogVisible,"createLabel":_vm.createLabel,"cancelLabel":_vm.cancelLabel,"parameterExtractors":_vm.parameterExtractors},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"label-generator-tabs"},[_c('v-tab',{key:"style"},[_vm._v("QR Code Style")])],1),_c('template',{slot:"label-generator-tab-items"},[_c('v-tab-item',{key:"style",attrs:{"eager":""}},[_c('qr-code-generator-fields',{ref:"style"})],1)],1)],2)}
 var QrCodeLabelGeneratorDialogvue_type_template_id_8e416970_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorDialog.vue?vue&type=template&id=8e416970&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGeneratorDialog.vue?vue&type=template&id=232f036e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/LabelGeneratorDialog.vue?vue&type=template&id=232f036e&
 var LabelGeneratorDialogvue_type_template_id_232f036e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('base-dialog',{ref:"dialog",attrs:{"icon":_vm.icon,"title":_vm.title,"width":_vm.width,"loaded":true,"visible":_vm.visible,"createLabel":_vm.createLabel || 'Create',"cancelLabel":_vm.cancelLabel || 'Cancel'},on:{"createClicked":_vm.onCreateClicked,"cancelClicked":_vm.onCancelClicked}},[_c('template',{slot:"header"},[_c('dialog-header',[_c('v-layout',{staticClass:"pl-4 pr-4 pt-0 pb-0",attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[(_vm.visible)?_c('form-text',{attrs:{"label":"Label generator id","title":"Unique label generator identifier.","icon":"info","dense":true,"autofocus":true},model:{value:(_vm.id),callback:function ($$v) {_vm.id=$$v},expression:"id"}},[(!_vm.$v.id.required && _vm.$v.$dirty)?_c('span',[_vm._v("Id is required.")]):_vm._e(),(!_vm.$v.id.idConflict && _vm.$v.$dirty)?_c('span',[_vm._v("Id already in use.")]):_vm._e()]):_vm._e()],1)],1)],1)],1),_c('template',{slot:"tabs"},[_vm._t("label-generator-tabs")],2),_c('template',{slot:"tab-items"},[_vm._t("label-generator-tab-items")],2)],2)}
 var LabelGeneratorDialogvue_type_template_id_232f036e_staticRenderFns = []
 
@@ -11823,7 +12971,7 @@ var LabelGeneratorDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var labelgeneration_LabelGeneratorDialog = (LabelGeneratorDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeGeneratorFields.vue?vue&type=template&id=0c9c28ec&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeGeneratorFields.vue?vue&type=template&id=0c9c28ec&
 var QrCodeGeneratorFieldsvue_type_template_id_0c9c28ec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('dialog-form',[_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Width","title":"QR code image width in pixels.","icon":"info","type":"number"},model:{value:(_vm.width),callback:function ($$v) {_vm.width=$$v},expression:"width"}},[(!_vm.$v.width.required && _vm.$v.$dirty)?_c('span',[_vm._v("Width is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('form-text',{attrs:{"required":"","label":"Height","title":"QR code image height in pixels.","icon":"info","type":"number"},model:{value:(_vm.height),callback:function ($$v) {_vm.height=$$v},expression:"height"}},[(!_vm.$v.height.required && _vm.$v.$dirty)?_c('span',[_vm._v("Height is required.")]):_vm._e()])],1),_c('v-flex',{attrs:{"xs6":""}},[_c('color-input-field',{attrs:{"label":"Foreground color","title":"QR code foreground color."},model:{value:(_vm.foregroundColor),callback:function ($$v) {_vm.foregroundColor=$$v},expression:"foregroundColor"}})],1),_c('v-flex',{attrs:{"xs6":""}},[_c('color-input-field',{attrs:{"label":"Background color","title":"QR code background color."},model:{value:(_vm.backgroundColor),callback:function ($$v) {_vm.backgroundColor=$$v},expression:"backgroundColor"}})],1)],1)}
 var QrCodeGeneratorFieldsvue_type_template_id_0c9c28ec_staticRenderFns = []
 
@@ -12114,7 +13262,7 @@ var QrCodeLabelGeneratorCreateDialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var qrcode_QrCodeLabelGeneratorCreateDialog = (QrCodeLabelGeneratorCreateDialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"ac518626-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorUpdateDialog.vue?vue&type=template&id=3166820c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"456c5e11-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/labelgeneration/generators/qrcode/QrCodeLabelGeneratorUpdateDialog.vue?vue&type=template&id=3166820c&
 var QrCodeLabelGeneratorUpdateDialogvue_type_template_id_3166820c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('qr-code-label-generator-dialog',{ref:"dialog",attrs:{"title":"Update QR Code Label Generator","width":"700","createLabel":"Update","cancelLabel":"Cancel","idsInUse":_vm.idsInUse,"tenantId":_vm.tenantId},on:{"payload":_vm.onPayload}})}
 var QrCodeLabelGeneratorUpdateDialogvue_type_template_id_3166820c_staticRenderFns = []
 
@@ -12467,6 +13615,8 @@ var LabelGenerationPlugin_component = normalizeComponent(
 
 /* harmony default export */ var labelgeneration_LabelGenerationPlugin = (LabelGenerationPlugin_component.exports);
 // CONCATENATED MODULE: ./src/index.ts
+
+
 
 
 

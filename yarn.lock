@@ -6497,10 +6497,10 @@ sitewhere-ide-common@3.0.0-beta.5:
     moment "^2.25.1"
     sitewhere-rest-api "3.0.0-beta.5"
 
-sitewhere-ide-components@3.0.0-beta.6:
-  version "3.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.0-beta.6.tgz#082197bc93b5d523de6cd6085fae04ab8c420c08"
-  integrity sha512-hf3q2/TxyZlqMi85PvRPATOT79KAzAE6U5yHsS5OYfjqGXT8zQM9Vu0Ng43wHffpRBBo3GadEM8zANYcbIuXbA==
+sitewhere-ide-components@3.0.0-beta.9:
+  version "3.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.0-beta.9.tgz#61a53cfa4d488af45e4e3696f0bb98b63d1b0867"
+  integrity sha512-utVt+Mo/2PG2cFwg+qpAiJRvWtwm3Cc9ES30tVQ3NvYfbvsGml0GlQJHcmM/BVEAOLHM6j7Z2F8vxzvzD1Q5kA==
   dependencies:
     axios "^0.19.2"
     sitewhere-ide-common "3.0.0-beta.5"

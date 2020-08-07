@@ -1,6 +1,6 @@
 {
   "name": "sitewhere-admin-ui-plugins",
-  "version": "3.0.0-beta.26",
+  "version": "3.0.0-beta.28",
   "description": "Pluggable components for SiteWhere admin user interface",
   "main": "dist/sitewhere-admin-ui-plugins.common.js",
   "types": "types/index.d.ts",
@@ -30,7 +30,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "sitewhere-configuration-model": "3.0.0-beta.3",
-    "sitewhere-ide-components": "3.0.0-beta.16",
+    "sitewhere-ide-components": "3.0.0-beta.18",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-color": "^2.7.1",

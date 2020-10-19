@@ -48,6 +48,16 @@
           selectItemValue="token"
           v-model="areaToken"
         />
+        <optional-selection
+          :items="assets"
+          checkboxTitle="Use default asset if not provided"
+          selectLabel="Choose asset"
+          selectTitle="Choose a default asset for device assignment"
+          selectItemText="name"
+          selectItemValue="token"
+          v-model="assetToken"
+        />
+        
       </v-card>
     </content-section>
   </tenant-engine-plugin>
@@ -82,14 +92,19 @@ import {
   IArea,
   IAreaSearchCriteria,
   IAreaResponseFormat,
-  IAreaSearchResults
+  IAreaSearchResults,
+  IAsset,
+  IAssetSearchCriteria,
+  IAssetResponseFormat,
+  IAssetSearchResults
 } from "sitewhere-rest-api";
 import { AxiosResponse } from "axios";
 import {
   showError,
   listDeviceTypes,
   listCustomers,
-  listAreas
+  listAreas,
+  listAssets
 } from "sitewhere-ide-common";
 
 @Component({
@@ -117,6 +132,9 @@ export default class DeviceRegsitrationPlugin extends Vue {
   areas: IArea[] = [];
   areaToken: string | null = null;
 
+  assets: IAsset[] = [];
+  assetToken: string | null = null;
+
   /** Get tenant configuration for device registration */
   get deviceRegistration(): IDeviceRegistrationConfiguration {
     return this.configuration ? this.configuration.tenantConfiguration : null;
@@ -134,6 +152,7 @@ export default class DeviceRegsitrationPlugin extends Vue {
     this.loadDeviceTypes();
     this.loadCustomers();
     this.loadAreas();
+    this.loadAssets();
 
     // Verify that config structure is valid.
     this.assureAssignmentDefaults();
@@ -143,6 +162,7 @@ export default class DeviceRegsitrationPlugin extends Vue {
     this.deviceTypeToken = this.deviceRegistration.assignmentDefaults.defaultDeviceTypeToken;
     this.customerToken = this.deviceRegistration.assignmentDefaults.defaultCustomerToken;
     this.areaToken = this.deviceRegistration.assignmentDefaults.defaultAreaToken;
+    this.assetToken = this.deviceRegistration.assignmentDefaults.defaultAssetToken;
   }
 
   @Watch("allowNewRegistrations")
@@ -169,13 +189,20 @@ export default class DeviceRegsitrationPlugin extends Vue {
     this.markDirty();
   }
 
+  @Watch("assetToken")
+  onAssetTokenUpdated(updated: string) {
+    this.deviceRegistration.assignmentDefaults.defaultAssetToken = updated;
+    this.markDirty();
+  }
+
   /** Assure assignment defaults section if null */
   assureAssignmentDefaults(): void {
     if (!this.deviceRegistration.assignmentDefaults) {
       this.deviceRegistration.assignmentDefaults = {
         defaultDeviceTypeToken: null,
         defaultCustomerToken: null,
-        defaultAreaToken: null
+        defaultAreaToken: null,
+        defaultAssetToken: null
       };
     }
   }
@@ -232,6 +259,25 @@ export default class DeviceRegsitrationPlugin extends Vue {
         format
       );
       this.areas = response.data.results;
+    } catch (err) {
+      showError(this, err);
+    }
+  }
+
+  /** Load assets asynchronously */
+  async loadAssets() {
+    try {
+      const criteria: IAssetSearchCriteria = {
+        pageNumber: 1,
+        pageSize: 0
+      };
+      const format: IAssetResponseFormat = {};
+      const response: AxiosResponse<IAssetSearchResults> = await listAssets(
+        this.$store,
+        criteria,
+        format
+      );
+      this.assets = response.data.results;
     } catch (err) {
       showError(this, err);
     }

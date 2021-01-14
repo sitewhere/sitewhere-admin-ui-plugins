@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/sitewhere/sitewhere-admin-ui-plugins#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "sitewhere-configuration-model": "3.0.0-beta.3",
     "sitewhere-ide-components": "3.0.0-beta.23",
     "vue": "^2.6.11",

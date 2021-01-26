@@ -32,36 +32,12 @@
       <form-text
         required
         label="Topic"
-        title="MQTT topic to listen on."
-        v-model="topic"
+        title="MQTT topic where events will be forwarded."
+        v-model="outboundTopic"
         icon="arrow_forward"
         class="mb-4"
       >
-        <span v-if="!$v.topic.required && $v.$dirty">Topic is required.</span>
-      </form-text>
-    </v-flex>
-    <v-flex xs6>
-      <form-select
-        :items="qosValues"
-        title="Choose quality of service (QoS)"
-        label="QoS"
-        item-text="text"
-        item-value="value"
-        v-model="qos"
-        icon="done"
-        class="mr-3"
-      />
-    </v-flex>
-    <v-flex xs6>
-      <form-text
-        required
-        label="Number of threads"
-        title="Number of threads used to handle processing."
-        v-model="numThreads"
-        icon="settings"
-        type="number"
-      >
-        <span v-if="!$v.numThreads.required && $v.$dirty">Number of threads is required.</span>
+        <span v-if="!$v.outboundTopic.required && $v.$dirty">Outbound topic is required.</span>
       </form-text>
     </v-flex>
   </dialog-form>
@@ -78,7 +54,7 @@ import {
 } from "sitewhere-ide-components";
 import { VFlex } from "vuetify/lib";
 
-import { IMqttEventSourceConfiguration } from "sitewhere-configuration-model";
+import { IMqttOutboundConnectorConfiguration } from "sitewhere-configuration-model";
 import { required } from "vuelidate/lib/validators";
 
 @Component({
@@ -93,13 +69,7 @@ import { required } from "vuelidate/lib/validators";
     port: {
       required
     },
-    topic: {
-      required
-    },
-    qos: {
-      required
-    },
-    numThreads: {
+    outboundTopic: {
       required
     }
   }
@@ -108,9 +78,7 @@ export default class MqttConnectionFields extends DialogSection {
   protocol = "tcp";
   hostname: string | null = null;
   port = 1883;
-  topic: string | null = null;
-  qos = 1;
-  numThreads = 3;
+  outboundTopic: string | null = null;
 
   protocols: { text: string; value: string }[] = [
     {
@@ -123,29 +91,12 @@ export default class MqttConnectionFields extends DialogSection {
     }
   ];
 
-  qosValues: { text: string; value: number }[] = [
-    {
-      text: "0 - At Most Once",
-      value: 0
-    },
-    {
-      text: "1 - At Least Once",
-      value: 1
-    },
-    {
-      text: "2 - Exactly Once",
-      value: 3
-    }
-  ];
-
   /** Reset section content */
   reset(): void {
     this.protocol = "tcp";
     this.hostname = null;
     this.port = 1883;
-    this.topic = null;
-    this.qos = 0;
-    this.numThreads = 3;
+    this.outboundTopic = null;
     this.$v.$reset();
   }
 
@@ -156,13 +107,11 @@ export default class MqttConnectionFields extends DialogSection {
   }
 
   /** Load form data from an object */
-  load(input: IMqttEventSourceConfiguration): void {
+  load(input: IMqttOutboundConnectorConfiguration): void {
     this.protocol = input.protocol || "tcp";
     this.hostname = input.hostname;
     this.port = input.port || 1883;
-    this.topic = input.topic;
-    this.qos = input.qos || 0;
-    this.numThreads = input.numThreads || 3;
+    this.outboundTopic = input.outboundTopic;
   }
 
   /** Save form data to an object */
@@ -171,9 +120,7 @@ export default class MqttConnectionFields extends DialogSection {
       protocol: this.protocol,
       hostname: this.hostname || "",
       port: this.port,
-      topic: this.topic || "",
-      qos: this.qos,
-      numThreads: this.numThreads
+      outboundTopic: this.outboundTopic || "",
     };
   }
 }

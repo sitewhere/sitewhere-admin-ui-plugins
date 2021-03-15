@@ -14,6 +14,7 @@ import DeviceStatePlugin from "./components/plugins/tenantengines/devicestate/De
 import EventManagementPlugin from "./components/plugins/tenantengines/eventmanagement/EventManagementPlugin.vue";
 import EventSourcesPlugin from "./components/plugins/tenantengines/eventsources/EventSourcesPlugin.vue";
 import InboundProcessingPlugin from "./components/plugins/tenantengines/inboundprocessing/InboundProcessingPlugin.vue";
+import InstanceManagementPlugin from "./components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue";
 import OutboundConnectorsPlugin from "./components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue";
 import ScheduleManagementPlugin from "./components/plugins/tenantengines/schedulemanagement/ScheduleManagementPlugin.vue";
 import LabelGenerationPlugin from "./components/plugins/tenantengines/labelgeneration/LabelGenerationPlugin.vue";
@@ -22,4 +23,4 @@ export { TenantEnginePlugin, RdbDatastoreSelector, TsDatastoreSelector };
 /** Form elements */
 export { Postgres95Fields, Warp10Fields, InfluxDbFields, NoFields };
 /** Plugins */
-export { AssetManagementPlugin, BatchOperationsPlugin, CommandDeliveryPlugin, DeviceManagementPlugin, DeviceRegistrationPlugin, DeviceStatePlugin, EventManagementPlugin, EventSourcesPlugin, InboundProcessingPlugin, LabelGenerationPlugin, OutboundConnectorsPlugin, ScheduleManagementPlugin };
+export { AssetManagementPlugin, BatchOperationsPlugin, CommandDeliveryPlugin, DeviceManagementPlugin, DeviceRegistrationPlugin, DeviceStatePlugin, EventManagementPlugin, EventSourcesPlugin, InboundProcessingPlugin, InstanceManagementPlugin, LabelGenerationPlugin, OutboundConnectorsPlugin, ScheduleManagementPlugin };

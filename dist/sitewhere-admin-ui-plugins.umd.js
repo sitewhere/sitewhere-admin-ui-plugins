@@ -1766,6 +1766,7 @@ __webpack_require__.d(__webpack_exports__, "DeviceStatePlugin", function() { ret
 __webpack_require__.d(__webpack_exports__, "EventManagementPlugin", function() { return /* reexport */ eventmanagement_EventManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "EventSourcesPlugin", function() { return /* reexport */ eventsources_EventSourcesPlugin; });
 __webpack_require__.d(__webpack_exports__, "InboundProcessingPlugin", function() { return /* reexport */ inboundprocessing_InboundProcessingPlugin; });
+__webpack_require__.d(__webpack_exports__, "InstanceManagementPlugin", function() { return /* reexport */ instancemanagement_InstanceManagementPlugin; });
 __webpack_require__.d(__webpack_exports__, "LabelGenerationPlugin", function() { return /* reexport */ labelgeneration_LabelGenerationPlugin; });
 __webpack_require__.d(__webpack_exports__, "OutboundConnectorsPlugin", function() { return /* reexport */ outboundconnectors_OutboundConnectorsPlugin; });
 __webpack_require__.d(__webpack_exports__, "ScheduleManagementPlugin", function() { return /* reexport */ schedulemanagement_ScheduleManagementPlugin; });
@@ -11629,6 +11630,101 @@ var InboundProcessingPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var inboundprocessing_InboundProcessingPlugin = (InboundProcessingPlugin_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"39dbcf02-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=d94e90fc&
+var InstanceManagementPluginvue_type_template_id_d94e90fc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-bug","title":"Instance Debugging Configuration"}},[_c('section-overview',{attrs:{"title":"Event Pipeline Debugging"}},[_vm._v(" Event pipeline debugging is used to track events in the processing pipeline across multiple microservices in order to understand how events are processed at a low level. ")]),_c('v-card',{attrs:{"flat":"","width":"60%"}},[_c('form-text',{staticStyle:{"width":"50%"},attrs:{"required":"","label":"Event History Length","title":"Number of entries retained for event pipeline history.","icon":"history"},model:{value:(_vm.eventPipelineHistoryLength),callback:function ($$v) {_vm.eventPipelineHistoryLength=$$v},expression:"eventPipelineHistoryLength"}})],1)],1)],1)}
+var InstanceManagementPluginvue_type_template_id_d94e90fc_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=d94e90fc&
+
+// CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=script&lang=ts&
+
+
+
+
+
+var InstanceManagementPluginvue_type_script_lang_ts_InstanceManagementPlugin = /** @class */ (function (_super) {
+    __extends(InstanceManagementPlugin, _super);
+    function InstanceManagementPlugin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(InstanceManagementPlugin.prototype, "tenantId", {
+        /** Tenant id */
+        get: function () {
+            return this.configuration ? this.configuration.tenant.token : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(InstanceManagementPlugin.prototype, "instanceManagementConfiguration", {
+        /** Get tenant configuration for instance management */
+        get: function () {
+            return this.configuration ? this.configuration.tenantConfiguration : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(InstanceManagementPlugin.prototype, "eventPipelineHistoryLength", {
+        /** Get label generators list */
+        get: function () {
+            return this.instanceManagementConfiguration
+                ? this.instanceManagementConfiguration.eventPipelineHistoryLength
+                : null;
+        },
+        set: function (value) {
+            if (this.instanceManagementConfiguration) {
+                if (value) {
+                    this.instanceManagementConfiguration.eventPipelineHistoryLength = value;
+                    this.markDirty();
+                }
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Mark data as having been updated */
+    InstanceManagementPlugin.prototype.markDirty = function () {
+        this.$emit("dirty");
+    };
+    __decorate([
+        Object(external_vue_property_decorator_["Prop"])()
+    ], InstanceManagementPlugin.prototype, "configuration", void 0);
+    InstanceManagementPlugin = __decorate([
+        Object(external_vue_property_decorator_["Component"])({
+            components: {
+                TenantEnginePlugin: tenantengines_TenantEnginePlugin,
+                ContentSection: external_sitewhere_ide_components_["ContentSection"],
+                SectionOverview: external_sitewhere_ide_components_["SectionOverview"],
+                FormText: external_sitewhere_ide_components_["FormText"],
+            },
+        })
+    ], InstanceManagementPlugin);
+    return InstanceManagementPlugin;
+}(external_commonjs_vue_commonjs2_vue_root_Vue_default.a));
+/* harmony default export */ var InstanceManagementPluginvue_type_script_lang_ts_ = (InstanceManagementPluginvue_type_script_lang_ts_InstanceManagementPlugin);
+
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=script&lang=ts&
+ /* harmony default export */ var instancemanagement_InstanceManagementPluginvue_type_script_lang_ts_ = (InstanceManagementPluginvue_type_script_lang_ts_); 
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue
+
+
+
+
+
+/* normalize component */
+
+var InstanceManagementPlugin_component = normalizeComponent(
+  instancemanagement_InstanceManagementPluginvue_type_script_lang_ts_,
+  InstanceManagementPluginvue_type_template_id_d94e90fc_render,
+  InstanceManagementPluginvue_type_template_id_d94e90fc_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var instancemanagement_InstanceManagementPlugin = (InstanceManagementPlugin_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"39dbcf02-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/outboundconnectors/OutboundConnectorsPlugin.vue?vue&type=template&id=9c63a3ee&
 var OutboundConnectorsPluginvue_type_template_id_9c63a3ee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('outbound-connectors-table',{attrs:{"tenantId":_vm.tenantId,"connectors":_vm.outboundConnectors},on:{"create":_vm.onOutboundConnectorCreated,"update":_vm.onOutboundConnectorUpdated,"delete":_vm.onOutboundConnectorDeleted}})],1)}
 var OutboundConnectorsPluginvue_type_template_id_9c63a3ee_staticRenderFns = []
@@ -13635,6 +13731,7 @@ var LabelGenerationPlugin_component = normalizeComponent(
 
 /* harmony default export */ var labelgeneration_LabelGenerationPlugin = (LabelGenerationPlugin_component.exports);
 // CONCATENATED MODULE: ./src/index.ts
+
 
 
 

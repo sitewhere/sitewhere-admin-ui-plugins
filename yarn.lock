@@ -6472,22 +6472,22 @@ sitewhere-configuration-model@3.0.1:
   resolved "https://registry.yarnpkg.com/sitewhere-configuration-model/-/sitewhere-configuration-model-3.0.1.tgz#1345f9e736af5ec3ae77c121c0546378168be305"
   integrity sha512-zSlL5VOznnacq826P+r2A01xx2GSLXeiXicCXQXh6A0bOGWCRdQdI9dJRgTtk4im+3tz0HMYnd7STjTgEEblqA==
 
-sitewhere-ide-common@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/sitewhere-ide-common/-/sitewhere-ide-common-3.0.1.tgz#c7aa2ad9a2a257b261a03d3b1c2caf2374b48b44"
-  integrity sha512-/8wV97PK1gSBr7eeQ/iqj2z68YA/tWaxUalpHyrfise9S4qYdHP9vRIEi6uDnkzr3wrpOstQ49SIBTb9jx0jpQ==
+sitewhere-ide-common@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/sitewhere-ide-common/-/sitewhere-ide-common-3.0.2.tgz#b8ff2e1fc0bb5a254494d86ea392a28f82c92765"
+  integrity sha512-ePe5vnbsf9tKHt6QSaIJb0bQqbp+Uq9rxGnno3BHQAlDeQo1mrX4vvlNZc0IwKNIF6evSb9f4HwelgeXfiMd7w==
   dependencies:
     axios "0.21.1"
     moment "^2.25.1"
-    sitewhere-rest-api "3.0.1"
+    sitewhere-rest-api "3.0.2"
 
-sitewhere-ide-components@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.2.tgz#5dffdcb7d776aaa87a55b194bd2d6eafcfbd64c5"
-  integrity sha512-GNI7BVQ/7y5NS3VblI7m17+9SmL7w8sXW3l7a1QusbCRs3bUnCWe3IR+aUMhuWdeB2Yw0ZXCEEYYF1AO9RaOZQ==
+sitewhere-ide-components@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/sitewhere-ide-components/-/sitewhere-ide-components-3.0.3.tgz#9e05aabc0aafa1e78e7ce6cf7d1468009dc61da4"
+  integrity sha512-m4yYY4UXNRDh/JVhCHgjalUgsZJWR0GJjV/5Q7tM6qBy4XGxZu1X1a6qK0/2pn2Rhoynt463WgXWdQjBfFeXhw==
   dependencies:
     axios "0.21.1"
-    sitewhere-ide-common "3.0.1"
+    sitewhere-ide-common "3.0.2"
     vue "^2.6.11"
     vue-class-component "^7.2.3"
     vue-color "^2.7.1"
@@ -6497,10 +6497,10 @@ sitewhere-ide-components@3.0.2:
     vuetify "^2.2.11"
     vuex "^3.3.0"
 
-sitewhere-rest-api@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/sitewhere-rest-api/-/sitewhere-rest-api-3.0.1.tgz#6c72dc58943011ee41705c15a33a0bc75a79fe56"
-  integrity sha512-XO16pdngOf7wi0HmHJkixxh3pzIlmgGjvMsJT5lHrcPIG8ELEo1sdv1U+qA676CFPtPzKzDWQCignENjRcN7dA==
+sitewhere-rest-api@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/sitewhere-rest-api/-/sitewhere-rest-api-3.0.2.tgz#ba8a919cd6abb2d633309093618f15eab70ba84d"
+  integrity sha512-7T4Ao0dCIwMOGLmOAVgiqlWPbBbV2GWXEY46gECGYquLo1rCTKdgHrWhYqmfxpvw6QSAF1TUChh3Fyf4PFR6wg==
   dependencies:
     axios "0.21.1"
 

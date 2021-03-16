@@ -23,6 +23,8 @@
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
+import { VCard } from "vuetify/lib";
+
 import TenantEnginePlugin from "../TenantEnginePlugin.vue";
 import {
   ContentSection,
@@ -39,6 +41,7 @@ import { IInstanceManagementConfiguration } from "sitewhere-configuration-model"
     ContentSection,
     SectionOverview,
     FormText,
+    VCard
   },
 })
 export default class InstanceManagementPlugin extends Vue {

@@ -11630,14 +11630,15 @@ var InboundProcessingPlugin_component = normalizeComponent(
 )
 
 /* harmony default export */ var inboundprocessing_InboundProcessingPlugin = (InboundProcessingPlugin_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"39dbcf02-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=d94e90fc&
-var InstanceManagementPluginvue_type_template_id_d94e90fc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-bug","title":"Instance Debugging Configuration"}},[_c('section-overview',{attrs:{"title":"Event Pipeline Debugging"}},[_vm._v(" Event pipeline debugging is used to track events in the processing pipeline across multiple microservices in order to understand how events are processed at a low level. ")]),_c('v-card',{attrs:{"flat":"","width":"60%"}},[_c('form-text',{staticStyle:{"width":"50%"},attrs:{"required":"","label":"Event History Length","title":"Number of entries retained for event pipeline history.","icon":"history"},model:{value:(_vm.eventPipelineHistoryLength),callback:function ($$v) {_vm.eventPipelineHistoryLength=$$v},expression:"eventPipelineHistoryLength"}})],1)],1)],1)}
-var InstanceManagementPluginvue_type_template_id_d94e90fc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"39dbcf02-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=ffb7d662&
+var InstanceManagementPluginvue_type_template_id_ffb7d662_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('tenant-engine-plugin',{attrs:{"configuration":_vm.configuration}},[_c('content-section',{attrs:{"icon":"fa-bug","title":"Instance Debugging Configuration"}},[_c('section-overview',{attrs:{"title":"Event Pipeline Debugging"}},[_vm._v(" Event pipeline debugging is used to track events in the processing pipeline across multiple microservices in order to understand how events are processed at a low level. ")]),_c('v-card',{attrs:{"flat":"","width":"60%"}},[_c('form-text',{staticStyle:{"width":"50%"},attrs:{"required":"","label":"Event History Length","title":"Number of entries retained for event pipeline history.","icon":"history"},model:{value:(_vm.eventPipelineHistoryLength),callback:function ($$v) {_vm.eventPipelineHistoryLength=$$v},expression:"eventPipelineHistoryLength"}})],1)],1)],1)}
+var InstanceManagementPluginvue_type_template_id_ffb7d662_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=d94e90fc&
+// CONCATENATED MODULE: ./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=template&id=ffb7d662&
 
 // CONCATENATED MODULE: ./node_modules/ts-loader??ref--13-0!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/plugins/tenantengines/instancemanagement/InstanceManagementPlugin.vue?vue&type=script&lang=ts&
+
 
 
 
@@ -11696,6 +11697,7 @@ var InstanceManagementPluginvue_type_script_lang_ts_InstanceManagementPlugin = /
                 ContentSection: external_sitewhere_ide_components_["ContentSection"],
                 SectionOverview: external_sitewhere_ide_components_["SectionOverview"],
                 FormText: external_sitewhere_ide_components_["FormText"],
+                VCard: lib_["VCard"]
             },
         })
     ], InstanceManagementPlugin);
@@ -11715,8 +11717,8 @@ var InstanceManagementPluginvue_type_script_lang_ts_InstanceManagementPlugin = /
 
 var InstanceManagementPlugin_component = normalizeComponent(
   instancemanagement_InstanceManagementPluginvue_type_script_lang_ts_,
-  InstanceManagementPluginvue_type_template_id_d94e90fc_render,
-  InstanceManagementPluginvue_type_template_id_d94e90fc_staticRenderFns,
+  InstanceManagementPluginvue_type_template_id_ffb7d662_render,
+  InstanceManagementPluginvue_type_template_id_ffb7d662_staticRenderFns,
   false,
   null,
   null,
